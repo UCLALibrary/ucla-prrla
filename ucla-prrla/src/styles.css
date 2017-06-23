@@ -213,6 +213,9 @@ header{
     background-color: #fff;
     padding: 0;
 }
+.dl-horizontal{
+    word-break: break-all;
+}
 .dl-horizontal dt {
     width: 130px;
     text-align: left;
