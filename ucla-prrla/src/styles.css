@@ -85,6 +85,9 @@ header{
 .nav{
     margin-top: 20px;
 }
+.nav>li>a{
+    padding: 10px;
+}
 .nav-pills > li > a{
     text-transform: uppercase;
     color: inherit;
@@ -157,7 +160,7 @@ header{
     top: 0;
     left: 0;
     bottom: 0;
-    right: 35%;
+    right: 30%;
     color: #fff;
     padding: 25px 15px 0;
 }
@@ -217,7 +220,7 @@ header{
     word-break: break-all;
 }
 .dl-horizontal dt {
-    width: 130px;
+    width: 100px;
     text-align: left;
     font-weight: 400;
     color: #808285;
@@ -364,6 +367,19 @@ header{
 .background-fuzzy-white{
     background-color: rgba(255, 255, 255, 0.5);
 }
+.advanced-rows{
+    background-color: #edf3f7;
+    padding: 10px 30px;
+}
+.advanced-rows h3{
+    color: #808285;
+}
+.advanced-rows input{
+    height: 21px;
+    width: 100%;
+    padding: 0 5px;
+    color: #808285;
+}
 footer{
     color: #fff;
     background-color: #7c7e7f;
@@ -427,12 +443,12 @@ footer{
 }
 @media (min-width: 768px) {
     .dl-horizontal dt {
-        width: 130px;
+        width: 100px;
         text-align: left;
         font-weight: 400;
         color: #808285;
     }
     .dl-horizontal dd {
-        margin-left: 150px;
+        margin-left: 100px;
     }
 }
