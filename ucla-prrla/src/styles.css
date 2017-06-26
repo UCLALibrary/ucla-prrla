@@ -448,6 +448,11 @@ footer{
 .padding-bottom20{
     padding-bottom: 20px;
 }
+@media (max-width: 991px) {
+    .border-left{
+        border-left: none;
+    }
+}
 @media (min-width: 868px) {
     .absolute-block{
         padding-top: 0;
