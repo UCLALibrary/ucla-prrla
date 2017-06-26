@@ -92,6 +92,10 @@ header{
     text-transform: uppercase;
     color: inherit;
 }
+.list-inline>li{
+    padding-right: 4px;
+    padding-left: 4px;
+}
 .blue{
     color: #1b75bb;
 }
@@ -380,6 +384,9 @@ header{
     padding: 0 5px;
     color: #808285;
 }
+.border-left{
+    border-left: 1px solid #7c7e7f;
+}
 footer{
     color: #fff;
     background-color: #7c7e7f;
@@ -441,6 +448,11 @@ footer{
 .padding-bottom20{
     padding-bottom: 20px;
 }
+@media (min-width: 868px) {
+    .absolute-block{
+        padding-top: 0;
+    }
+}
 @media (min-width: 768px) {
     .dl-horizontal dt {
         width: 100px;
@@ -452,3 +464,4 @@ footer{
         margin-left: 100px;
     }
 }
+

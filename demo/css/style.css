@@ -1,39 +1,10 @@
-/*--------------------------------------------------------*/
-/* F O N T S                                              */
-/*--------------------------------------------------------*/
 @font-face {
     font-family: "Proxima Nova";
-    src: url('../../src/app/fonts/Proxima Nova Regular.woff2') format('woff2'),
-    url('../../src/app/fonts/Proxima Nova Regular.woff') format('woff');
+    src: url('../fonts/Proxima Nova Regular.woff2') format('woff2'),
+    url('../fonts/Proxima Nova Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-
 }
-/*--------------------------------------------------------*/
-/* 01 - RESET STYLES                                      */
-/*--------------------------------------------------------*/
-
-/*html, body, div, span, applet, object, iframe,*/
-/*h1, h2, h3, h4, h5, h6, p, blockquote, pre,*/
-/*a, abbr, acronym, address, big, cite, code,*/
-/*del, dfn, em, img, ins, kbd, q, s, samp,*/
-/*small, strike, strong, sub, sup, tt, var,*/
-/*b, u, i, center,*/
-/*dl, dt, dd, ol, ul, li,*/
-/*fieldset, form, label, legend,*/
-/*table, caption, tbody, tfoot, thead, tr, th, td,*/
-/*article, aside, canvas, details, embed,*/
-/*figure, figcaption, footer, header, hgroup,*/
-/*menu, nav, output, ruby, section, summary,*/
-/*time, mark, audio, video {*/
-    /*margin: 0;*/
-    /*padding: 0;*/
-    /*border: 0;*/
-    /*font-size: 100%;*/
-    /*font: inherit;*/
-    /*vertical-align: baseline;*/
-/*}*/
-/* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
     display: block;
@@ -75,7 +46,6 @@ a, a:link, a:visited, a:active, a:hover {
     cursor: pointer;
     text-decoration: none;
     outline: none;
-    color: inherit;
 }
 *{
     margin: 0;
@@ -109,13 +79,22 @@ em, i{
 body{
     font-family: 'Proxima Nova',sans-serif;
 }
-
-/***************/
 header{
     padding-top: 60px;
 }
+.nav{
+    margin-top: 20px;
+}
+.nav>li>a{
+    padding: 10px;
+}
 .nav-pills > li > a{
     text-transform: uppercase;
+    color: inherit;
+}
+.list-inline>li{
+    padding-right: 4px;
+    padding-left: 4px;
 }
 .blue{
     color: #1b75bb;
@@ -157,7 +136,7 @@ header{
     width: 100%;
 }
 .height600{
-     height:600px;
+    height:600px;
 }
 .height300{
     height:300px;
@@ -185,7 +164,7 @@ header{
     top: 0;
     left: 0;
     bottom: 0;
-    right: 35%;
+    right: 30%;
     color: #fff;
     padding: 25px 15px 0;
 }
@@ -241,14 +220,18 @@ header{
     background-color: #fff;
     padding: 0;
 }
+.dl-horizontal{
+    word-break: break-all;
+}
 .dl-horizontal dt {
-    width: 130px;
+    width: 100px;
     text-align: left;
     font-weight: 400;
     color: #808285;
 }
 .dl-horizontal dd {
     margin-left: 150px;
+    word-break: break-all;
 }
 .social-icons img{
     width: 25px;
@@ -388,6 +371,22 @@ header{
 .background-fuzzy-white{
     background-color: rgba(255, 255, 255, 0.5);
 }
+.advanced-rows{
+    background-color: #edf3f7;
+    padding: 10px 30px;
+}
+.advanced-rows h3{
+    color: #808285;
+}
+.advanced-rows input{
+    height: 21px;
+    width: 100%;
+    padding: 0 5px;
+    color: #808285;
+}
+.border-left{
+    border-left: 1px solid #7c7e7f;
+}
 footer{
     color: #fff;
     background-color: #7c7e7f;
@@ -398,19 +397,71 @@ footer{
 }
 .footer-links a{
     margin-right: 10px;
+    color: inherit;
 }
 .copyright{
     font-size: 12px;
 }
+.margin-bottom5p{
+    margin-bottom: 5%;
+}
 
+.padding_top2p {
+    padding-top: 2%;
+}
+
+.padding_top3p {
+    padding-top: 3%;
+}
+
+.padding_top4p {
+    padding-top: 4%;
+}
+
+.padding_top5p {
+    padding-top: 5%;
+}
+
+.padding_top1px {
+    padding-top: 1px;
+}
+
+.padding_top10 {
+    padding-top: 10px;
+}
+
+.padding_bottom2p {
+    padding-bottom: 2% !important;
+}
+
+.padding_bottom3p {
+    padding-bottom: 3% !important;
+}
+
+.padding_bottom5p {
+    padding-bottom: 5% !important;
+}
+
+.padding_bottom10p {
+    padding-bottom: 10% !important;
+}
+.padding-bottom20{
+    padding-bottom: 20px;
+}
+@media (min-width: 868px) {
+    .absolute-block{
+        padding-top: 0;
+    }
+}
 @media (min-width: 768px) {
     .dl-horizontal dt {
-        width: 130px;
+        width: 100px;
         text-align: left;
         font-weight: 400;
         color: #808285;
     }
     .dl-horizontal dd {
-        margin-left: 150px;
+        margin-left: 100px;
     }
 }
+
