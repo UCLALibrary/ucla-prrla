@@ -20,7 +20,7 @@ export const router: Routes = [
     { path: 'advanced-search', component: AdvancedSearchComponent },
     { path: 'help', component: HelpComponent },
     { path: 'about', component: AboutComponent },
-    { path: 'advanced-search/detail/:id', component: DetailItemComponent },
+    { path: 'detail', component: DetailItemComponent },
     { path: '**', component: NotFoundComponent },
     ];
 
