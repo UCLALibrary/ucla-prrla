@@ -3,7 +3,7 @@
         <div class="cover-image height200" style="background-image: url('../../assets/img/china-paper.png');">
             <div class="main-page-block">
                 <div class="search">
-                    <input type="search" placeholder="Search the Library">
+                    <input type="search" placeholder="Search the Library" (keyup.enter)="searchOnEnter($event)">
                     <div class="search-submit">
                         <button type="submit"></button>
                         <img src="../../assets/img/search.png" alt="">
@@ -51,6 +51,7 @@
         </div>
         <div class="col-md-9 border-left padding_bottom5p">
             <div *ngIf="items.length > 0; else elseBlock">
+
                 <div class="row">
                     <div class="col-md-12 margin-bottom5p">
                         <div class="row">
@@ -60,7 +61,7 @@
                                 <div class="row">
                                     <div aria-label="Page navigation">
                                         <!-- pager -->
-                                        <ul *ngIf="pager.pages && pager.pages.length" class="pagination pull-right">
+                                        <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
                                             <li [ngClass]="{disabled:pager.currentPage === 1}">
                                                 <a (click)="pagerClick($event, 1)">First</a>
                                             </li>

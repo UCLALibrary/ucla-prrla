@@ -1,71 +1,91 @@
 <div class="row">
-  <div class="col-md-12 padding_bottom3p">
-    <div class="col-md-offset-1 col-md-11">
-      <div class="col-md-3 padding_bottom3p">
-        <img src="../../assets/img/title-lily.png" alt="">
-      </div>
-      <div class="col-md-6">
-        <dl class="dl-horizontal">
-          <dt>Title: </dt>
-          <dd>The Lily And The Nightingale. She Said I Was So Lonely</dd>
-          <br>
-          <dt>Alternate Title:</dt>
-          <dd>The Lily And The Nightingale</dd>
-          <dt>First Line: </dt>
-          <dd>On The Lake A White Lily Lay Dreaming, Where The Sunbeams Loved To Stray</dd>
-          <br>
-          <dt>External Link(s): </dt>
-          <dd>http://digital.library.ucla.edu/apam/librarian?itemid=sy105976</dd>
-          <br>
-          <dt>Collection: </dt>
-          <dd>Popular American Music</dd>
-          <dt>Institution: </dt>
-          <dd>University of Hong Kong</dd>
-          <dt>Author: </dt>
-          <dd>Herbert, Victor [composer]</dd>
-          <dt>Date: </dt>
-          <dd>1898</dd>
-          <br>
-          <dt>Alternative Title: </dt>
-          <dd>n/a</dd>
-          <dt>Subject Description: </dt>
-          <dd>Tempo di valse moderato [tempo]</dd>
-          <dt>Abstract: </dt>
-          <dd>n/a</dd>
-          <br>
-          <dt>Source: </dt>
-          <dd>SY105976</dd>
-          <dt>Rights: </dt>
-          <dd>UCLA Library</dd>
-          <dt>Language: </dt>
-          <dd>English</dd>
-          <dt>Identifier: </dt>
-          <dd>http://digital.library.ucla.edu/apam/librarian?itemid=sy105976</dd>
-        </dl>
-      </div>
-      <div class="col-md-3">
-        <div class="padding_bottom5p">
-          <a href="#" class="btn btn-block btn-blue">View item at University of Hong Kong’s site</a>
+  <div class="col-md-12">
+      <div class="cover-image height200" style="background-image: url('../../assets/img/hubeiwujiao.jpg');">
+        <div class="main-page-block">
+          <div class="search">
+            <input type="search" placeholder="Search the Library">
+            <div class="search-submit">
+              <button type="submit"></button>
+              <img src="../../assets/img/search.png" alt="">
+            </div>
+          </div>
         </div>
-        <dl>
-          <dt>Can I Use It?</dt>
-          <dd>
-            <p>No Re-use</p>
-            <a href="#" class="blue">© In Copyright</a>
-          </dd>
-          <br>
-          <dt>Share</dt>
-          <dd>
-            <ul class="list-inline social-icons">
-              <li><a href="#"><img src="../../assets/img/icon-fb.png" alt=""></a></li>
-              <li><a href="#"><img src="../../assets/img/icon-tw.png" alt=""></a></li>
-              <li><a href="#"><img src="../../assets/img/icon-pt.png" alt=""></a></li>
-              <li><a href="#"><img src="../../assets/img/icon-inst.png" alt=""></a></li>
-              <li><a href="#"><img src="../../assets/img/icon-tb.png" alt=""></a></li>
-            </ul>
-          </dd>
-        </dl>
+      </div>
+  </div>
+  <div class="col-md-12 padding_top2p padding_bottom3p">
+      <div class="col-md-12" *ngFor="let book of books.docs">
+        <div *ngIf="this.id == book.id">
+        <ol class="breadcrumb">
+          <li><a [routerLink]="advanced-search">Search Results </a></li>
+          <li class="active">{{ book.title }}</li>
+        </ol>
+        <hr>
+        <div class="col-md-3 padding_bottom3p">
+          <img src='{{ book.img }}' alt="">
+        </div>
+        <div class="col-md-6">
+          <dl class="dl-horizontal">
+            <dt>Title: </dt>
+            <dd>{{ book.title }}</dd>
+            <br>
+            <dt>Alternate Title:</dt>
+            <dd>{{ book.alternateTitle }}</dd>
+            <dt>First Line: </dt>
+            <dd>{{ book.firstLine }}</dd>
+            <br>
+            <dt>External Link(s): </dt>
+            <dd>{{ book.externalLinks }}</dd>
+            <br>
+            <dt>Collection: </dt>
+            <dd>{{ book.collection }}</dd>
+            <dt>Institution: </dt>
+            <dd>{{ book.institution }}</dd>
+            <dt>Author: </dt>
+            <dd>{{ book.author }}</dd>
+            <dt>Date: </dt>
+            <dd>{{ book.date }}</dd>
+            <br>
+            <dt>Alternative Title: </dt>
+            <dd>{{ book.alternativeTitle }}</dd>
+            <dt>Subject Description: </dt>
+            <dd>{{ book.subjectDescription }}</dd>
+            <dt>Abstract: </dt>
+            <dd>{{ book.abstract }}</dd>
+            <br>
+            <dt>Source: </dt>
+            <dd>{{ book.source }}</dd>
+            <dt>Rights: </dt>
+            <dd>{{ book.rights }}</dd>
+            <dt>Language: </dt>
+            <dd>{{ book.language }}</dd>
+            <dt>Identifier: </dt>
+            <dd>{{ book.identifier }}</dd>
+          </dl>
+        </div>
+        <div class="col-md-3">
+          <div class="padding_bottom5p">
+          <a href="#" class="btn btn-block btn-blue">View item at University of Hong Kong’s site</a>
+          </div>
+          <dl>
+            <dt>Can I Use It?</dt>
+            <dd>
+              <p>No Re-use</p>
+              <a href="#" class="blue">© In Copyright</a>
+            </dd>
+            <br>
+            <dt>Share</dt>
+            <dd>
+              <ul class="list-inline social-icons">
+                <li><a href="#"><img src="../../assets/img/icon-fb.png" alt=""></a></li>
+                <li><a href="#"><img src="../../assets/img/icon-tw.png" alt=""></a></li>
+                <li><a href="#"><img src="../../assets/img/icon-pt.png" alt=""></a></li>
+                <li><a href="#"><img src="../../assets/img/icon-inst.png" alt=""></a></li>
+                <li><a href="#"><img src="../../assets/img/icon-tb.png" alt=""></a></li>
+              </ul>
+            </dd>
+          </dl>
+        </div>
+        </div>
       </div>
     </div>
-  </div>
 </div>
