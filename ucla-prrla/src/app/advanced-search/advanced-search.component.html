@@ -27,8 +27,6 @@
                 <div *ngFor="let itemFilter of itemFilters; let i=index">
                     <div class="list-item-title active" (click)="toggleActiveClass($event)">
                         {{ itemFilter.displayName }}
-                        <span class="glyphicon glyphicon-chevron-right"></span>
-                        <span class="glyphicon glyphicon-chevron-up"></span>
                     </div>
                     <div class="filter-block">
                         <div class="blue-checkbox" *ngFor="let filterField of itemFilter.items; let ii=index">
@@ -101,7 +99,6 @@
                             <dt>External Link(s):</dt>
                             <dd>{{ item.identifier?item.identifier:"n/a" }}</dd>
                             <br><br>
-
                             <dt>Collection:</dt>
                             <dd>{{ item.collection?item.collection:"n/a" }}</dd>
                             <dt>Institution:</dt>
@@ -129,14 +126,14 @@
                         </dl>
                         <div class="row">
                             <div class="col-md-12 margin-bottom5p">
-                                <a [routerLink]="['detail', item.id]" (click)="onClick($event)" id='{{item.id}}'>
+                                <a [routerLink]="['/detail', item.id]">
                                     View Details >
                                 </a>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-10">
-                                <a href="#" class="btn btn-block btn-blue">View item at University of Hong Kong’s site</a>
+                                <a class="btn btn-block btn-blue">View item at University of Hong Kong’s site</a>
                             </div>
                         </div>
                     </div>

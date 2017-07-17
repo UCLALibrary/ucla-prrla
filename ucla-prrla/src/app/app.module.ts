@@ -23,6 +23,7 @@ import { TestService } from './services/test.service';
 import { ParseJsonPipe } from './parse-json/parse-json.pipe';
 import { TestComponent } from './test/test.component';
 import {DerpPipe} from './derp.pipe';
+import {TestDetailComponent} from "./test-detail/test-detail.component";
 
 
 @NgModule({
@@ -41,6 +42,7 @@ import {DerpPipe} from './derp.pipe';
     NotFoundComponent,
     ParseJsonPipe,
     TestComponent,
+    TestDetailComponent,
     DerpPipe,
   ],
   imports: [

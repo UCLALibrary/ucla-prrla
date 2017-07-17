@@ -95,8 +95,6 @@ export class TestService {
         }
 
         return this._jsonp.get(url).map(data => {
-            console.log(data.json());
-
             let totalRecords = data.json().response.numFound;
             let raw_items = data.json().response.docs;
             let items = [];
@@ -104,37 +102,7 @@ export class TestService {
             for(let i in raw_items){
                 let raw_item = raw_items[i];
 
-                let item = {
-                    title: raw_item.titles[0],
-                    alternative_title: false,
-                    first_line: false,
-                    collection: false,
-                    institution: false,
-                    author: false,
-                    language: false,
-                    rights: false,
-                    source: false,
-                    description: false,
-                    identifier: false,
-                    decade: false,
-                };
-
-                for(let ii in raw_item.titles){
-                    let title = raw_item.titles[ii];
-
-                    item = this.fillItemWithEndStringModificator(item, title, 'alternative_title', '[alternative title]');
-                    item = this.fillItemWithEndStringModificator(item, title, 'first_line', '[first line]');
-                }
-
-                item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'collectionName', 'collection');
-                item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'institutionName', 'institution');
-                item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'creator_keyword', 'author');
-                item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'language_keyword', 'language');
-                item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'rights_keyword', 'rights');
-                item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'source_keyword', 'source');
-                item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'description_keyword', 'description');
-                item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'identifier_keyword', 'identifier');
-                item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'decade', 'decade');
+                let item = this.parseRawItem(raw_item);
 
                 items.push(item);
             }
@@ -179,6 +147,62 @@ export class TestService {
                 itemFilters: itemFilters,
             };
         });
+    }
+
+    public getItemById(id){
+        let url =
+            this.baseURL + 'select' + '?' +
+            'q=' + encodeURI('id:' + id) + '&' +
+            'indent=true&' +
+            'wt=json&' +
+            'json.wrf=JSONP_CALLBACK';
+
+        return this._jsonp.get(url).map(data => {
+            let raw_items = data.json().response.docs;
+
+            if(raw_items.length == 1){
+                return this.parseRawItem(raw_items[0]);
+            }else{
+                return false;
+            }
+        });
+    }
+
+    private parseRawItem(raw_item){
+        let item = {
+            id: raw_item.id,
+            title: raw_item.titles[0],
+            alternative_title: false,
+            first_line: false,
+            collection: false,
+            institution: false,
+            author: false,
+            language: false,
+            rights: false,
+            source: false,
+            description: false,
+            identifier: false,
+            decade: false,
+        };
+
+        for(let ii in raw_item.titles){
+            let title = raw_item.titles[ii];
+
+            item = this.fillItemWithEndStringModificator(item, title, 'alternative_title', '[alternative title]');
+            item = this.fillItemWithEndStringModificator(item, title, 'first_line', '[first line]');
+        }
+
+        item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'collectionName', 'collection');
+        item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'institutionName', 'institution');
+        item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'creator_keyword', 'author');
+        item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'language_keyword', 'language');
+        item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'rights_keyword', 'rights');
+        item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'source_keyword', 'source');
+        item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'description_keyword', 'description');
+        item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'identifier_keyword', 'identifier');
+        item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'decade', 'decade');
+
+        return item;
     }
 
     private fillItemWithFirstOfArrayIfExists(item, raw_item, data_key, item_key){

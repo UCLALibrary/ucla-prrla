@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {TestService} from "../services/test.service";
 import {ActivatedRoute} from "@angular/router";
-import {element} from "protractor";
+import {element} from 'protractor';
 
 @Component({
     templateUrl: './test.component.html'

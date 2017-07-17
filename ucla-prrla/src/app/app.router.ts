@@ -11,6 +11,8 @@ import { HelpComponent } from './help/help.component';
 import { DetailItemComponent } from './detail-item/detail-item.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import {TestComponent} from './test/test.component';
+import {TestDetailComponent} from "./test-detail/test-detail.component";
+
 export const router: Routes = [
     { path: '', redirectTo: 'index', pathMatch: 'full' },
     // { path: '', component: IndexContentComponent },
@@ -21,7 +23,8 @@ export const router: Routes = [
     { path: 'help', component: HelpComponent },
     { path: 'about', component: AboutComponent },
     { path: 'test', component: TestComponent },
-    { path: 'advanced-search/detail/:id', component: DetailItemComponent },
+    { path: 'test-detail/:id', component: TestDetailComponent },
+    { path: 'detail/:id', component: DetailItemComponent },
     { path: '**', component: NotFoundComponent },
 ];
 

@@ -1,70 +1,70 @@
 <div class="row">
   <div class="col-md-12">
-      <div class="cover-image height200" style="background-image: url('../../assets/img/hubeiwujiao.jpg');">
-        <div class="main-page-block">
-          <div class="search">
-            <input type="search" placeholder="Search the Library">
-            <div class="search-submit">
-              <button type="submit"></button>
-              <img src="../../assets/img/search.png" alt="">
-            </div>
+    <div class="cover-image height200" style="background-image: url('../../assets/img/hubeiwujiao.jpg');">
+      <div class="main-page-block">
+        <div class="search">
+          <input type="search" placeholder="Search the Library">
+          <div class="search-submit">
+            <button type="submit"></button>
+            <img src="../../assets/img/search.png" alt="">
           </div>
         </div>
       </div>
+    </div>
   </div>
   <div class="col-md-12 padding_top2p padding_bottom3p">
-      <div class="col-md-12" *ngFor="let book of books.docs">
-        <div *ngIf="this.id == book.id">
-        <ol class="breadcrumb">
-          <li><a [routerLink]="advanced-search">Search Results </a></li>
-          <li class="active">{{ book.title }}</li>
-        </ol>
-        <hr>
+    <div class="col-md-12">
+      <ol class="breadcrumb">
+        <li><a [routerLink]="advanced-search">Search Results </a></li>
+        <li class="active">{{ item?item.title:"Not found" }}</li>
+      </ol>
+      <hr>
+      <div *ngIf="item; else elseBlock">
         <div class="col-md-3 padding_bottom3p">
-          <img src='{{ book.img }}' alt="">
+          <img src='{{ item.thumbnailExists ? item.thumbnailExists : "/assets/img/title-not-found.png"}}' alt="">
         </div>
         <div class="col-md-6">
           <dl class="dl-horizontal">
             <dt>Title: </dt>
-            <dd>{{ book.title }}</dd>
+            <dd>{{ item.title }}</dd>
             <br>
             <dt>Alternate Title:</dt>
-            <dd>{{ book.alternateTitle }}</dd>
+            <dd>{{ item.alternateTitle }}</dd>
             <dt>First Line: </dt>
-            <dd>{{ book.firstLine }}</dd>
+            <dd>{{ item.firstLine }}</dd>
             <br>
             <dt>External Link(s): </dt>
-            <dd>{{ book.externalLinks }}</dd>
+            <dd>{{ item.externalLinks }}</dd>
             <br>
             <dt>Collection: </dt>
-            <dd>{{ book.collection }}</dd>
+            <dd>{{ item.collection }}</dd>
             <dt>Institution: </dt>
-            <dd>{{ book.institution }}</dd>
+            <dd>{{ item.institution }}</dd>
             <dt>Author: </dt>
-            <dd>{{ book.author }}</dd>
+            <dd>{{ item.author }}</dd>
             <dt>Date: </dt>
-            <dd>{{ book.date }}</dd>
+            <dd>{{ item.date }}</dd>
             <br>
             <dt>Alternative Title: </dt>
-            <dd>{{ book.alternativeTitle }}</dd>
+            <dd>{{ item.alternativeTitle }}</dd>
             <dt>Subject Description: </dt>
-            <dd>{{ book.subjectDescription }}</dd>
+            <dd>{{ item.subjectDescription }}</dd>
             <dt>Abstract: </dt>
-            <dd>{{ book.abstract }}</dd>
+            <dd>{{ item.abstract }}</dd>
             <br>
             <dt>Source: </dt>
-            <dd>{{ book.source }}</dd>
+            <dd>{{ item.source }}</dd>
             <dt>Rights: </dt>
-            <dd>{{ book.rights }}</dd>
+            <dd>{{ item.rights }}</dd>
             <dt>Language: </dt>
-            <dd>{{ book.language }}</dd>
+            <dd>{{ item.language }}</dd>
             <dt>Identifier: </dt>
-            <dd>{{ book.identifier }}</dd>
+            <dd>{{ item.identifier }}</dd>
           </dl>
         </div>
         <div class="col-md-3">
           <div class="padding_bottom5p">
-          <a href="#" class="btn btn-block btn-blue">View item at University of Hong Kong’s site</a>
+            <a href="#" class="btn btn-block btn-blue">View item at University of Hong Kong’s site</a>
           </div>
           <dl>
             <dt>Can I Use It?</dt>
@@ -85,7 +85,10 @@
             </dd>
           </dl>
         </div>
-        </div>
       </div>
+      <ng-template #elseBlock>
+        No result found.
+      </ng-template>
     </div>
+  </div>
 </div>
