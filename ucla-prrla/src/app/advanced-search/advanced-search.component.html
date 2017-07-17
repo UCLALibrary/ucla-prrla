@@ -3,7 +3,7 @@
         <div class="cover-image height200" style="background-image: url('../../assets/img/china-paper.png');">
             <div class="main-page-block">
                 <div class="search">
-                    <input type="search" placeholder="Search the Library">
+                    <input type="search" placeholder="Search the Library" (keyup.enter)="searchOnEnter($event)">
                     <div class="search-submit">
                         <button type="submit"></button>
                         <img src="../../assets/img/search.png" alt="">
