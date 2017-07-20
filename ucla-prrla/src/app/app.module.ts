@@ -5,6 +5,8 @@ import { RouterModule } from '@angular/router';
 import { router, routes} from './app.router';
 import {Ng2PaginationModule} from 'ng2-pagination'; //importing ng2-pagination
 import {HttpModule, JsonpModule} from '@angular/http';
+// import { AccordionModule } from 'ngx-bootstrap';
+import {AccordionModule} from 'ng2-accordion';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -24,6 +26,8 @@ import { ParseJsonPipe } from './parse-json/parse-json.pipe';
 import { TestComponent } from './test/test.component';
 import {DerpPipe} from './derp.pipe';
 import {TestDetailComponent} from "./test-detail/test-detail.component";
+import {Test2Component} from "./test2/test2.component";
+import { ExhibitionsComponent } from './exhibitions/exhibitions.component';
 
 
 @NgModule({
@@ -42,8 +46,10 @@ import {TestDetailComponent} from "./test-detail/test-detail.component";
     NotFoundComponent,
     ParseJsonPipe,
     TestComponent,
+    Test2Component,
     TestDetailComponent,
     DerpPipe,
+    ExhibitionsComponent,
   ],
   imports: [
     BrowserModule,
@@ -53,6 +59,7 @@ import {TestDetailComponent} from "./test-detail/test-detail.component";
     Ng2PaginationModule,
     HttpModule,
     JsonpModule,
+    AccordionModule,
   ],
   providers: [BooksService, TestService],
   bootstrap: [AppComponent]

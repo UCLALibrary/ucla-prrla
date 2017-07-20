@@ -1,13 +1,16 @@
-import {Component, OnInit} from '@angular/core';
-import {TestService} from "../services/test.service";
-import {ActivatedRoute} from "@angular/router";
+import {Component, OnInit, OnDestroy} from '@angular/core';
+import {TestService} from '../services/test.service';
+import {ActivatedRoute, Params, Router} from '@angular/router';
 import {element} from 'protractor';
+import {Subscription} from 'rxjs/Subscription';
 
 @Component({
     templateUrl: './test.component.html'
 })
 
 export class TestComponent implements OnInit {
+    url_page: any;
+    route$: Subscription;
     public items = [];
     public itemFilters;
     public pager;
@@ -16,12 +19,40 @@ export class TestComponent implements OnInit {
 
     public search_therms = '';
 
-    constructor(private testService: TestService, private route: ActivatedRoute) {
+    constructor(
+        private testService: TestService,
+        private route: ActivatedRoute,
+        private router: Router
+    ) {
     }
 
     ngOnInit() {
         this.pager = this.testService.getPager(0);
-        this.setPage(1);
+
+        this.route$ = this.route.queryParams.subscribe(
+            (params: Params) => {
+                let page = +params['page'];
+                if(!isNaN(page)){
+                    this.url_page = page;
+                }
+                let params_json = params['filters'];
+                if(params_json){
+                    this.selectedFilters = JSON.parse(params_json);
+                }else{
+                    this.selectedFilters = {};
+                }
+
+                this.setPage(this.url_page);
+            }
+        );
+
+        this.setPage(this.url_page);
+    }
+
+    ngOnDestroy() {
+        if (this.route$) {
+            this.route$.unsubscribe();
+        }
     }
 
     setPage(page: number) {
@@ -40,8 +71,12 @@ export class TestComponent implements OnInit {
 
     pagerClick(event, page) {
         if(!event.target.parentElement.classList.contains('disabled')){
-            this.setPage(page);
+            this.navigateWithParams(page, this.selectedFilters);
         }
+    }
+
+    navigateWithParams(page, filters){
+        this.router.navigate(['/test'], { queryParams: { page: page, filters: JSON.stringify(filters) } });
     }
 
     searchOnEnter(event) {
@@ -74,7 +109,7 @@ export class TestComponent implements OnInit {
             delete this.selectedFilters[filterName];
         }
 
-        this.setPage(1);
+        this.navigateWithParams(1, this.selectedFilters);
     }
 
     getIsSelectedFilter(filterName, filterVal){

@@ -1,93 +1,95 @@
 <div class="row">
-  <div class="col-md-12">
-    <div class="cover-image height200" style="background-image: url('../../assets/img/koi-fish-copy.jpg');">
-      <div class="main-page-block">
-        <div class="search">
-          <input type="search" placeholder="Search the Library">
-          <div class="search-submit">
-            <button type="submit"></button>
-            <img src="../../assets/img/search.png" alt="">
-          </div>
+    <div class="col-md-12">
+        <div class="cover-image height200" style="background-image: url('../../assets/img/koi-fish-copy.jpg');">
+            <div class="main-page-block">
+                <div class="search">
+                    <input type="search" placeholder="Search the Library">
+                    <div class="search-submit">
+                        <button type="submit"></button>
+                        <img src="../../assets/img/search.png" alt="">
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
+        <div class="padding_top4p padding_bottom3p">
+            <div class="col-md-12">
+                <div class="col-md-4">
+                    <h3 class="bottom-line blue">PRL Collections</h3>
+                </div>
+                <div class="col-md-12">
+                    <p>Blurb about the institutions. Lorem ipsum dolor sit amet, amet mi libero lobortis nullam, hac est
+                        augue
+                        lacinia mauris adipiscing pede. Magna suspendisse pellentesque varius a sit urna, iaculis
+                        incidunt egestas
+                        hendrerit ac, justo in non eleifend varius integer arcu, donecdui turpis id pellentesque, vel
+                        morbi. Wisi
+                        non ac. Urna nibh nunc proin accumsan donec nibh, laboriosam.</p>
+                </div>
+            </div>
+            <div class="col-md-12 padding_top4p padding_bottom3p text-center explore-collection-control">
+                <div class="col-md-offset-3 col-md-6">
+                    <div *ngFor="let n of list" class="col-md-6">
+                        <div class="row">
+                        <a class="btn btn-white btn-block" (click)="selectButton(n)" [ngClass]="{selected: isSelected(n)}">{{n}}</a>
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf="selected == 'Browse by Institution'">
+                    <div class="col-md-12 padding_top4p padding_bottom3p by-institution">
+                        <div class="col-md-4 text-left" *ngFor="let university of universities">
+                            <div class="ac-item-container">
+                                <div
+                                        [attr.name]="university.name"
+                                        class="ac-title"
+                                        (click)="toggleUniversity($event)">
+                                    <span class="item-name">{{ university.name }}</span>
+                                    <span class="item-count">[{{ university.count }}]</span>
+                                </div>
+                                <div class="ac-body">
+                                    <div style="margin-left: 15px;">
+                                        <div *ngIf="isLoaded(university.name); else loadingBlock">
+                                            <div *ngIf="collectionsByUniversity[university.name].length > 0; else elseBlock">
+                                                <div *ngFor="let collection of collectionsByUniversity[university.name]">
+                                                    <span class="item-name">{{ collection.name }}</span>
+                                                    <span class="item-count">[{{ collection.count }}]</span>
+                                                </div>
+                                            </div>
+                                            <ng-template #elseBlock>
+                                                No collections found.
+                                            </ng-template>
+                                        </div>
+                                        <ng-template #loadingBlock>
+                                            Loading...
+                                        </ng-template>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf="selected != 'Browse by Institution'">
+                    <div class="col-md-12 padding_top4p padding_bottom3p by-collection">
+                        <div class="col-md-4 text-left">
+                            <p class="explore-collection-item">
+                                <span><strong>12th International Conference Of The Society For Global Business And Economic Development,</strong></span>
+                                <span>National University Of Singapore Library [ 12 Records ]</span>
+                            </p>
+                        </div>
+                        <div class="col-md-4 text-left">
+                            <p>
+                                <span><strong>12th International Conference Of The Society For Global Business And Economic Development,</strong></span>
+                                <span>National University Of Singapore Library [ 12 Records ]</span>
+                            </p>
+                        </div>
+                        <div class="col-md-4 text-left">
+                            <p>
+                                <span><strong>12th International Conference Of The Society For Global Business And Economic Development,</strong></span>
+                                <span>National University Of Singapore Library [ 12 Records ]</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="col-md-offset-1 col-md-10 padding_top4p padding_bottom3p">
-
-      <div class="col-md-5 padding_top4p">
-        <div class="col-md-12">
-          <p><strong>Sub-Heading</strong></p>
-          <dl class="dl-horizontal">
-            <dt>Location: </dt>
-            <dd>Hong Kong</dd>
-            <dt>Phone: </dt>
-            <dd>424-246-8895</dd>
-            <dt>Email: </dt>
-            <dd>email@cityuhongkong.com</dd>
-            <dt>Website: </dt>
-            <dd>cityuhongkong.com</dd>
-          </dl>
-        </div>
-
-        <div class="col-md-12">
-          <p><strong>Topics</strong></p>
-          <dl class="dl-horizontal">
-            <dt>Topic Title: </dt>
-            <dd>Jumplink</dd>
-            <dt>Topic Title: </dt>
-            <dd>Jumplink</dd>
-            <dt>Topic Title: </dt>
-            <dd>Jumplink</dd>
-            <dt>Topic Title: </dt>
-            <dd>Jumplink</dd>
-          </dl>
-        </div>
-      </div>
-      <div class="col-md-7">
-        <div class="col-md-4">
-          <h3 class="bottom-line blue">HEADING</h3>
-        </div>
-        <div class="col-md-12">
-          <p>Lorem ipsum dolor sit amet, amet mi libero lobortis nullam, hac est augue lacinia mauris adipiscing pede.
-            Magna suspendisse pellentesque varius a sit urna, iaculis incidunt egestas hendrerit ac, justo in non eleifend
-            varius integer arcu, donec dui turpis id pellentesque, vel morbi. Wisi non ac. Urna nibh nunc proin accumsan
-            donec nibh, laboriosam ullamcorper nec vestibulum.</p>
-          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet
-            dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit
-            lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate.</p>
-          <p>Lorem ipsum dolor sit amet, cons ectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet
-            dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
-            suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
-        </div>
-        <div class="col-md-5">
-          <h3 class="bottom-line blue">Sub-HEADING</h3>
-        </div>
-        <div class="col-md-12">
-          <div class="padding_top4p padding_bottom3p">
-            <p><strong>Topic Title</strong></p>
-            <p>Lorem ipsum dolor sit amet, cons ectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut
-              laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
-              ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
-          </div>
-          <div class="padding_top4p padding_bottom3p">
-            <p><strong>Topic Title</strong></p>
-            <p>Lorem ipsum dolor sit amet, cons ectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut
-              laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
-              ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
-          </div>
-          <div class="padding_top4p padding_bottom3p">
-            <p><strong>Topic Title</strong></p>
-            <p>Lorem ipsum dolor sit amet, cons ectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut
-              laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
-              ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
-          </div>
-          <div class="padding_top4p padding_bottom3p">
-            <p><strong>Topic Title</strong></p>
-            <p>Lorem ipsum dolor sit amet, cons ectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut
-              laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
-              ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 </div>
