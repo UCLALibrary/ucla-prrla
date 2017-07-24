@@ -95,42 +95,51 @@ header{
 .language-btn{
     z-index: 20;
 }
-.translate .language-btn.active, .translate .language-btn:hover{
-    color: #fff;
+.goog-te-gadget-simple, .goog-te-gadget-simple span{
+    border: none;
 }
-.translate .language-btn:after{
-    content: '\e114';
-    font-family: 'Glyphicons Halflings';
-    color: inherit;
-    cursor: pointer;
-    pointer-events: all;
-    top: 3px;
-    left: 5px;
-    font-weight: inherit;
-    position: relative;
-}
-.translate .language-btn:hover:after, .language-btn.active:after{
-    content: '\e113';
-}
-.translate .language-list{
+.goog-te-gadget-simple img{
     display: none;
-    background-color: #1b75bb;
-    opacity: 0.85;
-    width: 170px;
-    position: absolute;
-    top: -60px;
-    right: -27px;
-    padding: 100px 10px 5px 20px;
-    z-index: 10
 }
-.translate .language-list a{
-    color: #fff;
-    display: inline-block;
-    width: 100%;
+.goog-te-gadget-simple .goog-te-menu-value{
+    color: #1b75bb;
 }
-.translate .language-btn.active ~ .language-list, .translate  .language-btn:hover ~ .language-list{
-    display: block;
-}
+/*.translate .language-btn.active, .translate .language-btn:hover{*/
+    /*color: #fff;*/
+/*}*/
+/*.translate .language-btn:after{*/
+    /*content: '\e114';*/
+    /*font-family: 'Glyphicons Halflings';*/
+    /*color: inherit;*/
+    /*cursor: pointer;*/
+    /*pointer-events: all;*/
+    /*top: 3px;*/
+    /*left: 5px;*/
+    /*font-weight: inherit;*/
+    /*position: relative;*/
+/*}*/
+/*.translate .language-btn:hover:after, .language-btn.active:after{*/
+    /*content: '\e113';*/
+/*}*/
+/*.translate .language-list{*/
+    /*display: none;*/
+    /*background-color: #1b75bb;*/
+    /*opacity: 0.85;*/
+    /*width: 170px;*/
+    /*position: absolute;*/
+    /*top: -60px;*/
+    /*right: -27px;*/
+    /*padding: 100px 10px 5px 20px;*/
+    /*z-index: 10*/
+/*}*/
+/*.translate .language-list a{*/
+    /*color: #fff;*/
+    /*display: inline-block;*/
+    /*width: 100%;*/
+/*}*/
+/*.translate .language-btn.active ~ .language-list, .translate  .language-btn:hover ~ .language-list{*/
+    /*display: block;*/
+/*}*/
 .list-inline>li{
     padding-right: 4px;
     padding-left: 4px;
@@ -584,3 +593,10 @@ footer{
     cursor: wait;
     display: none;
 }
+
+/*.goog-te-banner-frame.skiptranslate {*/
+    /*display: none !important;*/
+/*}*/
+/*body {*/
+    /*top: 0px !important;*/
+/*}*/
