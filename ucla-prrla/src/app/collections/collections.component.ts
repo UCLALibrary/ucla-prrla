@@ -12,7 +12,7 @@ export class CollectionsComponent implements OnInit {
 
   name:string;
   list:any;
-  selected:any;
+  selected:any = 'Browse by Institution';
 
 
   public universities = [];
