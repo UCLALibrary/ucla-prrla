@@ -3,13 +3,7 @@
     <div class="cover-image height600" style="background-image: url('../../assets/img/bg-bamboo.png');">
       <div class="main-page-block">
         <h2>ENGAGING HEADLINE GOES HERE.</h2>
-        <div class="search">
-          <input type="search" placeholder="Search the Library" (keyup.enter)="onEnter($event)">
-          <div class="search-submit">
-            <button type="submit" (click)="btnClick();" ></button>
-            <img src="../../assets/img/search.png" alt="">
-          </div>
-        </div>
+        <app-general-search-box></app-general-search-box>
         <div class="background-fuzzy-white absolute-block full-width">
           <div class="col-md-12">
             <div class="col-md-offset-2 col-md-5">

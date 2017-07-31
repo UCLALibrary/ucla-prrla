@@ -30,6 +30,7 @@ import {Test2Component} from './test2/test2.component';
 import { ExhibitionsComponent } from './exhibitions/exhibitions.component';
 import { FooterHelpComponent } from './footer-help/footer-help.component';
 import { FooterAboutComponent } from './footer-about/footer-about.component';
+import { GeneralSearchBoxComponent } from './general-search-box/general-search-box.component';
 
 
 @NgModule({
@@ -54,6 +55,7 @@ import { FooterAboutComponent } from './footer-about/footer-about.component';
     ExhibitionsComponent,
     FooterHelpComponent,
     FooterAboutComponent,
+    GeneralSearchBoxComponent,
   ],
   imports: [
     BrowserModule,

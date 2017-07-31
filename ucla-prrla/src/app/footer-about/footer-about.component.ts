@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-footer-about',
@@ -7,14 +6,8 @@ import {Router} from '@angular/router';
 })
 export class FooterAboutComponent implements OnInit {
 
-  constructor(private router: Router) {}
+  constructor() {}
 
-  btnClick = function () {
-    this.router.navigateByUrl('/advanced-search');
-  };
-  onEnter(event: any) { // without type info
-    this.router.navigateByUrl('/advanced-search');
-  }
 
   ngOnInit() {
   }

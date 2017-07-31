@@ -40,15 +40,9 @@ export class DetailItemComponent implements OnInit {
   private route$: Subscription;
   public item;
 
-  constructor(private testService: TestService, private route: ActivatedRoute, private router: Router) {
+  constructor(private testService: TestService, private route: ActivatedRoute) {
   }
 
-  btnClick = function () {
-    this.router.navigateByUrl('/advanced-search');
-  };
-  onEnter(event: any) { // without type info
-    this.router.navigateByUrl('/advanced-search');
-  }
 
   ngOnInit() {
     this.route$ = this.route.params.subscribe(

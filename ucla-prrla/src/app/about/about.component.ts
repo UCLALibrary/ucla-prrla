@@ -11,14 +11,8 @@ import { FooterComponent } from '../footer/footer.component';
 })
 export class AboutComponent implements OnInit {
 
-  constructor(private router: Router) {}
+  constructor() {}
 
-  btnClick = function () {
-    this.router.navigateByUrl('/advanced-search');
-  };
-  onEnter(event: any) { // without type info
-    this.router.navigateByUrl('/advanced-search');
-  }
 
   ngOnInit() {
   }
