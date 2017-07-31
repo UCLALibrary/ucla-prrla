@@ -434,6 +434,9 @@ header{
     top: 3px;
     position: relative;
 }
+.item-name, .item-count{
+    cursor: pointer;
+}
 .ac-item-container.active .ac-title:before, .panel.panel-default.dropup .panel-title:before{
     content: '\e082';
 }
