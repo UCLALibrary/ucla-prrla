@@ -498,7 +498,7 @@ header{
 .border-left{
     border-left: 1px solid #7c7e7f;
 }
-footer{
+.navbar-default.navbar-fixed-bottom{
     color: #fff;
     background-color: #7c7e7f;
     padding: 25px 15px;
