@@ -3,9 +3,9 @@
     <div class="cover-image height200" style="background-image: url('../../assets/img/fish.png');">
       <div class="main-page-block">
         <div class="search">
-          <input type="search" placeholder="Search the Library">
+          <input type="search" placeholder="Search the Library" (keyup.enter)="onEnter($event)">
           <div class="search-submit">
-            <button type="submit"></button>
+            <button type="submit" (click)="btnClick();" ></button>
             <img src="../../assets/img/search.png" alt="">
           </div>
         </div>

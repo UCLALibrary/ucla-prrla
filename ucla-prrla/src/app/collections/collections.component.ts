@@ -19,7 +19,7 @@ export class CollectionsComponent implements OnInit {
   public universities = [];
   public collectionsByUniversity = {};
 
-  constructor(private testService: TestService) {
+  constructor(private testService: TestService, private router: Router) {
 
     this.list = [
       'Browse by Institution',
@@ -28,6 +28,12 @@ export class CollectionsComponent implements OnInit {
 
   }
 
+  btnClick = function () {
+    this.router.navigateByUrl('/advanced-search');
+  };
+  onEnter(event: any) { // without type info
+    this.router.navigateByUrl('/advanced-search');
+  }
   ngOnInit() {
     this.testService.getUniversities().subscribe(data => {
       this.universities = data.universities;

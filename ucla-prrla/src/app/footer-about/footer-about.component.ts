@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 
 @Component({
-  selector: 'app-exhibitions',
-  templateUrl: './exhibitions.component.html'
+  selector: 'app-footer-about',
+  templateUrl: './footer-about.component.html'
 })
-export class ExhibitionsComponent implements OnInit {
+export class FooterAboutComponent implements OnInit {
 
   constructor(private router: Router) {}
 

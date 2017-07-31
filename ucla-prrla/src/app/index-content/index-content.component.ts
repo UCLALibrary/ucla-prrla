@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute, Params, Router} from '@angular/router';
 
 
 @Component({
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IndexContentComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) {}
+
+  btnClick = function () {
+    this.router.navigateByUrl('/advanced-search');
+  };
+  onEnter(event: any) { // without type info
+    this.router.navigateByUrl('/advanced-search');
+  }
+
 
   ngOnInit() {
+
   }
 
 }

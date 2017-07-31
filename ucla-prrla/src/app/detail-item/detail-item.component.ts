@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {TestService} from '../services/test.service';
-import {ActivatedRoute, Params} from '@angular/router';
+import {ActivatedRoute, Params, Router} from '@angular/router';
 import {Subscription} from 'rxjs/Subscription';
 
 
@@ -40,7 +40,14 @@ export class DetailItemComponent implements OnInit {
   private route$: Subscription;
   public item;
 
-  constructor(private testService: TestService, private route: ActivatedRoute) {
+  constructor(private testService: TestService, private route: ActivatedRoute, private router: Router) {
+  }
+
+  btnClick = function () {
+    this.router.navigateByUrl('/advanced-search');
+  };
+  onEnter(event: any) { // without type info
+    this.router.navigateByUrl('/advanced-search');
   }
 
   ngOnInit() {

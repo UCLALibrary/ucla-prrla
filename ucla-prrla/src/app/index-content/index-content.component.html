@@ -4,9 +4,9 @@
       <div class="main-page-block">
         <h2>ENGAGING HEADLINE GOES HERE.</h2>
         <div class="search">
-          <input type="search" placeholder="Search the Library">
+          <input type="search" placeholder="Search the Library" (keyup.enter)="onEnter($event)">
           <div class="search-submit">
-            <button type="submit"></button>
+            <button type="submit" (click)="btnClick();" ></button>
             <img src="../../assets/img/search.png" alt="">
           </div>
         </div>

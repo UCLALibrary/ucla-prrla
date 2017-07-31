@@ -25,9 +25,11 @@ import { TestService } from './services/test.service';
 import { ParseJsonPipe } from './parse-json/parse-json.pipe';
 import { TestComponent } from './test/test.component';
 import {DerpPipe} from './derp.pipe';
-import {TestDetailComponent} from "./test-detail/test-detail.component";
-import {Test2Component} from "./test2/test2.component";
+import {TestDetailComponent} from './test-detail/test-detail.component';
+import {Test2Component} from './test2/test2.component';
 import { ExhibitionsComponent } from './exhibitions/exhibitions.component';
+import { FooterHelpComponent } from './footer-help/footer-help.component';
+import { FooterAboutComponent } from './footer-about/footer-about.component';
 
 
 @NgModule({
@@ -50,6 +52,8 @@ import { ExhibitionsComponent } from './exhibitions/exhibitions.component';
     TestDetailComponent,
     DerpPipe,
     ExhibitionsComponent,
+    FooterHelpComponent,
+    FooterAboutComponent,
   ],
   imports: [
     BrowserModule,

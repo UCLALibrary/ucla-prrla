@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-help',
@@ -6,7 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HelpComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) {}
+
+  btnClick = function () {
+    this.router.navigateByUrl('/advanced-search');
+  };
+  onEnter(event: any) { // without type info
+    this.router.navigateByUrl('/advanced-search');
+  }
 
   ngOnInit() {
   }

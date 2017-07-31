@@ -144,11 +144,11 @@ export class AdvancedSearchComponent implements OnInit {
   }
 
   getIsSelectedFilter(filterName, filterVal){
-    if(typeof this.selectedFilters[filterName] === 'undefined'){
+    if (typeof this.selectedFilters[filterName] === 'undefined'){
       return false;
     }
 
-    if(this.selectedFilters[filterName].indexOf(filterVal) === -1){
+    if (this.selectedFilters[filterName].indexOf(filterVal) === -1){
       return false;
     }
 
