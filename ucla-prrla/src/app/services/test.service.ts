@@ -296,6 +296,42 @@ export class TestService {
         });
     }
 
+    public getCollections(){
+        let url =
+            this.baseURL + 'select' + '?' +
+            'q=*&' +
+            'wt=json&' +
+            'facet=true&' +
+            'rows=0&' +
+            'facet.field=collectionName&' +
+            'json.wrf=JSONP_CALLBACK';
+
+        return this._jsonp.get(url).map(data => {
+            let collections = [];
+
+            let raw_collections = data.json().facet_counts.facet_fields['collectionName'];
+
+            let c = raw_collections.length;
+
+            for(let i = 0; i < c; i=i+2){
+                let count = raw_collections[i+1];
+
+                if(count){
+                    let name = decodeURI(raw_collections[i]);
+
+                    collections.push({
+                        name: name,
+                        count: count,
+                    });
+                }
+            }
+
+            return {
+                collections: collections,
+            };
+        });
+    }
+
     public getCollectionsByUniversity(universityName){
         let url =
             this.baseURL + 'select' + '?' +
@@ -330,6 +366,44 @@ export class TestService {
 
             return {
                 collections: collections,
+            };
+        });
+    }
+
+    public getUniversitiesByCollection(collectionName){
+        let url =
+            this.baseURL + 'select' + '?' +
+            'q=*&' +
+            'wt=json&' +
+            'facet=true&' +
+            'rows=0&' +
+            'facet.field=institutionName&' +
+            'json.wrf=JSONP_CALLBACK';
+
+        url += '&fq=collectionName:"' + encodeURIComponent(collectionName) + '"';
+
+        return this._jsonp.get(url).map(data => {
+            let institutions = [];
+
+            let raw_institutions = data.json().facet_counts.facet_fields['institutionName'];
+
+            let c = raw_institutions.length;
+
+            for(let i = 0; i < c; i=i+2){
+                let count = raw_institutions[i+1];
+
+                if(count){
+                    let name = decodeURI(raw_institutions[i]);
+
+                    institutions.push({
+                        name: name,
+                        count: count,
+                    });
+                }
+            }
+
+            return {
+                institutions: institutions,
             };
         });
     }

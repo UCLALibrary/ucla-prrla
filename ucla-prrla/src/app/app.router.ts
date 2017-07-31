@@ -29,9 +29,9 @@ export const router: Routes = [
     { path: 'about', component: AboutComponent },
     { path: 'footer-help', component: FooterHelpComponent },
     { path: 'footer-about', component: FooterAboutComponent },
-    { path: 'test', component: TestComponent },
-    { path: 'test2', component: Test2Component },
-    { path: 'test-detail/:id', component: TestDetailComponent },
+    // { path: 'test', component: TestComponent },
+    // { path: 'test2', component: Test2Component },
+    // { path: 'test-detail/:id', component: TestDetailComponent },
     { path: 'detail/:id', component: DetailItemComponent },
     { path: '**', component: NotFoundComponent },
 ];

@@ -41,9 +41,9 @@
                                 </div>
                                 <div class="ac-body">
                                     <div style="margin-left: 15px;">
-                                        <div *ngIf="isLoaded(university.name); else loadingBlock">
+                                        <div *ngIf="isLoadedUniversity(university.name); else loadingBlock">
                                             <div *ngIf="collectionsByUniversity[university.name].length > 0; else elseBlock">
-                                                <div *ngFor="let collection of collectionsByUniversity[university.name]">
+                                                <div *ngFor="let collection of collectionsByUniversity[university.name]" (click)="collectionClick(collection.name)">
                                                     <span class="item-name">{{ collection.name }}</span>
                                                     <span class="item-count">[{{ collection.count }}]</span>
                                                 </div>
@@ -63,23 +63,34 @@
                 </div>
                 <div *ngIf="selected != 'Browse by Institution'">
                     <div class="col-md-12 padding_top4p padding_bottom3p by-collection">
-                        <div class="col-md-4 text-left">
-                            <p class="explore-collection-item">
-                                <span><strong>12th International Conference Of The Society For Global Business And Economic Development,</strong></span>
-                                <span>National University Of Singapore Library [ 12 Records ]</span>
-                            </p>
-                        </div>
-                        <div class="col-md-4 text-left">
-                            <p>
-                                <span><strong>12th International Conference Of The Society For Global Business And Economic Development,</strong></span>
-                                <span>National University Of Singapore Library [ 12 Records ]</span>
-                            </p>
-                        </div>
-                        <div class="col-md-4 text-left">
-                            <p>
-                                <span><strong>12th International Conference Of The Society For Global Business And Economic Development,</strong></span>
-                                <span>National University Of Singapore Library [ 12 Records ]</span>
-                            </p>
+                        <div class="col-md-4 text-left" *ngFor="let collection of collections">
+                            <div class="ac-item-container">
+                                <div
+                                        [attr.name]="collection.name"
+                                        class="ac-title"
+                                        (click)="toggleCollection($event)">
+                                    <span class="item-name">{{ collection.name }}</span>
+                                    <span class="item-count">[{{ collection.count }}]</span>
+                                </div>
+                                <div class="ac-body">
+                                    <div style="margin-left: 15px;">
+                                        <div *ngIf="isLoadedCollection(collection.name); else loadingBlock">
+                                            <div *ngIf="universitiesByCollections[collection.name].length > 0; else elseBlock">
+                                                <div *ngFor="let university of universitiesByCollections[collection.name]" (click)="universityClick(university.name)">
+                                                    <span class="item-name">{{ university.name }}</span>
+                                                    <span class="item-count">[{{ university.count }}]</span>
+                                                </div>
+                                            </div>
+                                            <ng-template #elseBlock>
+                                                No collections found.
+                                            </ng-template>
+                                        </div>
+                                        <ng-template #loadingBlock>
+                                            Loading...
+                                        </ng-template>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

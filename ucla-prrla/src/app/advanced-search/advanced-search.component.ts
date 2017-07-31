@@ -4,8 +4,6 @@ import {ActivatedRoute, Params, Router} from '@angular/router';
 import {element} from 'protractor';
 import {Subscription} from 'rxjs/Subscription';
 
-
-
 @Component({
   selector: 'app-advanced-search',
   templateUrl: './advanced-search.component.html',

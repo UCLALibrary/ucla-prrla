@@ -23,10 +23,10 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { BooksService } from './services/books.service';
 import { TestService } from './services/test.service';
 import { ParseJsonPipe } from './parse-json/parse-json.pipe';
-import { TestComponent } from './test/test.component';
+// import { TestComponent } from './test/test.component';
 import {DerpPipe} from './derp.pipe';
-import {TestDetailComponent} from './test-detail/test-detail.component';
-import {Test2Component} from './test2/test2.component';
+// import {TestDetailComponent} from './test-detail/test-detail.component';
+// import {Test2Component} from './test2/test2.component';
 import { ExhibitionsComponent } from './exhibitions/exhibitions.component';
 import { FooterHelpComponent } from './footer-help/footer-help.component';
 import { FooterAboutComponent } from './footer-about/footer-about.component';
@@ -48,9 +48,9 @@ import { GeneralSearchBoxComponent } from './general-search-box/general-search-b
     DetailItemComponent,
     NotFoundComponent,
     ParseJsonPipe,
-    TestComponent,
-    Test2Component,
-    TestDetailComponent,
+    // TestComponent,
+    // Test2Component,
+    // TestDetailComponent,
     DerpPipe,
     ExhibitionsComponent,
     FooterHelpComponent,
