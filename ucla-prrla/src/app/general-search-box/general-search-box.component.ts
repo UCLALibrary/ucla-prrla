@@ -1,22 +1,29 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 
 @Component({
-  selector: 'app-general-search-box',
-  templateUrl: './general-search-box.component.html'
+    selector: 'app-general-search-box',
+    templateUrl: './general-search-box.component.html'
 })
 export class GeneralSearchBoxComponent implements OnInit {
+    public search;
 
-  constructor(private router: Router) {}
+    constructor(private router: Router) {
+    }
 
-  btnClick = function () {
-    this.router.navigateByUrl('/advanced-search');
-  };
-  onEnter(event: any) { // without type info
-    this.router.navigateByUrl('/advanced-search');
-  }
+    btnClick(therms: string) {
+        this.doNavigation(therms);
+    }
 
-  ngOnInit() {
-  }
+    onEnter(event: any) { // without type info
+        this.doNavigation(event.currentTarget.value);
+    }
+
+    doNavigation(therms: string) {
+        this.router.navigate(['/advanced-search'], {queryParams: {therms: therms}});
+    }
+
+    ngOnInit() {
+    }
 
 }

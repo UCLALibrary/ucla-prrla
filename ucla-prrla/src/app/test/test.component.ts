@@ -76,7 +76,7 @@ export class TestComponent implements OnInit {
     }
 
     navigateWithParams(page, filters){
-        this.router.navigate(['/test'], { queryParams: { page: page, filters: JSON.stringify(filters) } });
+        this.router.navigate(['/test'], { queryParams: { page: page, filters: JSON.stringify(filters), therms: this.search_therms } });
     }
 
     searchOnEnter(event) {

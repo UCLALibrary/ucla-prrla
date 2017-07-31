@@ -73,6 +73,11 @@ export class AdvancedSearchComponent implements OnInit {
             this.selectedFilters = {};
           }
 
+          let therms = params['therms'];
+          if(therms){
+            this.search_therms = therms;
+          }
+
           this.setPage(this.url_page);
         }
     );
@@ -102,17 +107,28 @@ export class AdvancedSearchComponent implements OnInit {
 
   pagerClick(event, page) {
     if(!event.target.parentElement.classList.contains('disabled')){
-      this.navigateWithParams(page, this.selectedFilters);
+      this.navigateWithParams(page, this.selectedFilters, this.search_therms);
     }
   }
 
-  navigateWithParams(page, filters){
-    this.router.navigate(['/test'], { queryParams: { page: page, filters: JSON.stringify(filters) } });
+  navigateWithParams(page, filters, therms){
+    this.router.navigate(['/advanced-search'], { queryParams: {
+      page: page,
+      filters: JSON.stringify(filters),
+      therms: therms
+    } });
   }
 
   searchOnEnter(event) {
     this.search_therms = event.target.value;
     this.setPage(1);
+    this.navigateWithParams(1, this.selectedFilters, this.search_therms);
+  }
+
+  searchButtonClick(therms: string) {
+    this.search_therms = therms;
+    this.setPage(1);
+    this.navigateWithParams(1, this.selectedFilters, this.search_therms);
   }
 
   clickOnFilter(event) {
@@ -140,7 +156,7 @@ export class AdvancedSearchComponent implements OnInit {
       delete this.selectedFilters[filterName];
     }
 
-    this.navigateWithParams(1, this.selectedFilters);
+    this.navigateWithParams(1, this.selectedFilters, this.search_therms);
   }
 
   getIsSelectedFilter(filterName, filterVal){

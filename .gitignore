@@ -1,4 +1,4 @@
 # phpstorm project files
 .idea/
-../.idea/*
-
+/ucla-prrla/package-lock.json
+ucla-prrla/package-lock.json
