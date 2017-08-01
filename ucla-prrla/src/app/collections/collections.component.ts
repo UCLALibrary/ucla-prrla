@@ -46,8 +46,8 @@ export class CollectionsComponent implements OnInit {
         return this.selected === item;
     }
 
-    toggleUniversity(event) {
-        let universityName = event.currentTarget.getAttribute('name');
+    toggleUniversity(event, universityName: string) {
+        // let universityName = event.currentTarget.getAttribute('name');
         event.currentTarget.parentElement.classList.toggle('active');
 
         if (typeof this.collectionsByUniversity[universityName] === 'undefined') {
@@ -57,8 +57,8 @@ export class CollectionsComponent implements OnInit {
         }
     }
 
-    toggleCollection(event) {
-        let collectionName = event.currentTarget.getAttribute('name');
+    toggleCollection(event, collectionName: string) {
+        // let collectionName = event.currentTarget.getAttribute('name');
         event.currentTarget.parentElement.classList.toggle('active');
         
         if (typeof this.universitiesByCollections[collectionName] === 'undefined') {

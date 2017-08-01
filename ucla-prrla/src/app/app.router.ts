@@ -13,9 +13,6 @@ import { ExhibitionsComponent } from './exhibitions/exhibitions.component';
 import { AdvancedSearchComponent } from './advanced-search/advanced-search.component';
 import { DetailItemComponent } from './detail-item/detail-item.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-import {TestComponent} from './test/test.component';
-import {Test2Component} from './test2/test2.component';
-import {TestDetailComponent} from './test-detail/test-detail.component';
 
 export const router: Routes = [
     { path: '', redirectTo: 'index', pathMatch: 'full' },
@@ -29,9 +26,6 @@ export const router: Routes = [
     { path: 'about', component: AboutComponent },
     { path: 'footer-help', component: FooterHelpComponent },
     { path: 'footer-about', component: FooterAboutComponent },
-    // { path: 'test', component: TestComponent },
-    // { path: 'test2', component: Test2Component },
-    // { path: 'test-detail/:id', component: TestDetailComponent },
     { path: 'detail/:id', component: DetailItemComponent },
     { path: '**', component: NotFoundComponent },
 ];

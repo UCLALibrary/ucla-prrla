@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 import {Jsonp} from '@angular/http';
-import {books} from "../../data/books";
 
 @Injectable()
 
@@ -285,6 +284,7 @@ export class TestService {
 
                     universities.push({
                         name: name,
+                        realName: raw_universities[i],
                         count: count,
                     });
                 }
@@ -321,6 +321,7 @@ export class TestService {
 
                     collections.push({
                         name: name,
+                        realName: raw_collections[i],
                         count: count,
                     });
                 }
@@ -359,6 +360,7 @@ export class TestService {
 
                     collections.push({
                         name: name,
+                        realName: raw_collections[i],
                         count: count,
                     });
                 }
@@ -397,6 +399,7 @@ export class TestService {
 
                     institutions.push({
                         name: name,
+                        realName: raw_institutions[i],
                         count: count,
                     });
                 }
