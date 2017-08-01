@@ -26,7 +26,6 @@ export class CollectionsComponent implements OnInit {
             'Browse by Institution',
             'Browse by Collection Title'
         ];
-        this.rows = Array.from(Array(Math.ceil(this.universities.length / 3)).keys());
     }
 
     ngOnInit() {
@@ -61,7 +60,7 @@ export class CollectionsComponent implements OnInit {
     toggleCollection(event) {
         let collectionName = event.currentTarget.getAttribute('name');
         event.currentTarget.parentElement.classList.toggle('active');
-        
+
         if (typeof this.universitiesByCollections[collectionName] === 'undefined') {
             this.testService.getUniversitiesByCollection(collectionName).subscribe(data => {
                 this.universitiesByCollections[collectionName] = data.institutions;
@@ -77,19 +76,27 @@ export class CollectionsComponent implements OnInit {
         return typeof this.universitiesByCollections[collectionName] !== 'undefined';
     }
 
-    collectionClick(collectionName: string){
-        this.router.navigate(['/advanced-search'], {queryParams: {filters: JSON.stringify({
-            collectionName: [
-                collectionName
-            ],
-        })}});
+    collectionClick(collectionName: string) {
+        this.router.navigate(['/advanced-search'], {
+            queryParams: {
+                filters: JSON.stringify({
+                    collectionName: [
+                        collectionName
+                    ],
+                })
+            }
+        });
     }
 
-    universityClick(universityName: string){
-        this.router.navigate(['/advanced-search'], {queryParams: {filters: JSON.stringify({
-            institutionName: [
-                universityName
-            ],
-        })}});
+    universityClick(universityName: string) {
+        this.router.navigate(['/advanced-search'], {
+            queryParams: {
+                filters: JSON.stringify({
+                    institutionName: [
+                        universityName
+                    ],
+                })
+            }
+        });
     }
 }
