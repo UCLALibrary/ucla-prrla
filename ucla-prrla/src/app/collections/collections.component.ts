@@ -14,7 +14,7 @@ export class CollectionsComponent implements OnInit {
     name: string;
     list: any;
     selected: any = 'Browse by Institution';
-
+    rows: any = [];
 
     public universities = [];
     public collections = [];
@@ -26,7 +26,7 @@ export class CollectionsComponent implements OnInit {
             'Browse by Institution',
             'Browse by Collection Title'
         ];
-
+        this.rows = Array.from(Array(Math.ceil(this.universities.length / 3)).keys());
     }
 
     ngOnInit() {
@@ -36,6 +36,7 @@ export class CollectionsComponent implements OnInit {
         this.testService.getCollections().subscribe(data => {
             this.collections = data.collections;
         });
+
     }
 
     selectButton(item) {
@@ -46,8 +47,8 @@ export class CollectionsComponent implements OnInit {
         return this.selected === item;
     }
 
-    toggleUniversity(event, universityName: string) {
-        // let universityName = event.currentTarget.getAttribute('name');
+    toggleUniversity(event) {
+        let universityName = event.currentTarget.getAttribute('name');
         event.currentTarget.parentElement.classList.toggle('active');
 
         if (typeof this.collectionsByUniversity[universityName] === 'undefined') {
@@ -57,8 +58,8 @@ export class CollectionsComponent implements OnInit {
         }
     }
 
-    toggleCollection(event, collectionName: string) {
-        // let collectionName = event.currentTarget.getAttribute('name');
+    toggleCollection(event) {
+        let collectionName = event.currentTarget.getAttribute('name');
         event.currentTarget.parentElement.classList.toggle('active');
         
         if (typeof this.universitiesByCollections[collectionName] === 'undefined') {
