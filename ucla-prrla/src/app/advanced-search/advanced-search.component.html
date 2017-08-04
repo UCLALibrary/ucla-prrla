@@ -53,6 +53,33 @@
                     <div class="col-md-12 margin-bottom5p">
                         <div class="row">
                             <div class="col-md-4">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="col-md-6">
+                                            <p>Display</p>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="row select-wrapper-blue">
+                                                <select [(ngModel)]="pageSize" (change)="pageSizeChange()">
+                                                    <option *ngFor="let number of [10, 20, 50, 100]" [ngValue]="number">{{ number }}</option>
+                                                </select>
+                                                <span class="glyphicon glyphicon-chevron-down"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="col-md-6">
+                                            <p>Sort by</p>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="row select-wrapper-blue">
+                                                <select id="" name="">
+                                                </select>
+                                                <span class="glyphicon glyphicon-chevron-down"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="col-md-8">
                                 <div class="row">
