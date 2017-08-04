@@ -77,7 +77,7 @@ export class CollectionsComponent implements OnInit {
     }
 
     collectionClick(collectionName: string) {
-        this.router.navigate(['/advanced-search'], {
+        this.router.navigate(['/search'], {
             queryParams: {
                 filters: JSON.stringify({
                     collectionName: [
@@ -89,7 +89,7 @@ export class CollectionsComponent implements OnInit {
     }
 
     universityClick(universityName: string) {
-        this.router.navigate(['/advanced-search'], {
+        this.router.navigate(['/search'], {
             queryParams: {
                 filters: JSON.stringify({
                     institutionName: [

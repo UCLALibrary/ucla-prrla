@@ -52,8 +52,29 @@
                 <div class="row">
                     <div class="col-md-12 margin-bottom5p">
                         <div class="row">
-                            <div class="col-md-4">
+                            <div class="col-md-8">
                                 <div class="row">
+                                    <div aria-label="Page navigation">
+                                        <!-- pager -->
+                                        <ul *ngIf="pager.pages && pager.pages.length" class="pagination pull-right">
+                                            <li [ngClass]="{disabled:pager.currentPage === 1}">
+                                                <a (click)="pagerClick($event, 1)">First</a>
+                                            </li>
+                                            <li [ngClass]="{disabled:pager.currentPage === 1}">
+                                                <a (click)="pagerClick($event, pager.currentPage - 1)">Previous</a>
+                                            </li>
+                                            <li *ngFor="let page of pager.pages"
+                                                [ngClass]="{active:pager.currentPage === page}">
+                                                <a (click)="pagerClick($event, page)">{{page}}</a>
+                                            </li>
+                                            <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+                                                <a (click)="pagerClick($event, pager.currentPage + 1)">Next</a>
+                                            </li>
+                                            <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+                                                <a (click)="pagerClick($event, pager.totalPages)">Last</a>
+                                            </li>
+                                        </ul>
+                                    </div>
                                     <div class="col-md-6">
                                         <div class="col-md-6">
                                             <p>Display</p>
@@ -78,31 +99,6 @@
                                                 <span class="glyphicon glyphicon-chevron-down"></span>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-8">
-                                <div class="row">
-                                    <div aria-label="Page navigation">
-                                        <!-- pager -->
-                                        <ul *ngIf="pager.pages && pager.pages.length" class="pagination pull-right">
-                                            <li [ngClass]="{disabled:pager.currentPage === 1}">
-                                                <a (click)="pagerClick($event, 1)">First</a>
-                                            </li>
-                                            <li [ngClass]="{disabled:pager.currentPage === 1}">
-                                                <a (click)="pagerClick($event, pager.currentPage - 1)">Previous</a>
-                                            </li>
-                                            <li *ngFor="let page of pager.pages"
-                                                [ngClass]="{active:pager.currentPage === page}">
-                                                <a (click)="pagerClick($event, page)">{{page}}</a>
-                                            </li>
-                                            <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
-                                                <a (click)="pagerClick($event, pager.currentPage + 1)">Next</a>
-                                            </li>
-                                            <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
-                                                <a (click)="pagerClick($event, pager.totalPages)">Last</a>
-                                            </li>
-                                        </ul>
                                     </div>
                                 </div>
                             </div>
