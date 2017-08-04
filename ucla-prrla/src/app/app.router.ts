@@ -21,7 +21,7 @@ export const router: Routes = [
     { path: 'institutions', component: InstitutionsComponent },
     { path: 'explore-collections', component: CollectionsComponent },
     { path: 'exhibitions', component: ExhibitionsComponent },
-    { path: 'advanced-search', component: AdvancedSearchComponent },
+    { path: 'search', component: AdvancedSearchComponent },
     { path: 'help', component: HelpComponent },
     { path: 'about', component: AboutComponent },
     { path: 'footer-help', component: FooterHelpComponent },

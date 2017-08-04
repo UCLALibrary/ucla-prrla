@@ -20,7 +20,7 @@ export class GeneralSearchBoxComponent implements OnInit {
     }
 
     doNavigation(therms: string) {
-        this.router.navigate(['/advanced-search'], {queryParams: {therms: therms}});
+        this.router.navigate(['/search'], {queryParams: {therms: therms}});
     }
 
     ngOnInit() {
