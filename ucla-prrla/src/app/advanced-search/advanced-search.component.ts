@@ -108,6 +108,11 @@ export class AdvancedSearchComponent implements OnInit {
         event.target.classList.toggle('active');
     }
 
+    clearInputs(event){
+        this.selectedFilters = {};
+        this.navigateWithParams(1, this.selectedFilters, this.search_therms);
+    }
+
     pagerClick(event, page) {
         if (!event.target.parentElement.classList.contains('disabled')) {
             this.navigateWithParams(page, this.selectedFilters, this.search_therms);

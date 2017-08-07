@@ -44,7 +44,7 @@
                 </div>
             </div>
             <div class="col-md-12 text-center padding_top3p">
-                <a class="btn btn-blue-outline" href="#">Clear Filters</a>
+                <a class="btn btn-blue-outline" href="#" (click)="clearInputs($event)">Clear Filters</a>
             </div>
         </div>
         <div class="col-md-9 border-left padding_bottom5p">
@@ -59,49 +59,55 @@
                             </div>
                             <div class="col-md-8">
                                 <div class="row">
-                                    <div aria-label="Page navigation">
-                                        <!-- pager -->
-                                        <ul *ngIf="pager.pages && pager.pages.length" class="pagination pull-right">
-                                            <li [ngClass]="{disabled:pager.currentPage === 1}">
-                                                <a (click)="pagerClick($event, 1)">First</a>
-                                            </li>
-                                            <li [ngClass]="{disabled:pager.currentPage === 1}">
-                                                <a (click)="pagerClick($event, pager.currentPage - 1)">Previous</a>
-                                            </li>
-                                            <li *ngFor="let page of pager.pages"
-                                                [ngClass]="{active:pager.currentPage === page}">
-                                                <a (click)="pagerClick($event, page)">{{page}}</a>
-                                            </li>
-                                            <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
-                                                <a (click)="pagerClick($event, pager.currentPage + 1)">Next</a>
-                                            </li>
-                                            <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
-                                                <a (click)="pagerClick($event, pager.totalPages)">Last</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="col-md-6">
-                                            <p>Display</p>
+                                    <div class="col-md-12">
+                                        <div aria-label="Page navigation">
+                                            <!-- pager -->
+                                            <ul *ngIf="pager.pages && pager.pages.length" class="pagination pull-right">
+                                                <li [ngClass]="{disabled:pager.currentPage === 1}">
+                                                    <a (click)="pagerClick($event, 1)">First</a>
+                                                </li>
+                                                <li [ngClass]="{disabled:pager.currentPage === 1}">
+                                                    <a (click)="pagerClick($event, pager.currentPage - 1)">Previous</a>
+                                                </li>
+                                                <li *ngFor="let page of pager.pages"
+                                                    [ngClass]="{active:pager.currentPage === page}">
+                                                    <a (click)="pagerClick($event, page)">{{page}}</a>
+                                                </li>
+                                                <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+                                                    <a (click)="pagerClick($event, pager.currentPage + 1)">Next</a>
+                                                </li>
+                                                <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+                                                    <a (click)="pagerClick($event, pager.totalPages)">Last</a>
+                                                </li>
+                                            </ul>
                                         </div>
-                                        <div class="col-md-6">
-                                            <div class="row select-wrapper-blue">
-                                                <select [(ngModel)]="pageSize" (change)="pageSizeChange()">
-                                                    <option *ngFor="let number of [10, 20, 50, 100]" [ngValue]="number">{{ number }}</option>
-                                                </select>
-                                                <span class="glyphicon glyphicon-chevron-down"></span>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="col-md-6">
+                                                    <p>Display</p>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="row select-wrapper-blue">
+                                                        <select [(ngModel)]="pageSize" (change)="pageSizeChange()">
+                                                            <option *ngFor="let number of [10, 20, 50, 100]" [ngValue]="number">{{ number }}</option>
+                                                        </select>
+                                                        <span class="glyphicon glyphicon-chevron-down"></span>
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="col-md-6">
-                                            <p>Sort by</p>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="row select-wrapper-blue">
-                                                <select id="" name="">
-                                                </select>
-                                                <span class="glyphicon glyphicon-chevron-down"></span>
+                                            <div class="col-md-6">
+                                                <div class="col-md-6">
+                                                    <p>Sort by</p>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="row select-wrapper-blue">
+                                                        <select id="" name="">
+                                                        </select>
+                                                        <span class="glyphicon glyphicon-chevron-down"></span>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -161,7 +167,7 @@
                         </div>
                         <div class="row">
                             <div class="col-md-10">
-                                <a class="btn btn-block btn-blue">View item at University of Hong Kong’s site</a>
+                                <a class="btn btn-block btn-blue" target="_blank" [href]="item.identifier">View item at University of Hong Kong’s site</a>
                             </div>
                         </div>
                     </div>

@@ -97,12 +97,16 @@ header{
 }
 .goog-te-gadget-simple, .goog-te-gadget-simple span{
     border: none;
+    color: #1b75bb!important;
 }
 .goog-te-gadget-simple img{
     display: none;
 }
 .goog-te-gadget-simple .goog-te-menu-value{
-    color: #1b75bb;
+    color: #1b75bb!important;
+}
+.goog-te-menu-value > span{
+    border: none!important;
 }
 /*.translate .language-btn.active, .translate .language-btn:hover{*/
     /*color: #fff;*/
