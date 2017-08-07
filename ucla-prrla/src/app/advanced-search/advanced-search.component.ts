@@ -10,53 +10,30 @@ import {Subscription} from 'rxjs/Subscription';
 })
 
 export class AdvancedSearchComponent implements OnInit {
-    // books: Array<any>;
-    // error: string;
-    // displayValues = [];
-    // pageOfItems: number;
-    // changeShape;
-    //
-    // static changeShape (value?: number): void {}
-    //
-    // constructor(private http: Http, private booksService: BooksService) {
-    //
-    //   for (let i = 1; i <= 10; i++) {
-    //     this.displayValues.push(`${i}`)
-    //   }
-    //
-    // }
-    //
-    // clicked(event) {
-    //   event.target.classList.toggle('active'); // To toggle
-    // }
-    //
-    // ngOnInit() {
-    //   this.booksService.getAllBooks()
-    //     .subscribe(
-    //       data => this.books = data,
-    //       error => this.error = error.statusText,
-    //     )
-    // };
-
     url_page: any;
     route$: Subscription;
     public items = [];
     public itemFilters;
     public pager;
     public pageSize;
+    public orderBy;
+    public availableOrders = [];
 
     public selectedFilters = {};
 
     public search_therms = '';
 
-    constructor(private testService: TestService,
-                private route: ActivatedRoute,
-                private router: Router) {
+    constructor(
+        private testService: TestService,
+        private route: ActivatedRoute,
+        private router: Router
+    ) {
     }
 
     ngOnInit() {
         this.pager = this.testService.getPager(0);
         this.pageSize = this.testService.pageSize;
+        this.availableOrders = this.testService.availableOrders;
 
         this.route$ = this.route.queryParams.subscribe(
             (params: Params) => {
@@ -74,6 +51,11 @@ export class AdvancedSearchComponent implements OnInit {
                 let therms = params['therms'];
                 if (therms) {
                     this.search_therms = therms;
+                }
+
+                let orderBy = params['order'];
+                if (orderBy) {
+                    this.orderBy = orderBy;
                 }
 
                 this.setPage(this.url_page);
@@ -104,22 +86,29 @@ export class AdvancedSearchComponent implements OnInit {
         this.setPage(1);
     }
 
+    orderByChange() {
+        this.testService.orderBy = this.orderBy;
+        this.setPage(1);
+        this.navigateWithParams(1, this.selectedFilters, this.search_therms, this.orderBy);
+    }
+
     toggleActiveClass(event) {
         event.target.classList.toggle('active');
     }
 
     pagerClick(event, page) {
         if (!event.target.parentElement.classList.contains('disabled')) {
-            this.navigateWithParams(page, this.selectedFilters, this.search_therms);
+            this.navigateWithParams(page, this.selectedFilters, this.search_therms, this.orderBy);
         }
     }
 
-    navigateWithParams(page, filters, therms) {
-        this.router.navigate(['/advanced-search'], {
+    navigateWithParams(page, filters, therms, orderBy) {
+        this.router.navigate(['/search'], {
             queryParams: {
                 page: page,
                 filters: JSON.stringify(filters),
-                therms: therms
+                therms: therms,
+                order: orderBy
             }
         });
     }
@@ -127,13 +116,13 @@ export class AdvancedSearchComponent implements OnInit {
     searchOnEnter(event) {
         this.search_therms = event.target.value;
         this.setPage(1);
-        this.navigateWithParams(1, this.selectedFilters, this.search_therms);
+        this.navigateWithParams(1, this.selectedFilters, this.search_therms, this.orderBy);
     }
 
     searchButtonClick(therms: string) {
         this.search_therms = therms;
         this.setPage(1);
-        this.navigateWithParams(1, this.selectedFilters, this.search_therms);
+        this.navigateWithParams(1, this.selectedFilters, this.search_therms, this.orderBy);
     }
 
     clickOnFilter(event) {
@@ -161,7 +150,7 @@ export class AdvancedSearchComponent implements OnInit {
             delete this.selectedFilters[filterName];
         }
 
-        this.navigateWithParams(1, this.selectedFilters, this.search_therms);
+        this.navigateWithParams(1, this.selectedFilters, this.search_therms, this.orderBy);
     }
 
     getIsSelectedFilter(filterName, filterVal) {
@@ -183,5 +172,4 @@ export class AdvancedSearchComponent implements OnInit {
             return '';
         }
     }
-
 }

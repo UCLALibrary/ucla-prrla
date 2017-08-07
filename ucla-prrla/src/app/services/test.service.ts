@@ -8,6 +8,14 @@ import {Jsonp} from '@angular/http';
 export class TestService {
     private baseURL = 'http://test-solr.library.ucla.edu/solr/prrla/';
     public pageSize = 10;
+    public orderBy = '';
+    public availableOrders = [
+        { value: '', name: 'Relevance'},
+        { value: 'title asc', name: 'Title (a-z)'},
+        { value: 'title desc', name: 'Title (z-a)'},
+        { value: 'decade asc', name: 'Date (oldest first)'},
+        { value: 'decade desc', name: 'Date (newest first)'}
+    ];
 
     constructor(private _jsonp: Jsonp) {
 
@@ -72,6 +80,7 @@ export class TestService {
             'rows=' + this.pageSize + '&' +
             'start=' + offset + '&' +
             'wt=json&' +
+            // 'sort=' + encodeURI(this.orderBy) + '&' +
             'facet=true&' +
             'facet.field=institutionName&' +
             'facet.field=collectionName&' +
@@ -128,7 +137,6 @@ export class TestService {
                             });
                         }
                     }
-
 
                     let itemFilter = {
                         name: facet_name,
