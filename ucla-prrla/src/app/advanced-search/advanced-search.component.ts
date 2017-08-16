@@ -24,9 +24,9 @@ export class AdvancedSearchComponent implements OnInit {
     public search_therms = '';
 
     constructor(
-        private testService: TestService,
-        private route: ActivatedRoute,
-        private router: Router
+        public testService: TestService,
+        public route: ActivatedRoute,
+        public router: Router
     ) {
     }
 

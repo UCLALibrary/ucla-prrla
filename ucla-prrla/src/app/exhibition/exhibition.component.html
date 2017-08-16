@@ -1,51 +1,14 @@
 <div class="row">
     <div class="col-md-12">
-        <div class="cover-image height200" style="background-image: url('../../assets/img/china-paper.png');">
+        <div class="cover-image height200" style="background-image: url('../../assets/img/hubeiwujiao.jpg');">
             <div class="main-page-block">
-                <div class="search">
-                    <input type="search" placeholder="Search the Library" (keyup.enter)="searchOnEnter($event)" value="{{ search_therms }}" #search>
-                    <div class="search-submit">
-                        <button type="submit" (click)="searchButtonClick(search.value)"></button>
-                        <img src="../../assets/img/search.png" alt="">
-                    </div>
-                </div>
+                <app-general-search-box></app-general-search-box>
             </div>
         </div>
     </div>
     <div class="col-md-12 padding_bottom3p">
         <div class="col-md-3 padding_top2p">
-            <!--<div class="search filter-search">-->
-                <!--<input type="search" placeholder="Search within results">-->
-                <!--<div class="search-submit">-->
-                    <!--<button type="submit"></button>-->
-                    <!--<img src="../../assets/img/search.png" alt="">-->
-                <!--</div>-->
-            <!--</div>-->
-            <!--<a href="#" class="blue">Advanced Search</a>-->
-            <h3>FILTER</h3>
-            <div class="filter-list">
-                <div *ngFor="let itemFilter of itemFilters; let i=index">
-                    <div class="list-item-title active" (click)="toggleActiveClass($event)">
-                        {{ itemFilter.displayName }}
-                    </div>
-                    <div class="filter-block">
-                        <div class="blue-checkbox" *ngFor="let filterField of itemFilter.items; let ii=index">
-                            <input
-                                    type="checkbox"
-                                    id="filter_{{ i }}_{{ ii }}"
-                                    name="{{itemFilter.name}}"
-                                    value="{{ filterField.name }}"
-                                    (change)="clickOnFilter($event)"
-                                    checked="{{ getIsSelectedFilterChecked(itemFilter.name, filterField.name) }}"
-                            >
-                            <label for="filter_{{ i }}_{{ ii }}">{{ filterField.name }} ({{ filterField.count }})</label>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-12 text-center padding_top3p">
-                <a class="btn btn-blue-outline" href="#">Clear Filters</a>
-            </div>
+            [{{ this.name }}]
         </div>
         <div class="col-md-9 border-left padding_bottom5p">
             <div *ngIf="items.length > 0; else elseBlock">
@@ -87,7 +50,9 @@
                                         <div class="col-md-6">
                                             <div class="row select-wrapper-blue">
                                                 <select [(ngModel)]="pageSize" (change)="pageSizeChange()">
-                                                    <option *ngFor="let number of [10, 20, 50, 100]" [ngValue]="number">{{ number }}</option>
+                                                    <option *ngFor="let number of [10, 20, 50, 100]" [ngValue]="number">
+                                                        {{ number }}
+                                                    </option>
                                                 </select>
                                                 <span class="glyphicon glyphicon-chevron-down"></span>
                                             </div>
@@ -100,7 +65,9 @@
                                         <div class="col-md-6">
                                             <div class="row select-wrapper-blue">
                                                 <select [(ngModel)]="orderBy" (change)="orderByChange()">
-                                                    <option *ngFor="let availableOrder of availableOrders" [ngValue]="availableOrder.value">{{ availableOrder.name }}</option>
+                                                    <option *ngFor="let availableOrder of availableOrders"
+                                                            [ngValue]="availableOrder.value">{{ availableOrder.name }}
+                                                    </option>
                                                 </select>
                                                 <span class="glyphicon glyphicon-chevron-down"></span>
                                             </div>
