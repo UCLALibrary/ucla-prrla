@@ -5,8 +5,6 @@ import { AppComponent } from './app.component';
 import { IndexContentComponent } from './index-content/index-content.component';
 import { AboutComponent } from './about/about.component';
 import { HelpComponent } from './help/help.component';
-import { FooterHelpComponent } from './footer-help/footer-help.component';
-import { FooterAboutComponent } from './footer-about/footer-about.component';
 import { InstitutionsComponent } from './institutions/institutions.component';
 import { CollectionsComponent } from './collections/collections.component';
 import { ExhibitionsComponent } from './exhibitions/exhibitions.component';
@@ -25,8 +23,6 @@ export const router: Routes = [
     { path: 'search', component: AdvancedSearchComponent },
     { path: 'help', component: HelpComponent },
     { path: 'about', component: AboutComponent },
-    { path: 'footer-help', component: FooterHelpComponent },
-    { path: 'footer-about', component: FooterAboutComponent },
     { path: 'detail/:id', component: DetailItemComponent },
     { path: 'exhibition', component: ExhibitionComponent },
     { path: '**', component: NotFoundComponent },

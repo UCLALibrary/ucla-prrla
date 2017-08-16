@@ -25,8 +25,6 @@ import { TestService } from './services/test.service';
 import { ParseJsonPipe } from './parse-json/parse-json.pipe';
 import {DerpPipe} from './derp.pipe';
 import { ExhibitionsComponent } from './exhibitions/exhibitions.component';
-import { FooterHelpComponent } from './footer-help/footer-help.component';
-import { FooterAboutComponent } from './footer-about/footer-about.component';
 import { GeneralSearchBoxComponent } from './general-search-box/general-search-box.component';
 import {ExhibitionComponent} from "./exhibition/exhibition.component";
 
@@ -48,8 +46,6 @@ import {ExhibitionComponent} from "./exhibition/exhibition.component";
     ParseJsonPipe,
     DerpPipe,
     ExhibitionsComponent,
-    FooterHelpComponent,
-    FooterAboutComponent,
     GeneralSearchBoxComponent,
     ExhibitionComponent,
   ],
