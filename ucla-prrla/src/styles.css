@@ -196,6 +196,9 @@ header{
 .height200{
     height:200px;
 }
+.banner-height{
+    height:130px;
+}
 .height100{
     height:100px;
 }
@@ -243,7 +246,7 @@ header{
 }
 .search{
     position: relative;
-    margin: 25px auto 0;
+    margin: auto;
     width: 50%;
     background-color: #fff;
     height: 30px;

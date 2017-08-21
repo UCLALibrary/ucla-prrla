@@ -1,26 +1,40 @@
 <div class="row">
     <div class="col-md-12">
-        <div class="cover-image height200" style="background-image: url('../../assets/img/hubeiwujiao.jpg');">
+        <div class="cover-image banner-height" style="background-image: url('../../assets/img/hubeiwujiao.jpg');">
             <div class="main-page-block">
                 <app-general-search-box></app-general-search-box>
             </div>
         </div>
     </div>
     <div class="col-md-12 padding_bottom3p">
-        <div class="col-md-3 padding_top2p">
-            [{{ this.name }}]
+        <!--<div class="col-md-3 padding_top2p">-->
+            <!--[{{ this.name }}]-->
+        <!--</div>-->
+        <div class="col-md-12">
+            <div class="col-md-3">
+                <h3 class="bottom-line blue">Exhibitions</h3>
+            </div>
+            <div class="col-md-12">
+                <p>Blurb about the institutions. Lorem ipsum dolor sit amet, amet mi libero lobortis nullam, hac est
+                    augue
+                    lacinia mauris adipiscing pede. Magna suspendisse pellentesque varius a sit urna, iaculis
+                    incidunt egestas
+                    hendrerit ac, justo in non eleifend varius integer arcu, donecdui turpis id pellentesque, vel
+                    morbi. Wisi
+                    non ac. Urna nibh nunc proin accumsan donec nibh, laboriosam.</p>
+            </div>
         </div>
-        <div class="col-md-9 border-left padding_bottom5p">
+        <div class="col-md-12">
             <div *ngIf="items.length > 0; else elseBlock">
                 <div class="row">
                     <div class="col-md-12 margin-bottom5p">
                         <div class="row">
-                            <div class="col-md-4">
+                            <div class="col-md-6">
                                 <div class="row">
 
                                 </div>
                             </div>
-                            <div class="col-md-8">
+                            <div class="col-md-6">
                                 <div class="row">
                                     <div aria-label="Page navigation" class="col-md-12">
                                         <!-- pager -->
@@ -78,23 +92,23 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-12 margin-bottom5p" *ngFor="let item of items">
-                    <div class="col-md-4">
+                <div class="col-md-6 margin-bottom5p" *ngFor="let item of items" style="min-height: 300px;">
+                    <div class="col-md-5">
                         <img src='{{ item.thumbnailExists ? item.thumbnailExists : "/assets/img/title-not-found.png"}}'
                              alt="">
                     </div>
-                    <div class="col-md-8">
+                    <div class="col-md-7">
                         <dl class="dl-horizontal">
                             <dt>Title:</dt>
                             <dd>{{ item.title }}</dd>
-                            <dt>Alternate Title:</dt>
-                            <dd>{{ item.alternative_title?item.alternative_title:"n/a" }}</dd>
-                            <dt>First Line:</dt>
-                            <dd>{{ item.first_line?item.first_line:"n/a" }}</dd>
-                            <br>
-                            <dt>External Link(s):</dt>
-                            <dd>{{ item.identifier?item.identifier:"n/a" }}</dd>
-                            <br><br>
+                            <!--<dt>Alternate Title:</dt>-->
+                            <!--<dd>{{ item.alternative_title?item.alternative_title:"n/a" }}</dd>-->
+                            <!--<dt>First Line:</dt>-->
+                            <!--<dd>{{ item.first_line?item.first_line:"n/a" }}</dd>-->
+                            <!--<br>-->
+                            <!--<dt>External Link(s):</dt>-->
+                            <!--<dd>{{ item.identifier?item.identifier:"n/a" }}</dd>-->
+                            <!--<br><br>-->
                             <dt>Collection:</dt>
                             <dd>{{ item.collection?item.collection:"n/a" }}</dd>
                             <dt>Institution:</dt>
@@ -103,22 +117,22 @@
                             <dd>{{ item.author?item.author:"n/a" }}</dd>
                             <dt>Date:</dt>
                             <dd>{{ item.decade?item.decade:"n/a" }}</dd>
-                            <br>
-                            <dt>Alternative Title:</dt>
-                            <dd>n/a</dd>
-                            <dt>Subject Description:</dt>
-                            <dd>{{ item.description?item.description:"n/a" }}</dd>
-                            <dt>Abstract:</dt>
-                            <dd>n/a</dd>
-                            <br>
-                            <dt>Source:</dt>
-                            <dd>{{ item.source?item.source:"n/a" }}</dd>
-                            <dt>Rights:</dt>
-                            <dd>{{ item.rights?item.rights:"n/a" }}</dd>
-                            <dt>Language:</dt>
-                            <dd>{{ item.language?item.language:"n/a" }}</dd>
-                            <dt>Identifier:</dt>
-                            <dd>{{ item.identifier?item.identifier:"n/a" }}</dd>
+                            <!--<br>-->
+                            <!--<dt>Alternative Title:</dt>-->
+                            <!--<dd>n/a</dd>-->
+                            <!--<dt>Subject Description:</dt>-->
+                            <!--<dd>{{ item.description?item.description:"n/a" }}</dd>-->
+                            <!--<dt>Abstract:</dt>-->
+                            <!--<dd>n/a</dd>-->
+                            <!--<br>-->
+                            <!--<dt>Source:</dt>-->
+                            <!--<dd>{{ item.source?item.source:"n/a" }}</dd>-->
+                            <!--<dt>Rights:</dt>-->
+                            <!--<dd>{{ item.rights?item.rights:"n/a" }}</dd>-->
+                            <!--<dt>Language:</dt>-->
+                            <!--<dd>{{ item.language?item.language:"n/a" }}</dd>-->
+                            <!--<dt>Identifier:</dt>-->
+                            <!--<dd>{{ item.identifier?item.identifier:"n/a" }}</dd>-->
                         </dl>
                         <div class="row">
                             <div class="col-md-12 margin-bottom5p">
@@ -128,7 +142,7 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-10">
+                            <div class="col-md-12">
                                 <a class="btn btn-block btn-blue">View item at University of Hong Kong’s site</a>
                             </div>
                         </div>

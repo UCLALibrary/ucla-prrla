@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {TestService} from '../services/test.service';
 import {ActivatedRoute, Params, Router} from '@angular/router';
 import {Subscription} from 'rxjs/Subscription';
-import {AdvancedSearchComponent} from "../advanced-search/advanced-search.component";
+import {AdvancedSearchComponent} from '../advanced-search/advanced-search.component';
 
 @Component({
     selector: 'app-exhibition',
