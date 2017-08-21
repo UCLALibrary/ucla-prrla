@@ -206,16 +206,16 @@ export class TestService {
         item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'rights_keyword', 'rights');
         item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'source_keyword', 'source');
         item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'description_keyword', 'description');
-        item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'identifier_keyword', 'identifier');
+        item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'identifier_keyword', 'identifier', 1);
         item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'decade', 'decade');
 
         return item;
     }
 
-    private fillItemWithFirstOfArrayIfExists(item, raw_item, data_key, item_key){
+    private fillItemWithFirstOfArrayIfExists(item, raw_item, data_key, item_key, index = 0){
         if(typeof raw_item[data_key] !== 'undefined'){
-            if(typeof raw_item[data_key][0] !== 'undefined'){
-                item[item_key] = raw_item[data_key][0];
+            if(typeof raw_item[data_key][index] !== 'undefined'){
+                item[item_key] = raw_item[data_key][index];
             }
         }
 
