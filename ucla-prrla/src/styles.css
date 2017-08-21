@@ -88,9 +88,20 @@ i{
 em, i{
     font-weight: 300
 }
+html, body{
+    height: 100%;
+}
 body{
     font-family: 'Proxima Nova',sans-serif;
 }
+
+.container{
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto 50px;
+}
+
 header{
     padding-top: 60px;
 }
@@ -555,6 +566,11 @@ header{
 app-footer{
     float: left;
     margin-top: 150px;
+}
+footer{
+    background-color: #7c7e7f;
+    padding: 25px 15px;
+    color: #fff;
 }
 .footer-links{
     padding-bottom: 15px;
