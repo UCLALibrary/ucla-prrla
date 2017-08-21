@@ -99,6 +99,7 @@ export class AdvancedSearchComponent implements OnInit {
     clearInputs(event){
         event.preventDefault();
         this.selectedFilters = {};
+        this.search_therms = '';
         this.navigateWithParams(1, this.selectedFilters, this.search_therms, this.orderBy);
     }
 
