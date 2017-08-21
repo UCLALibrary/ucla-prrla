@@ -304,7 +304,7 @@ header{
 .dl-horizontal dt {
     width: 100px;
     text-align: left;
-    font-weight: 600;
+    font-weight: 400;
     color: #808285;
 }
 .dl-horizontal dd {
@@ -424,6 +424,7 @@ header{
     border: none;
     cursor: pointer;
     padding-left: 5px;
+    padding-right: 20px;
 }
 .select-wrapper-blue span{
     position: absolute;
@@ -613,7 +614,6 @@ app-footer{
     .dl-horizontal dt {
         width: 100px;
         text-align: left;
-        font-weight: 600;
         color: #808285;
     }
     .dl-horizontal dd {
