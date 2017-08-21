@@ -166,9 +166,9 @@
                                 </a>
                             </div>
                         </div>
-                        <div class="row">
+                        <div class="row" *ngIf="item.identifier && item.institution">
                             <div class="col-md-10">
-                                <a class="btn btn-block btn-blue" target="_blank" [href]="item.identifier">View item at University of Hong Kong’s site</a>
+                                <a class="btn btn-block btn-blue" target="_blank" [href]="item.identifier">View item at {{ item.institution }}</a>
                             </div>
                         </div>
                     </div>
