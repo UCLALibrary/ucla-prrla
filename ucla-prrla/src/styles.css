@@ -9,7 +9,7 @@
     font-style: normal;
 }
 @font-face {
-    font-family: "Proxima Nova Bold";
+    font-family: "Proxima Nova";
     src: url('../fonts/Proxima Nova Bold.eot'),
     url('../fonts/Proxima Nova Bold.woff2') format('woff2'),
     url('../fonts/Proxima Nova Bold.woff') format('woff'),
@@ -22,7 +22,7 @@ footer, header, hgroup, menu, nav, section {
     display: block;
 }
 strong {
-    font-weight: 600;
+    font-weight: 700;
 }
 img {
     max-width: 100%;
