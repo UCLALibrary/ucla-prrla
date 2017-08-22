@@ -109,14 +109,22 @@
                             <!--<dt>External Link(s):</dt>-->
                             <!--<dd>{{ item.identifier?item.identifier:"n/a" }}</dd>-->
                             <!--<br><br>-->
-                            <dt>Collection:</dt>
-                            <dd>{{ item.collection?item.collection:"n/a" }}</dd>
-                            <dt>Institution:</dt>
-                            <dd>{{ item.institution?item.institution:"n/a" }}</dd>
-                            <dt>Author:</dt>
-                            <dd>{{ item.author?item.author:"n/a" }}</dd>
-                            <dt>Date:</dt>
-                            <dd>{{ item.decade?item.decade:"n/a" }}</dd>
+                            <div *ngIf="item.collection">
+                                <dt>Collection:</dt>
+                                <dd>{{ item.collection?item.collection:"n/a" }}</dd>
+                            </div>
+                            <div *ngIf="item.institution">
+                                <dt>Institution:</dt>
+                                <dd>{{ item.institution?item.institution:"n/a" }}</dd>
+                            </div>
+                            <div *ngIf="item.author">
+                                <dt>Author:</dt>
+                                <dd>{{ item.author?item.author:"n/a" }}</dd>
+                            </div>
+                            <div *ngIf="item.decade">
+                                <dt>Date:</dt>
+                                <dd>{{ item.decade?item.decade:"n/a" }}</dd>
+                            </div>
                             <!--<br>-->
                             <!--<dt>Alternative Title:</dt>-->
                             <!--<dd>n/a</dd>-->
