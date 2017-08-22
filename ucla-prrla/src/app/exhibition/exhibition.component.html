@@ -93,14 +93,14 @@
                     </div>
                 </div>
                 <div class="col-md-6 margin-bottom5p" *ngFor="let item of items" style="min-height: 300px;">
-                    <div class="col-md-5">
+                    <div class="col-md-4">
                         <img src='{{ item.thumbnailExists ? item.thumbnailExists : "/assets/img/title-not-found.png"}}'
                              alt="">
                     </div>
-                    <div class="col-md-7">
+                    <div class="col-md-8">
                         <dl class="dl-horizontal">
                             <dt>Title:</dt>
-                            <dd><strong>{{ item.title }}</strong></dd>
+                            <dd><strong class="font-17">{{ item.title }}</strong></dd>
                             <!--<dt>Alternate Title:</dt>-->
                             <!--<dd>{{ item.alternative_title?item.alternative_title:"n/a" }}</dd>-->
                             <!--<dt>First Line:</dt>-->
@@ -143,7 +143,7 @@
                         </div>
                         <div class="row">
                             <div class="col-md-12">
-                                <a class="btn btn-block btn-blue view-button">View item at University of Hong Kong’s site</a>
+                                <a class="btn btn-block btn-blue view-button" target="_blank" [href]="item.identifier">View item at {{ item.institution }}</a>
                             </div>
                         </div>
                     </div>
