@@ -14,52 +14,11 @@
           non ac. Urna nibh nunc proin accumsan donec nibh, laboriosam.</p>
       </div>
       <div class="col-md-12 text-center">
-        <div class="col-md-4">
-          <p>Beijing Institute of Technology</p>
-          <p>Chinese University of Hong Kong</p>
-          <p>City University of Hong Kong</p>
-          <p>Fudan University</p>
-          <p>Hong Kong Baptist University</p>
-          <p>Hong Kong Polytechnic University</p>
-          <p>Hong Kong University of Science</p>
-          <p>And Technology</p>
-          <p>Kansai University</p>
-          <p>Korea University</p>
-          <p>Korea University</p>
-          <p>Nanjing University</p>
-          <p>National Taiwan University</p>
-          <p>National University of Singapore</p>
-        </div>
-        <div class="col-md-4">
-          <p>Peking University</p>
-          <p>Seoul National University</p>
-          <p>Singapore Management University</p>
-          <p>Stanford University</p>
-          <p>Sun Yat-Sen University</p>
-          <p>Tohoku University</p>
-          <p>Tsinghua University</p>
-          <p>Universitas Indonesia</p>
-          <p>University of Auckland</p>
-          <p>University of British Columbia</p>
-          <p>University of California Berkeley</p>
-          <p>University of California Irvine</p>
-          <p>University of California Los Angeles</p>
-          <p>University of California Merced</p>
-        </div>
-        <div class="col-md-4">
-          <p>University of California San Diego</p>
-          <p>University of California Santa Barbara</p>
-          <p>University of Hawaii At Manoa</p>
-          <p>University of Hong Kong</p>
-          <p>University of Macau</p>
-          <p>University of Melbourne</p>
-          <p>University of Oregon</p>
-          <p>University of Otago</p>
-          <p>University of Southern California</p>
-          <p>University of Victoria</p>
-          <p>University of Washington</p>
-          <p>Wuhan University</p>
-          <p>Zhejiang University</p>
+        <div *ngFor="let institution of institutions; let i = index">
+          <div class="clearfix" *ngIf="i % 3 == 0"></div>
+          <div class="col-md-4">
+              <a href="/institution/?name={{ institution.realName }}">{{ institution.name }}</a>
+          </div>
         </div>
       </div>
     </div>

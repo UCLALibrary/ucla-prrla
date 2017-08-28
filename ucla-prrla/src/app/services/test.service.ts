@@ -306,6 +306,44 @@ export class TestService {
         });
     }
 
+    public getPrrlaMembers(){
+        let url =
+            this.baseURL + 'select' +
+            '?q=prrla_member_title:*' +
+            '&rows=0' +
+            '&wt=json' +
+            '&indent=true' +
+            '&facet=true' +
+            '&facet.field=prrla_member_title' +
+            '&json.wrf=JSONP_CALLBACK';
+
+        return this._jsonp.get(url).map(data => {
+            let members = [];
+
+            let raw_members = data.json().facet_counts.facet_fields['prrla_member_title'];
+
+            let c = raw_members.length;
+
+            for(let i = 0; i < c; i=i+2){
+                let count = raw_members[i+1];
+
+                if(count){
+                    let name = decodeURI(raw_members[i]);
+
+                    members.push({
+                        name: name,
+                        realName: raw_members[i],
+                        count: count,
+                    });
+                }
+            }
+
+            return {
+                members: members,
+            };
+        });
+    }
+
     public getCollections(){
         let url =
             this.baseURL + 'select' + '?' +
@@ -345,15 +383,27 @@ export class TestService {
 
     public getCollectionsByUniversity(universityName){
         let url =
-            this.baseURL + 'select' + '?' +
-            'q=*&' +
-            'wt=json&' +
-            'facet=true&' +
-            'rows=0&' +
-            'facet.field=collectionName&' +
-            'json.wrf=JSONP_CALLBACK';
+            // this.baseURL + 'select' + '?' +
+            // 'q=*&' +
+            // 'wt=json&' +
+            // 'facet=true&' +
+            // 'rows=0&' +
+            // 'facet.field=collectionName&' +
+            // 'json.wrf=JSONP_CALLBACK';
 
-        url += '&fq=institutionName:"' + encodeURIComponent(universityName) + '"';
+            this.baseURL + 'select' +
+            '?q=institutionName:"' + encodeURIComponent(universityName) + '"' +
+            '&rows=-1' +
+            '&facet=true' +
+            '&facet.field=collectionName' +
+            '&facet.sort=count' +
+            '&facet.mincount=1' +
+            '&facet.limit=-1' +
+            '&wt=json' +
+            '&indent=true' +
+            '&json.wrf=JSONP_CALLBACK';
+
+        // url += '&fq=institutionName:"' + encodeURIComponent(universityName) + '"';
 
         return this._jsonp.get(url).map(data => {
             let collections = [];
@@ -417,6 +467,23 @@ export class TestService {
 
             return {
                 institutions: institutions,
+            };
+        });
+    }
+
+    public getPrrlaMemberInfoByName(name){
+        let url =
+            this.baseURL + 'select' +
+            '?q=prrla_member_title:"' + encodeURIComponent(name) + '"' +
+            '&wt=json' +
+            '&indent=true' +
+            '&json.wrf=JSONP_CALLBACK';
+
+        return this._jsonp.get(url).map(data => {
+            let memberInfo = data.json().response.docs[0];
+
+            return {
+                memberInfo: memberInfo
             };
         });
     }

@@ -1,0 +1,24 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="cover-image banner-height" style="background-image: url('../../assets/img/hubeiwujiao.jpg');">
+            <div class="main-page-block">
+                <app-general-search-box></app-general-search-box>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12 padding_bottom3p">
+        <div class="col-md-12">
+            <div class="col-md-12">
+                <h3><span class="bottom-line blue">{{ memberInfo.prrla_member_title }}</span></h3>
+            </div>
+            <div class="col-md-12">
+                <p>{{ memberInfo.prrla_member_description }}</p>
+
+                <p>{{ memberInfo.prrla_member_website }}</p>
+            </div>
+            <div class="col-md-12">
+                <p>{{ collections | json }}</p>
+            </div>
+        </div>
+    </div>
+</div>

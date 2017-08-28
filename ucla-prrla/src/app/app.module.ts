@@ -27,6 +27,7 @@ import {DerpPipe} from './derp.pipe';
 import { ExhibitionsComponent } from './exhibitions/exhibitions.component';
 import { GeneralSearchBoxComponent } from './general-search-box/general-search-box.component';
 import {ExhibitionComponent} from "./exhibition/exhibition.component";
+import {InstitutionComponent} from "./institution/institution.component";
 
 
 @NgModule({
@@ -48,6 +49,7 @@ import {ExhibitionComponent} from "./exhibition/exhibition.component";
     ExhibitionsComponent,
     GeneralSearchBoxComponent,
     ExhibitionComponent,
+    InstitutionComponent,
   ],
   imports: [
     BrowserModule,

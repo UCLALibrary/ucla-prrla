@@ -17,8 +17,6 @@ export class ExhibitionsComponent implements OnInit {
   ngOnInit() {
       this.testService.getCollections().subscribe(data => {
           this.collections = data.collections;
-
-
       });
   }
 

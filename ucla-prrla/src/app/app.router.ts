@@ -12,6 +12,7 @@ import { AdvancedSearchComponent } from './advanced-search/advanced-search.compo
 import { DetailItemComponent } from './detail-item/detail-item.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ExhibitionComponent } from "./exhibition/exhibition.component";
+import {InstitutionComponent} from "./institution/institution.component";
 
 export const router: Routes = [
     { path: '', redirectTo: 'index', pathMatch: 'full' },
@@ -25,6 +26,7 @@ export const router: Routes = [
     { path: 'about', component: AboutComponent },
     { path: 'detail/:id', component: DetailItemComponent },
     { path: 'exhibition', component: ExhibitionComponent },
+    { path: 'institution', component: InstitutionComponent },
     { path: '**', component: NotFoundComponent },
 ];
 
