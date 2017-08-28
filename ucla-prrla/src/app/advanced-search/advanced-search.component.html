@@ -50,7 +50,7 @@
         <div class="col-md-9 border-left padding_bottom5p">
             <div *ngIf="!initializing_first_time; else initializingPageBlock">
                 <div *ngIf="items.length > 0; else elseBlock">
-                    <div class="row">
+                    <div class="">
                         <div class="col-md-12 margin-bottom5p">
                             <div class="row">
                                 <div class="col-md-4">
@@ -124,7 +124,7 @@
                                  alt="">
                         </div>
                         <div class="col-md-8">
-                            <dl class="dl-horizontal">
+                            <dl class="dl-horizontal" style="min-height: 200px;">
                                 <dt>Title:</dt>
                                 <dd><strong class="font-17">{{ item.title }}</strong></dd>
                                 <!--<dt>Alternate Title:</dt>-->
