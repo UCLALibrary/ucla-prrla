@@ -11,10 +11,10 @@ export class TestService {
     public orderBy = '';
     public availableOrders = [
         { value: '', name: 'Relevance'},
-        { value: 'title asc', name: 'Title (a-z)'},
-        { value: 'title desc', name: 'Title (z-a)'},
-        { value: 'decade asc', name: 'Date (oldest first)'},
-        { value: 'decade desc', name: 'Date (newest first)'}
+        { value: 'first_title asc', name: 'Title (a-z)'},
+        { value: 'first_title desc', name: 'Title (z-a)'},
+        { value: 'sort_decade asc', name: 'Date (oldest first)'},
+        { value: 'sort_decade desc', name: 'Date (newest first)'}
     ];
 
     constructor(private _jsonp: Jsonp) {
@@ -80,7 +80,7 @@ export class TestService {
             'rows=' + this.pageSize + '&' +
             'start=' + offset + '&' +
             'wt=json&' +
-            // 'sort=' + encodeURI(this.orderBy) + '&' +
+            'sort=' + encodeURI(this.orderBy) + '&' +
             'facet=true&' +
             'facet.field=institutionName&' +
             'facet.field=collectionName&' +
@@ -103,6 +103,8 @@ export class TestService {
         }
 
         return this._jsonp.get(url).map(data => {
+            console.log(data.json());
+
             let totalRecords = data.json().response.numFound;
             let raw_items = data.json().response.docs;
             let items = [];
@@ -178,11 +180,11 @@ export class TestService {
     private parseRawItem(raw_item){
         let item = {
             id: raw_item.id,
-            title: raw_item.titles[0],
+            title: raw_item.title_keyword[0],
             alternative_title: false,
             first_line: false,
-            collection: false,
-            institution: false,
+            collection: raw_item.collectionName,
+            institution: raw_item.institutionName,
             author: false,
             language: false,
             rights: false,
@@ -199,8 +201,8 @@ export class TestService {
             item = this.fillItemWithEndStringModificator(item, title, 'first_line', '[first line]');
         }
 
-        item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'collectionName', 'collection');
-        item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'institutionName', 'institution');
+        // item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'collectionName', 'collection');
+        // item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'institutionName', 'institution');
         item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'creator_keyword', 'author');
         item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'language_keyword', 'language');
         item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'rights_keyword', 'rights');

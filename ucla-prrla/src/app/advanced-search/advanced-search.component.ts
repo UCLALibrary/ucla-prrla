@@ -16,12 +16,14 @@ export class AdvancedSearchComponent implements OnInit {
     public itemFilters;
     public pager;
     public pageSize;
-    public orderBy;
+    public orderBy = '';
     public availableOrders = [];
 
     public selectedFilters = {};
 
     public search_therms = '';
+
+    public initializing_first_time = true;
 
     constructor(
         public testService: TestService,
@@ -74,6 +76,7 @@ export class AdvancedSearchComponent implements OnInit {
     setPage(page: number) {
         document.getElementById('loading').style.display = 'block';
         this.testService.getPaginatedBooks(this.search_therms, this.selectedFilters, page).subscribe(data => {
+            this.initializing_first_time = false;
             this.items = data.items;
             this.pager = this.testService.getPager(data.totalItems, page);
             this.itemFilters = data.itemFilters;
