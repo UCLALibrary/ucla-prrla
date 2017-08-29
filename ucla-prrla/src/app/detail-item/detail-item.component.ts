@@ -5,6 +5,7 @@ import {Subscription} from 'rxjs/Subscription';
 
 
 import { books } from '../../data/books';
+import {ErrorComponent} from "../error/error.component";
 
 @Component({
   selector: 'app-detail-item',
@@ -53,6 +54,8 @@ export class DetailItemComponent implements OnInit {
 
     this.testService.getItemById(this.id).subscribe(data => {
       this.item = data;
+    }, error => {
+      ErrorComponent.showBackend();
     });
   }
 

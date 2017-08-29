@@ -3,6 +3,7 @@ import {TestService} from '../services/test.service';
 import {ActivatedRoute, Params, Router} from '@angular/router';
 import {Subscription} from 'rxjs/Subscription';
 import {AdvancedSearchComponent} from '../advanced-search/advanced-search.component';
+import {ErrorComponent} from "../error/error.component";
 
 @Component({
     selector: 'app-exhibition',
@@ -47,6 +48,9 @@ export class ExhibitionComponent extends AdvancedSearchComponent {
             this.items = data.items;
             this.pager = this.testService.getPager(data.totalItems, page);
             this.itemFilters = data.itemFilters;
+            document.getElementById('loading').style.display = 'none';
+        }, error => {
+            ErrorComponent.showBackend();
             document.getElementById('loading').style.display = 'none';
         });
     }

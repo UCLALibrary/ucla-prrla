@@ -403,8 +403,6 @@ export class TestService {
             '&indent=true' +
             '&json.wrf=JSONP_CALLBACK';
 
-        // url += '&fq=institutionName:"' + encodeURIComponent(universityName) + '"';
-
         return this._jsonp.get(url).map(data => {
             let collections = [];
 
@@ -480,6 +478,7 @@ export class TestService {
             '&json.wrf=JSONP_CALLBACK';
 
         return this._jsonp.get(url).map(data => {
+            console.log('data', data.json());
             let memberInfo = data.json().response.docs[0];
 
             return {

@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {TestService} from "../services/test.service";
+import {ErrorComponent} from "../error/error.component";
 
 @Component({
     selector: 'app-institutions',
@@ -14,6 +15,8 @@ export class InstitutionsComponent implements OnInit {
     ngOnInit() {
         this.testService.getPrrlaMembers().subscribe(data => {
             this.institutions = data.members;
+        }, error => {
+            ErrorComponent.showBackend();
         });
     }
 }

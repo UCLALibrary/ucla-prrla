@@ -3,6 +3,7 @@ import {TestService} from '../services/test.service';
 import {element} from "protractor";
 import {Subscription} from "rxjs/Subscription";
 import {ActivatedRoute, Router} from "@angular/router";
+import {ErrorComponent} from "../error/error.component";
 
 
 @Component({
@@ -31,9 +32,13 @@ export class CollectionsComponent implements OnInit {
     ngOnInit() {
         this.testService.getUniversities().subscribe(data => {
             this.universities = data.universities;
+        }, error => {
+            ErrorComponent.showBackend();
         });
         this.testService.getCollections().subscribe(data => {
             this.collections = data.collections;
+        }, error => {
+            ErrorComponent.showBackend();
         });
 
     }
@@ -53,6 +58,8 @@ export class CollectionsComponent implements OnInit {
         if (typeof this.collectionsByUniversity[universityName] === 'undefined') {
             this.testService.getCollectionsByUniversity(universityName).subscribe(data => {
                 this.collectionsByUniversity[universityName] = data.collections;
+            }, error => {
+                ErrorComponent.showBackend();
             });
         }
     }
@@ -64,6 +71,8 @@ export class CollectionsComponent implements OnInit {
         if (typeof this.universitiesByCollections[collectionName] === 'undefined') {
             this.testService.getUniversitiesByCollection(collectionName).subscribe(data => {
                 this.universitiesByCollections[collectionName] = data.institutions;
+            }, error => {
+                ErrorComponent.showBackend();
             });
         }
     }

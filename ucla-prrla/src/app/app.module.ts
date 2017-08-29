@@ -28,6 +28,7 @@ import { ExhibitionsComponent } from './exhibitions/exhibitions.component';
 import { GeneralSearchBoxComponent } from './general-search-box/general-search-box.component';
 import {ExhibitionComponent} from "./exhibition/exhibition.component";
 import {InstitutionComponent} from "./institution/institution.component";
+import {ErrorComponent} from "./error/error.component";
 
 
 @NgModule({
@@ -50,6 +51,7 @@ import {InstitutionComponent} from "./institution/institution.component";
     GeneralSearchBoxComponent,
     ExhibitionComponent,
     InstitutionComponent,
+    ErrorComponent,
   ],
   imports: [
     BrowserModule,
