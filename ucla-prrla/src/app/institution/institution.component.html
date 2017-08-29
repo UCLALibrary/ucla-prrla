@@ -7,18 +7,42 @@
         </div>
     </div>
     <div class="container">
-        <div class="col-md-12 padding_bottom3p">
+        <div class="col-md-12 padding_bottom3p padding_top3p">
             <div class="col-md-12">
-                <div class="col-md-12">
-                    <h3><span class="bottom-line blue">{{ memberInfo.prrla_member_title }}</span></h3>
-                </div>
-                <div class="col-md-12">
-                    <p>{{ memberInfo.prrla_member_description }}</p>
+                <div class="col-md-4">
+                    <div class="col-md-offset-2 col-md-10 padding_bottom3p padding_top3p institution-logo">
+                        <img src="../../assets/img/logos/{{ memberInfo.prrla_member_title }}.png" alt="">
+                    </div>
 
-                    <p>{{ memberInfo.prrla_member_website }}</p>
+                    <div>
+                        <dl class="dl-horizontal">
+                            <dt>Location: </dt>
+                            <dd></dd>
+                            <dt>Phone: </dt>
+                            <dd></dd>
+                            <dt>Email: </dt>
+                            <dd></dd>
+                            <dt>Website: </dt>
+                            <dd><a href="{{ memberInfo.prrla_member_website }}" target="_blank">{{ memberInfo.prrla_member_website }}</a></dd>
+                        </dl>
+                    </div>
                 </div>
-                <div class="col-md-12">
-                    <p>{{ collections | json }}</p>
+                <div class="col-md-8">
+                    <h3><span class="bottom-line blue">{{ memberInfo.prrla_member_title }}</span></h3>
+                    <div class="col-md-12">
+                        <p>{{ memberInfo.prrla_member_description }}</p>
+
+                        <!--<p>{{ memberInfo.prrla_member_website }}</p>-->
+                    </div>
+                    <div class="col-md-4">
+                        <h3 class="bottom-line blue"><span class="bottom-line blue">Collections</span></h3>
+                    </div>
+                    <div class="col-md-12">
+                        <p><strong>{{ collections | json }}</strong></p>
+                    </div>
+                    <!--<div class="col-md-12">-->
+                        <!--<p>{{ collections | json }}</p>-->
+                    <!--</div>-->
                 </div>
             </div>
         </div>
