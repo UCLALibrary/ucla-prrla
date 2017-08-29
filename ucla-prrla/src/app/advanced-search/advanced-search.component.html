@@ -12,186 +12,188 @@
             </div>
         </div>
     </div>
-    <div class="col-md-12 padding_bottom3p">
-        <div class="col-md-3 padding_top2p">
-            <!--<div class="search filter-search">-->
-                <!--<input type="search" placeholder="Search within results">-->
-                <!--<div class="search-submit">-->
-                    <!--<button type="submit"></button>-->
-                    <!--<img src="../../assets/img/search.png" alt="">-->
+    <div class="container">
+        <div class="col-md-12 padding_bottom3p">
+            <div class="col-md-3 padding_top2p">
+                <!--<div class="search filter-search">-->
+                    <!--<input type="search" placeholder="Search within results">-->
+                    <!--<div class="search-submit">-->
+                        <!--<button type="submit"></button>-->
+                        <!--<img src="../../assets/img/search.png" alt="">-->
+                    <!--</div>-->
                 <!--</div>-->
-            <!--</div>-->
-            <!--<a href="#" class="blue">Advanced Search</a>-->
-            <h3>FILTER</h3>
-            <div class="filter-list">
-                <div *ngFor="let itemFilter of itemFilters; let i=index">
-                    <div class="list-item-title active" (click)="toggleActiveClass($event)">
-                        <strong>{{ itemFilter.displayName }}</strong>
-                    </div>
-                    <div class="filter-block">
-                        <div class="blue-checkbox" *ngFor="let filterField of itemFilter.items; let ii=index">
-                            <input
-                                    type="checkbox"
-                                    id="filter_{{ i }}_{{ ii }}"
-                                    name="{{itemFilter.name}}"
-                                    value="{{ filterField.name }}"
-                                    (change)="clickOnFilter($event)"
-                                    checked="{{ getIsSelectedFilterChecked(itemFilter.name, filterField.name) }}"
-                            >
-                            <label for="filter_{{ i }}_{{ ii }}">{{ filterField.name }} ({{ filterField.count }})</label>
+                <!--<a href="#" class="blue">Advanced Search</a>-->
+                <h3>FILTER</h3>
+                <div class="filter-list">
+                    <div *ngFor="let itemFilter of itemFilters; let i=index">
+                        <div class="list-item-title active" (click)="toggleActiveClass($event)">
+                            <strong>{{ itemFilter.displayName }}</strong>
+                        </div>
+                        <div class="filter-block">
+                            <div class="blue-checkbox" *ngFor="let filterField of itemFilter.items; let ii=index">
+                                <input
+                                        type="checkbox"
+                                        id="filter_{{ i }}_{{ ii }}"
+                                        name="{{itemFilter.name}}"
+                                        value="{{ filterField.name }}"
+                                        (change)="clickOnFilter($event)"
+                                        checked="{{ getIsSelectedFilterChecked(itemFilter.name, filterField.name) }}"
+                                >
+                                <label for="filter_{{ i }}_{{ ii }}">{{ filterField.name }} ({{ filterField.count }})</label>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <div class="col-md-12 text-center padding_top3p">
+                    <a class="btn btn-blue-outline" href="#" (click)="clearInputs($event)">Clear Filters</a>
+                </div>
             </div>
-            <div class="col-md-12 text-center padding_top3p">
-                <a class="btn btn-blue-outline" href="#" (click)="clearInputs($event)">Clear Filters</a>
-            </div>
-        </div>
-        <div class="col-md-9 border-left padding_bottom5p">
-            <div *ngIf="!initializing_first_time; else initializingPageBlock">
-                <div *ngIf="items.length > 0; else elseBlock">
-                    <div class="">
-                        <div class="col-md-12 margin-bottom5p">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="row">
+            <div class="col-md-9 border-left padding_bottom5p">
+                <div *ngIf="!initializing_first_time; else initializingPageBlock">
+                    <div *ngIf="items.length > 0; else elseBlock">
+                        <div class="">
+                            <div class="col-md-12 margin-bottom5p">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="row">
 
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div aria-label="Page navigation">
+                                                    <!-- pager -->
+                                                    <ul *ngIf="pager.pages && pager.pages.length" class="pagination pull-right">
+                                                        <li [ngClass]="{disabled:pager.currentPage === 1}">
+                                                            <a (click)="pagerClick($event, 1)">First</a>
+                                                        </li>
+                                                        <li [ngClass]="{disabled:pager.currentPage === 1}">
+                                                            <a (click)="pagerClick($event, pager.currentPage - 1)">Previous</a>
+                                                        </li>
+                                                        <li *ngFor="let page of pager.pages"
+                                                            [ngClass]="{active:pager.currentPage === page}">
+                                                            <a (click)="pagerClick($event, page)">{{page}}</a>
+                                                        </li>
+                                                        <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+                                                            <a (click)="pagerClick($event, pager.currentPage + 1)">Next</a>
+                                                        </li>
+                                                        <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+                                                            <a (click)="pagerClick($event, pager.totalPages)">Last</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="col-md-6">
+                                                            <p>Display</p>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="row select-wrapper-blue">
+                                                                <select [(ngModel)]="pageSize" (change)="pageSizeChange()">
+                                                                    <option *ngFor="let number of [10, 20, 50, 100]" [ngValue]="number">{{ number }}</option>
+                                                                </select>
+                                                                <span class="glyphicon glyphicon-chevron-down"></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="col-md-6">
+                                                            <p>Sort by</p>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="row select-wrapper-blue">
+                                                                <select [(ngModel)]="orderBy" (change)="orderByChange()">
+                                                            <option *ngFor="let availableOrder of availableOrders" [ngValue]="availableOrder.value">{{ availableOrder.name }}</option>
+                                                                </select>
+                                                                <span class="glyphicon glyphicon-chevron-down"></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-md-8">
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div aria-label="Page navigation">
-                                                <!-- pager -->
-                                                <ul *ngIf="pager.pages && pager.pages.length" class="pagination pull-right">
-                                                    <li [ngClass]="{disabled:pager.currentPage === 1}">
-                                                        <a (click)="pagerClick($event, 1)">First</a>
-                                                    </li>
-                                                    <li [ngClass]="{disabled:pager.currentPage === 1}">
-                                                        <a (click)="pagerClick($event, pager.currentPage - 1)">Previous</a>
-                                                    </li>
-                                                    <li *ngFor="let page of pager.pages"
-                                                        [ngClass]="{active:pager.currentPage === page}">
-                                                        <a (click)="pagerClick($event, page)">{{page}}</a>
-                                                    </li>
-                                                    <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
-                                                        <a (click)="pagerClick($event, pager.currentPage + 1)">Next</a>
-                                                    </li>
-                                                    <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
-                                                        <a (click)="pagerClick($event, pager.totalPages)">Last</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <div class="col-md-6">
-                                                        <p>Display</p>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <div class="row select-wrapper-blue">
-                                                            <select [(ngModel)]="pageSize" (change)="pageSizeChange()">
-                                                                <option *ngFor="let number of [10, 20, 50, 100]" [ngValue]="number">{{ number }}</option>
-                                                            </select>
-                                                            <span class="glyphicon glyphicon-chevron-down"></span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="col-md-6">
-                                                        <p>Sort by</p>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <div class="row select-wrapper-blue">
-                                                            <select [(ngModel)]="orderBy" (change)="orderByChange()">
-                                                        <option *ngFor="let availableOrder of availableOrders" [ngValue]="availableOrder.value">{{ availableOrder.name }}</option>
-                                                            </select>
-                                                            <span class="glyphicon glyphicon-chevron-down"></span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 margin-bottom5p" *ngFor="let item of items" style="min-height: 250px;">
+                            <div class="col-md-4">
+                                <img src='{{ item.thumbnailExists ? item.thumbnailExists : "/assets/img/title-not-found.png"}}'
+                                     alt="">
+                            </div>
+                            <div class="col-md-8">
+                                <dl class="dl-horizontal">
+                                    <dt>Title:</dt>
+                                    <dd><strong class="title-in-search-item">{{ item.title }}</strong></dd>
+                                    <!--<dt>Alternate Title:</dt>-->
+                                    <!--<dd>{{ item.alternative_title?item.alternative_title:"n/a" }}</dd>-->
+                                    <!--<dt>First Line:</dt>-->
+                                    <!--<dd>{{ item.first_line?item.first_line:"n/a" }}</dd>-->
+                                    <!--<br>-->
+                                    <!--<dt>External Link(s):</dt>-->
+                                    <!--<dd>{{ item.identifier?item.identifier:"n/a" }}</dd>-->
+                                    <!--<br><br>-->
+                                    <div *ngIf="item.collection">
+                                        <dt>Collection:</dt>
+                                        <dd>{{ item.collection?item.collection:"n/a" }}</dd>
+                                    </div>
+                                    <div *ngIf="item.institution ">
+                                        <dt>Institution:</dt>
+                                        <dd>{{ item.institution?item.institution:"n/a" }}</dd>
+                                    </div>
+                                    <div *ngIf="item.author ">
+                                        <dt>Author:</dt>
+                                        <dd>{{ item.author?item.author:"n/a" }}</dd>
+                                    </div>
+                                    <div *ngIf="item.decade ">
+                                        <dt>Date:</dt>
+                                        <dd>{{ item.decade?item.decade:"n/a" }}</dd>
+                                    </div>
+                                    <!--<br>-->
+                                    <!--<dt>Alternative Title:</dt>-->
+                                    <!--<dd>n/a</dd>-->
+                                    <!--<dt>Subject Description:</dt>-->
+                                    <!--<dd>{{ item.description?item.description:"n/a" }}</dd>-->
+                                    <!--<dt>Abstract:</dt>-->
+                                    <!--<dd>n/a</dd>-->
+                                    <!--<br>-->
+                                    <!--<dt>Source:</dt>-->
+                                    <!--<dd>{{ item.source?item.source:"n/a" }}</dd>-->
+                                    <!--<dt>Rights:</dt>-->
+                                    <!--<dd>{{ item.rights?item.rights:"n/a" }}</dd>-->
+                                    <!--<dt>Language:</dt>-->
+                                    <!--<dd>{{ item.language?item.language:"n/a" }}</dd>-->
+                                    <!--<dt>Identifier:</dt>-->
+                                    <!--<dd>{{ item.identifier?item.identifier:"n/a" }}</dd>-->
+                                </dl>
+                                <div class="row">
+                                    <div class="col-md-12 margin-bottom5p">
+                                        <a [routerLink]="['/detail', item.id]">
+                                            View Details >
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="row" *ngIf="item.identifier && item.institution">
+                                    <div class="col-md-10">
+                                        <a class="btn btn-block btn-blue view-button" target="_blank" [href]="item.identifier">View Item at {{ item.institution }}</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-12 margin-bottom5p" *ngFor="let item of items">
-                        <div class="col-md-4">
-                            <img src='{{ item.thumbnailExists ? item.thumbnailExists : "/assets/img/title-not-found.png"}}'
-                                 alt="">
-                        </div>
-                        <div class="col-md-8">
-                            <dl class="dl-horizontal" style="min-height: 200px;">
-                                <dt>Title:</dt>
-                                <dd><strong class="font-17">{{ item.title }}</strong></dd>
-                                <!--<dt>Alternate Title:</dt>-->
-                                <!--<dd>{{ item.alternative_title?item.alternative_title:"n/a" }}</dd>-->
-                                <!--<dt>First Line:</dt>-->
-                                <!--<dd>{{ item.first_line?item.first_line:"n/a" }}</dd>-->
-                                <!--<br>-->
-                                <!--<dt>External Link(s):</dt>-->
-                                <!--<dd>{{ item.identifier?item.identifier:"n/a" }}</dd>-->
-                                <!--<br><br>-->
-                                <div *ngIf="item.collection">
-                                    <dt>Collection:</dt>
-                                    <dd>{{ item.collection?item.collection:"n/a" }}</dd>
-                                </div>
-                                <div *ngIf="item.institution ">
-                                    <dt>Institution:</dt>
-                                    <dd>{{ item.institution?item.institution:"n/a" }}</dd>
-                                </div>
-                                <div *ngIf="item.author ">
-                                    <dt>Author:</dt>
-                                    <dd>{{ item.author?item.author:"n/a" }}</dd>
-                                </div>
-                                <div *ngIf="item.decade ">
-                                    <dt>Date:</dt>
-                                    <dd>{{ item.decade?item.decade:"n/a" }}</dd>
-                                </div>
-                                <!--<br>-->
-                                <!--<dt>Alternative Title:</dt>-->
-                                <!--<dd>n/a</dd>-->
-                                <!--<dt>Subject Description:</dt>-->
-                                <!--<dd>{{ item.description?item.description:"n/a" }}</dd>-->
-                                <!--<dt>Abstract:</dt>-->
-                                <!--<dd>n/a</dd>-->
-                                <!--<br>-->
-                                <!--<dt>Source:</dt>-->
-                                <!--<dd>{{ item.source?item.source:"n/a" }}</dd>-->
-                                <!--<dt>Rights:</dt>-->
-                                <!--<dd>{{ item.rights?item.rights:"n/a" }}</dd>-->
-                                <!--<dt>Language:</dt>-->
-                                <!--<dd>{{ item.language?item.language:"n/a" }}</dd>-->
-                                <!--<dt>Identifier:</dt>-->
-                                <!--<dd>{{ item.identifier?item.identifier:"n/a" }}</dd>-->
-                            </dl>
-                            <div class="row">
-                                <div class="col-md-12 margin-bottom5p">
-                                    <a [routerLink]="['/detail', item.id]">
-                                        View Details >
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="row" *ngIf="item.identifier && item.institution">
-                                <div class="col-md-10">
-                                    <a class="btn btn-block btn-blue view-button" target="_blank" [href]="item.identifier">View item at {{ item.institution }}</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <ng-template #elseBlock>
+                        No results found.
+                    </ng-template>
                 </div>
-                <ng-template #elseBlock>
-                    No results found.
+                <ng-template #initializingPageBlock>
+                    <div class="col-md-12">
+                        Loading
+                    </div>
                 </ng-template>
             </div>
-            <ng-template #initializingPageBlock>
-                <div class="col-md-12">
-                    Loading
-                </div>
-            </ng-template>
         </div>
     </div>
 </div>

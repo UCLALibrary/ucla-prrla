@@ -5,94 +5,96 @@
             <app-general-search-box></app-general-search-box>
             </div>
         </div>
-        <div class="padding_top4p padding_bottom3p">
-            <div class="col-md-12">
-                <div class="col-md-4">
-                    <h3><span class="bottom-line blue">PRL Collections</span></h3>
-                </div>
+        <div class="container">
+            <div class="padding_top4p padding_bottom3p">
                 <div class="col-md-12">
-                    <p>Blurb about the institutions. Lorem ipsum dolor sit amet, amet mi libero lobortis nullam, hac est
-                        augue
-                        lacinia mauris adipiscing pede. Magna suspendisse pellentesque varius a sit urna, iaculis
-                        incidunt egestas
-                        hendrerit ac, justo in non eleifend varius integer arcu, donecdui turpis id pellentesque, vel
-                        morbi. Wisi
-                        non ac. Urna nibh nunc proin accumsan donec nibh, laboriosam.</p>
-                </div>
-            </div>
-            <div class="col-md-12 padding_top4p padding_bottom3p text-center explore-collection-control">
-                <div class="col-md-offset-2 col-md-8">
-                    <div *ngFor="let n of list" class="col-md-6">
-                        <div class="row">
-                        <a class="btn btn-white btn-block" (click)="selectButton(n)" [ngClass]="{selected: isSelected(n)}">{{n}}</a>
-                        </div>
+                    <div class="col-md-4">
+                        <h3><span class="bottom-line blue">PRL Collections</span></h3>
+                    </div>
+                    <div class="col-md-12">
+                        <p>Blurb about the institutions. Lorem ipsum dolor sit amet, amet mi libero lobortis nullam, hac est
+                            augue
+                            lacinia mauris adipiscing pede. Magna suspendisse pellentesque varius a sit urna, iaculis
+                            incidunt egestas
+                            hendrerit ac, justo in non eleifend varius integer arcu, donecdui turpis id pellentesque, vel
+                            morbi. Wisi
+                            non ac. Urna nibh nunc proin accumsan donec nibh, laboriosam.</p>
                     </div>
                 </div>
-                <div *ngIf="selected == 'Browse by Institution'">
-                    <div class="col-md-12 padding_top4p padding_bottom3p by-institution">
-                        <div *ngFor="let university of universities; let i = index">
-                            <div class="clearfix" *ngIf="i % 3 == 0"></div>
-                            <div class="col-md-4 text-left">
-                                <div class="ac-item-container">
-                                    <div
-                                            [attr.name]="university.name"
-                                            class="ac-title"
-                                            (click)="toggleUniversity($event, university.realName)">
-                                        <span class="item-name">{{ university.name }}</span>
-                                        <span class="item-count">[{{ university.count }}]</span>
-                                    </div>
-                                    <div class="ac-body">
-                                        <div style="margin-left: 15px;">
-                                            <div *ngIf="isLoadedUniversity(university.realName); else loadingBlock">
-                                                <div *ngIf="collectionsByUniversity[university.realName].length > 0; else elseBlock">
-                                                    <div *ngFor="let collection of collectionsByUniversity[university.realName]" (click)="collectionClick(collection.realName)">
-                                                        <span class="item-name">{{ collection.name }}</span>
-                                                        <span class="item-count">[{{ collection.count }}]</span>
+                <div class="col-md-12 padding_top4p padding_bottom3p text-center explore-collection-control">
+                    <div class="col-md-offset-2 col-md-8">
+                        <div *ngFor="let n of list" class="col-md-6">
+                            <div class="row">
+                            <a class="btn btn-white btn-block" (click)="selectButton(n)" [ngClass]="{selected: isSelected(n)}">{{n}}</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div *ngIf="selected == 'Browse by Institution'">
+                        <div class="col-md-12 padding_top4p padding_bottom3p by-institution">
+                            <div *ngFor="let university of universities; let i = index">
+                                <div class="clearfix" *ngIf="i % 3 == 0"></div>
+                                <div class="col-md-4 text-left">
+                                    <div class="ac-item-container">
+                                        <div
+                                                [attr.name]="university.name"
+                                                class="ac-title"
+                                                (click)="toggleUniversity($event, university.realName)">
+                                            <span class="item-name">{{ university.name }}</span>
+                                            <span class="item-count">[{{ university.count }}]</span>
+                                        </div>
+                                        <div class="ac-body">
+                                            <div style="margin-left: 15px;">
+                                                <div *ngIf="isLoadedUniversity(university.realName); else loadingBlock">
+                                                    <div *ngIf="collectionsByUniversity[university.realName].length > 0; else elseBlock">
+                                                        <div *ngFor="let collection of collectionsByUniversity[university.realName]" (click)="collectionClick(collection.realName)">
+                                                            <span class="item-name">{{ collection.name }}</span>
+                                                            <span class="item-count">[{{ collection.count }}]</span>
+                                                        </div>
                                                     </div>
+                                                    <ng-template #elseBlock>
+                                                        No collections found.
+                                                    </ng-template>
                                                 </div>
-                                                <ng-template #elseBlock>
-                                                    No collections found.
+                                                <ng-template #loadingBlock>
+                                                    Loading...
                                                 </ng-template>
                                             </div>
-                                            <ng-template #loadingBlock>
-                                                Loading...
-                                            </ng-template>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div *ngIf="selected != 'Browse by Institution'">
-                    <div class="col-md-12 padding_top4p padding_bottom3p by-collection">
-                        <div *ngFor="let collection of collections; let i = index">
-                            <div class="clearfix" *ngIf="i % 3 == 0"></div>
-                            <div class="col-md-4 text-left">
-                                <div class="ac-item-container">
-                                    <div
-                                            [attr.name]="collection.name"
-                                            class="ac-title"
-                                            (click)="toggleCollection($event, collection.realName)">
-                                        <span class="item-name">{{ collection.name }}</span>
-                                        <span class="item-count">[{{ collection.count }}]</span>
-                                    </div>
-                                    <div class="ac-body">
-                                        <div style="margin-left: 15px;">
-                                            <div *ngIf="isLoadedCollection(collection.realName); else loadingBlock">
-                                                <div *ngIf="universitiesByCollections[collection.realName].length > 0; else elseBlock">
-                                                    <div *ngFor="let university of universitiesByCollections[collection.name]" (click)="universityClick(university.realName)">
-                                                        <span class="item-name">{{ university.name }}</span>
-                                                        <span class="item-count">[{{ university.count }}]</span>
+                    <div *ngIf="selected != 'Browse by Institution'">
+                        <div class="col-md-12 padding_top4p padding_bottom3p by-collection">
+                            <div *ngFor="let collection of collections; let i = index">
+                                <div class="clearfix" *ngIf="i % 3 == 0"></div>
+                                <div class="col-md-4 text-left">
+                                    <div class="ac-item-container">
+                                        <div
+                                                [attr.name]="collection.name"
+                                                class="ac-title"
+                                                (click)="toggleCollection($event, collection.realName)">
+                                            <span class="item-name">{{ collection.name }}</span>
+                                            <span class="item-count">[{{ collection.count }}]</span>
+                                        </div>
+                                        <div class="ac-body">
+                                            <div style="margin-left: 15px;">
+                                                <div *ngIf="isLoadedCollection(collection.realName); else loadingBlock">
+                                                    <div *ngIf="universitiesByCollections[collection.realName].length > 0; else elseBlock">
+                                                        <div *ngFor="let university of universitiesByCollections[collection.name]" (click)="universityClick(university.realName)">
+                                                            <span class="item-name">{{ university.name }}</span>
+                                                            <span class="item-count">[{{ university.count }}]</span>
+                                                        </div>
                                                     </div>
+                                                    <ng-template #elseBlock>
+                                                        No collections found.
+                                                    </ng-template>
                                                 </div>
-                                                <ng-template #elseBlock>
-                                                    No collections found.
+                                                <ng-template #loadingBlock>
+                                                    Loading...
                                                 </ng-template>
                                             </div>
-                                            <ng-template #loadingBlock>
-                                                Loading...
-                                            </ng-template>
                                         </div>
                                     </div>
                                 </div>

@@ -6,83 +6,85 @@
       </div>
     </div>
   </div>
-  <div class="col-md-12 padding_top2p padding_bottom3p">
-    <div class="col-md-12">
-      <ol class="breadcrumb">
-        <li><a [routerLink]="search">Search Results </a></li>
-        <li class="active">{{ item?item.title:"Not found" }}</li>
-      </ol>
-      <hr>
-      <div *ngIf="item; else elseBlock">
-        <div class="col-md-3 padding_bottom3p">
-          <img src='{{ item.thumbnailExists ? item.thumbnailExists : "/assets/img/title-not-found.png"}}' alt="">
-        </div>
-        <div class="col-md-6">
-          <dl class="dl-horizontal">
-            <dt>Title: </dt>
-            <dd>{{ item.title }}</dd>
-            <br>
-            <dt>Alternate Title:</dt>
-            <dd>{{ item.alternateTitle }}</dd>
-            <dt>First Line: </dt>
-            <dd>{{ item.firstLine }}</dd>
-            <br>
-            <dt>External Link(s): </dt>
-            <dd>{{ item.externalLinks }}</dd>
-            <br>
-            <dt>Collection: </dt>
-            <dd>{{ item.collection }}</dd>
-            <dt>Institution: </dt>
-            <dd>{{ item.institution }}</dd>
-            <dt>Author: </dt>
-            <dd>{{ item.author }}</dd>
-            <dt>Date: </dt>
-            <dd>{{ item.date }}</dd>
-            <br>
-            <dt>Alternative Title: </dt>
-            <dd>{{ item.alternativeTitle }}</dd>
-            <dt>Subject Description: </dt>
-            <dd>{{ item.subjectDescription }}</dd>
-            <dt>Abstract: </dt>
-            <dd>{{ item.abstract }}</dd>
-            <br>
-            <dt>Source: </dt>
-            <dd>{{ item.source }}</dd>
-            <dt>Rights: </dt>
-            <dd>{{ item.rights }}</dd>
-            <dt>Language: </dt>
-            <dd>{{ item.language }}</dd>
-            <dt>Identifier: </dt>
-            <dd>{{ item.identifier }}</dd>
-          </dl>
-        </div>
-        <div class="col-md-3">
-          <div class="padding_bottom5p">
-            <a target="_blank" [href]="item.identifier" class="btn btn-block btn-blue view-button">View item at University of Hong Kong’s site</a>
+  <div class="container">
+    <div class="col-md-12 padding_top2p padding_bottom3p">
+      <div class="col-md-12">
+        <ol class="breadcrumb">
+          <li><a [routerLink]="search">Search Results </a></li>
+          <li class="active">{{ item?item.title:"Not found" }}</li>
+        </ol>
+        <hr>
+        <div *ngIf="item; else elseBlock">
+          <div class="col-md-3 padding_bottom3p">
+            <img src='{{ item.thumbnailExists ? item.thumbnailExists : "/assets/img/title-not-found.png"}}' alt="">
           </div>
-          <dl>
-            <dt>Can I Use It?</dt>
-            <dd>
-              <p>No Re-use</p>
-              <a href="#" class="blue">© In Copyright</a>
-            </dd>
-            <br>
-            <dt>Share</dt>
-            <dd>
-              <ul class="list-inline social-icons">
-                <li><a href="#"><img src="../../assets/img/icon-fb.png" alt=""></a></li>
-                <li><a href="#"><img src="../../assets/img/icon-tw.png" alt=""></a></li>
-                <li><a href="#"><img src="../../assets/img/icon-pt.png" alt=""></a></li>
-                <li><a href="#"><img src="../../assets/img/icon-inst.png" alt=""></a></li>
-                <li><a href="#"><img src="../../assets/img/icon-tb.png" alt=""></a></li>
-              </ul>
-            </dd>
-          </dl>
+          <div class="col-md-6">
+            <dl class="dl-horizontal">
+              <dt>Title: </dt>
+              <dd>{{ item.title }}</dd>
+              <br>
+              <dt>Alternate Title:</dt>
+              <dd>{{ item.alternateTitle }}</dd>
+              <dt>First Line: </dt>
+              <dd>{{ item.firstLine }}</dd>
+              <br>
+              <dt>External Link(s): </dt>
+              <dd>{{ item.externalLinks }}</dd>
+              <br>
+              <dt>Collection: </dt>
+              <dd>{{ item.collection }}</dd>
+              <dt>Institution: </dt>
+              <dd>{{ item.institution }}</dd>
+              <dt>Author: </dt>
+              <dd>{{ item.author }}</dd>
+              <dt>Date: </dt>
+              <dd>{{ item.date }}</dd>
+              <br>
+              <dt>Alternative Title: </dt>
+              <dd>{{ item.alternativeTitle }}</dd>
+              <dt>Subject Description: </dt>
+              <dd>{{ item.subjectDescription }}</dd>
+              <dt>Abstract: </dt>
+              <dd>{{ item.abstract }}</dd>
+              <br>
+              <dt>Source: </dt>
+              <dd>{{ item.source }}</dd>
+              <dt>Rights: </dt>
+              <dd>{{ item.rights }}</dd>
+              <dt>Language: </dt>
+              <dd>{{ item.language }}</dd>
+              <dt>Identifier: </dt>
+              <dd>{{ item.identifier }}</dd>
+            </dl>
+          </div>
+          <div class="col-md-3">
+            <div class="padding_bottom5p">
+              <a target="_blank" [href]="item.identifier" class="btn btn-block btn-blue view-button">View Item at University of Hong Kong’s site</a>
+            </div>
+            <dl>
+              <dt>Can I Use It?</dt>
+              <dd>
+                <p>No Re-use</p>
+                <a href="#" class="blue">© In Copyright</a>
+              </dd>
+              <br>
+              <dt>Share</dt>
+              <dd>
+                <ul class="list-inline social-icons">
+                  <li><a href="#"><img src="../../assets/img/icon-fb.png" alt=""></a></li>
+                  <li><a href="#"><img src="../../assets/img/icon-tw.png" alt=""></a></li>
+                  <li><a href="#"><img src="../../assets/img/icon-pt.png" alt=""></a></li>
+                  <li><a href="#"><img src="../../assets/img/icon-inst.png" alt=""></a></li>
+                  <li><a href="#"><img src="../../assets/img/icon-tb.png" alt=""></a></li>
+                </ul>
+              </dd>
+            </dl>
+          </div>
         </div>
+        <ng-template #elseBlock>
+          No result found.
+        </ng-template>
       </div>
-      <ng-template #elseBlock>
-        No result found.
-      </ng-template>
     </div>
   </div>
 </div>

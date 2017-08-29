@@ -5,28 +5,30 @@
         <app-general-search-box></app-general-search-box>
       </div>
     </div>
-    <div class="padding_top4p padding_bottom3p">
-      <div class="col-md-12">
-        <div class="col-md-3">
-          <h3><span class="bottom-line blue">Exhibitions</span></h3>
-        </div>
+    <div class="container">
+      <div class="padding_top4p padding_bottom3p">
         <div class="col-md-12">
-          <p>Blurb about the institutions. Lorem ipsum dolor sit amet, amet mi libero lobortis nullam, hac est
-            augue
-            lacinia mauris adipiscing pede. Magna suspendisse pellentesque varius a sit urna, iaculis
-            incidunt egestas
-            hendrerit ac, justo in non eleifend varius integer arcu, donecdui turpis id pellentesque, vel
-            morbi. Wisi
-            non ac. Urna nibh nunc proin accumsan donec nibh, laboriosam.</p>
+          <div class="col-md-3">
+            <h3><span class="bottom-line blue">Exhibitions</span></h3>
+          </div>
+          <div class="col-md-12">
+            <p>Blurb about the institutions. Lorem ipsum dolor sit amet, amet mi libero lobortis nullam, hac est
+              augue
+              lacinia mauris adipiscing pede. Magna suspendisse pellentesque varius a sit urna, iaculis
+              incidunt egestas
+              hendrerit ac, justo in non eleifend varius integer arcu, donecdui turpis id pellentesque, vel
+              morbi. Wisi
+              non ac. Urna nibh nunc proin accumsan donec nibh, laboriosam.</p>
+          </div>
         </div>
-      </div>
-      <div class="col-md-12 padding_top4p padding_bottom3p text-center explore-collection-control">
-        <div class="col-md-4 col-sm-6 padding_top2p text-left" *ngFor="let collection of collections">
-          <div class="cover-image height200" style="background-image: url('../../assets/img/item_img1.png');"></div>
-          <h5 class="padding_top2p"><strong>{{ collection.name }}</strong></h5>
-          <p class="padding_top2p">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
-            euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim. </p>
-          <a class="btn btn-blue ma" (click)="clickOnViewCollection(collection.realName)">View</a>
+        <div class="col-md-12 padding_top4p padding_bottom3p text-center explore-collection-control">
+          <div class="col-md-4 col-sm-6 padding_top2p text-left" *ngFor="let collection of collections">
+            <div class="cover-image exhibitions-height" style="background-image: url('../../assets/img/item_img1.png');"></div>
+            <h5 class="padding_top2p capitalize"><strong>{{ collection.name }}</strong></h5>
+            <p class="padding_top2p">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
+              euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim. </p>
+            <a class="btn btn-blue view-button" (click)="clickOnViewCollection(collection.realName)">View</a>
+          </div>
         </div>
       </div>
     </div>
