@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {TestService} from "../services/test.service";
 import {ActivatedRoute, Router} from "@angular/router";
+import {ErrorComponent} from "../error/error.component";
 
 @Component({
   selector: 'app-exhibitions',
@@ -17,6 +18,8 @@ export class ExhibitionsComponent implements OnInit {
   ngOnInit() {
       this.testService.getCollections().subscribe(data => {
           this.collections = data.collections;
+      }, error => {
+          ErrorComponent.showBackend();
       });
   }
 

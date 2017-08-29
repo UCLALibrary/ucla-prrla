@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {TestService} from '../services/test.service';
 import {ActivatedRoute, Params, Router} from '@angular/router';
 import {Subscription} from 'rxjs/Subscription';
+import {ErrorComponent} from "../error/error.component";
 
 @Component({
     selector: 'app-institution',
@@ -29,6 +30,8 @@ export class InstitutionComponent implements OnInit {
 
                 this.testService.getPrrlaMemberInfoByName(this.name).subscribe(data => {
                     this.memberInfo = data.memberInfo;
+                }, error => {
+                    ErrorComponent.showBackend();
                 });
 
                 this.testService.getCollectionsByUniversity(this.name).subscribe(data => {

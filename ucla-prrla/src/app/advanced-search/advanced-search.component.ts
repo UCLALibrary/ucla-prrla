@@ -3,6 +3,7 @@ import {TestService} from '../services/test.service';
 import {ActivatedRoute, Params, Router} from '@angular/router';
 import {element} from 'protractor';
 import {Subscription} from 'rxjs/Subscription';
+import {ErrorComponent} from "../error/error.component";
 
 @Component({
     selector: 'app-advanced-search',
@@ -80,6 +81,9 @@ export class AdvancedSearchComponent implements OnInit {
             this.items = data.items;
             this.pager = this.testService.getPager(data.totalItems, page);
             this.itemFilters = data.itemFilters;
+            document.getElementById('loading').style.display = 'none';
+        }, error => {
+            ErrorComponent.showBackend();
             document.getElementById('loading').style.display = 'none';
         });
     }
