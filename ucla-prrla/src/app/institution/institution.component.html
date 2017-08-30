@@ -17,11 +17,11 @@
                     <div>
                         <dl class="dl-horizontal">
                             <dt>Location: </dt>
-                            <dd></dd>
+                            <dd>{{ memberInfo.prrla_member_location }}</dd>
                             <dt>Phone: </dt>
-                            <dd></dd>
+                            <dd>{{ memberInfo.prrla_member_phone }}</dd>
                             <dt>Email: </dt>
-                            <dd></dd>
+                            <dd><a href="mailto:{{ memberInfo.prrla_member_email }}">{{ memberInfo.prrla_member_email }}</a></dd>
                             <dt>Website: </dt>
                             <dd><a href="{{ memberInfo.prrla_member_website }}" target="_blank">{{ memberInfo.prrla_member_website }}</a></dd>
                         </dl>
