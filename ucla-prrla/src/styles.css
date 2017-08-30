@@ -745,6 +745,10 @@ a{
     background-image: url('assets/img/icon-pt.png')!important;
     background-size: cover!important;
 }
+.n2s-share-btn-instagram{
+    background-image: url('assets/img/icon-inst.png')!important;
+    background-size: cover!important;
+}
 .n2s-share-btn-reddit{
     background: #FF5700;
     font-size: 1.1rem;
