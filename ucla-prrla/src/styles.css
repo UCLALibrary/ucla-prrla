@@ -673,3 +673,16 @@ footer{
 /*body {*/
     /*top: 0px !important;*/
 /*}*/
+
+.error-box{
+    margin-top: 1rem;
+
+    padding: .75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+
+    background-color: #f2dede;
+    border-color: #ebcccc;
+    color: #a94442;
+}
