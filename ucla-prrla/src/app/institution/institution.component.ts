@@ -38,9 +38,7 @@ export class InstitutionComponent  implements OnInit {
                 this.testService.getCollectionsByUniversity(this.name).subscribe(data => {
                     this.collections = data.collections;
                 });
-                console.log(this.collections);
             }
-
         );
 
     }
