@@ -5,12 +5,13 @@ import {Subscription} from 'rxjs/Subscription';
 
 
 import { books } from '../../data/books';
-import {ErrorComponent} from "../error/error.component";
+import {ErrorComponent} from '../error/error.component';
 
 @Component({
   selector: 'app-detail-item',
   templateUrl: './detail-item.component.html'
 })
+
 // export class DetailItemComponent implements OnInit, OnDestroy {
 //   private id;
 //   private route$: Subscription;

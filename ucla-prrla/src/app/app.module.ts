@@ -4,6 +4,7 @@ import { FormsModule} from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { router, routes} from './app.router';
 import {Ng2PaginationModule} from 'ng2-pagination'; //importing ng2-pagination
+import {ShareModule} from 'ng2share/share.module' //social
 import {HttpModule, JsonpModule} from '@angular/http';
 // import { AccordionModule } from 'ngx-bootstrap';
 import {AccordionModule} from 'ng2-accordion';
@@ -26,9 +27,9 @@ import { ParseJsonPipe } from './parse-json/parse-json.pipe';
 import {DerpPipe} from './derp.pipe';
 import { ExhibitionsComponent } from './exhibitions/exhibitions.component';
 import { GeneralSearchBoxComponent } from './general-search-box/general-search-box.component';
-import {ExhibitionComponent} from "./exhibition/exhibition.component";
-import {InstitutionComponent} from "./institution/institution.component";
-import {ErrorComponent} from "./error/error.component";
+import {ExhibitionComponent} from './exhibition/exhibition.component';
+import {InstitutionComponent} from './institution/institution.component';
+import {ErrorComponent} from './error/error.component';
 
 
 @NgModule({
@@ -62,6 +63,7 @@ import {ErrorComponent} from "./error/error.component";
     HttpModule,
     JsonpModule,
     AccordionModule,
+    ShareModule
   ],
   providers: [BooksService, TestService],
   bootstrap: [AppComponent]

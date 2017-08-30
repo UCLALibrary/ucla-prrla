@@ -2,14 +2,15 @@ import {Component, OnInit} from '@angular/core';
 import {TestService} from '../services/test.service';
 import {ActivatedRoute, Params, Router} from '@angular/router';
 import {Subscription} from 'rxjs/Subscription';
-import {ErrorComponent} from "../error/error.component";
+import {ErrorComponent} from '../error/error.component';
 
 @Component({
     selector: 'app-institution',
     templateUrl: './institution.component.html'
 })
 
-export class InstitutionComponent implements OnInit {
+
+export class InstitutionComponent  implements OnInit {
     private name;
     public memberInfo = {};
     public collections = [];
@@ -39,6 +40,7 @@ export class InstitutionComponent implements OnInit {
                 });
             }
         );
+
     }
 
     ngOnDestroy() {

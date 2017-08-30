@@ -5,19 +5,21 @@
         <app-general-search-box></app-general-search-box>
       </div>
     </div>
-    <div class="col-md-offset-1 col-md-10 padding_top4p padding_bottom3p">
-      <h3><span class="bottom-line blue">INSTITUTIONS</span></h3>
-      <div class="col-md-12 padding_top4p padding_bottom3p">
-        <p>Blurb about the institutions. Lorem ipsum dolor sit amet, amet mi libero lobortis nullam, hac est augue
-          lacinia mauris adipiscing pede. Magna suspendisse pellentesque varius a sit urna, iaculis incidunt egestas
-          hendrerit ac, justo in non eleifend varius integer arcu, donecdui turpis id pellentesque, vel morbi. Wisi
-          non ac. Urna nibh nunc proin accumsan donec nibh, laboriosam.</p>
-      </div>
-      <div class="col-md-12 text-center">
-        <div *ngFor="let institution of institutions; let i = index">
-          <div class="clearfix" *ngIf="i % 3 == 0"></div>
-          <div class="col-md-4">
-              <a href="/institution/?name={{ institution.realName }}">{{ institution.name }}</a>
+    <div class="container">
+      <div class="col-md-offset-1 col-md-10 padding_top4p padding_bottom3p">
+        <h3><span class="bottom-line blue">INSTITUTIONS</span></h3>
+        <div class="col-md-12 padding_top4p padding_bottom3p">
+          <p>Blurb about the institutions. Lorem ipsum dolor sit amet, amet mi libero lobortis nullam, hac est augue
+            lacinia mauris adipiscing pede. Magna suspendisse pellentesque varius a sit urna, iaculis incidunt egestas
+            hendrerit ac, justo in non eleifend varius integer arcu, donecdui turpis id pellentesque, vel morbi. Wisi
+            non ac. Urna nibh nunc proin accumsan donec nibh, laboriosam.</p>
+        </div>
+        <div class="col-md-12 text-center">
+          <div *ngFor="let institution of institutions; let i = index">
+            <div class="clearfix" *ngIf="i % 3 == 0"></div>
+            <div class="col-md-4 institution-list">
+                <a href="/institution/?name={{ institution.realName }}">{{ institution.name }}</a>
+            </div>
           </div>
         </div>
       </div>
