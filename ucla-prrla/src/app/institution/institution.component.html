@@ -10,11 +10,13 @@
         <div class="col-md-12 padding_bottom3p padding_top3p">
             <div class="col-md-12">
                 <div class="col-md-4">
-                    <div class="col-md-offset-2 col-md-10 padding_bottom3p padding_top3p institution-logo">
-                        <img src="../../assets/img/logos/{{ memberInfo.prrla_member_title }}.png" alt="">
+                    <div class="col-md-12 padding_top3p padding_bottom3p">
+                        <div class="col-md-offset-2 col-md-10 padding_bottom3p padding_top3p institution-logo">
+                            <img src="../../assets/img/logos/{{ memberInfo.prrla_member_title }}.png" alt="">
+                        </div>
                     </div>
 
-                    <div>
+                    <div class="col-md-12 padding_top3p padding_bottom3p">
                         <dl class="dl-horizontal">
                             <dt>Location: </dt>
                             <dd>{{ memberInfo.prrla_member_location }}</dd>
@@ -35,10 +37,15 @@
                         <!--<p>{{ memberInfo.prrla_member_website }}</p>-->
                     </div>
                     <div class="col-md-4">
-                        <h3 class="bottom-line blue"><span class="bottom-line blue">Collections</span></h3>
+                        <h3><span class="bottom-line blue">Collections</span></h3>
                     </div>
-                    <div class="col-md-12">
-                        <p><strong>{{ collections | json }}</strong></p>
+                    <!--<div class="col-md-12">-->
+                        <!--<p><strong>{{ collections | json }}</strong></p>-->
+                    <!--</div>-->
+                    <div class="col-md-12" *ngFor="let collectionItem of collections">
+                        <div *ngIf="collectionItem.name">
+                            <p class="capitalize"><strong>{{ collectionItem.name }}</strong><span> [ {{ collectionItem.count }} Records ]</span></p>
+                        </div>
                     </div>
                     <!--<div class="col-md-12">-->
                         <!--<p>{{ collections | json }}</p>-->
