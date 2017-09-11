@@ -48,4 +48,16 @@ export class InstitutionComponent  implements OnInit {
             this.route$.unsubscribe()
         }
     }
+
+    collectionItemClick(collectionName: string) {
+        this.router.navigate(['/search'], {
+            queryParams: {
+                filters: JSON.stringify({
+                    collectionName: [
+                        collectionName
+                    ],
+                })
+            }
+        });
+    }
 }

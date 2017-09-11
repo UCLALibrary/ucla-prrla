@@ -623,6 +623,9 @@ footer{
 .copyright{
     font-size: 12px;
 }
+.cursor-pointer{
+    cursor: pointer;
+}
 .margin-bottom5p{
     margin-bottom: 5%;
 }

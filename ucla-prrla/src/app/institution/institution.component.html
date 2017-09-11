@@ -42,11 +42,21 @@
                     <!--<div class="col-md-12">-->
                         <!--<p><strong>{{ collections | json }}</strong></p>-->
                     <!--</div>-->
-                    <div class="col-md-12" *ngFor="let collectionItem of collections">
-                        <div *ngIf="collectionItem.name">
-                            <p class="capitalize"><strong>{{ collectionItem.name }}</strong><span> [ {{ collectionItem.count }} Records ]</span></p>
+                    <!--<div *ngIf="collections.length > 0; else elseBlock">-->
+                    <!--{{collections}}-->
+                    <div *ngIf="collections.length > 0">
+                        <div class="col-md-12" *ngFor="let collectionItem of collections;">
+                            <div *ngIf="collectionItem.name" (click)="collectionItemClick(collectionItem.realName)">
+                                <p class="capitalize cursor-pointer"><strong>{{ collectionItem.name }}</strong><span> [ {{ collectionItem.count }} Records ]</span></p>
+                            </div>
                         </div>
                     </div>
+                    <div *ngIf="collections.length < 1">
+                        <div class="col-md-12">
+                            <p>No collections are currently available.</p>
+                        </div>
+                    <div>
+                    <!--</div>-->
                     <!--<div class="col-md-12">-->
                         <!--<p>{{ collections | json }}</p>-->
                     <!--</div>-->
