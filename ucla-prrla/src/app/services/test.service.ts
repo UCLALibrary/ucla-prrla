@@ -140,6 +140,10 @@ export class TestService {
                         }
                     }
 
+                    if(filterDisplayName == 'Decade'){
+                        filterItems.sort(TestService.dynamicSort('-name'))
+                    }
+
                     let itemFilter = {
                         name: facet_name,
                         displayName: filterDisplayName,
@@ -239,7 +243,7 @@ export class TestService {
                 break;
             case 'type_keyword':
                 new_name = 'Types';
-                displayFilter = true;
+                displayFilter = false;
                 break;
             case 'creator_keyword':
                 new_name = 'Authors';
@@ -274,6 +278,7 @@ export class TestService {
             this.baseURL + 'select' + '?' +
             'q=*&' +
             'wt=json&' +
+            'sort=institutionName%20asc&' +
             'facet=true&' +
             'rows=0&' +
             'facet.field=institutionName&' +
@@ -300,6 +305,8 @@ export class TestService {
                 }
             }
 
+            universities.sort(TestService.dynamicSort('name'));
+
             return {
                 universities: universities,
             };
@@ -312,6 +319,7 @@ export class TestService {
             '?q=prrla_member_title:*' +
             '&rows=0' +
             '&wt=json' +
+            '&sort=prrla_member_title%20asc' +
             '&indent=true' +
             '&facet=true' +
             '&facet.field=prrla_member_title' +
@@ -375,6 +383,8 @@ export class TestService {
                 }
             }
 
+            collections.sort(TestService.dynamicSort('name'));
+
             return {
                 collections: collections,
             };
@@ -383,14 +393,6 @@ export class TestService {
 
     public getCollectionsByUniversity(universityName){
         let url =
-            // this.baseURL + 'select' + '?' +
-            // 'q=*&' +
-            // 'wt=json&' +
-            // 'facet=true&' +
-            // 'rows=0&' +
-            // 'facet.field=collectionName&' +
-            // 'json.wrf=JSONP_CALLBACK';
-
             this.baseURL + 'select' +
             '?q=institutionName:"' + encodeURIComponent(universityName) + '"' +
             '&rows=-1' +
@@ -399,6 +401,7 @@ export class TestService {
             '&facet.sort=count' +
             '&facet.mincount=1' +
             '&facet.limit=-1' +
+            '&sort=collectionName%20asc' +
             '&wt=json' +
             '&indent=true' +
             '&json.wrf=JSONP_CALLBACK';
@@ -485,5 +488,17 @@ export class TestService {
                 memberInfo: memberInfo
             };
         });
+    }
+
+    public static dynamicSort(property) {
+        let sortOrder = 1;
+        if(property[0] === "-") {
+            sortOrder = -1;
+            property = property.substr(1);
+        }
+        return function (a,b) {
+            let result = (a[property] < b[property]) ? -1 : (a[property] > b[property]) ? 1 : 0;
+            return result * sortOrder;
+        }
     }
 }

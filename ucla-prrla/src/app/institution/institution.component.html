@@ -33,33 +33,22 @@
                     <h3><span class="bottom-line blue">{{ memberInfo.prrla_member_title }}</span></h3>
                     <div class="col-md-12">
                         <p>{{ memberInfo.prrla_member_description }}</p>
-
-                        <!--<p>{{ memberInfo.prrla_member_website }}</p>-->
                     </div>
                     <div class="col-md-4">
                         <h3><span class="bottom-line blue">Collections</span></h3>
                     </div>
-                    <!--<div class="col-md-12">-->
-                        <!--<p><strong>{{ collections | json }}</strong></p>-->
-                    <!--</div>-->
-                    <!--<div *ngIf="collections.length > 0; else elseBlock">-->
-                    <!--{{collections}}-->
-                    <div *ngIf="collections.length > 0">
+                    <div *ngIf="collections.length > 0; else elseNoCollections">
                         <div class="col-md-12" *ngFor="let collectionItem of collections;">
                             <div *ngIf="collectionItem.name" (click)="collectionItemClick(collectionItem.realName)">
                                 <p class="capitalize cursor-pointer"><strong>{{ collectionItem.name }}</strong><span> [ {{ collectionItem.count }} Records ]</span></p>
                             </div>
                         </div>
                     </div>
-                    <div *ngIf="collections.length < 1">
+                    <ng-template #elseNoCollections>
                         <div class="col-md-12">
                             <p>No collections are currently available.</p>
                         </div>
-                    <div>
-                    <!--</div>-->
-                    <!--<div class="col-md-12">-->
-                        <!--<p>{{ collections | json }}</p>-->
-                    <!--</div>-->
+                    </ng-template>
                 </div>
             </div>
         </div>
