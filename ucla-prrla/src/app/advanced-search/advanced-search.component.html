@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-md-12 padding_top3p padding_bottom3p">
+    <div class="col-md-12 padding_bottom3p">
         <div class="cover-image banner-height" style="background-image: url('../../assets/img/china-paper.png');">
             <div class="main-page-block">
                 <div class="search">
@@ -84,13 +84,15 @@
                                                     </ul>
                                                 </div>
                                             </div>
+                                        </div>
+                                        <div class="row">
                                             <div class="col-md-12">
                                                 <div class="row">
                                                     <div class="col-md-6">
-                                                        <div class="col-md-6">
+                                                        <div class="col-md-4">
                                                             <p>Display</p>
                                                         </div>
-                                                        <div class="col-md-6">
+                                                        <div class="col-md-8">
                                                             <div class="row select-wrapper-blue">
                                                                 <select [(ngModel)]="pageSize" (change)="pageSizeChange()">
                                                                     <option *ngFor="let number of [10, 20, 50, 100]" [ngValue]="number">{{ number }}</option>
@@ -100,10 +102,10 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
-                                                        <div class="col-md-6">
+                                                        <div class="col-md-4">
                                                             <p>Sort by</p>
                                                         </div>
-                                                        <div class="col-md-6">
+                                                        <div class="col-md-8">
                                                             <div class="row select-wrapper-blue">
                                                                 <select [(ngModel)]="orderBy" (change)="orderByChange()">
                                                             <option *ngFor="let availableOrder of availableOrders" [ngValue]="availableOrder.value">{{ availableOrder.name }}</option>
@@ -120,7 +122,7 @@
                             </div>
                         </div>
                         <div class="col-md-12 margin-bottom5p" *ngFor="let item of items" style="min-height: 250px;">
-                            <div class="col-md-4">
+                            <div class="col-md-4 padding_bottom2p">
                                 <img src='{{ item.thumbnailExists ? item.thumbnailExists : "/assets/img/title-not-found.png"}}'
                                      alt="">
                             </div>
