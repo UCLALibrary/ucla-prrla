@@ -29,7 +29,7 @@
                             </div>
                         </div>
                     </div>
-                    <div *ngIf="selected == 'Browse by Institution'">
+                    <div *ngIf="selected != 'Browse by Collection Title'">
                         <div class="col-md-12 padding_top4p padding_bottom3p by-institution">
                             <div *ngFor="let university of universities; let i = index">
                                 <div class="clearfix" *ngIf="i % 3 == 0"></div>
@@ -65,7 +65,7 @@
                             </div>
                         </div>
                     </div>
-                    <div *ngIf="selected != 'Browse by Institution'">
+                    <div *ngIf="selected == 'Browse by Collection Title'">
                         <div class="col-md-12 padding_top4p padding_bottom3p by-collection">
                             <div *ngFor="let collection of collections; let i = index">
                                 <div class="clearfix" *ngIf="i % 3 == 0"></div>
