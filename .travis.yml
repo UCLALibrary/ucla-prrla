@@ -35,11 +35,12 @@ install:
 
 script:
   - reponame=${TRAVIS_BUILD_DIR##*/}
+  - travisbranch=${TRAVIS_BRANCH}
   - rootdir=${PWD}
   - 'ls "${rootdir}"'
   - 'cd "${rootdir}"/ucla-prrla'
   - 'npm install'
-  - 'if [ ${TRAVIS_BRANCH} = "develop" ]; then
+  - 'if [ ${travisbranch} = "develop" ]; then
         node_modules/.bin/ng build;
         aws s3 sync --delete dist/ s3://test-prl.library.ucla.edu;
      else
