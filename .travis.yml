@@ -1,4 +1,6 @@
-ty
+
+---
+dist: trusty
 sudo: required
 
 language: bash
