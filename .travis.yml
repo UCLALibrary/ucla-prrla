@@ -1,0 +1,55 @@
+ty
+sudo: required
+
+language: bash
+
+env:
+  global:
+  - secure: "TRu8K015ngAQwE558Zrj/e0yZGNXLsWVZyswFV20FRQLUcdTypYE52uDut0u6s776TW39uceL9VxCg2T/m7+NZ0UbC+DTXnzhGDFmWJAYt55xRiDODCMFIugIsrCOqFBfnqHrn56I7RXoB3BIZ1SKmrjTCSa1M5WQ+dmUYXtcefxvrXp2bBBxmjCglSxJwz6RUiztqDk5sWnmMzIL407WGX+aERtZAUORoy2QRXnU87bvSpHY2yjbjlxFYTSVMvfOZWxojW+QKGX5VBcButYTMT6ZAc2FW+N44tGfsdvQydvjMiCDfKC2CQ37numnj6cghgARl+aTq+xrGNHNv+WZj/iaLy8D/KFbZlRh4TYgRZra8u+aPj4+BKav5/kKnuFzrXrNDA0XNxPaBjoUf4I7DS4AxaKqsneMReOkRbVso/OnyCXYCfP4DMKnQAKI6KlktKOkk0cHydciQLimglTPVBrgZvPRpLqRG8Vc9k53RFpr2uq6ug7X+L4MwyGijgwqlniEMMn8f+Btu2qAh/klfMQqJ23Q+uiEVhIZMlgG/IhiUBHV2+tD/iPNbnfei8voPTgrNxa2iO07fXBnE9F6rRURwZUuKFYroCGdViIJy+PW3JIVkUX3bHBwnbTRYp1apGUmrYkv+/f9pQfdKNo8OGqy/nWFOzW5jZ98RUzE38="
+  - secure: "phEkjGJYKwn28sspHH2KD8DYyDNymG+XQFwtqDVz3nUm0zECMePEjsJV0ZlSio+s1axXT5cM0gFuWYTXjFfN76FkL/3MaJXM3W30FHZ6Z0zK2LXmcrGRc9IIODeuX/pO8Ojz5a6ItePxJV4/QjNE+ENeKo8NXZg9KDKAZgYmecUqWpx3AM+OJsjzE4EA9d+IdYVb9kPqsIR4ujTsyzeWgZhr2wNRa1Ha2dytZeUm/zJIgtbzCqdauw7bh8ZxYf/9hZScr8xBnFXnlfUtQDbxgs+bEA63rDnqD8WyrOmNYm/0ZCLPT80APnsWJZ7e06n88JItpJJ/q6n90CJ2+8Gn6xjdCjYC7gVARsgkZ4Hw/Y8pZEjWHzW1g4DRwzF6ijKiO6/DRr7P1Y28JaYwuMJBtx4+Tt1ptVjzo4YE2Ih57Gyv6Lic0p4/o1Hg1UI/AF3m9TKcmaXs/GkxvfhjhterMX6NUIt/3KjjctDXXlypV13suA5rYwnWHuebO1clrSAFL5rgOGqQtAbakYYwP+DO+qeOk4pC04aGRsFKIKlfpW3CohvrY7qmxpzEexhRZLn9jtOKUXwX5Lse1FU3IoqtBnk3t6y2e5DraD8eVV6KiOlFxHtI8vNqbANhZ+UbRzTeBS1c8otw1GQ2VQJ2L4y030381Nfw/I79Gr/hURkrnRc="
+  - secure: "pj/28nJRplS6grPkZjPQeSv7hiC/22jWCEez9IBEupUstmeflX+pao0hZmG6lpsFeowVY4CRBS1vHsvN4onM/R5Z0atF8uDbYxfwx1lJKMPLbzOQErjyXiCxQ8tV1yY+2+OXUOyskEMJVURN39M3TsMgjIhuABm/3QxpAZM7l/ll6DoRFTsbr45sfsYU6zIgaXdPWm05yvJO6/d7KUAEb7pu7ln4lqdc3lODFFmSu212sb+bHFn6S6wsJ96kkY8db7db/gX0imOfhue8zJRajgiPNdPMThYBuJ08pXEOBGGFXzIuV/KPY7vZiencWevHSpRHv2A4ldfFTINuWPfTmeXdst7VRtJpjKLO2DqXFGhevJ6DlHRzwNZZCphaxsygmVNyM3TZ4v9YMF76bhA/I2E8rmBnGJ99Jw/f9kLnIR4+ST53cUoA4agOUbh27Xa+dbvp5vXoNej8z/xRlTNzlHCLU7I0UgjEcceAcwCthqcDuhXN34i5hMNMSHP6BO+5pfDR8hAjc05SjAMccGIdE08UuNoF5TNeYlRVltFFWdS+OCsJ6gAjdldHAQ1SkF+nGqxv2DDUrRh8gkkS/PBkQ4cqpcSpTzHPh4EeDGA73cT4Ph743eFGNAET5c7QkcEC1Wktb0zhD0g7w5gPOQLAc+A4ec8QiEQ7AY9+M58n+cI="
+  - secure: "flL5jaNBc1TcAS+m/tls8lN2DA+UcKdcJxkeIv1Mokyr/lcLTDqfF9t+FzCDpmjm1pVE6aM26ACUNmezN6O4jsjax1oLtRqGokBBEzSL2q5itao+Td+r/JUQyN+ZdPckoroKujUqdbzmRkn9AaNGKMqbtEya4RViDG3lhj3YT7aC6ckJYZeBuNohO/MbJWayNP2b3PjzsnTk7+OgtnrXowdpoY9KhSlXLinbUiXyGCIdbdzpmd75P6/sgmiba4fAO0QUfbT7ldvkl/FvUG0rBAVFshzarrNNDCpQ0blAUreojYZp4wiGttuEa6t5BDO1xaqg+IRudVNFt93XyJ2ahIa9huIonwSJ0pLedGTw4thfUy9Rs2lwVfPP/kmxm+eoskK2ziWKvsaJTg1yT2gmZ79lTjd2hZycZMGk+CCBWzhgUpCokRzHqnsIAGd4ayLlAz6r/+7vc/dhZh8AKVt3+V415uSF/AeDQ8+CMSrCOnX/04/N+5oxinTOOY7ZkFUdn5wdWmN0IhDainbY8HdU0JlMiIpXsEiINbWljcJ60Tc01NoiAAeE4iUTsyfME/exXvzS9EYpraX0JS3gc9yhkgW3EDNxYxpyeqWY5Vg72pkkUxEFQArIuANCjrg697bF8Y4MqMCkSG4BRqif1jB4WsKF9JC9lvV10ju6WTQx7bc="
+
+install:
+  - 'curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -'
+  - 'sudo apt-get install -y build-essential'
+  - 'sudo apt-get install -y nodejs'
+  - 'sudo apt-get install -y python-pip'
+  - 'sudo pip install awscli'
+  - 'mkdir ~/.aws'
+  - 'touch ~/.aws/credentials'
+  - 'touch ~/.aws/config'
+  - 'chmod 600 ~/.aws/config'
+  - 'echo "[default]" >> ~/.aws/config'
+  - 'echo "output = json" >> ~/.aws/config'
+  - 'echo "region = us-west-2" >> ~/.aws/config'
+  - 'echo "[default]" >> ~/.aws/credentials'
+  - 'if [ ${TRAVIS_BRANCH} = "develop" ]; then
+        echo "aws_access_key_id=$TEST_AWS_ACCESS_KEY" >> ~/.aws/credentials;
+        echo "aws_secret_access_key=$TEST_AWS_SECRET_KEY" >> ~/.aws/credentials;
+     else
+        echo "aws_access_key_id=$PROD_AWS_ACCESS_KEY" >> ~/.aws/credentials;
+        echo "aws_secret_access_key=$PROD_AWS_SECRET_KEY" >> ~/.aws/credentials;
+     fi'
+
+script:
+  - reponame=${TRAVIS_BUILD_DIR##*/}
+  - rootdir=${PWD}
+  - 'ls "${rootdir}"'
+  - 'cd "${rootdir}"/ucla-prrla'
+  - 'npm install'
+  - 'if [ ${TRAVIS_BRANCH} = "develop" ]; then
+        node_modules/.bin/ng build;
+        aws s3 sync --delete dist/ s3://test-prl.library.ucla.edu;
+     else
+#        node_modules/.bin/ng build -prod;
+        node_modules/.bin/ng build;
+        aws s3 sync --delete dist/ s3://prl.library.ucla.edu;
+     fi'
+
+notifications:
+  email:
+    recipients:
+      - avuong@library.ucla.edu
+    on_success: change
+    on_failure: change
