@@ -25,7 +25,7 @@ install:
   - 'echo "output = json" >> ~/.aws/config'
   - 'echo "region = us-west-2" >> ~/.aws/config'
   - 'echo "[default]" >> ~/.aws/credentials'
-  - 'if [ ${TRAVIS_BRANCH} = "develop" ]; then
+  - 'if [ ${TRAVIS_BRANCH} = "master" ]; then
         echo "aws_access_key_id=$TEST_AWS_ACCESS_KEY" >> ~/.aws/credentials;
         echo "aws_secret_access_key=$TEST_AWS_SECRET_KEY" >> ~/.aws/credentials;
      else
@@ -39,12 +39,12 @@ script:
   - 'ls "${rootdir}"'
   - 'cd "${rootdir}"/ucla-prrla'
   - 'npm install'
-  - 'if [ ${TRAVIS_BRANCH} = "develop" ]; then
+  - 'if [ ${TRAVIS_BRANCH} = "master" ]; then
         node_modules/.bin/ng build;
         aws s3 sync --delete dist/ s3://test-prl.library.ucla.edu;
      else
         node_modules/.bin/ng build;
-        aws s3 sync --delete dist/ s3://test-prl.library.ucla.edu;
+        aws s3 sync --delete dist/ s3://prl.library.ucla.edu;
      fi'
 
 notifications:
