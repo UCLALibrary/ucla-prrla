@@ -145,6 +145,10 @@ header{
 .goog-te-menu-value > span{
     border: none!important;
 }
+.logo{
+    position: relative;
+    top: -30px;
+}
 /*.translate .language-btn.active, .translate .language-btn:hover{*/
     /*color: #fff;*/
 /*}*/

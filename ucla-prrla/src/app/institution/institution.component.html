@@ -11,8 +11,10 @@
             <div class="col-md-12">
                 <div class="col-md-4">
                     <div class="col-md-12 padding_top3p padding_bottom3p">
-                        <div class="col-md-offset-2 col-md-10 padding_bottom3p padding_top3p institution-logo">
-                            <img src="../../assets/img/logos/{{ memberInfo.prrla_member_title }}.png" alt="">
+                        <div class="row">
+                            <div class="col-md-12 padding_bottom3p padding_top3p institution-logo">
+                                <img src="../../assets/img/logos/{{ memberInfo.prrla_member_title }}.png" alt="">
+                            </div>
                         </div>
                     </div>
 
@@ -23,7 +25,7 @@
                             <dt>Phone: </dt>
                             <dd>{{ memberInfo.prrla_member_phone }}</dd>
                             <dt>Email: </dt>
-                            <dd><a href="mailto:{{ memberInfo.prrla_member_email }}">{{ memberInfo.prrla_member_email }}</a></dd>
+                            <dd><a href="{{ memberInfo.prrla_member_email }}">{{ memberInfo.prrla_member_email }}</a></dd>
                             <dt>Website: </dt>
                             <dd><a href="{{ memberInfo.prrla_member_website }}" target="_blank">{{ memberInfo.prrla_member_website }}</a></dd>
                         </dl>
