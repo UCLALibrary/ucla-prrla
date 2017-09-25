@@ -21,6 +21,12 @@ export class TestService {
 
     }
 
+    public static escapeLucene(value){
+        let specials = ['+', '-', '&', '!', '(', ')', '{', '}', '[', ']', '^', '"', '~', '*', '?', ':', '\\'];
+        let regexp = new RegExp("(\\" + specials.join("|\\") + ")", "g");
+        return value.replace(regexp, "\\$1");
+    }
+
     public getPager(totalItems: number, currentPage: number = 1, pageSize: number = this.pageSize) {
         // calculate total pages
         let totalPages = Math.ceil(totalItems / pageSize);
@@ -76,7 +82,7 @@ export class TestService {
         let offset = (page - 1) * this.pageSize;
         let url =
             this.baseURL + 'select' + '?' +
-            'q=' + encodeURI(search) + '&' +
+            'q=' + TestService.escapeLucene(encodeURI(search)) + '&' +
             'rows=' + this.pageSize + '&' +
             'start=' + offset + '&' +
             'wt=json&' +
@@ -93,6 +99,7 @@ export class TestService {
             'facet.field=source_keyword&' +
             'facet.field=description_keyword&' +
             'facet.field=identifier_keyword&' +
+            'facet.field=thumbnail_url&' +
             'json.wrf=JSONP_CALLBACK';
 
         for(let filterName in filters){
@@ -103,8 +110,6 @@ export class TestService {
         }
 
         return this._jsonp.get(url).map(data => {
-            console.log(data.json());
-
             let totalRecords = data.json().response.numFound;
             let raw_items = data.json().response.docs;
             let items = [];
@@ -165,7 +170,7 @@ export class TestService {
     public getItemById(id){
         let url =
             this.baseURL + 'select' + '?' +
-            'q=' + encodeURI('id:' + id) + '&' +
+            'q=' + TestService.escapeLucene(encodeURI('id:' + id)) + '&' +
             'indent=true&' +
             'wt=json&' +
             'json.wrf=JSONP_CALLBACK';
@@ -196,6 +201,7 @@ export class TestService {
             description: false,
             identifier: false,
             decade: false,
+            thumbnail_url: '/assets/img/no-thumb.png',
         };
 
         for(let ii in raw_item.titles){
@@ -203,6 +209,10 @@ export class TestService {
 
             item = this.fillItemWithEndStringModificator(item, title, 'alternative_title', '[alternative title]');
             item = this.fillItemWithEndStringModificator(item, title, 'first_line', '[first line]');
+        }
+
+        if(typeof raw_item['thumbnail_url'] !== 'undefined'){
+            item['thumbnail_url'] = raw_item['thumbnail_url'];
         }
 
         // item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'collectionName', 'collection');
@@ -394,7 +404,7 @@ export class TestService {
     public getCollectionsByUniversity(universityName){
         let url =
             this.baseURL + 'select' +
-            '?q=institutionName:"' + encodeURIComponent(universityName) + '"' +
+            '?q=institutionName:' + TestService.escapeLucene('"' + encodeURIComponent(universityName) + '"') +
             '&rows=-1' +
             '&facet=true' +
             '&facet.field=collectionName' +
@@ -475,7 +485,7 @@ export class TestService {
     public getPrrlaMemberInfoByName(name){
         let url =
             this.baseURL + 'select' +
-            '?q=prrla_member_title:"' + encodeURIComponent(name) + '"' +
+            '?q=prrla_member_title:' + TestService.escapeLucene('"' + encodeURIComponent(name) + '"') +
             '&wt=json' +
             '&indent=true' +
             '&json.wrf=JSONP_CALLBACK';
