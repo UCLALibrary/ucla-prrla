@@ -52,15 +52,15 @@
             <div class="col-md-9 border-left padding_bottom5p">
                 <div *ngIf="!initializing_first_time; else initializingPageBlock">
                     <div *ngIf="items.length > 0; else elseBlock">
-                        <div class="">
+                        <div class="row">
                             <div class="col-md-12 margin-bottom5p">
                                 <div class="row">
-                                    <div class="col-md-4">
+                                    <div class="col-md-2">
                                         <div class="row">
 
                                         </div>
                                     </div>
-                                    <div class="col-md-8">
+                                    <div class="col-md-10">
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div aria-label="Page navigation">
@@ -87,13 +87,13 @@
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <div class="col-md-12">
+                                            <div class="col-md-offset-4 col-md-8">
                                                 <div class="row">
                                                     <div class="col-md-6">
-                                                        <div class="col-md-4">
+                                                        <div class="col-md-6">
                                                             <p>Display</p>
                                                         </div>
-                                                        <div class="col-md-8">
+                                                        <div class="col-md-6">
                                                             <div class="row select-wrapper-blue">
                                                                 <select [(ngModel)]="pageSize" (change)="pageSizeChange()">
                                                                     <option *ngFor="let number of [10, 20, 50, 100]" [ngValue]="number">{{ number }}</option>
@@ -103,10 +103,10 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
-                                                        <div class="col-md-4">
+                                                        <div class="col-md-6">
                                                             <p>Sort by</p>
                                                         </div>
-                                                        <div class="col-md-8">
+                                                        <div class="col-md-6">
                                                             <div class="row select-wrapper-blue">
                                                                 <select [(ngModel)]="orderBy" (change)="orderByChange()">
                                                             <option *ngFor="let availableOrder of availableOrders" [ngValue]="availableOrder.value">{{ availableOrder.name }}</option>
@@ -123,11 +123,11 @@
                             </div>
                         </div>
                         <div class="col-md-12 margin-bottom5p" *ngFor="let item of items" style="min-height: 250px;">
-                            <div class="col-md-4 padding_bottom2p">
+                            <div class="col-md-4 col-sm-4 padding_bottom2p">
                                 <img src='{{ item.thumbnail_url }}'
                                      alt="">
                             </div>
-                            <div class="col-md-8">
+                            <div class="col-md-8 col-sm-8">
                                 <dl class="dl-horizontal">
                                     <dt>Title:</dt>
                                     <dd class="padding_bottom3p"><strong class="title-in-search-item">{{ item.title }}</strong></dd>

@@ -7,6 +7,7 @@
             </div>
         </div>
     </div>
+</div>
 
         <div class="row">
             <!--<div class="col-md-3 padding_top2p">-->
@@ -103,13 +104,13 @@
                             <dl class="dl-horizontal">
                                 <dt>Title:</dt>
                                 <dd><strong class="title-in-search-item">{{ item.title }}</strong></dd>
-                                <!--<dt>Alternate Title:</dt>-->
-                                <!--<dd>{{ item.alternative_title?item.alternative_title:"n/a" }}</dd>-->
-                                <!--<dt>First Line:</dt>-->
-                                <!--<dd>{{ item.first_line?item.first_line:"n/a" }}</dd>-->
-                                <!--<br>-->
-                                <!--<dt>External Link(s):</dt>-->
-                                <!--<dd>{{ item.identifier?item.identifier:"n/a" }}</dd>-->
+                                <dt>Alternate Title:</dt>
+                                <dd>{{ item.alternative_title?item.alternative_title:"n/a" }}</dd>
+                                <dt>First Line:</dt>
+                                <dd>{{ item.first_line?item.first_line:"n/a" }}</dd>
+                                <br>
+                                <dt>External Link(s):</dt>
+                                <dd>{{ item.identifier?item.identifier:"n/a" }}</dd>
                                 <!--<br><br>-->
                                 <div *ngIf="item.collection">
                                     <dt>Collection:</dt>
@@ -127,22 +128,22 @@
                                     <dt>Date:</dt>
                                     <dd>{{ item.decade?item.decade:"n/a" }}</dd>
                                 </div>
-                                <!--<br>-->
-                                <!--<dt>Alternative Title:</dt>-->
-                                <!--<dd>n/a</dd>-->
-                                <!--<dt>Subject Description:</dt>-->
-                                <!--<dd>{{ item.description?item.description:"n/a" }}</dd>-->
-                                <!--<dt>Abstract:</dt>-->
-                                <!--<dd>n/a</dd>-->
-                                <!--<br>-->
-                                <!--<dt>Source:</dt>-->
-                                <!--<dd>{{ item.source?item.source:"n/a" }}</dd>-->
-                                <!--<dt>Rights:</dt>-->
-                                <!--<dd>{{ item.rights?item.rights:"n/a" }}</dd>-->
-                                <!--<dt>Language:</dt>-->
-                                <!--<dd>{{ item.language?item.language:"n/a" }}</dd>-->
-                                <!--<dt>Identifier:</dt>-->
-                                <!--<dd>{{ item.identifier?item.identifier:"n/a" }}</dd>-->
+                                <br>
+                                <dt>Alternative Title:</dt>
+                                <dd>n/a</dd>
+                                <dt>Subject Description:</dt>
+                                <dd>{{ item.description?item.description:"n/a" }}</dd>
+                                <dt>Abstract:</dt>
+                                <dd>n/a</dd>
+                                <br>
+                                <dt>Source:</dt>
+                                <dd>{{ item.source?item.source:"n/a" }}</dd>
+                                <dt>Rights:</dt>
+                                <dd>{{ item.rights?item.rights:"n/a" }}</dd>
+                                <dt>Language:</dt>
+                                <dd>{{ item.language?item.language:"n/a" }}</dd>
+                                <dt>Identifier:</dt>
+                                <dd>{{ item.identifier?item.identifier:"n/a" }}</dd>
                             </dl>
                             <div class="row">
                                 <div class="col-md-12 margin-bottom5p">

@@ -147,7 +147,7 @@ header{
 }
 .logo{
     position: relative;
-    top: -30px;
+    top: -15px;
 }
 /*.translate .language-btn.active, .translate .language-btn:hover{*/
     /*color: #fff;*/
@@ -291,7 +291,7 @@ header{
 .absolute-block.full-width{
     right: 0;
     top: 50%;
-    bottom: 15%;
+    bottom: 7%;
     color: #000;
     text-align: left;
 }
@@ -395,7 +395,7 @@ header{
     width: 100%;
     position: relative;
     display: inline-block;
-    padding: 5px 0 10px;
+    /*padding: 5px 0 10px;*/
     margin: 10px 0 5px;
     border-bottom: 1px solid #1b75bb;
     cursor: pointer;
@@ -404,19 +404,20 @@ header{
     border-bottom: none;
 }
 .filter-list .list-item-title:after{
+    content: '';
     position: absolute;
     right: 5px;
-    top: 7px;
+    top: 2px;
     color: #1b75bb;
     pointer-events: all;
     border-style: solid;
-    border-width: 0.25em 0.25em 0 0;
-    content: '';
+    border-width: 0.2em 0.2em 0 0;
     display: inline-block;
-    height: 0.85em;
+    height: 0.75em;
+    -webkit-transform: rotate(-45deg);
     transform: rotate(-45deg);
     vertical-align: top;
-    width: 0.8em;
+    width: 0.75em;
 }
 .filter-list .list-item-title.active:after{
     right: 5px;
@@ -525,7 +526,8 @@ header{
 .item-name, .item-count{
     cursor: pointer;
     text-transform: capitalize;
-    line-height: 18px;
+    line-height: 16px;
+    font-size: 13px;
 }
 .ac-item-container.active .ac-title:before, .panel.panel-default.dropup .panel-title:before{
     content: '\e082';
