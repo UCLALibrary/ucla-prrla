@@ -16,7 +16,7 @@
         <hr>
         <div *ngIf="item; else elseBlock">
           <div class="col-md-3 padding_bottom3p">
-            <img src='{{ item.thumbnailExists ? item.thumbnailExists : "/assets/img/title-not-found.png"}}' alt="">
+            <img src='{{ item.thumbnail_url }}' alt="">
           </div>
           <div class="col-md-6">
             <dl class="dl-horizontal">
@@ -88,7 +88,7 @@
             </dl>
           </div>
           <div class="col-md-3">
-            <div class="padding_bottom5p">
+            <div class="padding_bottom5p" *ngIf="item.identifier">
               <a target="_blank" [href]="item.identifier" class="btn btn-block btn-blue view-button">View Item At {{ item.institution }}</a>
             </div>
             <dl>

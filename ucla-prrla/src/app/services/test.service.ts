@@ -82,7 +82,7 @@ export class TestService {
         let offset = (page - 1) * this.pageSize;
         let url =
             this.baseURL + 'select' + '?' +
-            'q=' + TestService.escapeLucene(encodeURI(search)) + '&' +
+            'q=' + encodeURI(search) + '&' +
             'rows=' + this.pageSize + '&' +
             'start=' + offset + '&' +
             'wt=json&' +
@@ -170,7 +170,7 @@ export class TestService {
     public getItemById(id){
         let url =
             this.baseURL + 'select' + '?' +
-            'q=' + TestService.escapeLucene(encodeURI('id:' + id)) + '&' +
+            'q=' + encodeURI('id:' + TestService.escapeLucene(id)) + '&' +
             'indent=true&' +
             'wt=json&' +
             'json.wrf=JSONP_CALLBACK';
@@ -222,7 +222,7 @@ export class TestService {
         item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'rights_keyword', 'rights');
         item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'source_keyword', 'source');
         item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'description_keyword', 'description');
-        item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'identifier_keyword', 'identifier', 1);
+        item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'identifier_keyword', 'identifier', 0);
         item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'decade', 'decade');
 
         return item;
@@ -404,7 +404,7 @@ export class TestService {
     public getCollectionsByUniversity(universityName){
         let url =
             this.baseURL + 'select' +
-            '?q=institutionName:' + TestService.escapeLucene('"' + encodeURIComponent(universityName) + '"') +
+            '?q=institutionName:' + encodeURIComponent('"' + universityName + '"') +
             '&rows=-1' +
             '&facet=true' +
             '&facet.field=collectionName' +
@@ -485,13 +485,12 @@ export class TestService {
     public getPrrlaMemberInfoByName(name){
         let url =
             this.baseURL + 'select' +
-            '?q=prrla_member_title:' + TestService.escapeLucene('"' + encodeURIComponent(name) + '"') +
+            '?q=prrla_member_title:' + '"' + encodeURIComponent(name) + '"' +
             '&wt=json' +
             '&indent=true' +
             '&json.wrf=JSONP_CALLBACK';
 
         return this._jsonp.get(url).map(data => {
-            console.log('data', data.json());
             let memberInfo = data.json().response.docs[0];
 
             return {
