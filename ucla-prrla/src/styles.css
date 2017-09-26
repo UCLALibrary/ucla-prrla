@@ -117,7 +117,7 @@ app-footer, .site-height-full:after {
     height: 100px;
 }
 header{
-    padding-top: 60px;
+    padding-top: 30px;
 }
 .nav{
     margin-top: 20px;
@@ -247,7 +247,7 @@ header{
     height: 160px;
 }
 .banner-height{
-    height:130px;
+    height:100px;
 }
 .height100{
     height:100px;
