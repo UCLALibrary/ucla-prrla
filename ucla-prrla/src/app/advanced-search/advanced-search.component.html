@@ -131,7 +131,7 @@
                                 <dl class="dl-horizontal">
                                     <div *ngIf="item.title">
                                         <dt>Title:</dt>
-                                        <dd class="padding_bottom3p"><strong class="title-in-search-item">{{ item.title | truncate: 60}}</strong></dd>
+                                        <dd class="padding_bottom3p"><strong class="title-in-search-item">{{ item.title?item.title:"n/a" }}</strong></dd>
                                     </div>
                                     <!--<dt>Alternate Title:</dt>-->
                                     <!--<dd>{{ item.alternative_title?item.alternative_title:"n/a" }}</dd>-->
