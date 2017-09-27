@@ -42,6 +42,8 @@ export class DetailItemComponent implements OnInit {
   private route$: Subscription;
   public item;
 
+  public loaded = false;
+
   constructor(private testService: TestService, private route: ActivatedRoute) {
   }
 
@@ -55,6 +57,8 @@ export class DetailItemComponent implements OnInit {
 
     this.testService.getItemById(this.id).subscribe(data => {
       this.item = data;
+      console.log(data);
+      this.loaded = true;
     }, error => {
       ErrorComponent.showBackend();
     });

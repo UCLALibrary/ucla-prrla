@@ -32,6 +32,7 @@ import {ExhibitionComponent} from './exhibition/exhibition.component';
 import {InstitutionComponent} from './institution/institution.component';
 import {ErrorComponent} from './error/error.component';
 import {TruncatePipe} from './truncate.pipe';
+import {ImplodePipe} from "./implode.pipe";
 
 
 @NgModule({
@@ -57,6 +58,7 @@ import {TruncatePipe} from './truncate.pipe';
     InstitutionComponent,
     ErrorComponent,
     TruncatePipe,
+    ImplodePipe,
   ],
   imports: [
     BrowserModule,

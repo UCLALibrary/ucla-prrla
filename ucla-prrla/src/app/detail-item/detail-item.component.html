@@ -10,7 +10,7 @@
   </div>
 
     <div class="row padding_top2p padding_bottom3p">
-      <div class="col-md-12">
+      <div class="col-md-12" *ngIf="loaded">
         <ol class="breadcrumb">
           <li><a [routerLink]="search">Search Results </a></li>
           <li class="active">{{ item.title | truncate: 60 }}</li>
@@ -24,7 +24,9 @@
             <dl class="dl-horizontal">
               <div *ngIf="item.title">
                 <dt>Title: </dt>
-                <dd><strong>{{ item.title | truncate: 60 }}</strong></dd>
+                <dd>
+                  <strong *ngFor="let v of item.titles">{{ v }}<br></strong>
+                </dd>
               </div>
               <br>
               <!--<div *ngIf="item.alternativeTitle">-->
@@ -38,7 +40,7 @@
               <br>
               <div *ngIf="item.identifier">
                 <dt>External Link(s): </dt>
-                <dd>{{ item.identifier?item.identifier:"n/a" }}</dd>
+                <dd><div *ngFor="let v of item.identifier">{{ v }}</div></dd>
               </div>
               <br>
               <div *ngIf="item.collection">
@@ -53,55 +55,52 @@
               <!--</div>-->
               <div *ngIf="item.author">
                 <dt>Author: </dt>
-                <dd>{{ item.author?item.author:"n/a" }}</dd>
+                <dd><div *ngFor="let v of item.author">{{ v }}</div></dd>
               </div>
               <div *ngIf="item.subject">
                 <dt>Subject: </dt>
-                <dd>{{ item.subject?item.subject:"n/a" }}</dd>
+                <dd><div *ngFor="let v of item.subject">{{ v }}</div></dd>
               </div>
               <br>
               <div *ngIf="item.source">
                 <dt>Source: </dt>
-                <dd>{{ item.source?item.source:"n/a" }}</dd>
+                <dd><div *ngFor="let v of item.source">{{ v }}</div></dd>
               </div>
               <div *ngIf="item.decade">
                 <dt>Date: </dt>
-                <dd>{{ item.decade?item.decade:"n/a" }}</dd>
+                <dd><div *ngFor="let v of item.decade">{{ v }}</div></dd>
               </div>
               <br>
               <!--<div *ngIf="item.alternativeTitle">-->
                 <!--<dt>Alternative Title: </dt>-->
                 <!--<dd>{{ item.alternativeTitle?item.alternativeTitle:"n/a" }}</dd>-->
               <!--</div>-->
-              <div *ngIf="item.subjectDescription">
+              <div *ngIf="item.description">
                 <dt>Abstract: </dt>
-                <dd>{{ item.subjectDescription?item.subjectDescription:"n/a" }}</dd>
+                <dd>
+                  <div *ngFor="let v of item.description">{{ v }}</div>
+                </dd>
               </div>
               <!--<div *ngIf="item.abstract">-->
                 <!--<dt>Abstract: </dt>-->
                 <!--<dd>{{ item.abstract?item.abstract:"n/a" }}</dd>-->
               <!--</div>-->
-
-              <div *ngIf="item.source">
-                <dt>Source: </dt>
-                <dd>{{ item.source?item.source:"n/a" }}</dd>
-              </div>
               <div *ngIf="item.rights">
                 <dt>Rights: </dt>
-                <dd>{{ item.rights?item.rights:"n/a" }}</dd>
+                <dd><div *ngFor="let v of item.rights">{{ v }}</div></dd>
               </div>
               <br>
               <div *ngIf="item.publisher">
                 <dt>Publisher: </dt>
-                <dd>{{ item.publisher?item.publisher:"n/a" }}</dd>
+                <dd><div *ngFor="let v of item.publisher">{{ v }}</div></dd>
               </div>
               <div *ngIf="item.language">
                 <dt>Language: </dt>
-                <dd>{{ item.language?item.language:"n/a" }}</dd>
+                <dd><div *ngFor="let v of item.language">{{ v }}</div></dd>
               </div>
               <div *ngIf="item.identifier">
                 <dt>Identifier: </dt>
-                <dd>{{ item.identifier?item.identifier:"n/a" }}</dd>
+                <dd><div *ngFor="let v of item.identifier">{{ v }}</div></dd>
               </div>
 
 
@@ -125,7 +124,7 @@
           </div>
           <div class="col-md-3">
             <div class="padding_bottom5p" *ngIf="item.identifier">
-              <a target="_blank" [href]="item.identifier" class="btn btn-block btn-blue view-button">View Item At {{ item.institution }}</a>
+              <a target="_blank" [href]="item.identifier[0]" class="btn btn-block btn-blue view-button">View Item At {{ item.institution }}</a>
             </div>
             <dl>
               <!--<dt>Can I Use It?</dt>-->

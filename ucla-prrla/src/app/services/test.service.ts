@@ -209,6 +209,7 @@ export class TestService {
         let item = {
             id: raw_item.id,
             title: raw_item.title_keyword[0],
+            titles: raw_item.title_keyword,
             alternative_title: false,
             first_line: false,
             collection: raw_item.collectionName,
@@ -241,10 +242,6 @@ export class TestService {
 
         if(typeof raw_item['thumbnail_url'] !== 'undefined'){
             item['thumbnail_url'] = raw_item['thumbnail_url'];
-        }
-
-        if(returnArrays){
-            item.title = raw_item.title_keyword.join('<br>');
         }
 
         // item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'collectionName', 'collection', 0, implodeArrays);
