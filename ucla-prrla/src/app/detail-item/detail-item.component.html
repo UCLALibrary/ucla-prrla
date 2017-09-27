@@ -24,7 +24,7 @@
             <dl class="dl-horizontal">
               <div *ngIf="item.title">
                 <dt>Title: </dt>
-                <dd><strong>{{ item.title | truncate: 60 }}</strong></dd>
+                <dd><strong>{{ item.title?item.title:"n/a" }}</strong></dd>
               </div>
               <br>
               <!--<div *ngIf="item.alternativeTitle">-->
