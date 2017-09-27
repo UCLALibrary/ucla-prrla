@@ -24,12 +24,14 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { BooksService } from './services/books.service';
 import { TestService } from './services/test.service';
 import { ParseJsonPipe } from './parse-json/parse-json.pipe';
-import {DerpPipe} from './derp.pipe';
+import { DerpPipe } from './derp.pipe';
+// import { CutstringPipe } from './cutstring.pipe';
 import { ExhibitionsComponent } from './exhibitions/exhibitions.component';
 import { GeneralSearchBoxComponent } from './general-search-box/general-search-box.component';
 import {ExhibitionComponent} from './exhibition/exhibition.component';
 import {InstitutionComponent} from './institution/institution.component';
 import {ErrorComponent} from './error/error.component';
+import {TruncatePipe} from './truncate.pipe';
 
 
 @NgModule({
@@ -48,22 +50,24 @@ import {ErrorComponent} from './error/error.component';
     NotFoundComponent,
     ParseJsonPipe,
     DerpPipe,
+    // CutstringPipe,
     ExhibitionsComponent,
     GeneralSearchBoxComponent,
     ExhibitionComponent,
     InstitutionComponent,
     ErrorComponent,
+    TruncatePipe,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     RouterModule,
+    ShareModule,
     routes,
     Ng2PaginationModule,
     HttpModule,
     JsonpModule,
-    AccordionModule,
-    ShareModule
+    AccordionModule
   ],
   providers: [BooksService, TestService],
   bootstrap: [AppComponent]

@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {TestService} from '../services/test.service';
 import {ActivatedRoute, Params, Router} from '@angular/router';
 import {Subscription} from 'rxjs/Subscription';
-
+// import {Pipe, TransformPipe} from '../truncate.pipe';
 
 import { books } from '../../data/books';
 import {ErrorComponent} from '../error/error.component';

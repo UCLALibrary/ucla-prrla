@@ -357,13 +357,13 @@ header{
     word-break: break-all;
 }
 .dl-horizontal dt {
-    width: 130px;
+    width: 110px;
     text-align: left;
     font-weight: 400;
     color: #808285;
 }
 .dl-horizontal dd {
-    margin-left: 130px;
+    margin-left: 110px;
     /*word-break: break-all;*/
     word-break: break-word;
 }
@@ -773,6 +773,9 @@ a{
 @media (max-width: 991px) {
     .border-left{
         border-left: none;
+    }
+    .column-count-3{
+        column-count: 1;
     }
 }
 @media (min-width: 868px) {
