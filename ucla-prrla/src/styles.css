@@ -774,6 +774,9 @@ a{
     .border-left{
         border-left: none;
     }
+    .column-count-3{
+        column-count: 1;
+    }
 }
 @media (min-width: 868px) {
     .absolute-block{
