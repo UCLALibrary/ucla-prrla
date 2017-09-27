@@ -117,7 +117,7 @@ app-footer, .site-height-full:after {
     height: 100px;
 }
 header{
-    padding-top: 30px;
+    padding-top: 52px;
 }
 .nav{
     margin-top: 20px;
@@ -357,13 +357,13 @@ header{
     word-break: break-all;
 }
 .dl-horizontal dt {
-    width: 100px;
+    width: 130px;
     text-align: left;
     font-weight: 400;
     color: #808285;
 }
 .dl-horizontal dd {
-    margin-left: 150px;
+    margin-left: 130px;
     /*word-break: break-all;*/
     word-break: break-word;
 }
@@ -782,12 +782,12 @@ a{
 }
 @media (min-width: 768px) {
     .dl-horizontal dt {
-        width: 100px;
+        width: 130px;
         text-align: left;
         color: #808285;
     }
     .dl-horizontal dd {
-        margin-left: 100px;
+        margin-left: 130px;
     }
 }
 
