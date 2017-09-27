@@ -556,6 +556,9 @@ header{
 .explore-collection-item strong {
     color: #000;
 }
+.column-count-3{
+    column-count: 3;
+}
 .institution-list a{
     color: #4f4f4f;
     line-height: 26px;
