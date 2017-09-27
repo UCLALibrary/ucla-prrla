@@ -785,12 +785,12 @@ a{
 }
 @media (min-width: 768px) {
     .dl-horizontal dt {
-        width: 130px;
+        width: 110px;
         text-align: left;
         color: #808285;
     }
     .dl-horizontal dd {
-        margin-left: 130px;
+        margin-left: 110px;
     }
 }
 
