@@ -186,4 +186,5 @@ export class AdvancedSearchComponent implements OnInit {
             return '';
         }
     }
+
 }

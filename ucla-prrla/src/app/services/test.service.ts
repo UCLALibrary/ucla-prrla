@@ -100,6 +100,16 @@ export class TestService {
             'facet.field=description_keyword&' +
             'facet.field=identifier_keyword&' +
             'facet.field=thumbnail_url&' +
+
+            // 'facet.field=title_keyword&' +
+            // 'facet.field=subject_keyword&' +
+            // 'facet.field=publisher_keyword&' +
+            // 'facet.field=contributor_keyword&' +
+            // 'facet.field=date_keyword&' +
+            // 'facet.field=format_keyword&' +
+            // 'facet.field=relation_keyword&' +
+            // 'facet.field=coverage_keyword&' +
+
             'json.wrf=JSONP_CALLBACK';
 
         for(let filterName in filters){
@@ -201,6 +211,15 @@ export class TestService {
             description: false,
             identifier: false,
             decade: false,
+
+            // subject: false,
+            // publisher: false,
+            // contributor: false,
+            // date: false,
+            // format: false,
+            // relation: false,
+            // coverage: false,
+
             thumbnail_url: '/assets/img/no-thumb.png',
         };
 
@@ -224,6 +243,14 @@ export class TestService {
         item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'description_keyword', 'description');
         item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'identifier_keyword', 'identifier', 0);
         item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'decade', 'decade');
+
+        // item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'subject', 'subject');
+        // item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'publisher', 'publisher');
+        // item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'contributor', 'contributor');
+        // item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'date', 'date');
+        // item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'format', 'format');
+        // item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'relation', 'relation');
+        // item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'coverage', 'coverage');
 
         return item;
     }

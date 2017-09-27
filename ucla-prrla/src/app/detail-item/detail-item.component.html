@@ -28,17 +28,17 @@
               </div>
               <br>
               <!--<div *ngIf="item.alternativeTitle">-->
-                <dt>Alternate Title:</dt>
-                <dd>{{ item.alternateTitle?item.alternateTitle:"n/a" }}</dd>
+                <!--<dt>Alternate Title:</dt>-->
+                <!--<dd>{{ item.alternateTitle?item.alternateTitle:"n/a" }}</dd>-->
               <!--</div>-->
               <!--<div *ngIf="item.firstLine">-->
-                <dt>First Line: </dt>
-                <dd>{{ item.firstLine?item.firstLine:"n/a" }}</dd>
+                <!--<dt>First Line: </dt>-->
+                <!--<dd>{{ item.firstLine?item.firstLine:"n/a" }}</dd>-->
               <!--</div>-->
               <br>
               <!--<div *ngIf="item.externalLinks">-->
                 <dt>External Link(s): </dt>
-                <dd>{{ item.externalLinks?item.externalLinks:"n/a" }}</dd>
+                <dd>{{ item.identifier?item.identifier:"n/a" }}</dd>
               <!--</div>-->
               <br>
               <!--<div *ngIf="item.collection">-->
@@ -48,29 +48,36 @@
               <!--<div *ngIf="item.institution">-->
                 <dt>Institution: </dt>
                 <dd>{{ item.institution?item.institution:"n/a" }}</dd>
+              <br>
               <!--</div>-->
               <!--<div *ngIf="item.author">-->
                 <dt>Author: </dt>
                 <dd>{{ item.author?item.author:"n/a" }}</dd>
               <!--</div>-->
               <!--<div *ngIf="item.date">-->
+                <dt>Subject: </dt>
+                <dd>{{ item.subject?item.subject:"n/a" }}</dd>
+              <br>
+                <dt>Source: </dt>
+                <dd>{{ item.source?item.source:"n/a" }}</dd>
+
                 <dt>Date: </dt>
-                <dd>{{ item.date?item.date:"n/a" }}</dd>
+                <dd>{{ item.decade?item.decade:"n/a" }}</dd>
               <!--</div>-->
               <br>
               <!--<div *ngIf="item.alternativeTitle">-->
-                <dt>Alternative Title: </dt>
-                <dd>{{ item.alternativeTitle?item.alternativeTitle:"n/a" }}</dd>
+                <!--<dt>Alternative Title: </dt>-->
+                <!--<dd>{{ item.alternativeTitle?item.alternativeTitle:"n/a" }}</dd>-->
               <!--</div>-->
               <!--<div *ngIf="item.subjectDescription">-->
-                <dt>Subject Description: </dt>
+                <dt>Abstract: </dt>
                 <dd>{{ item.subjectDescription?item.subjectDescription:"n/a" }}</dd>
               <!--</div>-->
               <!--<div *ngIf="item.abstract">-->
-                <dt>Abstract: </dt>
-                <dd>{{ item.abstract?item.abstract:"n/a" }}</dd>
+                <!--<dt>Abstract: </dt>-->
+                <!--<dd>{{ item.abstract?item.abstract:"n/a" }}</dd>-->
               <!--</div>-->
-              <br>
+
               <!--<div *ngIf="item.source">-->
                 <dt>Source: </dt>
                 <dd>{{ item.source?item.source:"n/a" }}</dd>
@@ -80,6 +87,9 @@
                 <dd>{{ item.rights?item.rights:"n/a" }}</dd>
               <!--</div>-->
               <!--<div *ngIf="item.language">-->
+              <br>
+                <dt>Publisher: </dt>
+                <dd>{{ item.publisher?item.publisher:"n/a" }}</dd>
                 <dt>Language: </dt>
                 <dd>{{ item.language?item.language:"n/a" }}</dd>
               <!--</div>-->
@@ -87,6 +97,24 @@
                 <dt>Identifier: </dt>
                 <dd>{{ item.identifier?item.identifier:"n/a" }}</dd>
               <!--</div>-->
+
+
+              <!--<dt>title: </dt>-->
+              <!--<dd>{{ item.title?item.title:"n/a" }}</dd>-->
+              <!--<dt>subject: </dt>-->
+              <!--<dd>{{ item.subject?item.subject:"n/a" }}</dd>-->
+              <!--<dt>publisher: </dt>-->
+              <!--<dd>{{ item.publisher?item.publisher:"n/a" }}</dd>-->
+              <!--<dt>contributor: </dt>-->
+              <!--<dd>{{ item.contributor?item.contributor:"n/a" }}</dd>-->
+              <!--<dt>date: </dt>-->
+              <!--<dd>{{ item.date?item.date:"n/a" }}</dd>-->
+              <!--<dt>format: </dt>-->
+              <!--<dd>{{ item.format?item.format:"n/a" }}</dd>-->
+              <!--<dt>relation: </dt>-->
+              <!--<dd>{{ item.relation?item.relation:"n/a" }}</dd>-->
+              <!--<dt>coverage: </dt>-->
+              <!--<dd>{{ item.coverage?item.coverage:"n/a" }}</dd>-->
             </dl>
           </div>
           <div class="col-md-3">
