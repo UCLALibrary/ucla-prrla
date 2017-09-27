@@ -101,14 +101,14 @@ export class TestService {
             'facet.field=identifier_keyword&' +
             'facet.field=thumbnail_url&' +
 
-            // 'facet.field=title_keyword&' +
-            // 'facet.field=subject_keyword&' +
-            // 'facet.field=publisher_keyword&' +
-            // 'facet.field=contributor_keyword&' +
-            // 'facet.field=date_keyword&' +
-            // 'facet.field=format_keyword&' +
-            // 'facet.field=relation_keyword&' +
-            // 'facet.field=coverage_keyword&' +
+            'facet.field=title_keyword&' +
+            'facet.field=subject_keyword&' +
+            'facet.field=publisher_keyword&' +
+            'facet.field=contributor_keyword&' +
+            'facet.field=date_keyword&' +
+            'facet.field=format_keyword&' +
+            'facet.field=relation_keyword&' +
+            'facet.field=coverage_keyword&' +
 
             'json.wrf=JSONP_CALLBACK';
 
@@ -156,7 +156,15 @@ export class TestService {
                     }
 
                     if(filterDisplayName == 'Decade'){
-                        filterItems.sort(TestService.dynamicSort('-name'))
+                        for(var _i in filterItems){
+                            filterItems[_i].key = parseInt(filterItems[_i].name);
+                            if(filterItems[_i].name[0] === "-"){
+                                filterItems[_i].humanName = filterItems[_i].name.substr(1) + ' B. C. E.';
+                            }
+                            filterItems[_i].name = parseInt(filterItems[_i].name);
+                        }
+                        console.log('Decade', filterItems);
+                        filterItems.sort(TestService.dynamicSort('-key'));
                     }
 
                     let itemFilter = {
@@ -188,15 +196,16 @@ export class TestService {
         return this._jsonp.get(url).map(data => {
             let raw_items = data.json().response.docs;
 
-            if(raw_items.length == 1){
-                return this.parseRawItem(raw_items[0]);
+            if(raw_items.length > 0){
+                // return this.parseRawItem(raw_items[0]);
+                return this.parseRawItem(raw_items[0], true);
             }else{
                 return false;
             }
         });
     }
 
-    private parseRawItem(raw_item){
+    private parseRawItem(raw_item, returnArrays = false){
         let item = {
             id: raw_item.id,
             title: raw_item.title_keyword[0],
@@ -212,13 +221,13 @@ export class TestService {
             identifier: false,
             decade: false,
 
-            // subject: false,
-            // publisher: false,
-            // contributor: false,
-            // date: false,
-            // format: false,
-            // relation: false,
-            // coverage: false,
+            subject: false,
+            publisher: false,
+            contributor: false,
+            date: false,
+            format: false,
+            relation: false,
+            coverage: false,
 
             thumbnail_url: '/assets/img/no-thumb.png',
         };
@@ -234,31 +243,39 @@ export class TestService {
             item['thumbnail_url'] = raw_item['thumbnail_url'];
         }
 
-        // item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'collectionName', 'collection');
-        // item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'institutionName', 'institution');
-        item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'creator_keyword', 'author');
-        item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'language_keyword', 'language');
-        item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'rights_keyword', 'rights');
-        item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'source_keyword', 'source');
-        item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'description_keyword', 'description');
-        item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'identifier_keyword', 'identifier', 0);
-        item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'decade', 'decade');
+        if(returnArrays){
+            item.title = raw_item.title_keyword.join('<br>');
+        }
 
-        // item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'subject', 'subject');
-        // item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'publisher', 'publisher');
-        // item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'contributor', 'contributor');
-        // item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'date', 'date');
-        // item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'format', 'format');
-        // item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'relation', 'relation');
-        // item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'coverage', 'coverage');
+        // item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'collectionName', 'collection', 0, implodeArrays);
+        // item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'institutionName', 'institution', 0, implodeArrays);
+        item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'creator_keyword', 'author', 0, returnArrays);
+        item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'language_keyword', 'language', 0, returnArrays);
+        item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'rights_keyword', 'rights', 0, returnArrays);
+        item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'source_keyword', 'source', 0, returnArrays);
+        item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'description_keyword', 'description', 0, returnArrays);
+        item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'identifier_keyword', 'identifier', 0, returnArrays);
+        item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'decade', 'decade', 0, returnArrays);
+
+        item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'subject', 'subject', 0, returnArrays);
+        item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'publisher', 'publisher', 0, returnArrays);
+        item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'contributor', 'contributor', 0, returnArrays);
+        item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'date', 'date', 0, returnArrays);
+        item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'format', 'format', 0, returnArrays);
+        item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'relation', 'relation', 0, returnArrays);
+        item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'coverage', 'coverage', 0, returnArrays);
 
         return item;
     }
 
-    private fillItemWithFirstOfArrayIfExists(item, raw_item, data_key, item_key, index = 0){
+    private fillItemWithFirstOfArrayIfExists(item, raw_item, data_key, item_key, index = 0, returnArray = false){
         if(typeof raw_item[data_key] !== 'undefined'){
             if(typeof raw_item[data_key][index] !== 'undefined'){
-                item[item_key] = raw_item[data_key][index];
+                if(returnArray){
+                    item[item_key] = raw_item[data_key];
+                }else{
+                    item[item_key] = raw_item[data_key][index];
+                }
             }
         }
 
@@ -364,6 +381,8 @@ export class TestService {
 
         return this._jsonp.get(url).map(data => {
             let members = [];
+
+            console.log(data.json());
 
             let raw_members = data.json().facet_counts.facet_fields['prrla_member_title'];
 

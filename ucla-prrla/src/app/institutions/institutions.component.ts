@@ -18,5 +18,11 @@ export class InstitutionsComponent implements OnInit {
         }, error => {
             ErrorComponent.showBackend();
         });
+
+        // this.testService.getUniversities().subscribe(data => {
+        //     this.institutions = data.universities;
+        // }, error => {
+        //     ErrorComponent.showBackend();
+        // });
     }
 }

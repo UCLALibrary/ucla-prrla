@@ -168,6 +168,8 @@ export class AdvancedSearchComponent implements OnInit {
     }
 
     getIsSelectedFilter(filterName, filterVal) {
+        filterVal = filterVal + "";
+
         if (typeof this.selectedFilters[filterName] === 'undefined') {
             return false;
         }
