@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {TestService} from "../services/test.service";
-import {ErrorComponent} from "../error/error.component";
+import {TestService} from '../services/test.service';
+import {ErrorComponent} from '../error/error.component';
 
 @Component({
     selector: 'app-institutions',

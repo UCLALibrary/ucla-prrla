@@ -6,7 +6,6 @@ import { router, routes} from './app.router';
 import {Ng2PaginationModule} from 'ng2-pagination'; //importing ng2-pagination
 import {ShareModule} from 'ng2share/share.module' //social
 import {HttpModule, JsonpModule} from '@angular/http';
-// import { AccordionModule } from 'ngx-bootstrap';
 import {AccordionModule} from 'ng2-accordion';
 
 import { AppComponent } from './app.component';
@@ -21,18 +20,16 @@ import { AdvancedSearchComponent } from './advanced-search/advanced-search.compo
 import { HelpComponent } from './help/help.component';
 import { DetailItemComponent } from './detail-item/detail-item.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { BooksService } from './services/books.service';
 import { TestService } from './services/test.service';
 import { ParseJsonPipe } from './parse-json/parse-json.pipe';
 import { DerpPipe } from './derp.pipe';
-// import { CutstringPipe } from './cutstring.pipe';
 import { ExhibitionsComponent } from './exhibitions/exhibitions.component';
 import { GeneralSearchBoxComponent } from './general-search-box/general-search-box.component';
 import {ExhibitionComponent} from './exhibition/exhibition.component';
 import {InstitutionComponent} from './institution/institution.component';
 import {ErrorComponent} from './error/error.component';
 import {TruncatePipe} from './truncate.pipe';
-import {ImplodePipe} from "./implode.pipe";
+import {ImplodePipe} from './implode.pipe';
 
 
 @NgModule({
@@ -51,7 +48,6 @@ import {ImplodePipe} from "./implode.pipe";
     NotFoundComponent,
     ParseJsonPipe,
     DerpPipe,
-    // CutstringPipe,
     ExhibitionsComponent,
     GeneralSearchBoxComponent,
     ExhibitionComponent,
@@ -71,7 +67,7 @@ import {ImplodePipe} from "./implode.pipe";
     JsonpModule,
     AccordionModule
   ],
-  providers: [BooksService, TestService],
+  providers: [TestService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

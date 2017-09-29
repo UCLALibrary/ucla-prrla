@@ -11,6 +11,7 @@ import {ErrorComponent} from '../error/error.component';
 
 
 export class InstitutionComponent  implements OnInit {
+    member_description: any;
     private name;
     public memberInfo = {};
     public collections = [];

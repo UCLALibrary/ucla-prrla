@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, isDevMode } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 import {Jsonp} from '@angular/http';
@@ -6,7 +6,8 @@ import {Jsonp} from '@angular/http';
 @Injectable()
 
 export class TestService {
-    private baseURL = 'http://test-solr.library.ucla.edu/solr/prrla/'; /*test service*/
+    private baseURL;
+    // private baseURL = 'http://test-solr.library.ucla.edu/solr/prrla/'; /*test service*/
     // private baseURL = 'http://solr.library.ucla.edu/solr/prrla/'; /*prod service*/
     public pageSize = 10;
     public orderBy = '';
@@ -19,7 +20,13 @@ export class TestService {
     ];
 
     constructor(private _jsonp: Jsonp) {
-
+        if (isDevMode()) {
+            this.baseURL = 'http://test-solr.library.ucla.edu/solr/prrla/';
+            console.log('dev');
+        } else {
+            this.baseURL = 'http://solr.library.ucla.edu/solr/prrla/';
+            console.log('prod');
+        }
     }
 
     public static escapeLucene(value){
@@ -315,8 +322,8 @@ export class TestService {
     }
 
     private fillItemWithEndStringModificator(item, string, property, endsWith){
-        if(string.endsWith(endsWith)){
-            if(!item[property]){
+        if (string.endsWith(endsWith)) {
+            if (!item[property]) {
                 string = string.substring(0, endsWith.length);
                 item[property] = string;
             }

@@ -1,5 +1,4 @@
 import {Pipe, PipeTransform} from '@angular/core';
-import {isDefined} from "@angular/compiler/src/util";
 
 @Pipe({
     name: 'truncate'
