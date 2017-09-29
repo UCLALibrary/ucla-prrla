@@ -6,7 +6,8 @@ import {Jsonp} from '@angular/http';
 @Injectable()
 
 export class TestService {
-    private baseURL = 'http://test-solr.library.ucla.edu/solr/prrla/';
+    private baseURL = 'http://test-solr.library.ucla.edu/solr/prrla/'; /*test service*/
+    // private baseURL = 'http://solr.library.ucla.edu/solr/prrla/'; /*prod service*/
     public pageSize = 10;
     public orderBy = '';
     public availableOrders = [
