@@ -1,7 +1,8 @@
-import { Injectable, isDevMode } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 import {Jsonp} from '@angular/http';
+import {environment} from '../../environments/environment';
 
 @Injectable()
 
@@ -20,7 +21,7 @@ export class TestService {
     ];
 
     constructor(private _jsonp: Jsonp) {
-        if (isDevMode()) {
+        if (environment.production) {
             this.baseURL = 'http://test-solr.library.ucla.edu/solr/prrla/';
             console.log('dev');
         } else {

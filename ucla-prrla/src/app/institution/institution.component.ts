@@ -15,6 +15,7 @@ export class InstitutionComponent  implements OnInit {
     private name;
     public memberInfo = {};
     public collections = [];
+    public dataLoaded = false;
 
     route$: Subscription;
 
@@ -32,6 +33,7 @@ export class InstitutionComponent  implements OnInit {
 
                 this.testService.getPrrlaMemberInfoByName(this.name).subscribe(data => {
                     this.memberInfo = data.memberInfo;
+                    this.dataLoaded = true;
                 }, error => {
                     ErrorComponent.showBackend();
                 });

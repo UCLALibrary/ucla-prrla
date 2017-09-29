@@ -16,12 +16,12 @@
       <p>Forty academic libraries surrounding the Pacific have joined together to improve access to scholarly resources.</p>
     </div>
     <div class="col-md-12 text-center">
-        <div class="clearfix" *ngIf="i % 3 == 0"></div>
         <div class="institution-list column-count-3">
           <div *ngFor="let institution of institutions; let i = index">
             <a href="/institution/?name={{ institution.realName }}">{{ institution.name }}</a>
+            <div class="clearfix" *ngIf="i % 3 == 0"></div>
+          </div>
         </div>
-      </div>
     </div>
     </div>
   </div>
