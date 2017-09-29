@@ -22,11 +22,11 @@ export class TestService {
 
     constructor(private _jsonp: Jsonp) {
         if (environment.production) {
-            this.baseURL = 'http://test-solr.library.ucla.edu/solr/prrla/';
-            console.log('dev');
-        } else {
             this.baseURL = 'http://solr.library.ucla.edu/solr/prrla/';
             console.log('prod');
+        } else {
+            this.baseURL = 'http://test-solr.library.ucla.edu/solr/prrla/';
+            console.log('dev');
         }
     }
 
