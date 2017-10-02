@@ -100,7 +100,7 @@
               </div>
               <div *ngIf="item.identifier">
                 <dt>Identifier: </dt>
-                <dd><div *ngFor="let v of item.identifier">{{ v }}</div></dd>
+                <dd><div *ngFor="let v of item.identifier"><a href="{{ v }}" target="_blank">{{ v }}</a></div></dd>
               </div>
 
 
