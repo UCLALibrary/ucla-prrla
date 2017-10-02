@@ -55,7 +55,7 @@
               </div>
               <div *ngIf="item.decade">
                 <dt>Date: </dt>
-                <dd><div *ngFor="let v of item.decade">{{ testService.makeHumanReadableDate(v) }}</div></dd>
+                <dd><div *ngFor="let v of item.date">{{ v }}</div></dd>
               </div>
               <br>
               <div *ngIf="item.type">
