@@ -44,7 +44,7 @@ export class DetailItemComponent implements OnInit {
 
   public loaded = false;
 
-  constructor(private testService: TestService, private route: ActivatedRoute) {
+  constructor(public testService: TestService, private route: ActivatedRoute) {
   }
 
 

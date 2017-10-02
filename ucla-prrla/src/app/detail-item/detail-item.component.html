@@ -29,19 +29,6 @@
                 </dd>
               </div>
               <br>
-              <!--<div *ngIf="item.alternativeTitle">-->
-                <!--<dt>Alternate Title:</dt>-->
-                <!--<dd>{{ item.alternateTitle?item.alternateTitle:"n/a" }}</dd>-->
-              <!--</div>-->
-              <!--<div *ngIf="item.firstLine">-->
-                <!--<dt>First Line: </dt>-->
-                <!--<dd>{{ item.firstLine?item.firstLine:"n/a" }}</dd>-->
-              <!--</div>-->
-              <!--<br>-->
-              <!--<div *ngIf="item.identifier">-->
-                <!--<dt>External Link(s): </dt>-->
-                <!--<dd><div *ngFor="let v of item.identifier">{{ v }}</div></dd>-->
-              <!--</div>-->
               <br>
               <div *ngIf="item.collection">
                 <dt>Collection: </dt>
@@ -68,23 +55,20 @@
               </div>
               <div *ngIf="item.decade">
                 <dt>Date: </dt>
-                <dd><div *ngFor="let v of item.decade">{{ v }}</div></dd>
+                <dd><div *ngFor="let v of item.decade">{{ testService.makeHumanReadableDate(v) }}</div></dd>
               </div>
               <br>
-              <!--<div *ngIf="item.alternativeTitle">-->
-                <!--<dt>Alternative Title: </dt>-->
-                <!--<dd>{{ item.alternativeTitle?item.alternativeTitle:"n/a" }}</dd>-->
-              <!--</div>-->
+              <div *ngIf="item.type">
+                <dt>Type: </dt>
+                <dd><div *ngFor="let v of item.type">{{ v }}</div></dd>
+              </div>
+              <br>
               <div *ngIf="item.description">
                 <dt>Abstract: </dt>
                 <dd>
                   <div *ngFor="let v of item.description">{{ v }}</div>
                 </dd>
               </div>
-              <!--<div *ngIf="item.abstract">-->
-                <!--<dt>Abstract: </dt>-->
-                <!--<dd>{{ item.abstract?item.abstract:"n/a" }}</dd>-->
-              <!--</div>-->
               <div *ngIf="item.rights">
                 <dt>Rights: </dt>
                 <dd><div *ngFor="let v of item.rights">{{ v }}</div></dd>
@@ -102,24 +86,6 @@
                 <dt>Identifier: </dt>
                 <dd><div *ngFor="let v of item.identifier"><a href="{{ v }}" target="_blank">{{ v }}</a></div></dd>
               </div>
-
-
-              <!--<dt>title: </dt>-->
-              <!--<dd>{{ item.title?item.title:"n/a" }}</dd>-->
-              <!--<dt>subject: </dt>-->
-              <!--<dd>{{ item.subject?item.subject:"n/a" }}</dd>-->
-              <!--<dt>publisher: </dt>-->
-              <!--<dd>{{ item.publisher?item.publisher:"n/a" }}</dd>-->
-              <!--<dt>contributor: </dt>-->
-              <!--<dd>{{ item.contributor?item.contributor:"n/a" }}</dd>-->
-              <!--<dt>date: </dt>-->
-              <!--<dd>{{ item.date?item.date:"n/a" }}</dd>-->
-              <!--<dt>format: </dt>-->
-              <!--<dd>{{ item.format?item.format:"n/a" }}</dd>-->
-              <!--<dt>relation: </dt>-->
-              <!--<dd>{{ item.relation?item.relation:"n/a" }}</dd>-->
-              <!--<dt>coverage: </dt>-->
-              <!--<dd>{{ item.coverage?item.coverage:"n/a" }}</dd>-->
             </dl>
           </div>
           <div class="col-md-3">

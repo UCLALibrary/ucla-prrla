@@ -169,9 +169,7 @@ export class TestService {
                     if(filterDisplayName == 'Decade'){
                         for(var _i in filterItems){
                             filterItems[_i].key = parseInt(filterItems[_i].name);
-                            if(filterItems[_i].name[0] === "-"){
-                                filterItems[_i].humanName = filterItems[_i].name.substr(1) + ' B.C.E.';
-                            }
+                            filterItems[_i].humanName = this.makeHumanReadableDate(filterItems[_i].name);
                             filterItems[_i].name = parseInt(filterItems[_i].name);
                         }
                         filterItems.sort(TestService.dynamicSort('-key'));
@@ -193,6 +191,14 @@ export class TestService {
                 itemFilters: itemFilters,
             };
         });
+    }
+
+    public makeHumanReadableDate(date){
+        if(date && date[0] === "-"){
+            date = date.substr(1) + ' B.C.E.';
+        }
+
+        return date;
     }
 
     public getItemById(id){
@@ -239,6 +245,7 @@ export class TestService {
             format: false,
             relation: false,
             coverage: false,
+            type: false,
 
             thumbnail_url: '/assets/img/no-thumb.png',
         };
@@ -264,13 +271,18 @@ export class TestService {
         item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'identifier_keyword', 'identifier', 0, returnArrays);
         item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'decade', 'decade', 0, returnArrays);
 
-        item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'subject', 'subject', 0, returnArrays);
-        item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'publisher', 'publisher', 0, returnArrays);
-        item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'contributor', 'contributor', 0, returnArrays);
-        item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'date', 'date', 0, returnArrays);
-        item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'format', 'format', 0, returnArrays);
-        item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'relation', 'relation', 0, returnArrays);
-        item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'coverage', 'coverage', 0, returnArrays);
+        item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'subject_keyword', 'subject', 0, returnArrays);
+        item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'publisher_keyword', 'publisher', 0, returnArrays);
+        item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'contributor_keyword', 'contributor', 0, returnArrays);
+        item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'date_keyword', 'date', 0, returnArrays);
+        item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'format_keyword', 'format', 0, returnArrays);
+        item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'relation_keyword', 'relation', 0, returnArrays);
+        item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'coverage_keyword', 'coverage', 0, returnArrays);
+        item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'type_keyword', 'type', 0, returnArrays);
+
+        if(!returnArrays){
+            item.decade = this.makeHumanReadableDate(item.decade);
+        }
 
         return item;
     }
