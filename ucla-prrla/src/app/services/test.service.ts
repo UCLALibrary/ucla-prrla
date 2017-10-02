@@ -157,8 +157,10 @@ export class TestService {
                         let count = facets[facet_name][i+1];
 
                         if(count){
+                            let name = decodeURI(facets[facet_name][i]);
                             filterItems.push({
-                                name: decodeURI(facets[facet_name][i]),
+                                name: name,
+                                humanName: name,
                                 count: count,
                             });
                         }
@@ -168,11 +170,10 @@ export class TestService {
                         for(var _i in filterItems){
                             filterItems[_i].key = parseInt(filterItems[_i].name);
                             if(filterItems[_i].name[0] === "-"){
-                                filterItems[_i].humanName = filterItems[_i].name.substr(1) + ' B. C. E.';
+                                filterItems[_i].humanName = filterItems[_i].name.substr(1) + ' B.C.E.';
                             }
                             filterItems[_i].name = parseInt(filterItems[_i].name);
                         }
-                        console.log('Decade', filterItems);
                         filterItems.sort(TestService.dynamicSort('-key'));
                     }
 
