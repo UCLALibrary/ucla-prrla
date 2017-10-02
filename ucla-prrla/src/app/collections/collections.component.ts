@@ -85,24 +85,30 @@ export class CollectionsComponent implements OnInit {
         return typeof this.universitiesByCollections[collectionName] !== 'undefined';
     }
 
-    collectionClick(collectionName: string) {
+    collectionClick(collectionName: string, universityName: string) {
         this.router.navigate(['/search'], {
             queryParams: {
                 filters: JSON.stringify({
                     collectionName: [
                         collectionName
                     ],
+                    institutionName: [
+                        universityName
+                    ],
                 })
             }
         });
     }
 
-    universityClick(universityName: string) {
+    universityClick(universityName: string, collectionName: string) {
         this.router.navigate(['/search'], {
             queryParams: {
                 filters: JSON.stringify({
                     institutionName: [
                         universityName
+                    ],
+                    collectionName: [
+                        collectionName
                     ],
                 })
             }
