@@ -192,10 +192,14 @@ header{
 .blue{
     color: #1b75bb;
 }
+.btn{
+    font-size: 13px;
+}
 .btn.view-button{
     text-transform: none;
     font-size: 12px;
     padding: 6px;
+    min-width: 100px;
 }
 .btn{
     border-radius: 0;
@@ -240,6 +244,9 @@ header{
 .height300{
     height:300px;
 }
+.height275{
+    height:275px;
+}
 .height200{
     height:200px;
 }
@@ -251,6 +258,10 @@ header{
 }
 .height100{
     height:100px;
+}
+.put-element-bottom{
+    bottom: 20px;
+    position: absolute;
 }
 .translate a{
     margin-left: 5px;
@@ -267,7 +278,7 @@ header{
     /*padding-top: 5%;*/
     color: #fff;
     position: relative;
-    top: 40%;
+    top: 28%;
 }
 .main-page-block.index-page{
     text-align: center;
@@ -280,7 +291,7 @@ header{
     top: 0;
     left: 0;
     bottom: 0;
-    right: 30%;
+    right: 35%;
     color: #fff;
     padding: 25px 15px 0;
 }
@@ -327,7 +338,7 @@ header{
     margin: auto;
     width: 50%;
     background-color: #fff;
-    height: 30px;
+    height: 50px;
 }
 .search input[type="search"]{
     background-color: #fff;
@@ -336,13 +347,14 @@ header{
     width: 100%;
     height: 100%;
     text-align: center;
+    font-size: 21px;
 }
 .search-submit, .search-submit button[type="submit"], .search-submit img{
     position: absolute;
-    top: 3px;
-    right: 3px;
-    width: 20px;
-    height: 20px;
+    top: 6px;
+    right: 6px;
+    width: 26px;
+    height: 26px;
 }
 .search-submit button[type="submit"]{
     background: transparent;
@@ -571,13 +583,13 @@ header{
     border-color: rgb(27, 117, 187);
 }
 .background-fuzzy-red{
-    background-color: rgba(235, 5, 0, 0.50);
+    background-color: rgba(179, 0, 0, 0.60);
 }
 .background-orange{
     background-color: rgb(235, 123, 0);
 }
 .background-fuzzy-orange{
-    background-color: rgba(235, 123, 0, 0.50);
+    background-color: rgba(204, 101, 0, 0.4);
 }
 .background-fuzzy-white{
     background-color: rgba(255, 255, 255, 0.5);
