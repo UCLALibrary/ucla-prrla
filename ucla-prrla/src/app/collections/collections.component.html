@@ -44,7 +44,6 @@
                                         <span class="item-count">[{{ university.count }}]</span>
                                     </div>
                                     <div class="ac-body">
-                                        <div style="margin-left: 15px;">
                                             <div *ngIf="isLoadedUniversity(university.realName); else loadingBlock">
                                                 <div *ngIf="collectionsByUniversity[university.realName].length > 0; else elseBlock">
                                                     <div *ngFor="let collection of collectionsByUniversity[university.realName]" (click)="collectionClick(collection.realName, university.realName)">
@@ -59,7 +58,6 @@
                                             <ng-template #loadingBlock>
                                                 Loading...
                                             </ng-template>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -82,7 +80,6 @@
                                         <span class="item-count">[{{ collection.count }}]</span>
                                     </div>
                                     <div class="ac-body">
-                                        <div style="margin-left: 15px;">
                                             <div *ngIf="isLoadedCollection(collection.realName); else loadingBlock">
                                                 <div *ngIf="universitiesByCollections[collection.realName].length > 0; else elseBlock">
                                                     <div *ngFor="let university of universitiesByCollections[collection.name]"
@@ -98,7 +95,6 @@
                                             <ng-template #loadingBlock>
                                                 Loading...
                                             </ng-template>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
