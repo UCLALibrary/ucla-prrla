@@ -307,6 +307,7 @@ header{
     text-align: left;
 }
 .bottom-line{
+    display: block;
     position: relative;
 }
 .bottom-line:after{
