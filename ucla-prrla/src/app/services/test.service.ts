@@ -502,6 +502,8 @@ export class TestService {
                 }
             }
 
+            collections.sort(TestService.dynamicSort('name'));
+
             return {
                 collections: collections,
             };
