@@ -82,14 +82,15 @@
                 <dt>Language: </dt>
                 <dd><div *ngFor="let v of item.language">{{ v }}</div></dd>
               </div>
-              <!--<div *ngIf="item.identifier">-->
-                <!--<dt>Identifier: </dt>-->
-                <!--<dd><div *ngFor="let v of item.identifier"><a href="{{ v }}" target="_blank">{{ v }}</a></div></dd>-->
-              <!--</div>-->
+              <div *ngIf="item.identifier">
+                <dt>Identifier: </dt>
+                <dd><div *ngFor="let v of item.identifier"><a href="{{ v }}" target="_blank">{{ v }}</a></div></dd>
+              </div>
             </dl>
           </div>
           <div class="col-md-3">
             <div class="padding_bottom5p" *ngIf="item.identifier">
+              <!--<a target="_blank" [href]="item.identifier[0]" class="btn btn-block btn-blue view-button">View Item At {{ item.institution }}</a>-->
               <a target="_blank" [href]="item.identifier[0]" class="btn btn-block btn-blue view-button">View Item At {{ item.institution }}</a>
             </div>
             <dl>
@@ -101,7 +102,7 @@
               <br>
               <dt><strong>Alternative Links:</strong></dt>
               <dd>
-                <div *ngFor="let v of item.identifier">
+                <div *ngFor="let v of item.alternate_external_link">
                   <a href="{{ v }}" class="blue" target="_blank">View Item</a>
                 </div>
               </dd>

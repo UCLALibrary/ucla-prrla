@@ -118,6 +118,8 @@ export class TestService {
             'facet.field=format_keyword&' +
             'facet.field=relation_keyword&' +
             'facet.field=coverage_keyword&' +
+            'facet.field=external_link&' +
+            'facet.field=alternate_external_link&' +
 
             'json.wrf=JSONP_CALLBACK';
 
@@ -207,6 +209,28 @@ export class TestService {
             'q=' + encodeURI('id:' + TestService.escapeLucene(id)) + '&' +
             'indent=true&' +
             'wt=json&' +
+            'facet=true&' +
+            // 'facet.field=institutionName&' +
+            // 'facet.field=collectionName&' +
+            // 'facet.field=type_keyword&' +
+            // 'facet.field=creator_keyword&' +
+            // 'facet.field=decade&' +
+            // 'facet.field=language_keyword&' +
+            // 'facet.field=rights_keyword&' +
+            // 'facet.field=collection&' +
+            // 'facet.field=source_keyword&' +
+            // 'facet.field=description_keyword&' +
+            // 'facet.field=identifier_keyword&' +
+            // 'facet.field=thumbnail_url&' +
+            // 'facet.field=title_keyword&' +
+            // 'facet.field=subject_keyword&' +
+            // 'facet.field=publisher_keyword&' +
+            // 'facet.field=contributor_keyword&' +
+            // 'facet.field=date_keyword&' +
+            // 'facet.field=format_keyword&' +
+            // 'facet.field=relation_keyword&' +
+            // 'facet.field=coverage_keyword&' +
+            'facet.field=alternate_external_link&' +
             'json.wrf=JSONP_CALLBACK';
 
         return this._jsonp.get(url).map(data => {
@@ -246,6 +270,8 @@ export class TestService {
             relation: false,
             coverage: false,
             type: false,
+            external_link: false,
+            alternate_external_link: false,
 
             thumbnail_url: '/assets/img/no-thumb.png',
         };
@@ -279,6 +305,8 @@ export class TestService {
         item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'relation_keyword', 'relation', 0, returnArrays);
         item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'coverage_keyword', 'coverage', 0, returnArrays);
         item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'type_keyword', 'type', 0, returnArrays);
+        item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'external_link', 'external_link', 0, returnArrays);
+        item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'alternate_external_link', 'alternate_external_link', 0, returnArrays);
 
         if(!returnArrays){
             item.decade = this.makeHumanReadableDate(item.decade);
