@@ -82,10 +82,10 @@
                 <dt>Language: </dt>
                 <dd><div *ngFor="let v of item.language">{{ v }}</div></dd>
               </div>
-              <div *ngIf="item.identifier">
-                <dt>Identifier: </dt>
-                <dd><div *ngFor="let v of item.identifier"><a href="{{ v }}" target="_blank">{{ v }}</a></div></dd>
-              </div>
+              <!--<div *ngIf="item.identifier">-->
+                <!--<dt>Identifier: </dt>-->
+                <!--<dd><div *ngFor="let v of item.identifier"><a href="{{ v }}" target="_blank">{{ v }}</a></div></dd>-->
+              <!--</div>-->
             </dl>
           </div>
           <div class="col-md-3">
@@ -98,7 +98,14 @@
                 <!--<p>No Re-use</p>-->
                 <!--<a href="#" class="blue">© In Copyright</a>-->
               <!--</dd>-->
-              <!--<br>-->
+              <br>
+              <dt><strong>Alternative Links:</strong></dt>
+              <dd>
+                <div *ngFor="let v of item.identifier">
+                  <a href="{{ v }}" class="blue" target="_blank">View Item</a>
+                </div>
+              </dd>
+              <br>
               <dt>Share</dt>
               <dd>
                 <share-container class="list-inline social-icons"
