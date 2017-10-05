@@ -12,7 +12,7 @@
   <!--<script src="js/main.js"></script>-->
 </head>
 <body>
-<div class="alert alert-warning text-center fixed-top navbar-fixed-top" role="alert">
+<div *ngIf="env !== prod" class="alert alert-warning text-center fixed-top navbar-fixed-top" role="alert">
     TEST SITE; TEMPORARY, SAMPLE DATA
 </div>
         <app-root></app-root>
