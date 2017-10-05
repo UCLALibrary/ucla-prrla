@@ -38,12 +38,13 @@
                                 <div class="ac-item-container">
                                     <div
                                             [attr.name]="university.name"
-                                            class="ac-title"
+                                            class="ac-title-inst"
                                             (click)="toggleUniversity($event, university.realName)">
-                                        <span class="item-name">{{ university.name }}</span>
+                                        <span class="item-name"><strong>{{ university.name }}</strong></span>
                                         <span class="item-count">[{{ university.count }}]</span>
                                     </div>
                                     <div class="ac-body">
+                                        <div style="margin-left: 20px;">
                                             <div *ngIf="isLoadedUniversity(university.realName); else loadingBlock">
                                                 <div *ngIf="collectionsByUniversity[university.realName].length > 0; else elseBlock">
                                                     <div *ngFor="let collection of collectionsByUniversity[university.realName]" (click)="collectionClick(collection.realName, university.realName)">
@@ -58,6 +59,7 @@
                                             <ng-template #loadingBlock>
                                                 Loading...
                                             </ng-template>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

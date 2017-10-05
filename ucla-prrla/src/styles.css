@@ -524,26 +524,26 @@ header{
     cursor: pointer;
     text-transform: capitalize;
 }
-/*.ac-title:before, .panel-title:before{*/
-    /*font-family: 'Glyphicons Halflings';*/
-    /*content: '\e081';*/
-    /*border-radius: 100%;*/
-    /*padding: 0 7px;*/
-    /*color: #000;*/
-    /*cursor: pointer;*/
-    /*pointer-events: all;*/
-    /*top: 3px;*/
-    /*position: relative;*/
-/*}*/
+.ac-title-inst:before, .panel-title:before{
+    font-family: 'Glyphicons Halflings';
+    content: '\e081';
+    border-radius: 100%;
+    padding: 0 7px;
+    color: #000;
+    cursor: pointer;
+    pointer-events: all;
+    top: 3px;
+    position: relative;
+}
 .item-name, .item-count{
     cursor: pointer;
     text-transform: capitalize;
     line-height: 16px;
     font-size: 13px;
 }
-/*.ac-item-container.active .ac-title:before, .panel.panel-default.dropup .panel-title:before{*/
-    /*content: '\e082';*/
-/*}*/
+.ac-item-container.active .ac-title-inst:before, .panel.panel-default.dropup .panel-title:before{
+    content: '\e082';
+}
 .ac-body, .panel-body{
     font-family: 'Proxima Nova', sans-serif;
     padding: 0;
