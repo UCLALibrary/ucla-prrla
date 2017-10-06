@@ -22,6 +22,7 @@ export class AdvancedSearchComponent implements OnInit {
     public availableOrders = [];
 
     public selectedFilters = {};
+    public selectedFiltersJsonString = '';
 
     public search_therms = '';
 
@@ -108,6 +109,7 @@ export class AdvancedSearchComponent implements OnInit {
         event.preventDefault();
         this.selectedFilters = {};
         this.search_therms = '';
+        this.selectedFiltersJsonString = '';
         this.navigateWithParams(1, this.selectedFilters, this.search_therms, this.orderBy);
     }
 
@@ -164,6 +166,8 @@ export class AdvancedSearchComponent implements OnInit {
         if (this.selectedFilters[filterName].length == 0) {
             delete this.selectedFilters[filterName];
         }
+
+        this.selectedFiltersJsonString = JSON.stringify(this.selectedFilters);
 
         this.navigateWithParams(1, this.selectedFilters, this.search_therms, this.orderBy);
     }

@@ -47,6 +47,7 @@ export class DetailItemComponent implements OnInit {
   public s_filters = '';
   public s_therms = '';
   public s_order = '';
+  public showBreadcrumbs = false;
 
   public loaded = false;
 
@@ -72,12 +73,19 @@ export class DetailItemComponent implements OnInit {
           this.s_filters = params['s_filters'];
           this.s_therms = params['s_therms'];
           this.s_order = params['s_order'];
+
+          if(
+              typeof this.s_filters !== "undefined" &&
+              typeof this.s_therms !== "undefined" &&
+              typeof this.s_order !== "undefined"
+          ){
+              this.showBreadcrumbs = true;
+          }
         }
     );
 
     this.testService.getItemById(this.id).subscribe(data => {
       this.item = data;
-      console.log(data);
       this.loaded = true;
     }, error => {
       ErrorComponent.showBackend();

@@ -11,11 +11,11 @@
 
     <div class="row padding_top2p padding_bottom3p">
       <div class="col-md-12" *ngIf="loaded">
-        <ol class="breadcrumb">
+        <ol class="breadcrumb" *ngIf="showBreadcrumbs">
           <li><a [routerLink]="['/search']" [queryParams]="{ therms: s_therms, page: this.s_page, filters: s_filters, order: s_order }">Search Results </a></li>
           <li class="active">{{ item.title | truncate: 60 }}</li>
         </ol>
-        <hr>
+        <hr *ngIf="showBreadcrumbs">
         <div *ngIf="item; else elseBlock">
           <div class="col-md-3 padding_bottom3p">
             <img src='{{ item.thumbnail_url }}' alt="">

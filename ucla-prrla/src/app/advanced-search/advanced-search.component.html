@@ -176,7 +176,9 @@
                                 </dl>
                                 <div class="row">
                                     <div class="col-md-12 margin-bottom5p">
-                                        <a [routerLink]="['/detail', item.id]" (click)="clickOnItem(item.id)">
+                                        <a [routerLink]="['/detail', item.id]"
+                                           [queryParams]="{ s_therms: search_therms, s_page: url_page, s_filters: selectedFiltersJsonString, s_order: orderBy }"
+                                           (click)="clickOnItem(item.id)">
                                             View Details >
                                         </a>
                                     </div>
