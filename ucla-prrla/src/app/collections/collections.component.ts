@@ -4,6 +4,7 @@ import {element} from "protractor";
 import {Subscription} from "rxjs/Subscription";
 import {ActivatedRoute, Router} from "@angular/router";
 import {ErrorComponent} from "../error/error.component";
+import {forEach} from "@angular/router/src/utils/collection";
 
 
 @Component({
@@ -37,6 +38,12 @@ export class CollectionsComponent implements OnInit {
         });
         this.testService.getCollections().subscribe(data => {
             this.collections = data.collections;
+
+            for(let i in this.collections){
+                let collection = this.collections[i];
+
+                this.loadCollection(collection.realName);
+            }
         }, error => {
             ErrorComponent.showBackend();
         });
@@ -64,10 +71,14 @@ export class CollectionsComponent implements OnInit {
         }
     }
 
-    toggleCollection(event) {
-        let collectionName = event.currentTarget.getAttribute('name');
-        event.currentTarget.parentElement.classList.toggle('active');
+    toggleCollection(event, collectionName){
+        // let collectionName = event.currentTarget.getAttribute('name');
+        // event.currentTarget.parentElement.classList.toggle('active');
 
+        this.loadCollection(collectionName);
+    }
+
+    loadCollection(collectionName){
         if (typeof this.universitiesByCollections[collectionName] === 'undefined') {
             this.testService.getUniversitiesByCollection(collectionName).subscribe(data => {
                 this.universitiesByCollections[collectionName] = data.institutions;

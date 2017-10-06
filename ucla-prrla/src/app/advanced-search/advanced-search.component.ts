@@ -5,6 +5,7 @@ import {element} from 'protractor';
 import {Subscription} from 'rxjs/Subscription';
 import {ErrorComponent} from "../error/error.component";
 // import { UrlPipe } from '../url.pipe';
+import {router} from "../app.router";
 
 @Component({
     selector: 'app-advanced-search',
@@ -166,6 +167,19 @@ export class AdvancedSearchComponent implements OnInit {
         }
 
         this.navigateWithParams(1, this.selectedFilters, this.search_therms, this.orderBy);
+    }
+
+    clickOnItem(item_id){
+        this.router.navigate(['/detail', item_id], {
+            queryParams: {
+                s_page: this.url_page,
+                s_filters: JSON.stringify(this.selectedFilters),
+                s_therms: this.search_therms,
+                s_order: this.orderBy
+            }
+        });
+
+        return false;
     }
 
     getIsSelectedFilter(filterName, filterVal) {

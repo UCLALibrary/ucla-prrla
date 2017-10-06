@@ -12,7 +12,7 @@
     <div class="row padding_top2p padding_bottom3p">
       <div class="col-md-12" *ngIf="loaded">
         <ol class="breadcrumb">
-          <li><a [routerLink]="search">Search Results </a></li>
+          <li><a [routerLink]="['/search']" [queryParams]="{ therms: s_therms, page: this.s_page, filters: s_filters, order: s_order }">Search Results </a></li>
           <li class="active">{{ item.title | truncate: 60 }}</li>
         </ol>
         <hr>
@@ -64,7 +64,7 @@
               </div>
               <br>
               <div *ngIf="item.description">
-                <dt>Abstract: </dt>
+                <dt>Description: </dt>
                 <dd>
                   <div *ngFor="let v of item.description">{{ v }}</div>
                 </dd>
