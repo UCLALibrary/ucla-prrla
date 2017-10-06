@@ -86,8 +86,8 @@ export class DetailItemComponent implements OnInit {
 
   ngOnDestroy() {
     if (this.route$) {
-      this.route$.unsubscribe()
-      this.routeQuery$.unsubscribe()
+      this.route$.unsubscribe();
+      this.routeQuery$.unsubscribe();
     }
   }
 }
