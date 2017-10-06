@@ -23,6 +23,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { TestService } from './services/test.service';
 import { ParseJsonPipe } from './parse-json/parse-json.pipe';
 import { DerpPipe } from './derp.pipe';
+import { UrlPipe } from './url.pipe';
 import { ExhibitionsComponent } from './exhibitions/exhibitions.component';
 import { GeneralSearchBoxComponent } from './general-search-box/general-search-box.component';
 import {ExhibitionComponent} from './exhibition/exhibition.component';
@@ -48,6 +49,7 @@ import {ImplodePipe} from './implode.pipe';
     NotFoundComponent,
     ParseJsonPipe,
     DerpPipe,
+    UrlPipe,
     ExhibitionsComponent,
     GeneralSearchBoxComponent,
     ExhibitionComponent,

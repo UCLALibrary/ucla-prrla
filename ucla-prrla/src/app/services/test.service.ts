@@ -245,6 +245,7 @@ export class TestService {
             format: false,
             relation: false,
             coverage: false,
+            date_keyword: false,
             type: false,
 
             thumbnail_url: '/assets/img/no-thumb.png',
