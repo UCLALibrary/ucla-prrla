@@ -155,7 +155,9 @@
                                     </div>
                                     <div *ngIf="item.date ">
                                         <dt>Date:</dt>
-                                        <dd>{{ item.date?item.date:"n/a" }}</dd>
+                                        <dd>
+                                            <div *ngFor="let v of item.date">{{ v }}</div>
+                                        </dd>
                                     </div>
                                     <br>
                                     <!--<dt>Alternative Title:</dt>-->
