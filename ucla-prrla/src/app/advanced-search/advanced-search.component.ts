@@ -4,6 +4,7 @@ import {ActivatedRoute, Params, Router} from '@angular/router';
 import {element} from 'protractor';
 import {Subscription} from 'rxjs/Subscription';
 import {ErrorComponent} from "../error/error.component";
+// import { UrlPipe } from '../url.pipe';
 
 @Component({
     selector: 'app-advanced-search',

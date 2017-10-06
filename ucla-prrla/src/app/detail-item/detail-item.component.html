@@ -55,7 +55,7 @@
               </div>
               <div *ngIf="item.date">
                 <dt>Date: </dt>
-                <dd><div *ngFor="let v of item.date">{{ v }}</div></dd>
+                <dd><div *ngFor="let v of item.date">{{ v[0] }}</div></dd>
               </div>
               <br>
               <div *ngIf="item.type">
@@ -84,7 +84,11 @@
               </div>
               <div *ngIf="item.identifier">
                 <dt>Identifier: </dt>
-                <dd><div *ngFor="let v of item.identifier"><a href="{{ v }}" target="_blank">{{ v }}</a></div></dd>
+                <dd>
+                  <div *ngFor="let v of item.identifier">
+                    <a href="{{ v }}" target="_blank">{{ v }}</a>
+                  </div>
+                </dd>
               </div>
             </dl>
           </div>
