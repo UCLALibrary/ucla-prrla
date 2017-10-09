@@ -104,12 +104,14 @@
                 <!--<a href="#" class="blue">© In Copyright</a>-->
               <!--</dd>-->
               <br>
-              <dt><strong>Alternative Links:</strong></dt>
-              <dd>
-                <div *ngFor="let v of item.alternate_external_link">
-                  <a href="{{ v }}" class="blue" target="_blank">View Item</a>
-                </div>
-              </dd>
+              <div *ngIf="item.identifier">
+                <dt><strong>Alternative Links:</strong></dt>
+                <dd>
+                  <div *ngFor="let v of item.alternate_external_link">
+                    <a href="{{ v }}" class="blue" target="_blank">View Item</a>
+                  </div>
+                </dd>
+              </div>
               <br>
               <dt>Share</dt>
               <dd>
