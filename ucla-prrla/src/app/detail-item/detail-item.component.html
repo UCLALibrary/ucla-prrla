@@ -29,7 +29,6 @@
                 </dd>
               </div>
               <br>
-              <br>
               <div *ngIf="item.collection">
                 <dt>Collection: </dt>
                 <dd>{{ item.collection?item.collection:"n/a" }}</dd>
@@ -38,7 +37,6 @@
                 <dt>Institution: </dt>
                 <dd>{{ item.institution?item.institution:"n/a" }}</dd>
               </div>
-              <br>
               <!--</div>-->
               <div *ngIf="item.author">
                 <dt>Author: </dt>
@@ -48,7 +46,6 @@
                 <dt>Subject: </dt>
                 <dd><div *ngFor="let v of item.subject">{{ v }}</div></dd>
               </div>
-              <br>
               <div *ngIf="item.source">
                 <dt>Source: </dt>
                 <dd><div *ngFor="let v of item.source">{{ v }}</div></dd>
@@ -57,12 +54,10 @@
                 <dt>Date: </dt>
                 <dd><div *ngFor="let v of item.date">{{ v }}</div></dd>
               </div>
-              <br>
               <div *ngIf="item.type">
                 <dt>Type: </dt>
                 <dd><div *ngFor="let v of item.type">{{ v }}</div></dd>
               </div>
-              <br>
               <div *ngIf="item.description">
                 <dt>Description: </dt>
                 <dd>
@@ -73,7 +68,6 @@
                 <dt>Rights: </dt>
                 <dd><div *ngFor="let v of item.rights">{{ v }}</div></dd>
               </div>
-              <br>
               <div *ngIf="item.publisher">
                 <dt>Publisher: </dt>
                 <dd><div *ngFor="let v of item.publisher">{{ v }}</div></dd>

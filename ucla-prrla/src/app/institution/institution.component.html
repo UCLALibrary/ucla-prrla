@@ -23,23 +23,23 @@
                     <div class="col-md-12 padding_top3p padding_bottom3p">
                         <dl class="dl-horizontal">
                             <dt>Location: </dt>
-                            <dd>{{ memberInfo.prrla_member_location }}</dd>
+                            <dd><strong>{{ memberInfo.prrla_member_location }}</strong></dd>
                             <dt>Phone: </dt>
-                            <dd>{{ memberInfo.prrla_member_phone }}</dd>
+                            <dd><strong>{{ memberInfo.prrla_member_phone }}</strong></dd>
                             <dt>Email: </dt>
-                            <dd><a href="{{ memberInfo.prrla_member_email }}">{{ memberInfo.prrla_member_email }}</a></dd>
+                            <dd><strong><a href="{{ memberInfo.prrla_member_email }}">{{ memberInfo.prrla_member_email }}</a></strong></dd>
                             <dt>Website: </dt>
-                            <dd><a href="{{ memberInfo.prrla_member_website }}" target="_blank">{{ memberInfo.prrla_member_website }}</a></dd>
+                            <dd><strong><a href="{{ memberInfo.prrla_member_website }}" target="_blank">{{ memberInfo.prrla_member_website }}</a></strong></dd>
                         </dl>
                     </div>
                 </div>
                 <div class="col-md-8">
                     <div class="col-md-12">
-                        <h3><span class="bottom-line blue">{{ memberInfo.prrla_member_title }}</span></h3>
+                        <h3 class="padding_bottom2p"><span class="bottom-line blue">{{ memberInfo.prrla_member_title }}</span></h3>
                         <p>{{ memberInfo.prrla_member_description }}</p>
                     </div>
                     <div class="col-md-4">
-                        <h3><span class="bottom-line blue">Collections</span></h3>
+                        <h3 class="padding_bottom2p"><span class="bottom-line blue">Collections</span></h3>
                     </div>
                     <div *ngIf="collections.length > 0; else elseNoCollections">
                         <div class="col-md-12" *ngFor="let collectionItem of collections;">

@@ -116,6 +116,11 @@ body{
 app-footer, .site-height-full:after {
     height: 75px;
 }
+h3{
+    font-size: 21px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
 header{
     padding-top: 52px;
 }
@@ -190,7 +195,10 @@ header{
     padding-left: 4px;
 }
 .blue{
-    color: #1b75bb;
+    /*color: #1b75bb;*/
+}
+h3 span.blue{
+    color: #333;
 }
 .btn{
     font-size: 13px;
@@ -377,6 +385,7 @@ header{
 }
 .dl-horizontal dd {
     margin-left: 110px;
+    margin-bottom: 5px;
     /*word-break: break-all;*/
     word-break: break-word;
 }
@@ -441,6 +450,7 @@ header{
 }
 .filter-list .list-item-title.active ~ .filter-block{
     display: block;
+    margin-bottom: 15px;
 }
 .filter-block{
     border: 1px solid #1b75bb;
@@ -596,7 +606,7 @@ header{
     background-color: rgba(255, 255, 255, 0.5);
 }
 .title-in-search-item{
-    font-size: 20px;
+    font-size: 18px;
     line-height: 18px;
 }
 .advanced-rows{
@@ -651,7 +661,15 @@ footer{
 .margin-bottom5p{
     margin-bottom: 5%;
 }
-
+.margin-bottom3p{
+    margin-bottom: 3%;
+}
+.margin-bottom0{
+    margin-bottom: 0;
+}
+.margin-bottom10{
+    margin-bottom: 10px;
+}
 .padding_top2p {
     padding-top: 2%;
 }

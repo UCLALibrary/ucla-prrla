@@ -24,7 +24,7 @@
                     <!--</div>-->
                 <!--</div>-->
                 <!--<a href="#" class="blue">Advanced Search</a>-->
-                <h3>FILTER</h3>
+                <h3 class="margin-bottom0">FILTER</h3>
                 <div class="filter-list">
                     <div *ngFor="let itemFilter of itemFilters; let i=index">
                         <div class="list-item-title active" (click)="toggleActiveClass($event)">
@@ -122,13 +122,13 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-12 margin-bottom5p" *ngFor="let item of items" style="min-height: 250px;">
-                            <div class="col-md-3 col-sm-4 padding_bottom2p">
+                        <div class="col-md-12 margin-bottom3p" *ngFor="let item of items" style="min-height: 250px;">
+                            <div class="col-md-4 col-sm-4 padding_bottom2p">
                                 <img src='{{ item.thumbnail_url }}'
                                      alt="">
                             </div>
-                            <div class="col-md-9 col-sm-8">
-                                <dl class="dl-horizontal">
+                            <div class="col-md-8 col-sm-8">
+                                <dl class="dl-horizontal margin-bottom0">
                                     <div *ngIf="item.title">
                                         <dt>Title:</dt>
                                         <dd class="padding_bottom3p"><strong class="title-in-search-item">{{ item.title?item.title:"n/a" }}</strong></dd>
@@ -159,7 +159,6 @@
                                             <div *ngFor="let v of item.date">{{ v }}</div>
                                         </dd>
                                     </div>
-                                    <br>
                                     <!--<dt>Alternative Title:</dt>-->
                                     <!--<dd>n/a</dd>-->
                                     <!--<dt>Subject Description:</dt>-->
@@ -177,7 +176,7 @@
                                     <!--<dd>{{ item.identifier?item.identifier:"n/a" }}</dd>-->
                                 </dl>
                                 <div class="row">
-                                    <div class="col-md-12 margin-bottom5p">
+                                    <div class="col-md-12 margin-bottom3p">
                                         <a [routerLink]="['/detail', item.id]"
                                            [queryParams]="{ s_therms: search_therms, s_page: url_page, s_filters: selectedFiltersJsonString, s_order: orderBy }"
                                            (click)="clickOnItem(item.id)">
@@ -186,7 +185,7 @@
                                     </div>
                                 </div>
                                 <div class="row" *ngIf="item.identifier">
-                                    <div class="col-md-10">
+                                    <div class="col-md-9">
                                         <a class="btn btn-block btn-blue view-button" target="_blank" [href]="item.identifier">View Item at {{ item.institution?item.institution:'University Site' }}</a>
                                     </div>
                                 </div>
