@@ -275,7 +275,7 @@ export class TestService {
         item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'subject_keyword', 'subject', 0, returnArrays);
         item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'publisher_keyword', 'publisher', 0, returnArrays);
         item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'contributor_keyword', 'contributor', 0, returnArrays);
-        item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'date_keyword', 'date', 0, returnArrays);
+        item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'date_keyword', 'date', 0, true);
         item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'format_keyword', 'format', 0, returnArrays);
         item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'relation_keyword', 'relation', 0, returnArrays);
         item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'coverage_keyword', 'coverage', 0, returnArrays);
