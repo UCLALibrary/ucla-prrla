@@ -589,10 +589,10 @@ h3 span.blue{
 }
 .fixed{
     position: fixed;
-    display: block;
-    right: 58%;
-    left: 20%;
+    display: inline-block;
     top: 50px;
+    max-width: 345px;
+    width: 30%;
 }
 .bottom-line.orange:after{
     border-color: rgb(235, 123, 0);

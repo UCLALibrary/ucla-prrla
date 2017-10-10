@@ -6,7 +6,6 @@ import { DOCUMENT } from '@angular/platform-browser';
   templateUrl: './help.component.html'
 })
 export class HelpComponent implements OnInit {
-
   public navIsFixed: boolean = false;
 
   goTo(location: string): void {
@@ -18,7 +17,7 @@ export class HelpComponent implements OnInit {
   ngOnInit() {
   }
 
-  @HostListener('window:scroll', [])
+  @HostListener('window:scroll')
   onWindowScroll() {
     let number = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
     if (number > 280) {
@@ -26,5 +25,6 @@ export class HelpComponent implements OnInit {
     } else if (this.navIsFixed && number < 280) {
       this.navIsFixed = false;
     }
+    // console.log(number);
   }
 }
