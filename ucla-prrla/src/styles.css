@@ -117,7 +117,7 @@ app-footer, .site-height-full:after {
     height: 75px;
 }
 h3{
-    font-size: 21px;
+    /*font-size: 21px;*/
     font-weight: 400;
     text-transform: uppercase;
 }
