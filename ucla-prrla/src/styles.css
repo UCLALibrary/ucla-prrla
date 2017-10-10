@@ -587,6 +587,12 @@ h3 span.blue{
     line-height: 26px;
     font-size: 14px;
 }
+.fixed-help-block{
+    position: fixed;
+    display: block;
+    right: 58%;
+    left: 20%;
+}
 .bottom-line.orange:after{
     border-color: rgb(235, 123, 0);
 }

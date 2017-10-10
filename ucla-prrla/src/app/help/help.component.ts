@@ -6,6 +6,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HelpComponent implements OnInit {
 
+  goTo(location: string): void {
+    window.location.hash = location;
+  }
+
   constructor() {}
 
   ngOnInit() {
