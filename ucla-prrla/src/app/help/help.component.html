@@ -27,7 +27,7 @@
             <!--</div>-->
 
             <div class="col-md-12">
-                <div class="fixed-help-block">
+                <div [class.fixed]="navIsFixed">
                     <h4><strong>FAQs</strong></h4>
                     <a (click)="goTo('1')">• How can I find content on PRL?</a>
                     <br><a (click)="goTo('2')">• Do you have any search tips?</a>
