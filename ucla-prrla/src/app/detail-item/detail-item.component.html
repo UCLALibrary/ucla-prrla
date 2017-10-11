@@ -98,10 +98,10 @@
                 <!--<a href="#" class="blue">© In Copyright</a>-->
               <!--</dd>-->
               <br>
-              <div *ngIf="item.identifier">
+              <div *ngIf="item.alternate_external_link">
                 <dt><strong>Alternative Links:</strong></dt>
                 <dd>
-                  <div *ngFor="let v of item.identifier">
+                  <div *ngFor="let v of item.alternate_external_link">
                     <a href="{{ v }}" class="blue" target="_blank">View Item</a>
                   </div>
                 </dd>

@@ -131,7 +131,11 @@
                                 <dl class="dl-horizontal margin-bottom0">
                                     <div *ngIf="item.title">
                                         <dt>Title:</dt>
-                                        <dd class="padding_bottom3p"><strong class="title-in-search-item">{{ item.title?item.title:"n/a" }}</strong></dd>
+                                        <dd class="padding_bottom3p">
+                                            <a [routerLink]="['/detail', item.id]"
+                                            [queryParams]="{ s_therms: search_therms, s_page: url_page, s_filters: selectedFiltersJsonString, s_order: orderBy }"
+                                            (click)="clickOnItem(item.id)">
+                                            <strong class="title-in-search-item">{{ item.title?item.title:"n/a" }}</strong></a></dd>
                                     </div>
                                     <!--<dt>Alternate Title:</dt>-->
                                     <!--<dd>{{ item.alternative_title?item.alternative_title:"n/a" }}</dd>-->

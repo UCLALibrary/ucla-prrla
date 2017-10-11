@@ -115,6 +115,7 @@ export class TestService {
             'facet.field=publisher_keyword&' +
             'facet.field=contributor_keyword&' +
             'facet.field=date_keyword&' +
+            'facet.field=alternate_external_link&' +
             'facet.field=format_keyword&' +
             'facet.field=relation_keyword&' +
             'facet.field=coverage_keyword&' +
@@ -246,6 +247,7 @@ export class TestService {
             relation: false,
             coverage: false,
             date_keyword: false,
+            alternate_external_link: false,
             type: false,
 
             thumbnail_url: '/assets/img/no-thumb.png',
@@ -276,6 +278,7 @@ export class TestService {
         item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'publisher_keyword', 'publisher', 0, returnArrays);
         item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'contributor_keyword', 'contributor', 0, returnArrays);
         item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'date_keyword', 'date', 0, true);
+        item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'alternate_external_link', 'alternate_external_link', 0, true);
         item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'format_keyword', 'format', 0, returnArrays);
         item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'relation_keyword', 'relation', 0, returnArrays);
         item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'coverage_keyword', 'coverage', 0, returnArrays);
