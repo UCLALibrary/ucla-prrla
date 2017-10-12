@@ -137,9 +137,10 @@ export class TestService {
             for(let i in raw_items){
                 let raw_item = raw_items[i];
 
-                let item = this.parseRawItem(raw_item);
-
-                items.push(item);
+                if(this.detectRegularItem(raw_item)){
+                    let item = this.parseRawItem(raw_item);
+                    items.push(item);
+                }
             }
 
             let itemFilters = [];
@@ -220,6 +221,13 @@ export class TestService {
                 return false;
             }
         });
+    }
+
+    private detectRegularItem(raw_item){
+        return (
+            typeof raw_item['title_keyword'] !== 'undefined' &&
+            typeof raw_item['prrla_member_title'] == 'undefined'
+        );
     }
 
     private parseRawItem(raw_item, returnArrays = false){

@@ -86,6 +86,7 @@ export class AdvancedSearchComponent implements OnInit {
             this.itemFilters = data.itemFilters;
             document.getElementById('loading').style.display = 'none';
         }, error => {
+            console.log(error);
             ErrorComponent.showBackend();
             document.getElementById('loading').style.display = 'none';
         });
