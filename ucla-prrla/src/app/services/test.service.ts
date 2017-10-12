@@ -247,6 +247,7 @@ export class TestService {
             relation: false,
             coverage: false,
             date_keyword: false,
+            external_link: false,
             alternate_external_link: false,
             type: false,
 
@@ -262,6 +263,10 @@ export class TestService {
 
         if(typeof raw_item['thumbnail_url'] !== 'undefined'){
             item['thumbnail_url'] = raw_item['thumbnail_url'];
+        }
+
+        if(typeof raw_item['external_link'] !== 'undefined'){
+            item['external_link'] = raw_item['external_link'];
         }
 
         // item = this.fillItemWithFirstOfArrayIfExists(item, raw_item, 'collectionName', 'collection', 0, implodeArrays);

@@ -188,9 +188,9 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="row" *ngIf="item.identifier">
+                                <div class="row" *ngIf="item.external_link">
                                     <div class="col-md-9">
-                                        <a class="btn btn-block btn-blue view-button" target="_blank" [href]="item.identifier">View Item at {{ item.institution?item.institution:'University Site' }}</a>
+                                        <a class="btn btn-block btn-blue view-button" target="_blank" [href]="item.external_link">View Item at {{ item.institution?item.institution:'University Site' }}</a>
                                     </div>
                                 </div>
                             </div>
