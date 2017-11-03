@@ -15,7 +15,7 @@ export class CollectionsComponent implements OnInit {
 
     name: string;
     list: any;
-    selected: any = 'Browse by Collection Title';
+    selected: any = 'Browse by Institution';
     rows: any = [];
 
     public universities = [];
