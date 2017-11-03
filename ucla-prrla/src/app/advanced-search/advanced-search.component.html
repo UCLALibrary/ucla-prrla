@@ -179,18 +179,21 @@
                                     <!--<dt>Identifier:</dt>-->
                                     <!--<dd>{{ item.identifier?item.identifier:"n/a" }}</dd>-->
                                 </dl>
-                                <div class="row">
-                                    <div class="col-md-12 margin-bottom3p">
-                                        <a [routerLink]="['/detail', item.id]"
-                                           [queryParams]="{ s_therms: search_therms, s_page: url_page, s_filters: selectedFiltersJsonString, s_order: orderBy }"
-                                           (click)="clickOnItem(item.id)">
-                                            View Details >
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="row" *ngIf="item.external_link">
+                                <!--<div class="row">-->
+                                    <!--<div class="col-md-12 margin-bottom3p">-->
+                                        <!--<a [routerLink]="['/detail', item.id]"-->
+                                           <!--[queryParams]="{ s_therms: search_therms, s_page: url_page, s_filters: selectedFiltersJsonString, s_order: orderBy }"-->
+                                           <!--(click)="clickOnItem(item.id)">-->
+                                            <!--View Details >-->
+                                        <!--</a>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                                <div class="row padding_top10" *ngIf="item.external_link">
                                     <div class="col-md-9">
-                                        <a class="btn btn-block btn-blue view-button" target="_blank" [href]="item.external_link">View Item at {{ item.institution?item.institution:'University Site' }}</a>
+                                        <a class="btn btn-block btn-blue view-button" target="_blank" [href]="item.external_link">
+                                            View Item at {{ item.institution?item.institution:'University Site' }}
+                                            <img src="../../assets/img/link.png" style="width: 14px; margin-left: 15px;" alt="">
+                                        </a>
                                     </div>
                                 </div>
                             </div>
