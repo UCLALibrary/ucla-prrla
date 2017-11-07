@@ -25,7 +25,7 @@ export class TestService {
             this.baseURL = 'http://solr.library.ucla.edu/solr/prrla/';
             console.log('prod');
         } else {
-            this.baseURL = 'http://test-solr.library.ucla.edu/solr/prrla/';
+            this.baseURL = 'https://test-solr.library.ucla.edu/solr/prrla/';
             console.log('dev');
         }
     }
