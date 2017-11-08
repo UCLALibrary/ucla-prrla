@@ -493,7 +493,7 @@ export class TestService {
             '&facet.sort=count' +
             '&facet.mincount=1' +
             '&facet.limit=-1' +
-            '&sort=collectionName%20asc' +
+            // '&sort=collectionName%20asc' +
             '&wt=json' +
             '&indent=true' +
             '&json.wrf=JSONP_CALLBACK';
