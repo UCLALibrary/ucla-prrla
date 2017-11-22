@@ -1,41 +1,100 @@
 import {Component, OnInit, OnDestroy} from '@angular/core';
-import {TestService} from '../services/test.service';
+import {SolrService} from '../services/solr.service';
 import {ActivatedRoute, Params, Router} from '@angular/router';
-import {element} from 'protractor';
 import {Subscription} from 'rxjs/Subscription';
 import {ErrorComponent} from "../error/error.component";
-// import { UrlPipe } from '../url.pipe';
-import {router} from "../app.router";
 
+/**
+ * This file if used to render Advanced Search Page
+ */
 @Component({
     selector: 'app-advanced-search',
     templateUrl: './advanced-search.component.html',
 })
-
 export class AdvancedSearchComponent implements OnInit {
+    /**
+     * Page Number in Url
+     */
     url_page: any;
+
+    /**
+     * Route
+     */
     route$: Subscription;
+
+    /**
+     * Loaded Items
+     * @type {Array}
+     */
     public items = [];
+
+    /**
+     * Filters
+     */
     public itemFilters;
+
+    /**
+     * Pager
+     */
     public pager;
+
+    /**
+     * Page Size
+     */
     public pageSize;
+
+    /**
+     * Order By
+     * @type {string}
+     */
     public orderBy = '';
+
+    /**
+     * Available Orders
+     * @type {Array}
+     */
     public availableOrders = [];
 
+    /**
+     * Selected Filters
+     * @type {{}}
+     */
     public selectedFilters = {};
+
+    /**
+     * Selected Filters in JSON
+     * @type {string}
+     */
     public selectedFiltersJsonString = '';
 
+    /**
+     * Search therms
+     * @type {string}
+     */
     public search_therms = '';
 
+    /**
+     * Flag that indicates if page is initializing or not
+     * @type {boolean}
+     */
     public initializing_first_time = true;
 
+    /**
+     * Constructor
+     * @param testService SolrService
+     * @param route ActivatedRoute
+     * @param router Router
+     */
     constructor(
-        public testService: TestService,
+        public testService: SolrService,
         public route: ActivatedRoute,
         public router: Router
     ) {
     }
 
+    /**
+     * OnInit, loads default data
+     */
     ngOnInit() {
         this.pager = this.testService.getPager(0);
         this.pageSize = this.testService.pageSize;
@@ -71,12 +130,19 @@ export class AdvancedSearchComponent implements OnInit {
         this.setPage(this.url_page);
     }
 
+    /**
+     * OnDestroy releases route
+     */
     ngOnDestroy() {
         if (this.route$) {
             this.route$.unsubscribe();
         }
     }
 
+    /**
+     * Loads page data
+     * @param page
+     */
     setPage(page: number) {
         document.getElementById('loading').style.display = 'block';
         this.testService.getPaginatedBooks(this.search_therms, this.selectedFilters, page).subscribe(data => {
@@ -92,21 +158,35 @@ export class AdvancedSearchComponent implements OnInit {
         });
     }
 
+    /**
+     * Changes page size and jumps to first page
+     */
     pageSizeChange() {
         this.testService.pageSize = this.pageSize;
         this.setPage(1);
     }
 
+    /**
+     * Changes orderBy and jumps to first page
+     */
     orderByChange() {
         this.testService.orderBy = this.orderBy;
         this.setPage(1);
         this.navigateWithParams(1, this.selectedFilters, this.search_therms, this.orderBy);
     }
 
+    /**
+     * Toggles `active` class
+     * @param event
+     */
     toggleActiveClass(event) {
         event.target.classList.toggle('active');
     }
 
+    /**
+     * Clears inputs
+     * @param event
+     */
     clearInputs(event){
         event.preventDefault();
         this.selectedFilters = {};
@@ -115,12 +195,24 @@ export class AdvancedSearchComponent implements OnInit {
         this.navigateWithParams(1, this.selectedFilters, this.search_therms, this.orderBy);
     }
 
+    /**
+     * Handles click on page
+     * @param event
+     * @param page
+     */
     pagerClick(event, page) {
         if (!event.target.parentElement.classList.contains('disabled')) {
             this.navigateWithParams(page, this.selectedFilters, this.search_therms, this.orderBy);
         }
     }
 
+    /**
+     * Navigates to specific page with selected filters and params
+     * @param page
+     * @param filters
+     * @param therms
+     * @param orderBy
+     */
     navigateWithParams(page, filters, therms, orderBy) {
         this.router.navigate(['/search'], {
             queryParams: {
@@ -132,18 +224,30 @@ export class AdvancedSearchComponent implements OnInit {
         });
     }
 
+    /**
+     * Handles enter click
+     * @param event
+     */
     searchOnEnter(event) {
         this.search_therms = event.target.value;
         this.setPage(1);
         this.navigateWithParams(1, this.selectedFilters, this.search_therms, this.orderBy);
     }
 
+    /**
+     * Handles click on search button
+     * @param therms
+     */
     searchButtonClick(therms: string) {
         this.search_therms = therms;
         this.setPage(1);
         this.navigateWithParams(1, this.selectedFilters, this.search_therms, this.orderBy);
     }
 
+    /**
+     * Handles click on filter
+     * @param event
+     */
     clickOnFilter(event) {
         let filterName = event.target.name;
         let filterValue = event.target.value;
@@ -174,6 +278,11 @@ export class AdvancedSearchComponent implements OnInit {
         this.navigateWithParams(1, this.selectedFilters, this.search_therms, this.orderBy);
     }
 
+    /**
+     * Handles click on item, opens Item Detail page
+     * @param item_id
+     * @returns {boolean}
+     */
     clickOnItem(item_id){
         this.router.navigate(['/detail', item_id], {
             queryParams: {
@@ -187,6 +296,12 @@ export class AdvancedSearchComponent implements OnInit {
         return false;
     }
 
+    /**
+     * Returnts true if filter is selected
+     * @param filterName
+     * @param filterVal
+     * @returns {boolean}
+     */
     getIsSelectedFilter(filterName, filterVal) {
         filterVal = filterVal + "";
 
@@ -201,6 +316,12 @@ export class AdvancedSearchComponent implements OnInit {
         return true;
     }
 
+    /**
+     * returns `checked` string if filter is selected
+     * @param filterName
+     * @param filterVal
+     * @returns {any}
+     */
     getIsSelectedFilterChecked(filterName, filterVal) {
         if (this.getIsSelectedFilter(filterName, filterVal)) {
             return 'checked';

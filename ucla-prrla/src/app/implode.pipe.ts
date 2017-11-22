@@ -1,5 +1,8 @@
 import {Pipe, PipeTransform, Sanitizer} from '@angular/core';
 
+/**
+ * Implodes arguments
+ */
 @Pipe({
     name: 'implode',
     pure: false

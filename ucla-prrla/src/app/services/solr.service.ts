@@ -4,14 +4,34 @@ import 'rxjs/add/operator/map';
 import {Jsonp} from '@angular/http';
 import {environment} from '../../environments/environment';
 
+/**
+ * Service to load data from Solr Backend
+ */
 @Injectable()
-
-export class TestService {
+export class SolrService {
+    /**
+     * Base URL
+     */
     private baseURL;
     // private baseURL = 'http://test-solr.library.ucla.edu/solr/prrla/'; /*test service*/
     // private baseURL = 'http://solr.library.ucla.edu/solr/prrla/'; /*prod service*/
+
+    /**
+     * Default Page Size for pagination
+     * @type {number}
+     */
     public pageSize = 10;
+
+    /**
+     * Default Order By
+     * @type {string}
+     */
     public orderBy = '';
+
+    /**
+     * Available orders
+     * @type {[{value: string; name: string}]}
+     */
     public availableOrders = [
         { value: '', name: 'Relevance'},
         { value: 'first_title asc', name: 'Title (a-z)'},
@@ -20,6 +40,10 @@ export class TestService {
         { value: 'sort_decade desc', name: 'Date (newest first)'}
     ];
 
+    /**
+     * Constructor, sets Base Url depending on environment
+     * @param _jsonp
+     */
     constructor(private _jsonp: Jsonp) {
         if (environment.production) {
             this.baseURL = 'http://solr.library.ucla.edu/solr/prrla/';
@@ -30,12 +54,23 @@ export class TestService {
         }
     }
 
+    /**
+     * Escapes Apache Lucene special characters
+     * @param value
+     */
     public static escapeLucene(value){
         let specials = ['+', '-', '&', '!', '(', ')', '{', '}', '[', ']', '^', '"', '~', '*', '?', ':', '\\'];
         let regexp = new RegExp("(\\" + specials.join("|\\") + ")", "g");
         return value.replace(regexp, "\\$1");
     }
 
+    /**
+     * Returns Pager
+     * @param totalItems
+     * @param currentPage
+     * @param pageSize
+     * @returns {{totalItems: number, currentPage: number, pageSize: number, totalPages: number, startPage: number, endPage: number, startIndex: number, endIndex: number, pages: Array}}
+     */
     public getPager(totalItems: number, currentPage: number = 1, pageSize: number = this.pageSize) {
         // calculate total pages
         let totalPages = Math.ceil(totalItems / pageSize);
@@ -83,6 +118,13 @@ export class TestService {
         };
     }
 
+    /**
+     * Returns Books with pagination
+     * @param search
+     * @param filters
+     * @param page
+     * @returns {OperatorFunction<T, R>}
+     */
     public getPaginatedBooks(search, filters, page = 1) {
         if(search == ''){
             search = '*';
@@ -174,7 +216,7 @@ export class TestService {
                             filterItems[_i].humanName = this.makeHumanReadableDate(filterItems[_i].name);
                             filterItems[_i].name = parseInt(filterItems[_i].name);
                         }
-                        filterItems.sort(TestService.dynamicSort('-key'));
+                        filterItems.sort(SolrService.dynamicSort('-key'));
                     }
 
                     let itemFilter = {
@@ -195,6 +237,11 @@ export class TestService {
         });
     }
 
+    /**
+     * Converts minus in date string to B.C.E.
+     * @param date
+     * @returns {any}
+     */
     public makeHumanReadableDate(date){
         if(date && date[0] === "-"){
             date = date.substr(1) + ' B.C.E.';
@@ -203,10 +250,15 @@ export class TestService {
         return date;
     }
 
+    /**
+     * Returns Item info by ID
+     * @param id
+     * @returns {OperatorFunction<T, R>}
+     */
     public getItemById(id){
         let url =
             this.baseURL + 'select' + '?' +
-            'q=' + encodeURI('id:' + TestService.escapeLucene(id)) + '&' +
+            'q=' + encodeURI('id:' + SolrService.escapeLucene(id)) + '&' +
             'indent=true&' +
             'wt=json&' +
             'json.wrf=JSONP_CALLBACK';
@@ -223,6 +275,11 @@ export class TestService {
         });
     }
 
+    /**
+     * Used to filter garbage in Solr Response
+     * @param raw_item
+     * @returns {boolean}
+     */
     private detectRegularItem(raw_item){
         return (
             typeof raw_item['title_keyword'] !== 'undefined' &&
@@ -230,6 +287,12 @@ export class TestService {
         );
     }
 
+    /**
+     * Transforms Item Array from Solr response to Object
+     * @param raw_item
+     * @param returnArrays
+     * @returns {{id, title: any, titles: any, alternative_title: boolean, first_line: boolean, collection: Array, institution: Array, author: boolean, language: boolean, rights: boolean, source: boolean, description: boolean, identifier: boolean, decade: boolean, subject: boolean, publisher: boolean, contributor: boolean, date: boolean, format: boolean, relation: boolean, coverage: boolean, date_keyword: boolean, external_link: boolean, alternate_external_link: boolean, type: boolean, thumbnail_url: string}}
+     */
     private parseRawItem(raw_item, returnArrays = false){
         let item = {
             id: raw_item.id,
@@ -304,6 +367,16 @@ export class TestService {
         return item;
     }
 
+    /**
+     * Sets Item Object Property with n element of array or sets all array
+     * @param item Item Object
+     * @param raw_item Item Array
+     * @param data_key Key in Raw item
+     * @param item_key Property in Item Object
+     * @param index Index in array
+     * @param returnArray return value by index or all array
+     * @returns {any}
+     */
     private fillItemWithFirstOfArrayIfExists(item, raw_item, data_key, item_key, index = 0, returnArray = false){
         if(typeof raw_item[data_key] !== 'undefined'){
             if(typeof raw_item[data_key][index] !== 'undefined'){
@@ -318,6 +391,11 @@ export class TestService {
         return item;
     }
 
+    /**
+     * Returns facet human-readable name
+     * @param name
+     * @returns {any}
+     */
     private getFacetDisplayName(name){
         let new_name = '';
         let displayFilter = false;
@@ -352,6 +430,14 @@ export class TestService {
         return false;
     }
 
+    /**
+     * Sets item property to selected string if end of string contains specific text
+     * @param item
+     * @param string
+     * @param property
+     * @param endsWith
+     * @returns {any}
+     */
     private fillItemWithEndStringModificator(item, string, property, endsWith){
         if (string.endsWith(endsWith)) {
             if (!item[property]) {
@@ -363,6 +449,10 @@ export class TestService {
         return item;
     }
 
+    /**
+     * Returns Universities
+     * @returns {Observable<R>}
+     */
     public getUniversities(){
         let url =
             this.baseURL + 'select' + '?' +
@@ -395,7 +485,7 @@ export class TestService {
                 }
             }
 
-            universities.sort(TestService.dynamicSort('name'));
+            universities.sort(SolrService.dynamicSort('name'));
 
             return {
                 universities: universities,
@@ -403,6 +493,10 @@ export class TestService {
         });
     }
 
+    /**
+     * Returns Prrla Members
+     * @returns {Observable<R>}
+     */
     public getPrrlaMembers(){
         let url =
             this.baseURL + 'select' +
@@ -444,6 +538,10 @@ export class TestService {
         });
     }
 
+    /**
+     * Returns Collections
+     * @returns {Observable<R>}
+     */
     public getCollections(){
         let url =
             this.baseURL + 'select' + '?' +
@@ -475,7 +573,7 @@ export class TestService {
                 }
             }
 
-            collections.sort(TestService.dynamicSort('name'));
+            collections.sort(SolrService.dynamicSort('name'));
 
             return {
                 collections: collections,
@@ -483,6 +581,11 @@ export class TestService {
         });
     }
 
+    /**
+     * Returns Collections by University Name
+     * @param universityName
+     * @returns {Observable<R>}
+     */
     public getCollectionsByUniversity(universityName){
         let url =
             this.baseURL + 'select' +
@@ -519,7 +622,7 @@ export class TestService {
                 }
             }
 
-            collections.sort(TestService.dynamicSort('name'));
+            collections.sort(SolrService.dynamicSort('name'));
 
             return {
                 collections: collections,
@@ -527,6 +630,11 @@ export class TestService {
         });
     }
 
+    /**
+     * Returns Universities by Collection Name
+     * @param collectionName
+     * @returns {Observable<R>}
+     */
     public getUniversitiesByCollection(collectionName){
         let url =
             this.baseURL + 'select' + '?' +
@@ -566,6 +674,11 @@ export class TestService {
         });
     }
 
+    /**
+     * Get Prrla Member Info by Name
+     * @param name
+     * @returns {Observable<R>}
+     */
     public getPrrlaMemberInfoByName(name){
         let url =
             this.baseURL + 'select' +
@@ -583,6 +696,11 @@ export class TestService {
         });
     }
 
+    /**
+     * Sort array by property
+     * @param property
+     * @returns {(a:any, b:any)=>number}
+     */
     public static dynamicSort(property) {
         let sortOrder = 1;
         if(property[0] === "-") {

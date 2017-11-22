@@ -1,101 +1,128 @@
 import {Component, OnInit} from '@angular/core';
-import {TestService} from '../services/test.service';
+import {SolrService} from '../services/solr.service';
 import {ActivatedRoute, Params, Router} from '@angular/router';
 import {Subscription} from 'rxjs/Subscription';
-// import {Pipe, TransformPipe} from '../truncate.pipe';
-
-import { books } from '../../data/books';
 import {ErrorComponent} from '../error/error.component';
 
+/**
+ * This file is used to render Detail Item Page
+ */
 @Component({
-  selector: 'app-detail-item',
-  templateUrl: './detail-item.component.html'
+    selector: 'app-detail-item',
+    templateUrl: './detail-item.component.html'
 })
-
-// export class DetailItemComponent implements OnInit, OnDestroy {
-//   private id;
-//   private route$: Subscription;
-//
-//   books: Array<any> = books;
-//
-//
-//   constructor(private route: ActivatedRoute) {
-//
-//   }
-//
-//   ngOnInit() {
-//     this.route$ = this.route.params.subscribe(
-//         (params: Params) => {
-//           this.id = +params['id']; // cast to number
-//         }
-//     );
-//   }
-//   ngOnDestroy() {
-//     if (this.route$) {
-//       this.route$.unsubscribe()
-//     }
-//   }
-// }
-
 export class DetailItemComponent implements OnInit {
-  private id;
-  private route$: Subscription;
-  private routeQuery$: Subscription;
-  public item;
+    /**
+     * Id of item
+     */
+    private id;
 
-  public s_page = 1;
-  public s_filters = '';
-  public s_therms = '';
-  public s_order = '';
-  public showBreadcrumbs = false;
+    /**
+     * Route, is used to navigate
+     */
+    private route$: Subscription;
 
-  public loaded = false;
+    /**
+     * Route, is used to get params
+     */
+    private routeQuery$: Subscription;
 
-  constructor(public testService: TestService, private route: ActivatedRoute) {
-  }
+    /**
+     * Loaded item
+     */
+    public item;
 
+    /**
+     * Pagination Page
+     * @type {number}
+     */
+    public s_page = 1;
 
-  ngOnInit() {
-    this.route$ = this.route.params.subscribe(
-        (params: Params) => {
-          this.id = params['id'];
-        }
-    );
+    /**
+     * Selected filters, used to return to search
+     * @type {string}
+     */
+    public s_filters = '';
 
-    this.routeQuery$ = this.route.queryParams.subscribe(
-        (params: Params) => {
-          let page = +params['s_page'];
-          if (!isNaN(page)) {
-            this.s_page = page;
-          }else{
-            this.s_page = 1;
-          }
-          this.s_filters = params['s_filters'];
-          this.s_therms = params['s_therms'];
-          this.s_order = params['s_order'];
+    /**
+     * Search Therms, used to return to search
+     * @type {string}
+     */
+    public s_therms = '';
 
-          if(
-              typeof this.s_filters !== "undefined" &&
-              typeof this.s_therms !== "undefined" &&
-              typeof this.s_order !== "undefined"
-          ){
-              this.showBreadcrumbs = true;
-          }
-        }
-    );
+    /**
+     * Selected order, used to return to search
+     * @type {string}
+     */
+    public s_order = '';
 
-    this.testService.getItemById(this.id).subscribe(data => {
-      this.item = data;
-      this.loaded = true;
-    }, error => {
-      ErrorComponent.showBackend();
-    });
-  }
+    /**
+     * Becomes true if we can return to advanced search
+     * @type {boolean}
+     */
+    public showBreadcrumbs = false;
 
-  ngOnDestroy() {
-    if (this.route$) {
-      this.route$.unsubscribe();
-      this.routeQuery$.unsubscribe();
+    /**
+     * Become true when page data is loaded
+     * @type {boolean}
+     */
+    public loaded = false;
+
+    /**
+     * Constructor
+     * @param testService SorlService
+     * @param route
+     */
+    constructor(public testService: SolrService, private route: ActivatedRoute) {
     }
-  }
+
+    /**
+     * Init. Loads item data depending on route params
+     */
+    ngOnInit() {
+        this.route$ = this.route.params.subscribe(
+            (params: Params) => {
+                this.id = params['id'];
+            }
+        );
+
+        this.routeQuery$ = this.route.queryParams.subscribe(
+            (params: Params) => {
+                let page = +params['s_page'];
+                if (!isNaN(page)) {
+                    this.s_page = page;
+                } else {
+                    this.s_page = 1;
+                }
+                this.s_filters = params['s_filters'];
+                this.s_therms = params['s_therms'];
+                this.s_order = params['s_order'];
+
+                if (
+                    typeof this.s_filters !== "undefined" &&
+                    typeof this.s_therms !== "undefined" &&
+                    typeof this.s_order !== "undefined"
+                ) {
+                    this.showBreadcrumbs = true;
+                }
+            }
+        );
+
+        this.testService.getItemById(this.id).subscribe(data => {
+            this.item = data;
+            this.loaded = true;
+        }, error => {
+            ErrorComponent.showBackend();
+        });
+    }
+
+    /**
+     * OnDestroy. Releases route
+     */
+    ngOnDestroy() {
+        if (this.route$) {
+            this.route$.unsubscribe();
+            this.routeQuery$.unsubscribe();
+        }
+    }
 }

@@ -7,7 +7,6 @@ import {Ng2PaginationModule} from 'ng2-pagination'; //importing ng2-pagination
 import {ShareModule} from 'ng2share/share.module' //social
 import {HttpModule, JsonpModule} from '@angular/http';
 import {AccordionModule} from 'ng2-accordion';
-
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
@@ -20,7 +19,7 @@ import { AdvancedSearchComponent } from './advanced-search/advanced-search.compo
 import { HelpComponent } from './help/help.component';
 import { DetailItemComponent } from './detail-item/detail-item.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { TestService } from './services/test.service';
+import { SolrService } from './services/solr.service';
 import { ParseJsonPipe } from './parse-json/parse-json.pipe';
 import { DerpPipe } from './derp.pipe';
 import { UrlPipe } from './url.pipe';
@@ -69,7 +68,7 @@ import {ImplodePipe} from './implode.pipe';
     JsonpModule,
     AccordionModule
   ],
-  providers: [TestService],
+  providers: [SolrService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

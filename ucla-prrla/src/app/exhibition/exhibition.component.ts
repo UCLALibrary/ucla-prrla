@@ -1,18 +1,28 @@
 import {Component, OnInit} from '@angular/core';
-import {TestService} from '../services/test.service';
+import {SolrService} from '../services/solr.service';
 import {ActivatedRoute, Params, Router} from '@angular/router';
 import {Subscription} from 'rxjs/Subscription';
 import {AdvancedSearchComponent} from '../advanced-search/advanced-search.component';
 import {ErrorComponent} from "../error/error.component";
 
+
+/**
+ * This file if used to render Exhibition Page
+ */
 @Component({
     selector: 'app-exhibition',
     templateUrl: './exhibition.component.html'
 })
 
 export class ExhibitionComponent extends AdvancedSearchComponent {
+    /**
+     * Name of Exhibition
+     */
     private name;
 
+    /**
+     * OnInit
+     */
     ngOnInit() {
         this.pager = this.testService.getPager(0);
         this.pageSize = this.testService.pageSize;
@@ -36,12 +46,18 @@ export class ExhibitionComponent extends AdvancedSearchComponent {
         );
     }
 
+    /**
+     * OnDestroy
+     */
     ngOnDestroy() {
         if (this.route$) {
             this.route$.unsubscribe()
         }
     }
 
+    /**
+     * Set Page is used to reload data on page
+     */
     setPage(page: number) {
         document.getElementById('loading').style.display = 'block';
         this.testService.getPaginatedBooks(this.search_therms, this.selectedFilters, page).subscribe(data => {
@@ -55,6 +71,9 @@ export class ExhibitionComponent extends AdvancedSearchComponent {
         });
     }
 
+    /**
+     * Is used to navigate to another page
+     */
     navigateWithParams(page, filters, therms, orderBy) {
         this.router.navigate(['/exhibition'], {
             queryParams: {

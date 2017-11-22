@@ -1,6 +1,6 @@
 import { Pipe } from '@angular/core';
 
-/*
+/**
  # Description:
 
  Repackages an array subset as a new array.

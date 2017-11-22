@@ -1,5 +1,8 @@
 import {Pipe, PipeTransform} from '@angular/core';
 
+/**
+ * Truncates provided text
+ */
 @Pipe({
     name: 'truncate'
 })

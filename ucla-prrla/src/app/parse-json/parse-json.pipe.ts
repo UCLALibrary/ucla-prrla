@@ -1,5 +1,9 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
+/**
+ * This Pipe is used to transform key - value array `{key1: 'value1', key2: 'value2'}`
+ * to array with objects `[{key: 'key1', value: 'value1}, {key: 'key2', value: 'value2}]`
+ */
 @Pipe({
   name: 'parseJson'
 })

@@ -1,0 +1,884 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>prrla documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	    <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">prrla documentation</a>
+            <button type="button" class="btn btn-default btn-menu fa fa-bars" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+            <div id="book-search-input" role="search">
+                <input type="text" placeholder="Type to search">
+            </div>
+            <nav>
+            
+                <ul class="list">
+            
+                    <li class="title">
+                        <a href="../index.html">prrla documentation</a>
+                    </li>
+            
+                    <li class="divider"></li>
+            
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="../index.html"><span class="fa fa-home"></span>Getting started</a>
+                        <ul class="links">
+                                <li class="link">
+                                    <a 
+                                        
+                                         href="../overview.html" 
+                                         href="../overview.html" 
+                                        >
+                                        <span class="fa fa-th"></span>Overview
+                                    </a>
+                                </li>
+                                <li class="link">
+                                  <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="../modules.html" >
+                            <div class="menu-toggler linked" data-toggle="collapse"
+                                    data-target="#xs-modules-links"
+                            >
+                                <span class="fa fa-archive"></span>
+                                <span class="link-name">Modules</span>
+                                <span class="fa fa-angle-down"></span>
+                            </div>
+                        </a>
+                        <ul class="links collapse "
+                                id="xs-modules-links"
+                            >
+                                <li class="link">
+                                    <a href="../modules/AppModule.html" >AppModule</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+                    <li class="chapter">
+                        <div class="simple menu-toggler" data-toggle="collapse"
+                                data-target="#xs-components-links"
+                            >
+                            <span class="fa fa-cogs"></span>
+                            <span>Components</span>
+                            <span class="fa fa-angle-down"></span>
+                        </div>
+                        <ul class="links collapse "
+                                id="xs-components-links"
+                            >
+                                <li class="link">
+                                    <a href="../components/AboutComponent.html" >AboutComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/AdvancedSearchComponent.html" >AdvancedSearchComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/AppComponent.html" >AppComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/CollectionsComponent.html" >CollectionsComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/DetailItemComponent.html" >DetailItemComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/ErrorComponent.html" >ErrorComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/ExhibitionComponent.html" >ExhibitionComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/ExhibitionsComponent.html" >ExhibitionsComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/FooterComponent.html" >FooterComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/GeneralSearchBoxComponent.html" >GeneralSearchBoxComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/HeaderComponent.html" >HeaderComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/HeaderMenuComponent.html" >HeaderMenuComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/HelpComponent.html" >HelpComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/IndexContentComponent.html" >IndexContentComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/InstitutionComponent.html" >InstitutionComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/InstitutionsComponent.html"  data-type="entity-link" class="active" >InstitutionsComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../components/NotFoundComponent.html" >NotFoundComponent</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+            
+            
+                    <li class="chapter">
+                        <div class="simple menu-toggler" data-toggle="collapse"
+                                data-target="#xs-injectables-links"
+                            >
+                            <span class="fa fa-long-arrow-down"></span>
+                            <span>Injectables</span>
+                            <span class="fa fa-angle-down"></span>
+                        </div>
+                        <ul class="links collapse "
+                                id="xs-injectables-links"
+                            >
+                                <li class="link">
+                                    <a href="../injectables/SolrService.html" >SolrService</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+            
+            
+                    <li class="chapter">
+                        <div class="simple menu-toggler" data-toggle="collapse"
+                                data-target="#xs-pipes-links"
+                            >
+                            <span class="fa fa-plus"></span>
+                            <span>Pipes</span>
+                            <span class="fa fa-angle-down"></span>
+                        </div>
+                        <ul class="links collapse "
+                                id="xs-pipes-links"
+                            >
+                                <li class="link">
+                                    <a href="../pipes/DerpPipe.html" >DerpPipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/ImplodePipe.html" >ImplodePipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/ParseJsonPipe.html" >ParseJsonPipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/TruncatePipe.html" >TruncatePipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="../pipes/UrlPipe.html" >UrlPipe</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+                    <li class="chapter">
+                        <div class="simple menu-toggler" data-toggle="collapse"
+                                data-target="#xs-miscellaneous-links"
+                            >
+                            <span class="fa fa-cubes"></span>
+                            <span>Miscellaneous</span>
+                            <span class="fa fa-angle-down"></span>
+                        </div>
+                        <ul class="links collapse "
+                                id="xs-miscellaneous-links"
+                            >
+                                <li class="link">
+                                  <a href="../miscellaneous/variables.html" data-type="entity-link" >Variables</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="../coverage.html" ><span class="fa fa-tasks"></span>Documentation coverage</a>
+                    </li>
+            
+                    <li class="divider"></li>
+                    <li class="copyright">
+                            Documentation generated using <a href="https://compodoc.github.io/website/" target="_blank">
+                                        <img src="..//images/compodoc-vectorise.svg" class="img-responsive">
+                            </a>
+                    </li>
+            
+                </ul>
+            
+            </nav>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <nav>
+                   
+                       <ul class="list">
+                   
+                           <li class="title">
+                               <a href="../index.html">prrla documentation</a>
+                           </li>
+                   
+                           <li class="divider"></li>
+                   
+                               <div id="book-search-input" role="search">
+                                   <input type="text" placeholder="Type to search">
+                               </div>
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="../index.html"><span class="fa fa-home"></span>Getting started</a>
+                               <ul class="links">
+                                       <li class="link">
+                                           <a 
+                                               
+                                                href="../overview.html" 
+                                                href="../overview.html" 
+                                               >
+                                               <span class="fa fa-th"></span>Overview
+                                           </a>
+                                       </li>
+                                       <li class="link">
+                                         <a href="../index.html" ><span class="fa fa-file-text-o"></span>README</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="../modules.html" >
+                                   <div class="menu-toggler linked" data-toggle="collapse"
+                                           data-target="#modules-links"
+                                   >
+                                       <span class="fa fa-archive"></span>
+                                       <span class="link-name">Modules</span>
+                                       <span class="fa fa-angle-down"></span>
+                                   </div>
+                               </a>
+                               <ul class="links collapse "
+                                       id="modules-links"
+                   >
+                                       <li class="link">
+                                           <a href="../modules/AppModule.html" >AppModule</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                           <li class="chapter">
+                               <div class="simple menu-toggler" data-toggle="collapse"
+                                       data-target="#components-links"
+                   >
+                                   <span class="fa fa-cogs"></span>
+                                   <span>Components</span>
+                                   <span class="fa fa-angle-down"></span>
+                               </div>
+                               <ul class="links collapse "
+                                       id="components-links"
+                   >
+                                       <li class="link">
+                                           <a href="../components/AboutComponent.html" >AboutComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/AdvancedSearchComponent.html" >AdvancedSearchComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/AppComponent.html" >AppComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/CollectionsComponent.html" >CollectionsComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/DetailItemComponent.html" >DetailItemComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/ErrorComponent.html" >ErrorComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/ExhibitionComponent.html" >ExhibitionComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/ExhibitionsComponent.html" >ExhibitionsComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/FooterComponent.html" >FooterComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/GeneralSearchBoxComponent.html" >GeneralSearchBoxComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/HeaderComponent.html" >HeaderComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/HeaderMenuComponent.html" >HeaderMenuComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/HelpComponent.html" >HelpComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/IndexContentComponent.html" >IndexContentComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/InstitutionComponent.html" >InstitutionComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/InstitutionsComponent.html"  data-type="entity-link" class="active" >InstitutionsComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../components/NotFoundComponent.html" >NotFoundComponent</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                   
+                   
+                           <li class="chapter">
+                               <div class="simple menu-toggler" data-toggle="collapse"
+                                       data-target="#injectables-links"
+                   >
+                                   <span class="fa fa-long-arrow-down"></span>
+                                   <span>Injectables</span>
+                                   <span class="fa fa-angle-down"></span>
+                               </div>
+                               <ul class="links collapse "
+                                       id="injectables-links"
+                   >
+                                       <li class="link">
+                                           <a href="../injectables/SolrService.html" >SolrService</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                   
+                   
+                           <li class="chapter">
+                               <div class="simple menu-toggler" data-toggle="collapse"
+                                       data-target="#pipes-links"
+                   >
+                                   <span class="fa fa-plus"></span>
+                                   <span>Pipes</span>
+                                   <span class="fa fa-angle-down"></span>
+                               </div>
+                               <ul class="links collapse "
+                                       id="pipes-links"
+                   >
+                                       <li class="link">
+                                           <a href="../pipes/DerpPipe.html" >DerpPipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/ImplodePipe.html" >ImplodePipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/ParseJsonPipe.html" >ParseJsonPipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/TruncatePipe.html" >TruncatePipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="../pipes/UrlPipe.html" >UrlPipe</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                           <li class="chapter">
+                               <div class="simple menu-toggler" data-toggle="collapse"
+                                       data-target="#miscellaneous-links"
+                   >
+                                   <span class="fa fa-cubes"></span>
+                                   <span>Miscellaneous</span>
+                                   <span class="fa fa-angle-down"></span>
+                               </div>
+                               <ul class="links collapse "
+                                       id="miscellaneous-links"
+                   >
+                                       <li class="link">
+                                         <a href="../miscellaneous/variables.html" data-type="entity-link" >Variables</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="../coverage.html" ><span class="fa fa-tasks"></span>Documentation coverage</a>
+                           </li>
+                   
+                           <li class="divider"></li>
+                           <li class="copyright">
+                                   Documentation generated using <a href="https://compodoc.github.io/website/" target="_blank">
+                                               <img src="..//images/compodoc-vectorise.svg" class="img-responsive">
+                                   </a>
+                           </li>
+                   
+                       </ul>
+                   
+                   </nav>
+               </div>
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>InstitutionsComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+    <li class="active">
+        <a href="#info" id="info-tab" role="tab" data-toggle="tab" data-link="info">Info</a>
+    </li>
+
+    <li>
+        <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+    </li>
+
+    <li>
+        <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+    </li>
+    <li>
+        <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+    </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/institutions/institutions.component.ts</code>
+</p>
+
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Is used to render Institutions Page</p>
+
+    </p>
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code><a href="https://angular.io/docs/ts/latest/api/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-institutions</code></td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./institutions.component.html</code></td>
+            </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+        <h3 id="index">Index</h3>
+        <table class="table table-sm table-bordered index-table">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <span class="modifier">Public</span> <a href="#institutions">institutions</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                 <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section>
+        <h3 id="constructor">Constructor</h3>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <code>constructor(testService: <a href="../injectables/SolrService.html">SolrService</a>)</code>
+                        </td>
+                    </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/institutions/institutions.component.ts:16</a></div>
+                                </td>
+                            </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Constructor</p>
+    </div>
+                                <div>
+                                        <b>Parameters :</b>
+                                        <table class="params">
+                                            <thead>
+                                                <tr>
+                                                    <td>Name</td>
+                                                    <td>Type</td>
+                                                    <td>Optional</td>
+                                                    <td>Description</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                    <tr>
+                                                      <td>testService</td>
+                                                      <td>
+                                                                <code><a href="../injectables/SolrService.html" target="_self" >SolrService</a></code>
+                                                      </td>
+                                                      <td>
+                                                      </td>
+                                                      <td></td>
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+    </section>
+
+
+
+
+
+    <section>
+        
+            <h3 id="methods">
+                Methods
+            </h3>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <a name="ngOnInit"></a>
+                            <span class="name"><b> ngOnInit</b><a href="#ngOnInit"><span class="fa fa-link"></span></a></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+    <code>ngOnInit()</code>
+                        </td>
+                    </tr>
+    
+    
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/institutions/institutions.component.ts:27</a></div>
+                                </td>
+                            </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>Initializing data</p>
+    </div>
+    
+                                <div class="io-description">
+                                    <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+    
+                                </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+    </section>
+
+    <section>
+        
+            <h3 id="inputs">
+                Properties
+            </h3>
+            <table class="table table-sm table-bordered">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <a name="institutions"></a>
+                            <span class="name"><b><span class="modifier">Public</span> institutions</b><a href="#institutions"><span class="fa fa-link"></span></a></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <span class="modifier-icon fa fa-reset"></span><code>institutions:     <code></code>
+    </code>
+                        </td>
+                    </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/institutions/institutions.component.ts:16</a></div>
+                                </td>
+                            </tr>
+    
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-description"><p>Institutions Array</p>
+    </div>
+                        </td>
+                    </tr>
+    
+                </tbody>
+            </table>
+    </section>
+
+</div>
+
+
+    <div class="tab-pane fade tab-source-code" id="source">
+        <pre class="line-numbers"><code class="language-typescript">import {Component, OnInit} from &#x27;@angular/core&#x27;;
+import {SolrService} from &#x27;../services/solr.service&#x27;;
+import {ErrorComponent} from &#x27;../error/error.component&#x27;;
+
+/**
+ * Is used to render Institutions Page
+ */
+@Component({
+    selector: &#x27;app-institutions&#x27;,
+    templateUrl: &#x27;./institutions.component.html&#x27;
+})
+export class InstitutionsComponent implements OnInit {
+    /**
+     * Institutions Array
+     */
+    public institutions &#x3D; [];
+
+    /**
+     * Constructor
+     */
+    constructor(private testService: SolrService) {
+    }
+
+    /**
+     * Initializing data
+     */
+    ngOnInit() {
+        this.testService.getPrrlaMembers().subscribe(data &#x3D;&gt; {
+            this.institutions &#x3D; data.members;
+        }, error &#x3D;&gt; {
+            ErrorComponent.showBackend();
+        });
+    }
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade" id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container&quot;&gt;
+  &lt;div class&#x3D;&quot;row&quot;&gt;
+    &lt;div class&#x3D;&quot;col-md-12&quot;&gt;
+      &lt;div class&#x3D;&quot;cover-image banner-height&quot; style&#x3D;&quot;background-image: url(&#x27;../../assets/img/fish.png&#x27;);&quot;&gt;
+        &lt;div class&#x3D;&quot;main-page-block&quot;&gt;
+          &lt;app-general-search-box&gt;&lt;/app-general-search-box&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class&#x3D;&quot;col-md-offset-1 col-md-10&quot;&gt;
+    &lt;div class&#x3D;&quot;row&quot;&gt;
+    &lt;div class&#x3D;&quot;col-md-12 padding_top3p padding_bottom3p&quot;&gt;
+      &lt;h3 class&#x3D;&quot;padding_bottom2p&quot;&gt;&lt;span class&#x3D;&quot;bottom-line blue&quot;&gt;INSTITUTIONS&lt;/span&gt;&lt;/h3&gt;
+      &lt;p&gt;Forty academic libraries surrounding the Pacific have joined together to improve access to scholarly resources.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;col-md-12 text-center&quot;&gt;
+        &lt;div class&#x3D;&quot;institution-list column-count-3&quot;&gt;
+          &lt;div *ngFor&#x3D;&quot;let institution of institutions; let i &#x3D; index&quot;&gt;
+            &lt;a href&#x3D;&quot;/institution/?name&#x3D;{{ institution.realName }}&quot;&gt;{{ institution.name }}&lt;/a&gt;
+            &lt;div class&#x3D;&quot;clearfix&quot; *ngIf&#x3D;&quot;i % 3 &#x3D;&#x3D; 0&quot;&gt;&lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
+
+&lt;!--&lt;div class&#x3D;&quot;row&quot;&gt;--&gt;
+  &lt;!--&lt;div class&#x3D;&quot;col-md-12&quot;&gt;--&gt;
+    &lt;!--&lt;div class&#x3D;&quot;cover-image banner-height&quot; style&#x3D;&quot;background-image: url(&#x27;../../assets/img/fish.png&#x27;);&quot;&gt;--&gt;
+      &lt;!--&lt;div class&#x3D;&quot;main-page-block&quot;&gt;--&gt;
+        &lt;!--&lt;div class&#x3D;&quot;search&quot;&gt;--&gt;
+          &lt;!--&lt;input type&#x3D;&quot;search&quot; placeholder&#x3D;&quot;Search the Library&quot;&gt;--&gt;
+          &lt;!--&lt;div class&#x3D;&quot;search-submit&quot;&gt;--&gt;
+            &lt;!--&lt;button type&#x3D;&quot;submit&quot;&gt;&lt;/button&gt;--&gt;
+            &lt;!--&lt;img src&#x3D;&quot;../../assets/img/search.png&quot; alt&#x3D;&quot;&quot;&gt;--&gt;
+          &lt;!--&lt;/div&gt;--&gt;
+        &lt;!--&lt;/div&gt;--&gt;
+      &lt;!--&lt;/div&gt;--&gt;
+    &lt;!--&lt;/div&gt;--&gt;
+    &lt;!--&lt;div class&#x3D;&quot;col-md-offset-1 col-md-10 padding_top4p padding_bottom3p &quot;&gt;--&gt;
+
+      &lt;!--&lt;div class&#x3D;&quot;col-md-4 padding_top4p padding_bottom3p&quot;&gt;--&gt;
+        &lt;!--&lt;div class&#x3D;&quot;col-md-offset-2 col-md-10 padding_bottom5p&quot;&gt;--&gt;
+          &lt;!--&lt;img src&#x3D;&quot;../../assets/img/city.png&quot; alt&#x3D;&quot;&quot;&gt;--&gt;
+        &lt;!--&lt;/div&gt;--&gt;
+
+        &lt;!--&lt;div class&#x3D;&quot;padding_top5p col-md-12&quot;&gt;--&gt;
+          &lt;!--&lt;dl class&#x3D;&quot;dl-horizontal&quot;&gt;--&gt;
+            &lt;!--&lt;dt&gt;Location: &lt;/dt&gt;--&gt;
+            &lt;!--&lt;dd&gt;Hong Kong&lt;/dd&gt;--&gt;
+            &lt;!--&lt;dt&gt;Phone: &lt;/dt&gt;--&gt;
+            &lt;!--&lt;dd&gt;424-246-8895&lt;/dd&gt;--&gt;
+            &lt;!--&lt;dt&gt;Email: &lt;/dt&gt;--&gt;
+            &lt;!--&lt;dd&gt;email@cityuhongkong.com&lt;/dd&gt;--&gt;
+            &lt;!--&lt;dt&gt;Website: &lt;/dt&gt;--&gt;
+            &lt;!--&lt;dd&gt;cityuhongkong.com&lt;/dd&gt;--&gt;
+          &lt;!--&lt;/dl&gt;--&gt;
+        &lt;!--&lt;/div&gt;--&gt;
+      &lt;!--&lt;/div&gt;--&gt;
+      &lt;!--&lt;div class&#x3D;&quot;col-md-offset-1 col-md-7&quot;&gt;--&gt;
+        &lt;!--&lt;div class&#x3D;&quot;col-md-8&quot;&gt;--&gt;
+          &lt;!--&lt;h3 class&#x3D;&quot;bottom-line blue&quot;&gt;city university of hong Kong&lt;/h3&gt;--&gt;
+        &lt;!--&lt;/div&gt;--&gt;
+        &lt;!--&lt;div class&#x3D;&quot;col-md-12&quot;&gt;--&gt;
+          &lt;!--&lt;p&gt;Blurb about City University of Hong Kong. Lorem ipsum dolor sit amet, amet mi libero lobortis--&gt;
+            &lt;!--nullam, hac est augue lacinia mauris adipiscing pede. Magna suspendisse pellentesque varius--&gt;
+            &lt;!--a sit urna, iaculis incidunt egestas hendrerit ac, justo in non eleifend varius integer arcu,--&gt;
+            &lt;!--donec dui turpis id pellentesque, vel morbi. Wisi non ac. Urna nibh nunc proin accumsan--&gt;
+            &lt;!--donec nibh, laboriosam ullamcorper nec vestibulum sem rutrum ex, at libero viverra diam--&gt;
+            &lt;!--in euismod. Ligula et nonummy vitae eu vitae eget, congue pulvi. &lt;/p&gt;--&gt;
+        &lt;!--&lt;/div&gt;--&gt;
+        &lt;!--&lt;div class&#x3D;&quot;col-md-4&quot;&gt;--&gt;
+          &lt;!--&lt;h3 class&#x3D;&quot;bottom-line blue&quot;&gt;collections&lt;/h3&gt;--&gt;
+        &lt;!--&lt;/div&gt;--&gt;
+        &lt;!--&lt;div class&#x3D;&quot;col-md-12&quot;&gt;--&gt;
+          &lt;!--&lt;p&gt;&lt;strong&gt;Cityu Electronic Theses And Dissertations &lt;/strong&gt;&lt;span&gt;[ 1731 Records ]&lt;/span&gt;&lt;/p&gt;--&gt;
+          &lt;!--&lt;p&gt;&lt;strong&gt;Outstanding Academic Papers By Students &lt;/strong&gt;&lt;span&gt;[ 241 Records ]&lt;/span&gt;&lt;/p&gt;--&gt;
+          &lt;!--&lt;p&gt;&lt;strong&gt;Student Works With External Awards &lt;/strong&gt;&lt;span&gt;[ 253 Records ]&lt;/span&gt;&lt;/p&gt;--&gt;
+        &lt;!--&lt;/div&gt;--&gt;
+      &lt;!--&lt;/div&gt;--&gt;
+    &lt;!--&lt;/div&gt;--&gt;
+  &lt;!--&lt;/div&gt;--&gt;
+&lt;!--&lt;/div&gt;--&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade" id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="container">  <div class="row">    <div class="col-md-12">      <div class="cover-image banner-height" style="background-image: url(\'../../assets/img/fish.png\');">        <div class="main-page-block">          <app-general-search-box></app-general-search-box>        </div>      </div>    </div>  </div>  <div class="col-md-offset-1 col-md-10">    <div class="row">    <div class="col-md-12 padding_top3p padding_bottom3p">      <h3 class="padding_bottom2p"><span class="bottom-line blue">INSTITUTIONS</span></h3>      <p>Forty academic libraries surrounding the Pacific have joined together to improve access to scholarly resources.</p>    </div>    <div class="col-md-12 text-center">        <div class="institution-list column-count-3">          <div *ngFor="let institution of institutions; let i = index">            <a href="/institution/?name={{ institution.realName }}">{{ institution.name }}</a>            <div class="clearfix" *ngIf="i % 3 == 0"></div>          </div>        </div>    </div>    </div>  </div></div><!--<div class="row">-->  <!--<div class="col-md-12">-->    <!--<div class="cover-image banner-height" style="background-image: url(\'../../assets/img/fish.png\');">-->      <!--<div class="main-page-block">-->        <!--<div class="search">-->          <!--<input type="search" placeholder="Search the Library">-->          <!--<div class="search-submit">-->            <!--<button type="submit"></button>-->            <!--<img src="../../assets/img/search.png" alt="">-->          <!--</div>-->        <!--</div>-->      <!--</div>-->    <!--</div>-->    <!--<div class="col-md-offset-1 col-md-10 padding_top4p padding_bottom3p ">-->      <!--<div class="col-md-4 padding_top4p padding_bottom3p">-->        <!--<div class="col-md-offset-2 col-md-10 padding_bottom5p">-->          <!--<img src="../../assets/img/city.png" alt="">-->        <!--</div>-->        <!--<div class="padding_top5p col-md-12">-->          <!--<dl class="dl-horizontal">-->            <!--<dt>Location: </dt>-->            <!--<dd>Hong Kong</dd>-->            <!--<dt>Phone: </dt>-->            <!--<dd>424-246-8895</dd>-->            <!--<dt>Email: </dt>-->            <!--<dd>email@cityuhongkong.com</dd>-->            <!--<dt>Website: </dt>-->            <!--<dd>cityuhongkong.com</dd>-->          <!--</dl>-->        <!--</div>-->      <!--</div>-->      <!--<div class="col-md-offset-1 col-md-7">-->        <!--<div class="col-md-8">-->          <!--<h3 class="bottom-line blue">city university of hong Kong</h3>-->        <!--</div>-->        <!--<div class="col-md-12">-->          <!--<p>Blurb about City University of Hong Kong. Lorem ipsum dolor sit amet, amet mi libero lobortis-->            <!--nullam, hac est augue lacinia mauris adipiscing pede. Magna suspendisse pellentesque varius-->            <!--a sit urna, iaculis incidunt egestas hendrerit ac, justo in non eleifend varius integer arcu,-->            <!--donec dui turpis id pellentesque, vel morbi. Wisi non ac. Urna nibh nunc proin accumsan-->            <!--donec nibh, laboriosam ullamcorper nec vestibulum sem rutrum ex, at libero viverra diam-->            <!--in euismod. Ligula et nonummy vitae eu vitae eget, congue pulvi. </p>-->        <!--</div>-->        <!--<div class="col-md-4">-->          <!--<h3 class="bottom-line blue">collections</h3>-->        <!--</div>-->        <!--<div class="col-md-12">-->          <!--<p><strong>Cityu Electronic Theses And Dissertations </strong><span>[ 1731 Records ]</span></p>-->          <!--<p><strong>Outstanding Academic Papers By Students </strong><span>[ 241 Records ]</span></p>-->          <!--<p><strong>Student Works With External Awards </strong><span>[ 253 Records ]</span></p>-->        <!--</div>-->      <!--</div>-->    <!--</div>-->  <!--</div>--><!--</div>--></div>'
+    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AdvancedSearchComponent', 'selector': 'app-advanced-search'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CollectionsComponent', 'selector': 'app-collections'},{'name': 'DetailItemComponent', 'selector': 'app-detail-item'},{'name': 'ErrorComponent', 'selector': 'app-error'},{'name': 'ExhibitionComponent', 'selector': 'app-exhibition'},{'name': 'ExhibitionsComponent', 'selector': 'app-exhibitions'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'GeneralSearchBoxComponent', 'selector': 'app-general-search-box'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HeaderMenuComponent', 'selector': 'app-header-menu'},{'name': 'HelpComponent', 'selector': 'app-help'},{'name': 'IndexContentComponent', 'selector': 'app-index-content'},{'name': 'InstitutionComponent', 'selector': 'app-institution'},{'name': 'InstitutionsComponent', 'selector': 'app-institutions'},{'name': 'NotFoundComponent', 'selector': ''}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'InstitutionsComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+           </div>
+       </div>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script>var COMPODOC_CURRENT_PAGE_DEPTH = 1;</script>
+
+       <script src="../js/search/search.js"></script>
+       <script src="../js/search/lunr.min.js"></script>
+       <script src="../js/search/search-lunr.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+       <script src="../js/search/search_index.js"></script>
+
+    </body>
+</html>

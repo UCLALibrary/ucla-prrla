@@ -1,0 +1,878 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>prrla documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+	    <link rel="stylesheet" href="./styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="./" class="navbar-brand">prrla documentation</a>
+            <button type="button" class="btn btn-default btn-menu fa fa-bars" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+            <div id="book-search-input" role="search">
+                <input type="text" placeholder="Type to search">
+            </div>
+            <nav>
+            
+                <ul class="list">
+            
+                    <li class="title">
+                        <a href="./index.html">prrla documentation</a>
+                    </li>
+            
+                    <li class="divider"></li>
+            
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="./index.html"><span class="fa fa-home"></span>Getting started</a>
+                        <ul class="links">
+                                <li class="link">
+                                    <a 
+                                         href="./overview.html" 
+                                        
+                                         href="./overview.html" 
+                                         class="active" >
+                                        <span class="fa fa-th"></span>Overview
+                                    </a>
+                                </li>
+                                <li class="link">
+                                  <a href="./index.html" ><span class="fa fa-file-text-o"></span>README</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="./modules.html" >
+                            <div class="menu-toggler linked" data-toggle="collapse"
+                                    data-target="#xs-modules-links"
+                            >
+                                <span class="fa fa-archive"></span>
+                                <span class="link-name">Modules</span>
+                                <span class="fa fa-angle-down"></span>
+                            </div>
+                        </a>
+                        <ul class="links collapse "
+                                id="xs-modules-links"
+                            >
+                                <li class="link">
+                                    <a href="./modules/AppModule.html" >AppModule</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+                    <li class="chapter">
+                        <div class="simple menu-toggler" data-toggle="collapse"
+                                data-target="#xs-components-links"
+                            >
+                            <span class="fa fa-cogs"></span>
+                            <span>Components</span>
+                            <span class="fa fa-angle-down"></span>
+                        </div>
+                        <ul class="links collapse "
+                                id="xs-components-links"
+                            >
+                                <li class="link">
+                                    <a href="./components/AboutComponent.html" >AboutComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="./components/AdvancedSearchComponent.html" >AdvancedSearchComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="./components/AppComponent.html" >AppComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="./components/CollectionsComponent.html" >CollectionsComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="./components/DetailItemComponent.html" >DetailItemComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="./components/ErrorComponent.html" >ErrorComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="./components/ExhibitionComponent.html" >ExhibitionComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="./components/ExhibitionsComponent.html" >ExhibitionsComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="./components/FooterComponent.html" >FooterComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="./components/GeneralSearchBoxComponent.html" >GeneralSearchBoxComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="./components/HeaderComponent.html" >HeaderComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="./components/HeaderMenuComponent.html" >HeaderMenuComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="./components/HelpComponent.html" >HelpComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="./components/IndexContentComponent.html" >IndexContentComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="./components/InstitutionComponent.html" >InstitutionComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="./components/InstitutionsComponent.html" >InstitutionsComponent</a>
+                                </li>
+                                <li class="link">
+                                    <a href="./components/NotFoundComponent.html" >NotFoundComponent</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+            
+            
+                    <li class="chapter">
+                        <div class="simple menu-toggler" data-toggle="collapse"
+                                data-target="#xs-injectables-links"
+                            >
+                            <span class="fa fa-long-arrow-down"></span>
+                            <span>Injectables</span>
+                            <span class="fa fa-angle-down"></span>
+                        </div>
+                        <ul class="links collapse "
+                                id="xs-injectables-links"
+                            >
+                                <li class="link">
+                                    <a href="./injectables/SolrService.html" >SolrService</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+            
+            
+                    <li class="chapter">
+                        <div class="simple menu-toggler" data-toggle="collapse"
+                                data-target="#xs-pipes-links"
+                            >
+                            <span class="fa fa-plus"></span>
+                            <span>Pipes</span>
+                            <span class="fa fa-angle-down"></span>
+                        </div>
+                        <ul class="links collapse "
+                                id="xs-pipes-links"
+                            >
+                                <li class="link">
+                                    <a href="./pipes/DerpPipe.html" >DerpPipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="./pipes/ImplodePipe.html" >ImplodePipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="./pipes/ParseJsonPipe.html" >ParseJsonPipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="./pipes/TruncatePipe.html" >TruncatePipe</a>
+                                </li>
+                                <li class="link">
+                                    <a href="./pipes/UrlPipe.html" >UrlPipe</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+                    <li class="chapter">
+                        <div class="simple menu-toggler" data-toggle="collapse"
+                                data-target="#xs-miscellaneous-links"
+                            >
+                            <span class="fa fa-cubes"></span>
+                            <span>Miscellaneous</span>
+                            <span class="fa fa-angle-down"></span>
+                        </div>
+                        <ul class="links collapse "
+                                id="xs-miscellaneous-links"
+                            >
+                                <li class="link">
+                                  <a href="./miscellaneous/variables.html" data-type="entity-link" >Variables</a>
+                                </li>
+                        </ul>
+                    </li>
+            
+            
+                    <li class="chapter">
+                        <a data-type="chapter-link" href="./coverage.html" ><span class="fa fa-tasks"></span>Documentation coverage</a>
+                    </li>
+            
+                    <li class="divider"></li>
+                    <li class="copyright">
+                            Documentation generated using <a href="https://compodoc.github.io/website/" target="_blank">
+                                        <img src=".//images/compodoc-vectorise.svg" class="img-responsive">
+                            </a>
+                    </li>
+            
+                </ul>
+            
+            </nav>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <nav>
+                   
+                       <ul class="list">
+                   
+                           <li class="title">
+                               <a href="./index.html">prrla documentation</a>
+                           </li>
+                   
+                           <li class="divider"></li>
+                   
+                               <div id="book-search-input" role="search">
+                                   <input type="text" placeholder="Type to search">
+                               </div>
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="./index.html"><span class="fa fa-home"></span>Getting started</a>
+                               <ul class="links">
+                                       <li class="link">
+                                           <a 
+                                                href="./overview.html" 
+                                               
+                                                href="./overview.html" 
+                                                class="active" >
+                                               <span class="fa fa-th"></span>Overview
+                                           </a>
+                                       </li>
+                                       <li class="link">
+                                         <a href="./index.html" ><span class="fa fa-file-text-o"></span>README</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="./modules.html" >
+                                   <div class="menu-toggler linked" data-toggle="collapse"
+                                           data-target="#modules-links"
+                                   >
+                                       <span class="fa fa-archive"></span>
+                                       <span class="link-name">Modules</span>
+                                       <span class="fa fa-angle-down"></span>
+                                   </div>
+                               </a>
+                               <ul class="links collapse "
+                                       id="modules-links"
+                   >
+                                       <li class="link">
+                                           <a href="./modules/AppModule.html" >AppModule</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                           <li class="chapter">
+                               <div class="simple menu-toggler" data-toggle="collapse"
+                                       data-target="#components-links"
+                   >
+                                   <span class="fa fa-cogs"></span>
+                                   <span>Components</span>
+                                   <span class="fa fa-angle-down"></span>
+                               </div>
+                               <ul class="links collapse "
+                                       id="components-links"
+                   >
+                                       <li class="link">
+                                           <a href="./components/AboutComponent.html" >AboutComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./components/AdvancedSearchComponent.html" >AdvancedSearchComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./components/AppComponent.html" >AppComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./components/CollectionsComponent.html" >CollectionsComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./components/DetailItemComponent.html" >DetailItemComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./components/ErrorComponent.html" >ErrorComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./components/ExhibitionComponent.html" >ExhibitionComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./components/ExhibitionsComponent.html" >ExhibitionsComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./components/FooterComponent.html" >FooterComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./components/GeneralSearchBoxComponent.html" >GeneralSearchBoxComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./components/HeaderComponent.html" >HeaderComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./components/HeaderMenuComponent.html" >HeaderMenuComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./components/HelpComponent.html" >HelpComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./components/IndexContentComponent.html" >IndexContentComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./components/InstitutionComponent.html" >InstitutionComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./components/InstitutionsComponent.html" >InstitutionsComponent</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./components/NotFoundComponent.html" >NotFoundComponent</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                   
+                   
+                           <li class="chapter">
+                               <div class="simple menu-toggler" data-toggle="collapse"
+                                       data-target="#injectables-links"
+                   >
+                                   <span class="fa fa-long-arrow-down"></span>
+                                   <span>Injectables</span>
+                                   <span class="fa fa-angle-down"></span>
+                               </div>
+                               <ul class="links collapse "
+                                       id="injectables-links"
+                   >
+                                       <li class="link">
+                                           <a href="./injectables/SolrService.html" >SolrService</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                   
+                   
+                           <li class="chapter">
+                               <div class="simple menu-toggler" data-toggle="collapse"
+                                       data-target="#pipes-links"
+                   >
+                                   <span class="fa fa-plus"></span>
+                                   <span>Pipes</span>
+                                   <span class="fa fa-angle-down"></span>
+                               </div>
+                               <ul class="links collapse "
+                                       id="pipes-links"
+                   >
+                                       <li class="link">
+                                           <a href="./pipes/DerpPipe.html" >DerpPipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./pipes/ImplodePipe.html" >ImplodePipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./pipes/ParseJsonPipe.html" >ParseJsonPipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./pipes/TruncatePipe.html" >TruncatePipe</a>
+                                       </li>
+                                       <li class="link">
+                                           <a href="./pipes/UrlPipe.html" >UrlPipe</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                           <li class="chapter">
+                               <div class="simple menu-toggler" data-toggle="collapse"
+                                       data-target="#miscellaneous-links"
+                   >
+                                   <span class="fa fa-cubes"></span>
+                                   <span>Miscellaneous</span>
+                                   <span class="fa fa-angle-down"></span>
+                               </div>
+                               <ul class="links collapse "
+                                       id="miscellaneous-links"
+                   >
+                                       <li class="link">
+                                         <a href="./miscellaneous/variables.html" data-type="entity-link" >Variables</a>
+                                       </li>
+                               </ul>
+                           </li>
+                   
+                   
+                           <li class="chapter">
+                               <a data-type="chapter-link" href="./coverage.html" ><span class="fa fa-tasks"></span>Documentation coverage</a>
+                           </li>
+                   
+                           <li class="divider"></li>
+                           <li class="copyright">
+                                   Documentation generated using <a href="https://compodoc.github.io/website/" target="_blank">
+                                               <img src=".//images/compodoc-vectorise.svg" class="img-responsive">
+                                   </a>
+                           </li>
+                   
+                       </ul>
+                   
+                   </nav>
+               </div>
+               <div class="content overview">
+                   <div class="content-data">
+
+
+<h3>Overview</h3>
+            <div class="text-center module-graph-container">
+                <div id="module-graph-svg">
+                    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: dependencies Pages: 1 -->
+<svg width="3402pt" height="284pt"
+ viewBox="0.00 0.00 3402.00 284.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 280)">
+<title>dependencies</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-280 3398,-280 3398,4 -4,4"/>
+<text text-anchor="start" x="1676.0091" y="-42.4" font-family="sans-serif" font-weight="bold" font-size="14.00" fill="#000000">Legend</text>
+<polygon fill="#ffffb3" stroke="transparent" points="1463,-10 1463,-30 1483,-30 1483,-10 1463,-10"/>
+<text text-anchor="start" x="1486.629" y="-15.4" font-family="sans-serif" font-size="14.00" fill="#000000"> &#160;Declarations</text>
+<polygon fill="#8dd3c7" stroke="transparent" points="1576,-10 1576,-30 1596,-30 1596,-10 1576,-10"/>
+<text text-anchor="start" x="1599.7251" y="-15.4" font-family="sans-serif" font-size="14.00" fill="#000000"> &#160;Module</text>
+<polygon fill="#80b1d3" stroke="transparent" points="1662,-10 1662,-30 1682,-30 1682,-10 1662,-10"/>
+<text text-anchor="start" x="1685.7812" y="-15.4" font-family="sans-serif" font-size="14.00" fill="#000000"> &#160;Bootstrap</text>
+<polygon fill="#fdb462" stroke="transparent" points="1759,-10 1759,-30 1779,-30 1779,-10 1759,-10"/>
+<text text-anchor="start" x="1782.6732" y="-15.4" font-family="sans-serif" font-size="14.00" fill="#000000"> &#160;Providers</text>
+<polygon fill="#fb8072" stroke="transparent" points="1855,-10 1855,-30 1875,-30 1875,-10 1855,-10"/>
+<text text-anchor="start" x="1878.7258" y="-15.4" font-family="sans-serif" font-size="14.00" fill="#000000"> &#160;Exports</text>
+<g id="clust1" class="cluster">
+<title>cluster_AppModule</title>
+<polygon fill="none" stroke="#000000" stroke-dasharray="1,5" points="8,-70 8,-268 3386,-268 3386,-70 8,-70"/>
+</g>
+<g id="clust2" class="cluster">
+<title>cluster_AppModule_declarations</title>
+<polygon fill="none" stroke="#000000" points="230,-78 230,-130 3378,-130 3378,-78 230,-78"/>
+</g>
+<g id="clust25" class="cluster">
+<title>cluster_AppModule_imports</title>
+<polygon fill="none" stroke="#000000" points="152,-78 152,-130 222,-130 222,-78 152,-78"/>
+</g>
+<g id="clust27" class="cluster">
+<title>cluster_AppModule_bootstrap</title>
+<polygon fill="none" stroke="#000000" points="1483,-208 1483,-260 1607,-260 1607,-208 1483,-208"/>
+</g>
+<g id="clust28" class="cluster">
+<title>cluster_AppModule_providers</title>
+<polygon fill="none" stroke="#000000" points="16,-78 16,-130 144,-130 144,-78 16,-78"/>
+</g>
+<!-- AppComponent -->
+<g id="node1" class="node">
+<title>AppComponent</title>
+<polygon fill="#ffffb3" stroke="#000000" points="3369.9399,-122 3264.0601,-122 3264.0601,-86 3369.9399,-86 3369.9399,-122"/>
+<text text-anchor="middle" x="3317" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">AppComponent</text>
+</g>
+<!-- AppModule -->
+<g id="node23" class="node">
+<title>AppModule</title>
+<polygon fill="#8dd3c7" stroke="#000000" points="1586.6571,-187 1583.6571,-191 1562.6571,-191 1559.6571,-187 1503.3429,-187 1503.3429,-151 1586.6571,-151 1586.6571,-187"/>
+<text text-anchor="middle" x="1545" y="-164.8" font-family="Times,serif" font-size="14.00" fill="#000000">AppModule</text>
+</g>
+<!-- AppComponent&#45;&gt;AppModule -->
+<g id="edge1" class="edge">
+<title>AppComponent&#45;&gt;AppModule</title>
+<path fill="none" stroke="#000000" d="M3317,-122.1532C3317,-145.7566 3317,-184 3317,-184 3317,-184 1597.0547,-184 1597.0547,-184"/>
+<polygon fill="#000000" stroke="#000000" points="1597.0548,-180.5001 1587.0547,-184 1597.0547,-187.5001 1597.0548,-180.5001"/>
+</g>
+<!-- HeaderComponent -->
+<g id="node2" class="node">
+<title>HeaderComponent</title>
+<polygon fill="#ffffb3" stroke="#000000" points="3245.7437,-122 3124.2563,-122 3124.2563,-86 3245.7437,-86 3245.7437,-122"/>
+<text text-anchor="middle" x="3185" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">HeaderComponent</text>
+</g>
+<!-- HeaderComponent&#45;&gt;AppModule -->
+<g id="edge2" class="edge">
+<title>HeaderComponent&#45;&gt;AppModule</title>
+<path fill="none" stroke="#000000" d="M3185,-122.2479C3185,-145.0179 3185,-181 3185,-181 3185,-181 1596.7728,-181 1596.7728,-181"/>
+<polygon fill="#000000" stroke="#000000" points="1596.7728,-177.5001 1586.7728,-181 1596.7727,-184.5001 1596.7728,-177.5001"/>
+</g>
+<!-- FooterComponent -->
+<g id="node3" class="node">
+<title>FooterComponent</title>
+<polygon fill="#ffffb3" stroke="#000000" points="3105.8809,-122 2988.1191,-122 2988.1191,-86 3105.8809,-86 3105.8809,-122"/>
+<text text-anchor="middle" x="3047" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">FooterComponent</text>
+</g>
+<!-- FooterComponent&#45;&gt;AppModule -->
+<g id="edge3" class="edge">
+<title>FooterComponent&#45;&gt;AppModule</title>
+<path fill="none" stroke="#000000" d="M3047,-122.2921C3047,-144.2057 3047,-178 3047,-178 3047,-178 1596.7397,-178 1596.7397,-178"/>
+<polygon fill="#000000" stroke="#000000" points="1596.7398,-174.5001 1586.7397,-178 1596.7397,-181.5001 1596.7398,-174.5001"/>
+</g>
+<!-- IndexContentComponent -->
+<g id="node4" class="node">
+<title>IndexContentComponent</title>
+<polygon fill="#ffffb3" stroke="#000000" points="2969.5407,-122 2812.4593,-122 2812.4593,-86 2969.5407,-86 2969.5407,-122"/>
+<text text-anchor="middle" x="2891" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">IndexContentComponent</text>
+</g>
+<!-- IndexContentComponent&#45;&gt;AppModule -->
+<g id="edge4" class="edge">
+<title>IndexContentComponent&#45;&gt;AppModule</title>
+<path fill="none" stroke="#000000" d="M2891,-122.2843C2891,-143.3211 2891,-175 2891,-175 2891,-175 1596.7591,-175 1596.7591,-175"/>
+<polygon fill="#000000" stroke="#000000" points="1596.7591,-171.5001 1586.7591,-175 1596.759,-178.5001 1596.7591,-171.5001"/>
+</g>
+<!-- HeaderMenuComponent -->
+<g id="node5" class="node">
+<title>HeaderMenuComponent</title>
+<polygon fill="#ffffb3" stroke="#000000" points="2794.4031,-122 2639.5969,-122 2639.5969,-86 2794.4031,-86 2794.4031,-122"/>
+<text text-anchor="middle" x="2717" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">HeaderMenuComponent</text>
+</g>
+<!-- HeaderMenuComponent&#45;&gt;AppModule -->
+<g id="edge5" class="edge">
+<title>HeaderMenuComponent&#45;&gt;AppModule</title>
+<path fill="none" stroke="#000000" d="M2717,-122.2228C2717,-142.3652 2717,-172 2717,-172 2717,-172 1596.7121,-172 1596.7121,-172"/>
+<polygon fill="#000000" stroke="#000000" points="1596.7121,-168.5001 1586.7121,-172 1596.7121,-175.5001 1596.7121,-168.5001"/>
+</g>
+<!-- AboutComponent -->
+<g id="node6" class="node">
+<title>AboutComponent</title>
+<polygon fill="#ffffb3" stroke="#000000" points="2622.3301,-122 2505.6699,-122 2505.6699,-86 2622.3301,-86 2622.3301,-122"/>
+<text text-anchor="middle" x="2564" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">AboutComponent</text>
+</g>
+<!-- AboutComponent&#45;&gt;AppModule -->
+<g id="edge6" class="edge">
+<title>AboutComponent&#45;&gt;AppModule</title>
+<path fill="none" stroke="#000000" d="M2564,-122.1061C2564,-141.3391 2564,-169 2564,-169 2564,-169 1596.8457,-169 1596.8457,-169"/>
+<polygon fill="#000000" stroke="#000000" points="1596.8458,-165.5001 1586.8457,-169 1596.8457,-172.5001 1596.8458,-165.5001"/>
+</g>
+<!-- InstitutionsComponent -->
+<g id="node7" class="node">
+<title>InstitutionsComponent</title>
+<polygon fill="#ffffb3" stroke="#000000" points="2488.3356,-122 2343.6644,-122 2343.6644,-86 2488.3356,-86 2488.3356,-122"/>
+<text text-anchor="middle" x="2416" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">InstitutionsComponent</text>
+</g>
+<!-- InstitutionsComponent&#45;&gt;AppModule -->
+<g id="edge7" class="edge">
+<title>InstitutionsComponent&#45;&gt;AppModule</title>
+<path fill="none" stroke="#000000" d="M2416,-122.2667C2416,-140.5552 2416,-166 2416,-166 2416,-166 1596.7167,-166 1596.7167,-166"/>
+<polygon fill="#000000" stroke="#000000" points="1596.7167,-162.5001 1586.7167,-166 1596.7167,-169.5001 1596.7167,-162.5001"/>
+</g>
+<!-- CollectionsComponent -->
+<g id="node8" class="node">
+<title>CollectionsComponent</title>
+<polygon fill="#ffffb3" stroke="#000000" points="2325.6052,-122 2180.3948,-122 2180.3948,-86 2325.6052,-86 2325.6052,-122"/>
+<text text-anchor="middle" x="2253" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">CollectionsComponent</text>
+</g>
+<!-- CollectionsComponent&#45;&gt;AppModule -->
+<g id="edge8" class="edge">
+<title>CollectionsComponent&#45;&gt;AppModule</title>
+<path fill="none" stroke="#000000" d="M2253,-122.0225C2253,-139.3734 2253,-163 2253,-163 2253,-163 1596.9065,-163 1596.9065,-163"/>
+<polygon fill="#000000" stroke="#000000" points="1596.9066,-159.5001 1586.9065,-163 1596.9065,-166.5001 1596.9066,-159.5001"/>
+</g>
+<!-- AdvancedSearchComponent -->
+<g id="node9" class="node">
+<title>AdvancedSearchComponent</title>
+<polygon fill="#ffffb3" stroke="#000000" points="2162.1699,-122 1985.8301,-122 1985.8301,-86 2162.1699,-86 2162.1699,-122"/>
+<text text-anchor="middle" x="2074" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">AdvancedSearchComponent</text>
+</g>
+<!-- AdvancedSearchComponent&#45;&gt;AppModule -->
+<g id="edge9" class="edge">
+<title>AdvancedSearchComponent&#45;&gt;AppModule</title>
+<path fill="none" stroke="#000000" d="M2074,-122.027C2074,-138.3976 2074,-160 2074,-160 2074,-160 1596.9519,-160 1596.9519,-160"/>
+<polygon fill="#000000" stroke="#000000" points="1596.9519,-156.5001 1586.9519,-160 1596.9519,-163.5001 1596.9519,-156.5001"/>
+</g>
+<!-- HelpComponent -->
+<g id="node10" class="node">
+<title>HelpComponent</title>
+<polygon fill="#ffffb3" stroke="#000000" points="1968.0452,-122 1859.9548,-122 1859.9548,-86 1968.0452,-86 1968.0452,-122"/>
+<text text-anchor="middle" x="1914" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">HelpComponent</text>
+</g>
+<!-- HelpComponent&#45;&gt;AppModule -->
+<g id="edge10" class="edge">
+<title>HelpComponent&#45;&gt;AppModule</title>
+<path fill="none" stroke="#000000" d="M1914,-122.2396C1914,-137.5706 1914,-157 1914,-157 1914,-157 1596.9697,-157 1596.9697,-157"/>
+<polygon fill="#000000" stroke="#000000" points="1596.9698,-153.5001 1586.9697,-157 1596.9697,-160.5001 1596.9698,-153.5001"/>
+</g>
+<!-- DetailItemComponent -->
+<g id="node11" class="node">
+<title>DetailItemComponent</title>
+<polygon fill="#ffffb3" stroke="#000000" points="1841.6965,-122 1700.3035,-122 1700.3035,-86 1841.6965,-86 1841.6965,-122"/>
+<text text-anchor="middle" x="1771" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">DetailItemComponent</text>
+</g>
+<!-- DetailItemComponent&#45;&gt;AppModule -->
+<g id="edge11" class="edge">
+<title>DetailItemComponent&#45;&gt;AppModule</title>
+<path fill="none" stroke="#000000" d="M1771,-122.0511C1771,-136.373 1771,-154 1771,-154 1771,-154 1596.7153,-154 1596.7153,-154"/>
+<polygon fill="#000000" stroke="#000000" points="1596.7153,-150.5001 1586.7153,-154 1596.7152,-157.5001 1596.7153,-150.5001"/>
+</g>
+<!-- NotFoundComponent -->
+<g id="node12" class="node">
+<title>NotFoundComponent</title>
+<polygon fill="#ffffb3" stroke="#000000" points="1682.1122,-122 1543.8878,-122 1543.8878,-86 1682.1122,-86 1682.1122,-122"/>
+<text text-anchor="middle" x="1613" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">NotFoundComponent</text>
+</g>
+<!-- NotFoundComponent&#45;&gt;AppModule -->
+<g id="edge12" class="edge">
+<title>NotFoundComponent&#45;&gt;AppModule</title>
+<path fill="none" stroke="#000000" d="M1565.3861,-122.1061C1565.3861,-122.1061 1565.3861,-140.991 1565.3861,-140.991"/>
+<polygon fill="#000000" stroke="#000000" points="1561.8861,-140.9909 1565.3861,-150.991 1568.8861,-140.991 1561.8861,-140.9909"/>
+</g>
+<!-- ParseJsonPipe -->
+<g id="node13" class="node">
+<title>ParseJsonPipe</title>
+<polygon fill="#ffffb3" stroke="#000000" points="1526.094,-122 1429.906,-122 1429.906,-86 1526.094,-86 1526.094,-122"/>
+<text text-anchor="middle" x="1478" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">ParseJsonPipe</text>
+</g>
+<!-- ParseJsonPipe&#45;&gt;AppModule -->
+<g id="edge13" class="edge">
+<title>ParseJsonPipe&#45;&gt;AppModule</title>
+<path fill="none" stroke="#000000" d="M1514.6094,-122.1061C1514.6094,-122.1061 1514.6094,-140.991 1514.6094,-140.991"/>
+<polygon fill="#000000" stroke="#000000" points="1511.1095,-140.9909 1514.6094,-150.991 1518.1095,-140.991 1511.1095,-140.9909"/>
+</g>
+<!-- DerpPipe -->
+<g id="node14" class="node">
+<title>DerpPipe</title>
+<polygon fill="#ffffb3" stroke="#000000" points="1412.3697,-122 1343.6303,-122 1343.6303,-86 1412.3697,-86 1412.3697,-122"/>
+<text text-anchor="middle" x="1378" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">DerpPipe</text>
+</g>
+<!-- DerpPipe&#45;&gt;AppModule -->
+<g id="edge14" class="edge">
+<title>DerpPipe&#45;&gt;AppModule</title>
+<path fill="none" stroke="#000000" d="M1378,-122.0511C1378,-136.373 1378,-154 1378,-154 1378,-154 1493.2896,-154 1493.2896,-154"/>
+<polygon fill="#000000" stroke="#000000" points="1493.2897,-157.5001 1503.2896,-154 1493.2896,-150.5001 1493.2897,-157.5001"/>
+</g>
+<!-- UrlPipe -->
+<g id="node15" class="node">
+<title>UrlPipe</title>
+<polygon fill="#ffffb3" stroke="#000000" points="1325.5473,-122 1266.4527,-122 1266.4527,-86 1325.5473,-86 1325.5473,-122"/>
+<text text-anchor="middle" x="1296" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">UrlPipe</text>
+</g>
+<!-- UrlPipe&#45;&gt;AppModule -->
+<g id="edge15" class="edge">
+<title>UrlPipe&#45;&gt;AppModule</title>
+<path fill="none" stroke="#000000" d="M1296,-122.2396C1296,-137.5706 1296,-157 1296,-157 1296,-157 1493.323,-157 1493.323,-157"/>
+<polygon fill="#000000" stroke="#000000" points="1493.323,-160.5001 1503.323,-157 1493.323,-153.5001 1493.323,-160.5001"/>
+</g>
+<!-- ExhibitionsComponent -->
+<g id="node16" class="node">
+<title>ExhibitionsComponent</title>
+<polygon fill="#ffffb3" stroke="#000000" points="1247.892,-122 1102.108,-122 1102.108,-86 1247.892,-86 1247.892,-122"/>
+<text text-anchor="middle" x="1175" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">ExhibitionsComponent</text>
+</g>
+<!-- ExhibitionsComponent&#45;&gt;AppModule -->
+<g id="edge16" class="edge">
+<title>ExhibitionsComponent&#45;&gt;AppModule</title>
+<path fill="none" stroke="#000000" d="M1175,-122.027C1175,-138.3976 1175,-160 1175,-160 1175,-160 1493.2755,-160 1493.2755,-160"/>
+<polygon fill="#000000" stroke="#000000" points="1493.2756,-163.5001 1503.2755,-160 1493.2755,-156.5001 1493.2756,-163.5001"/>
+</g>
+<!-- GeneralSearchBoxComponent -->
+<g id="node17" class="node">
+<title>GeneralSearchBoxComponent</title>
+<polygon fill="#ffffb3" stroke="#000000" points="1084.5576,-122 897.4424,-122 897.4424,-86 1084.5576,-86 1084.5576,-122"/>
+<text text-anchor="middle" x="991" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">GeneralSearchBoxComponent</text>
+</g>
+<!-- GeneralSearchBoxComponent&#45;&gt;AppModule -->
+<g id="edge17" class="edge">
+<title>GeneralSearchBoxComponent&#45;&gt;AppModule</title>
+<path fill="none" stroke="#000000" d="M991,-122.0225C991,-139.3734 991,-163 991,-163 991,-163 1492.9052,-163 1492.9052,-163"/>
+<polygon fill="#000000" stroke="#000000" points="1492.9053,-166.5001 1502.9052,-163 1492.9052,-159.5001 1492.9053,-166.5001"/>
+</g>
+<!-- ExhibitionComponent -->
+<g id="node18" class="node">
+<title>ExhibitionComponent</title>
+<polygon fill="#ffffb3" stroke="#000000" points="879.4481,-122 738.5519,-122 738.5519,-86 879.4481,-86 879.4481,-122"/>
+<text text-anchor="middle" x="809" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">ExhibitionComponent</text>
+</g>
+<!-- ExhibitionComponent&#45;&gt;AppModule -->
+<g id="edge18" class="edge">
+<title>ExhibitionComponent&#45;&gt;AppModule</title>
+<path fill="none" stroke="#000000" d="M809,-122.2667C809,-140.5552 809,-166 809,-166 809,-166 1493.3207,-166 1493.3207,-166"/>
+<polygon fill="#000000" stroke="#000000" points="1493.3207,-169.5001 1503.3207,-166 1493.3206,-162.5001 1493.3207,-169.5001"/>
+</g>
+<!-- InstitutionComponent -->
+<g id="node19" class="node">
+<title>InstitutionComponent</title>
+<polygon fill="#ffffb3" stroke="#000000" points="720.3906,-122 581.6094,-122 581.6094,-86 720.3906,-86 720.3906,-122"/>
+<text text-anchor="middle" x="651" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">InstitutionComponent</text>
+</g>
+<!-- InstitutionComponent&#45;&gt;AppModule -->
+<g id="edge19" class="edge">
+<title>InstitutionComponent&#45;&gt;AppModule</title>
+<path fill="none" stroke="#000000" d="M651,-122.1061C651,-141.3391 651,-169 651,-169 651,-169 1493.0796,-169 1493.0796,-169"/>
+<polygon fill="#000000" stroke="#000000" points="1493.0797,-172.5001 1503.0796,-169 1493.0796,-165.5001 1493.0797,-172.5001"/>
+</g>
+<!-- ErrorComponent -->
+<g id="node20" class="node">
+<title>ErrorComponent</title>
+<polygon fill="#ffffb3" stroke="#000000" points="563.3669,-122 452.6331,-122 452.6331,-86 563.3669,-86 563.3669,-122"/>
+<text text-anchor="middle" x="508" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">ErrorComponent</text>
+</g>
+<!-- ErrorComponent&#45;&gt;AppModule -->
+<g id="edge20" class="edge">
+<title>ErrorComponent&#45;&gt;AppModule</title>
+<path fill="none" stroke="#000000" d="M508,-122.2228C508,-142.3652 508,-172 508,-172 508,-172 1493.064,-172 1493.064,-172"/>
+<polygon fill="#000000" stroke="#000000" points="1493.064,-175.5001 1503.064,-172 1493.064,-168.5001 1493.064,-175.5001"/>
+</g>
+<!-- TruncatePipe -->
+<g id="node21" class="node">
+<title>TruncatePipe</title>
+<polygon fill="#ffffb3" stroke="#000000" points="434.1361,-122 343.8639,-122 343.8639,-86 434.1361,-86 434.1361,-122"/>
+<text text-anchor="middle" x="389" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">TruncatePipe</text>
+</g>
+<!-- TruncatePipe&#45;&gt;AppModule -->
+<g id="edge21" class="edge">
+<title>TruncatePipe&#45;&gt;AppModule</title>
+<path fill="none" stroke="#000000" d="M389,-122.2843C389,-143.3211 389,-175 389,-175 389,-175 1493.1744,-175 1493.1744,-175"/>
+<polygon fill="#000000" stroke="#000000" points="1493.1744,-178.5001 1503.1744,-175 1493.1744,-171.5001 1493.1744,-178.5001"/>
+</g>
+<!-- ImplodePipe -->
+<g id="node22" class="node">
+<title>ImplodePipe</title>
+<polygon fill="#ffffb3" stroke="#000000" points="325.5454,-122 238.4546,-122 238.4546,-86 325.5454,-86 325.5454,-122"/>
+<text text-anchor="middle" x="282" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">ImplodePipe</text>
+</g>
+<!-- ImplodePipe&#45;&gt;AppModule -->
+<g id="edge22" class="edge">
+<title>ImplodePipe&#45;&gt;AppModule</title>
+<path fill="none" stroke="#000000" d="M282,-122.2921C282,-144.2057 282,-178 282,-178 282,-178 1493.3375,-178 1493.3375,-178"/>
+<polygon fill="#000000" stroke="#000000" points="1493.3375,-181.5001 1503.3375,-178 1493.3374,-174.5001 1493.3375,-181.5001"/>
+</g>
+<!-- AppComponent  -->
+<g id="node25" class="node">
+<title>AppComponent </title>
+<polygon fill="#80b1d3" stroke="#000000" points="1599.439,-252 1490.561,-252 1490.561,-216 1599.439,-216 1599.439,-252"/>
+<text text-anchor="middle" x="1545" y="-229.8" font-family="Times,serif" font-size="14.00" fill="#000000">AppComponent </text>
+</g>
+<!-- AppModule&#45;&gt;AppComponent  -->
+<g id="edge24" class="edge">
+<title>AppModule&#45;&gt;AppComponent </title>
+<path fill="none" stroke="#000000" stroke-dasharray="1,5" d="M1545,-187.1061C1545,-187.1061 1545,-205.991 1545,-205.991"/>
+<polygon fill="#000000" stroke="#000000" points="1541.5001,-205.9909 1545,-215.991 1548.5001,-205.991 1541.5001,-205.9909"/>
+</g>
+<!-- routes -->
+<g id="node24" class="node">
+<title>routes</title>
+<polygon fill="#8dd3c7" stroke="#000000" points="214,-122 211,-126 190,-126 187,-122 160,-122 160,-86 214,-86 214,-122"/>
+<text text-anchor="middle" x="187" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">routes</text>
+</g>
+<!-- routes&#45;&gt;AppModule -->
+<g id="edge23" class="edge">
+<title>routes&#45;&gt;AppModule</title>
+<path fill="none" stroke="#000000" d="M187,-122.2479C187,-145.0179 187,-181 187,-181 187,-181 1493.2432,-181 1493.2432,-181"/>
+<polygon fill="#000000" stroke="#000000" points="1493.2432,-184.5001 1503.2432,-181 1493.2432,-177.5001 1493.2432,-184.5001"/>
+</g>
+<!-- SolrService -->
+<g id="node26" class="node">
+<title>SolrService</title>
+<ellipse fill="#fdb462" stroke="#000000" cx="80" cy="-104" rx="56.1744" ry="18"/>
+<text text-anchor="middle" x="80" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">SolrService</text>
+</g>
+<!-- SolrService&#45;&gt;AppModule -->
+<g id="edge25" class="edge">
+<title>SolrService&#45;&gt;AppModule</title>
+<path fill="none" stroke="#000000" d="M80,-122.1532C80,-145.7566 80,-184 80,-184 80,-184 1493.1261,-184 1493.1261,-184"/>
+<polygon fill="#000000" stroke="#000000" points="1493.1262,-187.5001 1503.1261,-184 1493.1261,-180.5001 1493.1262,-187.5001"/>
+</g>
+</g>
+</svg>
+
+                </div>
+                <i id="fullscreen" class="fa fa-expand module-graph-fullscreen-btn" aria-hidden="true"></i>
+                <div class="btn-group">
+                    <button id="zoom-in" class="btn btn-default btn-sm">Zoom in</button>
+                    <button id="reset" class="btn btn-default btn-sm">Reset</button>
+                    <button id="zoom-out" class="btn btn-default btn-sm">Zoom out</button>
+                </div>
+            </div>
+<div class="container-fluid overview">
+    <div class="row">
+            <div class="col-sm-3">
+                <div class="card text-center">
+                    <div class="card-block">
+                        <h4 class="card-title"><span class="fa fa-archive"></span></h4>
+                        <p class="card-text">
+                            <a href="./modules.html">1 module</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card text-center">
+                    <div class="card-block">
+                        <h4 class="card-title"><span class="fa fa-cogs"></span></h4>
+                        <p class="card-text">17 components</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card text-center">
+                    <div class="card-block">
+                        <h4 class="card-title"><span class="fa fa-code-fork"></span></h4>
+                        <p class="card-text">1 injectable</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card text-center">
+                    <div class="card-block">
+                        <h4 class="card-title"><span class="fa fa-plus"></span></h4>
+                        <p class="card-text">5 pipes</p>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+<script src="js/libs/svg-pan-zoom.min.js"></script>
+<script src="js/svg-pan-zoom.controls.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+           </div>
+       </div>
+
+       <script src="./js/libs/bootstrap-native.js"></script>
+
+       <script src="./js/libs/es6-shim.min.js"></script>
+       <script src="./js/libs/EventDispatcher.js"></script>
+       <script src="./js/libs/promise.min.js"></script>
+       <script src="./js/libs/zepto.min.js"></script>
+
+       <script src="./js/compodoc.js"></script>
+
+       <script>var COMPODOC_CURRENT_PAGE_DEPTH = 0;</script>
+
+       <script src="./js/search/search.js"></script>
+       <script src="./js/search/lunr.min.js"></script>
+       <script src="./js/search/search-lunr.js"></script>
+
+       <script src="./js/tabs.js"></script>
+       <script src="./js/menu.js"></script>
+       <script src="./js/libs/prism.js"></script>
+       <script src="./js/sourceCode.js"></script>
+       <script src="./js/search/search_index.js"></script>
+
+    </body>
+</html>
