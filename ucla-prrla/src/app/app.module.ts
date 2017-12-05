@@ -11,7 +11,6 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { IndexContentComponent } from './index-content/index-content.component';
-import { HeaderMenuComponent } from './header-menu/header-menu.component';
 import { AboutComponent } from './about/about.component';
 import { InstitutionsComponent } from './institutions/institutions.component';
 import { CollectionsComponent } from './collections/collections.component';
@@ -38,7 +37,6 @@ import {ImplodePipe} from './implode.pipe';
     HeaderComponent,
     FooterComponent,
     IndexContentComponent,
-    HeaderMenuComponent,
     AboutComponent,
     InstitutionsComponent,
     CollectionsComponent,

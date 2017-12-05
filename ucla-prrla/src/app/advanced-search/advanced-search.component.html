@@ -16,14 +16,6 @@
 
         <div class="col-md-12 padding_bottom3p">
             <div class="col-md-3">
-                <!--<div class="search filter-search">-->
-                    <!--<input type="search" placeholder="Search within results">-->
-                    <!--<div class="search-submit">-->
-                        <!--<button type="submit"></button>-->
-                        <!--<img src="../../assets/img/search.png" alt="">-->
-                    <!--</div>-->
-                <!--</div>-->
-                <!--<a href="#" class="blue">Advanced Search</a>-->
                 <h3 class="margin-bottom0">FILTER</h3>
                 <div class="filter-list">
                     <div *ngFor="let itemFilter of itemFilters; let i=index">
@@ -137,14 +129,6 @@
                                             (click)="clickOnItem(item.id)">
                                             <strong class="title-in-search-item">{{ item.title?item.title:"n/a" }}</strong></a></dd>
                                     </div>
-                                    <!--<dt>Alternate Title:</dt>-->
-                                    <!--<dd>{{ item.alternative_title?item.alternative_title:"n/a" }}</dd>-->
-                                    <!--<dt>First Line:</dt>-->
-                                    <!--<dd>{{ item.first_line?item.first_line:"n/a" }}</dd>-->
-                                    <!--<br>-->
-                                    <!--<dt>External Link(s):</dt>-->
-                                    <!--<dd>{{ item.identifier?item.identifier:"n/a" }}</dd>-->
-                                    <!--<br><br>-->
                                     <div *ngIf="item.collection">
                                         <dt>Collection:</dt>
                                         <dd>{{ item.collection?item.collection:"n/a" }}</dd>
@@ -163,31 +147,7 @@
                                             <div *ngFor="let v of item.date">{{ v }}</div>
                                         </dd>
                                     </div>
-                                    <!--<dt>Alternative Title:</dt>-->
-                                    <!--<dd>n/a</dd>-->
-                                    <!--<dt>Subject Description:</dt>-->
-                                    <!--<dd>{{ item.description?item.description:"n/a" }}</dd>-->
-                                    <!--<dt>Description:</dt>-->
-                                    <!--<dd>n/a</dd>-->
-                                    <!--<br>-->
-                                    <!--<dt>Source:</dt>-->
-                                    <!--<dd>{{ item.source?item.source:"n/a" }}</dd>-->
-                                    <!--<dt>Rights:</dt>-->
-                                    <!--<dd>{{ item.rights?item.rights:"n/a" }}</dd>-->
-                                    <!--<dt>Language:</dt>-->
-                                    <!--<dd>{{ item.language?item.language:"n/a" }}</dd>-->
-                                    <!--<dt>Identifier:</dt>-->
-                                    <!--<dd>{{ item.identifier?item.identifier:"n/a" }}</dd>-->
                                 </dl>
-                                <!--<div class="row">-->
-                                    <!--<div class="col-md-12 margin-bottom3p">-->
-                                        <!--<a [routerLink]="['/detail', item.id]"-->
-                                           <!--[queryParams]="{ s_therms: search_therms, s_page: url_page, s_filters: selectedFiltersJsonString, s_order: orderBy }"-->
-                                           <!--(click)="clickOnItem(item.id)">-->
-                                            <!--View Details >-->
-                                        <!--</a>-->
-                                    <!--</div>-->
-                                <!--</div>-->
                                 <div class="row padding_top10" *ngIf="item.external_link">
                                     <div class="col-md-9">
                                         <a class="btn btn-block btn-blue view-button" target="_blank" [href]="item.external_link">

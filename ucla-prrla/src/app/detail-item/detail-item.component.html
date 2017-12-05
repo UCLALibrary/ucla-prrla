@@ -88,17 +88,11 @@
           </div>
           <div class="col-md-3">
             <div class="padding_bottom5p" *ngIf="item.external_link">
-              <!--<a target="_blank" [href]="item.identifier[0]" class="btn btn-block btn-blue view-button">View Item At {{ item.institution }}</a>-->
               <a target="_blank" [href]="item.external_link" class="btn btn-block btn-blue view-button" style="font-size: 11.5px;">View Item At {{ item.institution }}
                 <img src="../../assets/img/link.png" style="width: 14px; margin-left: 5px;" alt="">
               </a>
             </div>
             <dl>
-              <!--<dt>Can I Use It?</dt>-->
-              <!--<dd>-->
-                <!--<p>No Re-use</p>-->
-                <!--<a href="#" class="blue">© In Copyright</a>-->
-              <!--</dd>-->
               <br>
               <div *ngIf="item.alternate_external_link">
                 <dt><strong>Alternative Links:</strong></dt>

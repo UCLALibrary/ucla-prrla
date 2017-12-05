@@ -124,8 +124,6 @@ export class CollectionsComponent implements OnInit {
      * @param collectionName
      */
     toggleCollection(event, collectionName){
-        // let collectionName = event.currentTarget.getAttribute('name');
-        // event.currentTarget.parentElement.classList.toggle('active');
 
         this.loadCollection(collectionName);
     }

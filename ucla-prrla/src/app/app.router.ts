@@ -1,7 +1,5 @@
 import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
-import { AppComponent } from './app.component';
 import { IndexContentComponent } from './index-content/index-content.component';
 import { AboutComponent } from './about/about.component';
 import { HelpComponent } from './help/help.component';
@@ -11,12 +9,11 @@ import { ExhibitionsComponent } from './exhibitions/exhibitions.component';
 import { AdvancedSearchComponent } from './advanced-search/advanced-search.component';
 import { DetailItemComponent } from './detail-item/detail-item.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { ExhibitionComponent } from "./exhibition/exhibition.component";
-import {InstitutionComponent} from "./institution/institution.component";
+import { ExhibitionComponent } from './exhibition/exhibition.component';
+import {InstitutionComponent} from './institution/institution.component';
 
 export const router: Routes = [
     { path: '', redirectTo: 'index', pathMatch: 'full' },
-    // { path: '', component: IndexContentComponent },
     { path: 'index', component: IndexContentComponent },
     { path: 'institutions', component: InstitutionsComponent },
     { path: 'explore-collections', component: CollectionsComponent },
