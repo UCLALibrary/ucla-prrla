@@ -684,7 +684,7 @@ a{
 .n2s-shareText{
     margin-left: 5px;
     font-size: 14px;
-    font-family: helvetica;
+    font-family: 'helvetica', sans-serif;
 }
 .social-icons .n2s-share-btn-facebook{
     background-color: transparent;

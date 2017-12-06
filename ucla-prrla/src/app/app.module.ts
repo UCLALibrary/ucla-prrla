@@ -20,7 +20,6 @@ import { DetailItemComponent } from './detail-item/detail-item.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { SolrService } from './services/solr.service';
 import { ParseJsonPipe } from './parse-json/parse-json.pipe';
-import { DerpPipe } from './derp.pipe';
 import { UrlPipe } from './url.pipe';
 import { ExhibitionsComponent } from './exhibitions/exhibitions.component';
 import { GeneralSearchBoxComponent } from './general-search-box/general-search-box.component';
@@ -28,7 +27,6 @@ import {ExhibitionComponent} from './exhibition/exhibition.component';
 import {InstitutionComponent} from './institution/institution.component';
 import {ErrorComponent} from './error/error.component';
 import {TruncatePipe} from './truncate.pipe';
-import {ImplodePipe} from './implode.pipe';
 
 
 @NgModule({
@@ -45,7 +43,6 @@ import {ImplodePipe} from './implode.pipe';
     DetailItemComponent,
     NotFoundComponent,
     ParseJsonPipe,
-    DerpPipe,
     UrlPipe,
     ExhibitionsComponent,
     GeneralSearchBoxComponent,
@@ -53,7 +50,6 @@ import {ImplodePipe} from './implode.pipe';
     InstitutionComponent,
     ErrorComponent,
     TruncatePipe,
-    ImplodePipe,
   ],
   imports: [
     BrowserModule,
