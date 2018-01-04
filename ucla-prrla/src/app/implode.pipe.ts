@@ -1,4 +1,4 @@
-import {Pipe, PipeTransform, Sanitizer} from '@angular/core';
+import {Pipe, PipeTransform} from '@angular/core';
 
 /**
  * Implodes arguments
@@ -7,8 +7,8 @@ import {Pipe, PipeTransform, Sanitizer} from '@angular/core';
     name: 'implode',
     pure: false
 })
-export class ImplodePipe implements PipeTransform{
-    transform(value, args) : string {
+export class ImplodePipe implements PipeTransform {
+    transform(value, args): string {
         return value.join(args);
     }
 }

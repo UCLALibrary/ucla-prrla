@@ -1,9 +1,7 @@
-import {Component, OnInit} from '@angular/core';
-import {SolrService} from '../services/solr.service';
-import {ActivatedRoute, Params, Router} from '@angular/router';
-import {Subscription} from 'rxjs/Subscription';
+import {Component} from '@angular/core';
+import {Params} from '@angular/router';
 import {AdvancedSearchComponent} from '../advanced-search/advanced-search.component';
-import {ErrorComponent} from "../error/error.component";
+import {ErrorComponent} from '../error/error.component';
 
 
 /**

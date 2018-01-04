@@ -6,8 +6,8 @@ import {Pipe, PipeTransform} from '@angular/core';
 @Pipe({
     name: 'truncate'
 })
-export class TruncatePipe implements PipeTransform{
-    transform(value: string, args: string) : string {
+export class TruncatePipe implements PipeTransform {
+    transform(value: string, args: string): string {
         let limit = parseInt(args);
         let trail = '...';
 

@@ -1,8 +1,8 @@
-import {Component, OnInit, OnDestroy} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {SolrService} from '../services/solr.service';
 import {ActivatedRoute, Params, Router} from '@angular/router';
 import {Subscription} from 'rxjs/Subscription';
-import {ErrorComponent} from "../error/error.component";
+import {ErrorComponent} from '../error/error.component';
 
 /**
  * This file if used to render Advanced Search Page

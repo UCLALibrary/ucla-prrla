@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 import {Jsonp} from '@angular/http';
 import {environment} from '../../environments/environment';

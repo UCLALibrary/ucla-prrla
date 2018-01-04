@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {SolrService} from "../services/solr.service";
-import {ActivatedRoute, Router} from "@angular/router";
-import {ErrorComponent} from "../error/error.component";
+import {SolrService} from '../services/solr.service';
+import {ActivatedRoute, Router} from '@angular/router';
+import {ErrorComponent} from '../error/error.component';
 
 /**
  * Is used to render Exhibitions Page

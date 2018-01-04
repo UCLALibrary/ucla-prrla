@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {SolrService} from '../services/solr.service';
-import {ActivatedRoute, Params, Router} from '@angular/router';
+import {ActivatedRoute, Params} from '@angular/router';
 import {Subscription} from 'rxjs/Subscription';
 import {ErrorComponent} from '../error/error.component';
 
