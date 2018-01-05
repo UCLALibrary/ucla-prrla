@@ -1,0 +1,1984 @@
+[
+  {
+    "name": "AppRoutingModule",
+    "file": "__path__/app/app-routing.module.ts",
+    "providers": [],
+    "declarations": [],
+    "imports": [
+      {
+        "ns": "RouterModule",
+        "name": "RouterModule.forRoot(args)"
+      }
+    ],
+    "exports": [
+      {
+        "name": "RouterModule"
+      }
+    ],
+    "bootstrap": [],
+    "__raw": [
+      {
+        "pos": 178,
+        "end": 220,
+        "flags": 0,
+        "kind": 264,
+        "name": {
+          "pos": 178,
+          "end": 188,
+          "flags": 0,
+          "escapedText": "imports"
+        },
+        "initializer": {
+          "pos": 189,
+          "end": 220,
+          "flags": 0,
+          "kind": 177,
+          "elements": [
+            {
+              "pos": 191,
+              "end": 219,
+              "flags": 0,
+              "kind": 181,
+              "expression": {
+                "pos": 191,
+                "end": 211,
+                "flags": 0,
+                "kind": 179,
+                "expression": {
+                  "pos": 191,
+                  "end": 203,
+                  "flags": 0,
+                  "escapedText": "RouterModule"
+                },
+                "name": {
+                  "pos": 204,
+                  "end": 211,
+                  "flags": 0,
+                  "escapedText": "forRoot"
+                }
+              },
+              "arguments": [
+                {
+                  "pos": 212,
+                  "end": 218,
+                  "flags": 0,
+                  "escapedText": "routes"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "pos": 221,
+        "end": 247,
+        "flags": 0,
+        "kind": 264,
+        "name": {
+          "pos": 221,
+          "end": 231,
+          "flags": 0,
+          "escapedText": "exports"
+        },
+        "initializer": {
+          "pos": 232,
+          "end": 247,
+          "flags": 0,
+          "kind": 177,
+          "elements": [
+            {
+              "pos": 234,
+              "end": 246,
+              "flags": 0,
+              "escapedText": "RouterModule"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "Ng2BreadcrumbModule",
+    "file": "ng2-breadcrumb/app/app.module.ts",
+    "providers": [],
+    "declarations": [
+      {
+        "name": "BreadcrumbComponent"
+      }
+    ],
+    "imports": [
+      {
+        "name": "CommonModule"
+      }
+    ],
+    "exports": [
+      {
+        "name": "BreadcrumbComponent"
+      }
+    ],
+    "bootstrap": [],
+    "__raw": [
+      {
+        "pos": 358,
+        "end": 403,
+        "flags": 0,
+        "kind": 264,
+        "name": {
+          "pos": 358,
+          "end": 371,
+          "flags": 0,
+          "escapedText": "imports"
+        },
+        "initializer": {
+          "pos": 372,
+          "end": 403,
+          "flags": 0,
+          "kind": 177,
+          "multiLine": true,
+          "elements": [
+            {
+              "pos": 374,
+              "end": 396,
+              "flags": 0,
+              "escapedText": "CommonModule"
+            }
+          ]
+        }
+      },
+      {
+        "pos": 404,
+        "end": 461,
+        "flags": 0,
+        "kind": 264,
+        "name": {
+          "pos": 404,
+          "end": 422,
+          "flags": 0,
+          "escapedText": "declarations"
+        },
+        "initializer": {
+          "pos": 423,
+          "end": 461,
+          "flags": 0,
+          "kind": 177,
+          "multiLine": true,
+          "elements": [
+            {
+              "pos": 425,
+              "end": 454,
+              "flags": 0,
+              "escapedText": "BreadcrumbComponent"
+            }
+          ]
+        }
+      },
+      {
+        "pos": 462,
+        "end": 514,
+        "flags": 0,
+        "kind": 264,
+        "name": {
+          "pos": 462,
+          "end": 475,
+          "flags": 0,
+          "escapedText": "exports"
+        },
+        "initializer": {
+          "pos": 476,
+          "end": 514,
+          "flags": 0,
+          "kind": 177,
+          "multiLine": true,
+          "elements": [
+            {
+              "pos": 478,
+              "end": 507,
+              "flags": 0,
+              "escapedText": "BreadcrumbComponent"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "AppModule",
+    "file": "ng2-breadcrumb/demo/app.module.ts",
+    "providers": [
+      {
+        "name": "appRoutingProviders"
+      }
+    ],
+    "declarations": [
+      {
+        "name": "AppComponent",
+        "file": "ng2-breadcrumb/demo/app.component.ts",
+        "selector": "app",
+        "providers": [],
+        "templateUrl": [],
+        "styleUrls": [],
+        "__raw": [
+          {
+            "pos": 157,
+            "end": 178,
+            "flags": 0,
+            "kind": 264,
+            "name": {
+              "pos": 157,
+              "end": 171,
+              "flags": 0,
+              "escapedText": "selector"
+            },
+            "initializer": {
+              "pos": 172,
+              "end": 178,
+              "flags": 0,
+              "kind": 9,
+              "text": "app"
+            }
+          },
+          {
+            "pos": 179,
+            "end": 377,
+            "flags": 0,
+            "kind": 264,
+            "name": {
+              "pos": 179,
+              "end": 193,
+              "flags": 0,
+              "escapedText": "template"
+            },
+            "initializer": {
+              "pos": 194,
+              "end": 377,
+              "flags": 0,
+              "kind": 13,
+              "text": "\n        <div class=\"container\">\n            <h1>Breadcrumb Example</h1>\n            <breadcrumb></breadcrumb>\n            <router-outlet></router-outlet>\n        </div>\n    "
+            }
+          }
+        ]
+      },
+      {
+        "name": "Component1",
+        "file": "ng2-breadcrumb/demo/app.component.ts",
+        "selector": "comp1",
+        "providers": [],
+        "templateUrl": [],
+        "styleUrls": [],
+        "__raw": [
+          {
+            "pos": 894,
+            "end": 917,
+            "flags": 0,
+            "kind": 264,
+            "name": {
+              "pos": 894,
+              "end": 908,
+              "flags": 0,
+              "escapedText": "selector"
+            },
+            "initializer": {
+              "pos": 909,
+              "end": 917,
+              "flags": 0,
+              "kind": 9,
+              "text": "comp1"
+            }
+          },
+          {
+            "pos": 918,
+            "end": 1028,
+            "flags": 0,
+            "kind": 264,
+            "name": {
+              "pos": 918,
+              "end": 932,
+              "flags": 0,
+              "escapedText": "template"
+            },
+            "initializer": {
+              "pos": 933,
+              "end": 1028,
+              "flags": 0,
+              "kind": 13,
+              "text": "\n        <h3>This is Component 1</h3>\n        <button (click)=\"goTo()\">Next</button>\n    "
+            }
+          }
+        ]
+      },
+      {
+        "name": "Component2",
+        "file": "ng2-breadcrumb/demo/app.component.ts",
+        "selector": "comp2",
+        "providers": [],
+        "templateUrl": [],
+        "styleUrls": [],
+        "__raw": [
+          {
+            "pos": 1206,
+            "end": 1229,
+            "flags": 0,
+            "kind": 264,
+            "name": {
+              "pos": 1206,
+              "end": 1220,
+              "flags": 0,
+              "escapedText": "selector"
+            },
+            "initializer": {
+              "pos": 1221,
+              "end": 1229,
+              "flags": 0,
+              "kind": 9,
+              "text": "comp2"
+            }
+          },
+          {
+            "pos": 1230,
+            "end": 1340,
+            "flags": 0,
+            "kind": 264,
+            "name": {
+              "pos": 1230,
+              "end": 1244,
+              "flags": 0,
+              "escapedText": "template"
+            },
+            "initializer": {
+              "pos": 1245,
+              "end": 1340,
+              "flags": 0,
+              "kind": 13,
+              "text": "\n        <h3>This is Component 2</h3>\n        <button (click)=\"goTo()\">Next</button>\n    "
+            }
+          }
+        ]
+      },
+      {
+        "name": "Component3",
+        "file": "ng2-breadcrumb/demo/app.component.ts",
+        "selector": "comp3",
+        "providers": [],
+        "templateUrl": [],
+        "styleUrls": [],
+        "__raw": [
+          {
+            "pos": 1524,
+            "end": 1547,
+            "flags": 0,
+            "kind": 264,
+            "name": {
+              "pos": 1524,
+              "end": 1538,
+              "flags": 0,
+              "escapedText": "selector"
+            },
+            "initializer": {
+              "pos": 1539,
+              "end": 1547,
+              "flags": 0,
+              "kind": 9,
+              "text": "comp3"
+            }
+          },
+          {
+            "pos": 1548,
+            "end": 1695,
+            "flags": 0,
+            "kind": 264,
+            "name": {
+              "pos": 1548,
+              "end": 1562,
+              "flags": 0,
+              "escapedText": "template"
+            },
+            "initializer": {
+              "pos": 1563,
+              "end": 1695,
+              "flags": 0,
+              "kind": 13,
+              "text": "\n        <h3>This is Component 3, which is hidden from the breadcrumb</h3>\n        <button (click)=\"goTo()\">Next</button>\n    "
+            }
+          }
+        ]
+      },
+      {
+        "name": "Component4",
+        "file": "ng2-breadcrumb/demo/app.component.ts",
+        "selector": "comp4",
+        "providers": [],
+        "templateUrl": [],
+        "styleUrls": [],
+        "__raw": [
+          {
+            "pos": 1918,
+            "end": 1941,
+            "flags": 0,
+            "kind": 264,
+            "name": {
+              "pos": 1918,
+              "end": 1932,
+              "flags": 0,
+              "escapedText": "selector"
+            },
+            "initializer": {
+              "pos": 1933,
+              "end": 1941,
+              "flags": 0,
+              "kind": 9,
+              "text": "comp4"
+            }
+          },
+          {
+            "pos": 1942,
+            "end": 2058,
+            "flags": 0,
+            "kind": 264,
+            "name": {
+              "pos": 1942,
+              "end": 1956,
+              "flags": 0,
+              "escapedText": "template"
+            },
+            "initializer": {
+              "pos": 1957,
+              "end": 2058,
+              "flags": 0,
+              "kind": 13,
+              "text": "\n        <h3>This is Component 4, which uses a callback to display its breadcrumb name</h3>\n    "
+            }
+          }
+        ]
+      }
+    ],
+    "imports": [
+      {
+        "name": "BrowserModule"
+      },
+      {
+        "name": "routing"
+      },
+      {
+        "ns": "Ng2BreadcrumbModule",
+        "name": "Ng2BreadcrumbModule.forRoot()"
+      }
+    ],
+    "exports": [],
+    "bootstrap": [
+      {
+        "name": "AppComponent"
+      }
+    ],
+    "__raw": [
+      {
+        "pos": 376,
+        "end": 480,
+        "flags": 0,
+        "kind": 264,
+        "name": {
+          "pos": 376,
+          "end": 389,
+          "flags": 0,
+          "escapedText": "imports"
+        },
+        "initializer": {
+          "pos": 390,
+          "end": 480,
+          "flags": 0,
+          "kind": 177,
+          "multiLine": true,
+          "elements": [
+            {
+              "pos": 392,
+              "end": 415,
+              "flags": 0,
+              "escapedText": "BrowserModule"
+            },
+            {
+              "pos": 416,
+              "end": 433,
+              "flags": 0,
+              "escapedText": "routing"
+            },
+            {
+              "pos": 434,
+              "end": 473,
+              "flags": 0,
+              "kind": 181,
+              "expression": {
+                "pos": 434,
+                "end": 471,
+                "flags": 0,
+                "kind": 179,
+                "expression": {
+                  "pos": 434,
+                  "end": 463,
+                  "flags": 0,
+                  "escapedText": "Ng2BreadcrumbModule"
+                },
+                "name": {
+                  "pos": 464,
+                  "end": 471,
+                  "flags": 0,
+                  "escapedText": "forRoot"
+                }
+              },
+              "arguments": []
+            }
+          ]
+        }
+      },
+      {
+        "pos": 481,
+        "end": 615,
+        "flags": 0,
+        "kind": 264,
+        "name": {
+          "pos": 481,
+          "end": 499,
+          "flags": 0,
+          "escapedText": "declarations"
+        },
+        "initializer": {
+          "pos": 500,
+          "end": 615,
+          "flags": 0,
+          "kind": 177,
+          "multiLine": true,
+          "elements": [
+            {
+              "pos": 502,
+              "end": 524,
+              "flags": 0,
+              "escapedText": "AppComponent"
+            },
+            {
+              "pos": 525,
+              "end": 545,
+              "flags": 0,
+              "escapedText": "Component1"
+            },
+            {
+              "pos": 546,
+              "end": 566,
+              "flags": 0,
+              "escapedText": "Component2"
+            },
+            {
+              "pos": 567,
+              "end": 587,
+              "flags": 0,
+              "escapedText": "Component3"
+            },
+            {
+              "pos": 588,
+              "end": 608,
+              "flags": 0,
+              "escapedText": "Component4"
+            }
+          ]
+        }
+      },
+      {
+        "pos": 616,
+        "end": 670,
+        "flags": 0,
+        "kind": 264,
+        "name": {
+          "pos": 616,
+          "end": 631,
+          "flags": 0,
+          "escapedText": "providers"
+        },
+        "initializer": {
+          "pos": 632,
+          "end": 670,
+          "flags": 0,
+          "kind": 177,
+          "multiLine": true,
+          "elements": [
+            {
+              "pos": 634,
+              "end": 663,
+              "flags": 0,
+              "escapedText": "appRoutingProviders"
+            }
+          ]
+        }
+      },
+      {
+        "pos": 671,
+        "end": 704,
+        "flags": 0,
+        "kind": 264,
+        "name": {
+          "pos": 671,
+          "end": 686,
+          "flags": 0,
+          "escapedText": "bootstrap"
+        },
+        "initializer": {
+          "pos": 687,
+          "end": 704,
+          "flags": 0,
+          "kind": 177,
+          "elements": [
+            {
+              "pos": 689,
+              "end": 702,
+              "flags": 0,
+              "escapedText": "AppComponent"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "ShareModule",
+    "file": "node_modules/ng2share/share.module.ts",
+    "providers": [],
+    "declarations": [
+      {
+        "name": "ShareContainerComponent",
+        "file": "ng2share/share-container/share-container.component.ts",
+        "selector": "share-container",
+        "providers": [],
+        "templateUrl": [
+          "share-container.component.html"
+        ],
+        "styleUrls": [
+          "share-container.component.css"
+        ],
+        "__raw": [
+          {
+            "pos": 194,
+            "end": 225,
+            "flags": 0,
+            "kind": 264,
+            "name": {
+              "pos": 194,
+              "end": 206,
+              "flags": 0,
+              "escapedText": "selector"
+            },
+            "initializer": {
+              "pos": 207,
+              "end": 225,
+              "flags": 0,
+              "kind": 9,
+              "text": "share-container"
+            }
+          },
+          {
+            "pos": 226,
+            "end": 277,
+            "flags": 0,
+            "kind": 264,
+            "name": {
+              "pos": 226,
+              "end": 241,
+              "flags": 0,
+              "escapedText": "templateUrl"
+            },
+            "initializer": {
+              "pos": 242,
+              "end": 277,
+              "flags": 0,
+              "kind": 9,
+              "text": "./share-container.component.html"
+            }
+          },
+          {
+            "pos": 278,
+            "end": 328,
+            "flags": 0,
+            "kind": 264,
+            "name": {
+              "pos": 278,
+              "end": 291,
+              "flags": 0,
+              "escapedText": "styleUrls"
+            },
+            "initializer": {
+              "pos": 292,
+              "end": 328,
+              "flags": 0,
+              "kind": 177,
+              "elements": [
+                {
+                  "pos": 294,
+                  "end": 327,
+                  "flags": 0,
+                  "kind": 9,
+                  "text": "./share-container.component.css"
+                }
+              ]
+            }
+          },
+          {
+            "pos": 329,
+            "end": 704,
+            "flags": 0,
+            "kind": 264,
+            "name": {
+              "pos": 329,
+              "end": 343,
+              "flags": 0,
+              "escapedText": "animations"
+            },
+            "initializer": {
+              "pos": 344,
+              "end": 704,
+              "flags": 0,
+              "kind": 177,
+              "multiLine": true,
+              "elements": [
+                {
+                  "pos": 346,
+                  "end": 693,
+                  "flags": 0,
+                  "kind": 181,
+                  "expression": {
+                    "pos": 346,
+                    "end": 365,
+                    "flags": 0,
+                    "escapedText": "trigger"
+                  },
+                  "arguments": [
+                    {
+                      "pos": 366,
+                      "end": 381,
+                      "flags": 0,
+                      "kind": 9,
+                      "text": "expandedState"
+                    },
+                    {
+                      "pos": 382,
+                      "end": 692,
+                      "flags": 0,
+                      "kind": 177,
+                      "multiLine": true,
+                      "elements": [
+                        {
+                          "pos": 384,
+                          "end": 492,
+                          "flags": 0,
+                          "kind": 181,
+                          "expression": {
+                            "pos": 384,
+                            "end": 403,
+                            "flags": 0,
+                            "escapedText": "state"
+                          },
+                          "arguments": [
+                            {
+                              "pos": 404,
+                              "end": 414,
+                              "flags": 0,
+                              "kind": 9,
+                              "text": "expanded"
+                            },
+                            {
+                              "pos": 415,
+                              "end": 491,
+                              "flags": 0,
+                              "kind": 181,
+                              "expression": {
+                                "pos": 415,
+                                "end": 421,
+                                "flags": 0,
+                                "escapedText": "style"
+                              },
+                              "arguments": [
+                                {
+                                  "pos": 422,
+                                  "end": 490,
+                                  "flags": 0,
+                                  "kind": 178,
+                                  "multiLine": true,
+                                  "properties": [
+                                    {
+                                      "pos": 423,
+                                      "end": 448,
+                                      "flags": 0,
+                                      "kind": 264,
+                                      "name": {
+                                        "pos": 423,
+                                        "end": 444,
+                                        "flags": 0,
+                                        "escapedText": "width"
+                                      },
+                                      "initializer": {
+                                        "pos": 445,
+                                        "end": 448,
+                                        "flags": 0,
+                                        "kind": 9,
+                                        "text": "*"
+                                      }
+                                    },
+                                    {
+                                      "pos": 449,
+                                      "end": 475,
+                                      "flags": 0,
+                                      "kind": 264,
+                                      "name": {
+                                        "pos": 449,
+                                        "end": 471,
+                                        "flags": 0,
+                                        "escapedText": "height"
+                                      },
+                                      "initializer": {
+                                        "pos": 472,
+                                        "end": 475,
+                                        "flags": 0,
+                                        "kind": 9,
+                                        "text": "*"
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "pos": 493,
+                          "end": 602,
+                          "flags": 0,
+                          "kind": 181,
+                          "expression": {
+                            "pos": 493,
+                            "end": 512,
+                            "flags": 0,
+                            "escapedText": "state"
+                          },
+                          "arguments": [
+                            {
+                              "pos": 513,
+                              "end": 524,
+                              "flags": 0,
+                              "kind": 9,
+                              "text": "collapsed"
+                            },
+                            {
+                              "pos": 525,
+                              "end": 601,
+                              "flags": 0,
+                              "kind": 181,
+                              "expression": {
+                                "pos": 525,
+                                "end": 531,
+                                "flags": 0,
+                                "escapedText": "style"
+                              },
+                              "arguments": [
+                                {
+                                  "pos": 532,
+                                  "end": 600,
+                                  "flags": 0,
+                                  "kind": 178,
+                                  "multiLine": true,
+                                  "properties": [
+                                    {
+                                      "pos": 533,
+                                      "end": 558,
+                                      "flags": 0,
+                                      "kind": 264,
+                                      "name": {
+                                        "pos": 533,
+                                        "end": 554,
+                                        "flags": 0,
+                                        "escapedText": "width"
+                                      },
+                                      "initializer": {
+                                        "pos": 555,
+                                        "end": 558,
+                                        "flags": 0,
+                                        "kind": 9,
+                                        "text": "0"
+                                      }
+                                    },
+                                    {
+                                      "pos": 559,
+                                      "end": 585,
+                                      "flags": 0,
+                                      "kind": 264,
+                                      "name": {
+                                        "pos": 559,
+                                        "end": 581,
+                                        "flags": 0,
+                                        "escapedText": "height"
+                                      },
+                                      "initializer": {
+                                        "pos": 582,
+                                        "end": 585,
+                                        "flags": 0,
+                                        "kind": 9,
+                                        "text": "0"
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "pos": 603,
+                          "end": 679,
+                          "flags": 0,
+                          "kind": 181,
+                          "expression": {
+                            "pos": 603,
+                            "end": 627,
+                            "flags": 0,
+                            "escapedText": "transition"
+                          },
+                          "arguments": [
+                            {
+                              "pos": 628,
+                              "end": 652,
+                              "flags": 0,
+                              "kind": 9,
+                              "text": "collapsed <=> expanded"
+                            },
+                            {
+                              "pos": 653,
+                              "end": 678,
+                              "flags": 0,
+                              "kind": 181,
+                              "expression": {
+                                "pos": 653,
+                                "end": 661,
+                                "flags": 0,
+                                "escapedText": "animate"
+                              },
+                              "arguments": [
+                                {
+                                  "pos": 662,
+                                  "end": 677,
+                                  "flags": 0,
+                                  "kind": 9,
+                                  "text": "100ms ease-in"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "ShareButtonComponent",
+        "file": "ng2share/share-button/share-button.component.ts",
+        "selector": "share-button",
+        "providers": [],
+        "templateUrl": [],
+        "styleUrls": [
+          "share-button.css"
+        ],
+        "__raw": [
+          {
+            "pos": 231,
+            "end": 259,
+            "flags": 0,
+            "kind": 264,
+            "name": {
+              "pos": 231,
+              "end": 243,
+              "flags": 0,
+              "escapedText": "selector"
+            },
+            "initializer": {
+              "pos": 244,
+              "end": 259,
+              "flags": 0,
+              "kind": 9,
+              "text": "share-button"
+            }
+          },
+          {
+            "pos": 260,
+            "end": 922,
+            "flags": 0,
+            "kind": 264,
+            "name": {
+              "pos": 260,
+              "end": 272,
+              "flags": 0,
+              "escapedText": "template"
+            },
+            "initializer": {
+              "pos": 273,
+              "end": 922,
+              "flags": 0,
+              "kind": 13,
+              "text": "<a href=\"{{this.url}}\" (click)=\"click($event)\" target='_blank'>\n              <div  (click)=\"click($event)\"\n                class=\"n2s-share-btn n2s-share-btn-{{platform.name}} n2s-{{direction}}-margin\n                  {{textEnabled ? 'n2s-share-btn-with-text' : '' }}\">\n                <i class=\"ic fa fa-{{platform.logoOfficial}}\"></i>\n                <span class=\"n2s-shareText\" *ngIf=\"textEnabled\">\n                  <span class=\"n2s-shareText-primary\">{{platform.text}} </span>\n                  <span class=\"n2s-shareText-secondary\">{{addedText}}</span>\n                </span>\n              </div>\n            </a>\n            "
+            }
+          },
+          {
+            "pos": 923,
+            "end": 959,
+            "flags": 0,
+            "kind": 264,
+            "name": {
+              "pos": 923,
+              "end": 936,
+              "flags": 0,
+              "escapedText": "styleUrls"
+            },
+            "initializer": {
+              "pos": 937,
+              "end": 959,
+              "flags": 0,
+              "kind": 177,
+              "elements": [
+                {
+                  "pos": 938,
+                  "end": 958,
+                  "flags": 0,
+                  "kind": 9,
+                  "text": "./share-button.css"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    "imports": [
+      {
+        "name": "CommonModule"
+      },
+      {
+        "name": "FormsModule"
+      }
+    ],
+    "exports": [
+      {
+        "name": "ShareContainerComponent"
+      }
+    ],
+    "bootstrap": [],
+    "__raw": [
+      {
+        "pos": 352,
+        "end": 399,
+        "flags": 0,
+        "kind": 264,
+        "name": {
+          "pos": 352,
+          "end": 363,
+          "flags": 0,
+          "escapedText": "imports"
+        },
+        "initializer": {
+          "pos": 364,
+          "end": 399,
+          "flags": 0,
+          "kind": 177,
+          "elements": [
+            {
+              "pos": 371,
+              "end": 384,
+              "flags": 0,
+              "escapedText": "CommonModule"
+            },
+            {
+              "pos": 385,
+              "end": 397,
+              "flags": 0,
+              "escapedText": "FormsModule"
+            }
+          ]
+        }
+      },
+      {
+        "pos": 400,
+        "end": 467,
+        "flags": 0,
+        "kind": 264,
+        "name": {
+          "pos": 400,
+          "end": 416,
+          "flags": 0,
+          "escapedText": "declarations"
+        },
+        "initializer": {
+          "pos": 417,
+          "end": 467,
+          "flags": 0,
+          "kind": 177,
+          "elements": [
+            {
+              "pos": 419,
+              "end": 443,
+              "flags": 0,
+              "escapedText": "ShareContainerComponent"
+            },
+            {
+              "pos": 444,
+              "end": 465,
+              "flags": 0,
+              "escapedText": "ShareButtonComponent"
+            }
+          ]
+        }
+      },
+      {
+        "pos": 468,
+        "end": 513,
+        "flags": 0,
+        "kind": 264,
+        "name": {
+          "pos": 468,
+          "end": 479,
+          "flags": 0,
+          "escapedText": "exports"
+        },
+        "initializer": {
+          "pos": 480,
+          "end": 513,
+          "flags": 0,
+          "kind": 177,
+          "elements": [
+            {
+              "pos": 487,
+              "end": 511,
+              "flags": 0,
+              "escapedText": "ShareContainerComponent"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "AppModule",
+    "file": "src/app/app.module.ts",
+    "providers": [
+      {
+        "name": "SolrService"
+      }
+    ],
+    "declarations": [
+      {
+        "name": "AppComponent",
+        "file": "src/app/app.component.ts",
+        "selector": "app-root",
+        "providers": [],
+        "templateUrl": [
+          "app.component.html"
+        ],
+        "styleUrls": [],
+        "__raw": [
+          {
+            "pos": 87,
+            "end": 111,
+            "flags": 0,
+            "kind": 264,
+            "name": {
+              "pos": 87,
+              "end": 99,
+              "flags": 0,
+              "escapedText": "selector"
+            },
+            "initializer": {
+              "pos": 100,
+              "end": 111,
+              "flags": 0,
+              "kind": 9,
+              "text": "app-root"
+            }
+          },
+          {
+            "pos": 112,
+            "end": 151,
+            "flags": 0,
+            "kind": 264,
+            "name": {
+              "pos": 112,
+              "end": 127,
+              "flags": 0,
+              "escapedText": "templateUrl"
+            },
+            "initializer": {
+              "pos": 128,
+              "end": 151,
+              "flags": 0,
+              "kind": 9,
+              "text": "./app.component.html"
+            }
+          }
+        ]
+      },
+      {
+        "name": "HeaderComponent"
+      },
+      {
+        "name": "FooterComponent"
+      },
+      {
+        "name": "IndexContentComponent"
+      },
+      {
+        "name": "AboutComponent",
+        "file": "app/about/about.component.ts",
+        "selector": "app-about",
+        "providers": [],
+        "templateUrl": [
+          "about.component.html"
+        ],
+        "styleUrls": [],
+        "__raw": [
+          {
+            "pos": 119,
+            "end": 144,
+            "flags": 0,
+            "kind": 264,
+            "name": {
+              "pos": 119,
+              "end": 131,
+              "flags": 0,
+              "escapedText": "selector"
+            },
+            "initializer": {
+              "pos": 132,
+              "end": 144,
+              "flags": 0,
+              "kind": 9,
+              "text": "app-about"
+            }
+          },
+          {
+            "pos": 145,
+            "end": 186,
+            "flags": 0,
+            "kind": 264,
+            "name": {
+              "pos": 145,
+              "end": 160,
+              "flags": 0,
+              "escapedText": "templateUrl"
+            },
+            "initializer": {
+              "pos": 161,
+              "end": 186,
+              "flags": 0,
+              "kind": 9,
+              "text": "./about.component.html"
+            }
+          }
+        ]
+      },
+      {
+        "name": "InstitutionsComponent"
+      },
+      {
+        "name": "CollectionsComponent"
+      },
+      {
+        "name": "AdvancedSearchComponent",
+        "file": "app/advanced-search/advanced-search.component.ts",
+        "selector": "app-advanced-search",
+        "providers": [],
+        "templateUrl": [
+          "advanced-search.component.html"
+        ],
+        "styleUrls": [],
+        "__raw": [
+          {
+            "pos": 354,
+            "end": 391,
+            "flags": 0,
+            "kind": 264,
+            "name": {
+              "pos": 354,
+              "end": 368,
+              "flags": 0,
+              "escapedText": "selector"
+            },
+            "initializer": {
+              "pos": 369,
+              "end": 391,
+              "flags": 0,
+              "kind": 9,
+              "text": "app-advanced-search"
+            }
+          },
+          {
+            "pos": 392,
+            "end": 445,
+            "flags": 0,
+            "kind": 264,
+            "name": {
+              "pos": 392,
+              "end": 409,
+              "flags": 0,
+              "escapedText": "templateUrl"
+            },
+            "initializer": {
+              "pos": 410,
+              "end": 445,
+              "flags": 0,
+              "kind": 9,
+              "text": "./advanced-search.component.html"
+            }
+          }
+        ]
+      },
+      {
+        "name": "HelpComponent"
+      },
+      {
+        "name": "DetailItemComponent"
+      },
+      {
+        "name": "NotFoundComponent"
+      },
+      {
+        "name": "ParseJsonPipe"
+      },
+      {
+        "name": "UrlPipe"
+      },
+      {
+        "name": "ExhibitionsComponent"
+      },
+      {
+        "name": "GeneralSearchBoxComponent"
+      },
+      {
+        "name": "ExhibitionComponent"
+      },
+      {
+        "name": "InstitutionComponent"
+      },
+      {
+        "name": "ErrorComponent"
+      },
+      {
+        "name": "TruncatePipe"
+      }
+    ],
+    "imports": [
+      {
+        "name": "BrowserModule"
+      },
+      {
+        "name": "FormsModule"
+      },
+      {
+        "name": "RouterModule"
+      },
+      {
+        "name": "ShareModule"
+      },
+      {
+        "name": "routes"
+      },
+      {
+        "name": "Ng2PaginationModule"
+      },
+      {
+        "name": "HttpModule"
+      },
+      {
+        "name": "JsonpModule"
+      },
+      {
+        "name": "AccordionModule"
+      }
+    ],
+    "exports": [],
+    "bootstrap": [
+      {
+        "name": "AppComponent"
+      }
+    ],
+    "__raw": [
+      {
+        "pos": 1857,
+        "end": 2334,
+        "flags": 0,
+        "kind": 264,
+        "name": {
+          "pos": 1857,
+          "end": 1873,
+          "flags": 0,
+          "escapedText": "declarations"
+        },
+        "initializer": {
+          "pos": 1874,
+          "end": 2334,
+          "flags": 0,
+          "kind": 177,
+          "multiLine": true,
+          "elements": [
+            {
+              "pos": 1876,
+              "end": 1894,
+              "flags": 0,
+              "escapedText": "AppComponent"
+            },
+            {
+              "pos": 1895,
+              "end": 1916,
+              "flags": 0,
+              "escapedText": "HeaderComponent"
+            },
+            {
+              "pos": 1917,
+              "end": 1938,
+              "flags": 0,
+              "escapedText": "FooterComponent"
+            },
+            {
+              "pos": 1939,
+              "end": 1966,
+              "flags": 0,
+              "escapedText": "IndexContentComponent"
+            },
+            {
+              "pos": 1967,
+              "end": 1987,
+              "flags": 0,
+              "escapedText": "AboutComponent"
+            },
+            {
+              "pos": 1988,
+              "end": 2015,
+              "flags": 0,
+              "escapedText": "InstitutionsComponent"
+            },
+            {
+              "pos": 2016,
+              "end": 2042,
+              "flags": 0,
+              "escapedText": "CollectionsComponent"
+            },
+            {
+              "pos": 2043,
+              "end": 2072,
+              "flags": 0,
+              "escapedText": "AdvancedSearchComponent"
+            },
+            {
+              "pos": 2073,
+              "end": 2092,
+              "flags": 0,
+              "escapedText": "HelpComponent"
+            },
+            {
+              "pos": 2093,
+              "end": 2118,
+              "flags": 0,
+              "escapedText": "DetailItemComponent"
+            },
+            {
+              "pos": 2119,
+              "end": 2142,
+              "flags": 0,
+              "escapedText": "NotFoundComponent"
+            },
+            {
+              "pos": 2143,
+              "end": 2162,
+              "flags": 0,
+              "escapedText": "ParseJsonPipe"
+            },
+            {
+              "pos": 2163,
+              "end": 2176,
+              "flags": 0,
+              "escapedText": "UrlPipe"
+            },
+            {
+              "pos": 2177,
+              "end": 2203,
+              "flags": 0,
+              "escapedText": "ExhibitionsComponent"
+            },
+            {
+              "pos": 2204,
+              "end": 2235,
+              "flags": 0,
+              "escapedText": "GeneralSearchBoxComponent"
+            },
+            {
+              "pos": 2236,
+              "end": 2261,
+              "flags": 0,
+              "escapedText": "ExhibitionComponent"
+            },
+            {
+              "pos": 2262,
+              "end": 2288,
+              "flags": 0,
+              "escapedText": "InstitutionComponent"
+            },
+            {
+              "pos": 2289,
+              "end": 2309,
+              "flags": 0,
+              "escapedText": "ErrorComponent"
+            },
+            {
+              "pos": 2310,
+              "end": 2328,
+              "flags": 0,
+              "escapedText": "TruncatePipe"
+            }
+          ]
+        }
+      },
+      {
+        "pos": 2335,
+        "end": 2524,
+        "flags": 0,
+        "kind": 264,
+        "name": {
+          "pos": 2335,
+          "end": 2346,
+          "flags": 0,
+          "escapedText": "imports"
+        },
+        "initializer": {
+          "pos": 2347,
+          "end": 2524,
+          "flags": 0,
+          "kind": 177,
+          "multiLine": true,
+          "elements": [
+            {
+              "pos": 2349,
+              "end": 2368,
+              "flags": 0,
+              "escapedText": "BrowserModule"
+            },
+            {
+              "pos": 2369,
+              "end": 2386,
+              "flags": 0,
+              "escapedText": "FormsModule"
+            },
+            {
+              "pos": 2387,
+              "end": 2405,
+              "flags": 0,
+              "escapedText": "RouterModule"
+            },
+            {
+              "pos": 2406,
+              "end": 2423,
+              "flags": 0,
+              "escapedText": "ShareModule"
+            },
+            {
+              "pos": 2424,
+              "end": 2436,
+              "flags": 0,
+              "escapedText": "routes"
+            },
+            {
+              "pos": 2437,
+              "end": 2462,
+              "flags": 0,
+              "escapedText": "Ng2PaginationModule"
+            },
+            {
+              "pos": 2463,
+              "end": 2479,
+              "flags": 0,
+              "escapedText": "HttpModule"
+            },
+            {
+              "pos": 2480,
+              "end": 2497,
+              "flags": 0,
+              "escapedText": "JsonpModule"
+            },
+            {
+              "pos": 2498,
+              "end": 2519,
+              "flags": 0,
+              "escapedText": "AccordionModule"
+            }
+          ]
+        }
+      },
+      {
+        "pos": 2525,
+        "end": 2553,
+        "flags": 0,
+        "kind": 264,
+        "name": {
+          "pos": 2525,
+          "end": 2538,
+          "flags": 0,
+          "escapedText": "providers"
+        },
+        "initializer": {
+          "pos": 2539,
+          "end": 2553,
+          "flags": 0,
+          "kind": 177,
+          "elements": [
+            {
+              "pos": 2541,
+              "end": 2552,
+              "flags": 0,
+              "escapedText": "SolrService"
+            }
+          ]
+        }
+      },
+      {
+        "pos": 2554,
+        "end": 2583,
+        "flags": 0,
+        "kind": 264,
+        "name": {
+          "pos": 2554,
+          "end": 2567,
+          "flags": 0,
+          "escapedText": "bootstrap"
+        },
+        "initializer": {
+          "pos": 2568,
+          "end": 2583,
+          "flags": 0,
+          "kind": 177,
+          "elements": [
+            {
+              "pos": 2570,
+              "end": 2582,
+              "flags": 0,
+              "escapedText": "AppComponent"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "name": "AboutRoutingModule",
+    "file": "src/app/app.router.ts",
+    "providers": [],
+    "declarations": [
+      {
+        "name": "NotFoundComponent"
+      },
+      {
+        "name": "InstitutionComponent"
+      },
+      {
+        "name": "ExhibitionComponent"
+      },
+      {
+        "name": "DetailItemComponent"
+      },
+      {
+        "name": "AboutComponent",
+        "file": "app/about/about.component.ts",
+        "selector": "app-about",
+        "providers": [],
+        "templateUrl": [
+          "about.component.html"
+        ],
+        "styleUrls": [],
+        "__raw": [
+          {
+            "pos": 119,
+            "end": 144,
+            "flags": 0,
+            "kind": 264,
+            "name": {
+              "pos": 119,
+              "end": 131,
+              "flags": 0,
+              "escapedText": "selector"
+            },
+            "initializer": {
+              "pos": 132,
+              "end": 144,
+              "flags": 0,
+              "kind": 9,
+              "text": "app-about"
+            }
+          },
+          {
+            "pos": 145,
+            "end": 186,
+            "flags": 0,
+            "kind": 264,
+            "name": {
+              "pos": 145,
+              "end": 160,
+              "flags": 0,
+              "escapedText": "templateUrl"
+            },
+            "initializer": {
+              "pos": 161,
+              "end": 186,
+              "flags": 0,
+              "kind": 9,
+              "text": "./about.component.html"
+            }
+          }
+        ]
+      },
+      {
+        "name": "HelpComponent"
+      },
+      {
+        "name": "AdvancedSearchComponent",
+        "file": "app/advanced-search/advanced-search.component.ts",
+        "selector": "app-advanced-search",
+        "providers": [],
+        "templateUrl": [
+          "advanced-search.component.html"
+        ],
+        "styleUrls": [],
+        "__raw": [
+          {
+            "pos": 354,
+            "end": 391,
+            "flags": 0,
+            "kind": 264,
+            "name": {
+              "pos": 354,
+              "end": 368,
+              "flags": 0,
+              "escapedText": "selector"
+            },
+            "initializer": {
+              "pos": 369,
+              "end": 391,
+              "flags": 0,
+              "kind": 9,
+              "text": "app-advanced-search"
+            }
+          },
+          {
+            "pos": 392,
+            "end": 445,
+            "flags": 0,
+            "kind": 264,
+            "name": {
+              "pos": 392,
+              "end": 409,
+              "flags": 0,
+              "escapedText": "templateUrl"
+            },
+            "initializer": {
+              "pos": 410,
+              "end": 445,
+              "flags": 0,
+              "kind": 9,
+              "text": "./advanced-search.component.html"
+            }
+          }
+        ]
+      },
+      {
+        "name": "ExhibitionsComponent"
+      },
+      {
+        "name": "CollectionsComponent"
+      },
+      {
+        "name": "InstitutionsComponent"
+      },
+      {
+        "name": "IndexContentComponent"
+      }
+    ],
+    "imports": [
+      {
+        "ns": "RouterModule",
+        "name": "RouterModule.forChild(args)"
+      }
+    ],
+    "exports": [
+      {
+        "name": "RouterModule"
+      }
+    ],
+    "bootstrap": [],
+    "__raw": [
+      {
+        "pos": 2495,
+        "end": 2541,
+        "flags": 0,
+        "kind": 264,
+        "name": {
+          "pos": 2495,
+          "end": 2508,
+          "flags": 0,
+          "escapedText": "imports"
+        },
+        "initializer": {
+          "pos": 2509,
+          "end": 2541,
+          "flags": 0,
+          "kind": 177,
+          "elements": [
+            {
+              "pos": 2511,
+              "end": 2540,
+              "flags": 0,
+              "kind": 181,
+              "expression": {
+                "pos": 2511,
+                "end": 2532,
+                "flags": 0,
+                "kind": 179,
+                "expression": {
+                  "pos": 2511,
+                  "end": 2523,
+                  "flags": 0,
+                  "escapedText": "RouterModule"
+                },
+                "name": {
+                  "pos": 2524,
+                  "end": 2532,
+                  "flags": 0,
+                  "escapedText": "forChild"
+                }
+              },
+              "arguments": [
+                {
+                  "pos": 2533,
+                  "end": 2539,
+                  "flags": 0,
+                  "escapedText": "router"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "pos": 2542,
+        "end": 2571,
+        "flags": 0,
+        "kind": 264,
+        "name": {
+          "pos": 2542,
+          "end": 2555,
+          "flags": 0,
+          "escapedText": "exports"
+        },
+        "initializer": {
+          "pos": 2556,
+          "end": 2571,
+          "flags": 0,
+          "kind": 177,
+          "elements": [
+            {
+              "pos": 2558,
+              "end": 2570,
+              "flags": 0,
+              "escapedText": "RouterModule"
+            }
+          ]
+        }
+      },
+      {
+        "pos": 2572,
+        "end": 2928,
+        "flags": 0,
+        "kind": 264,
+        "name": {
+          "pos": 2572,
+          "end": 2590,
+          "flags": 0,
+          "escapedText": "declarations"
+        },
+        "initializer": {
+          "pos": 2591,
+          "end": 2928,
+          "flags": 0,
+          "kind": 177,
+          "multiLine": true,
+          "elements": [
+            {
+              "pos": 2593,
+              "end": 2620,
+              "flags": 0,
+              "escapedText": "NotFoundComponent"
+            },
+            {
+              "pos": 2621,
+              "end": 2651,
+              "flags": 0,
+              "escapedText": "InstitutionComponent"
+            },
+            {
+              "pos": 2652,
+              "end": 2681,
+              "flags": 0,
+              "escapedText": "ExhibitionComponent"
+            },
+            {
+              "pos": 2682,
+              "end": 2711,
+              "flags": 0,
+              "escapedText": "DetailItemComponent"
+            },
+            {
+              "pos": 2712,
+              "end": 2736,
+              "flags": 0,
+              "escapedText": "AboutComponent"
+            },
+            {
+              "pos": 2737,
+              "end": 2760,
+              "flags": 0,
+              "escapedText": "HelpComponent"
+            },
+            {
+              "pos": 2761,
+              "end": 2794,
+              "flags": 0,
+              "escapedText": "AdvancedSearchComponent"
+            },
+            {
+              "pos": 2795,
+              "end": 2825,
+              "flags": 0,
+              "escapedText": "ExhibitionsComponent"
+            },
+            {
+              "pos": 2826,
+              "end": 2856,
+              "flags": 0,
+              "escapedText": "CollectionsComponent"
+            },
+            {
+              "pos": 2857,
+              "end": 2888,
+              "flags": 0,
+              "escapedText": "InstitutionsComponent"
+            },
+            {
+              "pos": 2889,
+              "end": 2920,
+              "flags": 0,
+              "escapedText": "IndexContentComponent"
+            }
+          ]
+        }
+      }
+    ]
+  }
+]

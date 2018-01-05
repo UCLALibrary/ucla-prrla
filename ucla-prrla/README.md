@@ -132,6 +132,8 @@ Just add new facet in Solr response. Filter will appear automatically.
 #### http://prl.library.ucla.edu/detail/oai:ira.lib.polyu.edu.hk:10397%2F3036?s_page=1&s_filters=%7B%7D&s_therms=&s_order=
 
 #### Node version
-npm -version
-5.3.0
+v6.10.3
+
+#### Compodoc version
+v1.0.5
 

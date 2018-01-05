@@ -2,6 +2,7 @@ import {Pipe, PipeTransform} from '@angular/core';
 
 /**
  * Truncates provided text
+ * You can set limited numbers of symbols and cut text
  */
 @Pipe({
     name: 'truncate'

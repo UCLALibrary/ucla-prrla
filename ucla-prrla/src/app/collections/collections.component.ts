@@ -17,12 +17,12 @@ export class CollectionsComponent implements OnInit {
     /**
      * List of available types of page
      */
-    list: any;
+    public list: any;
     /**
      * Type of page: (Browse by Collection Title|Browse by Institution)
      * @type {string}
      */
-    selected: any = 'Browse by Institution';
+    public selected: any = 'Browse by Institution';
 
     /**
      * Universities list

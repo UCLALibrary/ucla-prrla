@@ -1,4 +1,4 @@
-import { ModuleWithProviders } from '@angular/core';
+import { ModuleWithProviders, NgModule} from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { IndexContentComponent } from './index-content/index-content.component';
 import { AboutComponent } from './about/about.component';
@@ -10,7 +10,7 @@ import { AdvancedSearchComponent } from './advanced-search/advanced-search.compo
 import { DetailItemComponent } from './detail-item/detail-item.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ExhibitionComponent } from './exhibition/exhibition.component';
-import {InstitutionComponent} from './institution/institution.component';
+import { InstitutionComponent } from './institution/institution.component';
 
 export const router: Routes = [
     { path: '', redirectTo: 'index', pathMatch: 'full' },
@@ -26,5 +26,25 @@ export const router: Routes = [
     { path: 'institution', component: InstitutionComponent },
     { path: '**', component: NotFoundComponent },
 ];
+
+@NgModule({
+    imports: [RouterModule.forChild(router)],
+    exports: [RouterModule],
+    declarations: [
+        NotFoundComponent,
+        InstitutionComponent,
+        ExhibitionComponent,
+        DetailItemComponent,
+        AboutComponent,
+        HelpComponent,
+        AdvancedSearchComponent,
+        ExhibitionsComponent,
+        CollectionsComponent,
+        InstitutionsComponent,
+        IndexContentComponent,
+    ]
+})
+export class AboutRoutingModule { }
+
 
 export const routes: ModuleWithProviders = RouterModule.forRoot(router);

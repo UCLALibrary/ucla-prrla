@@ -65,6 +65,9 @@
                                 id="xs-modules-links"
                             >
                                 <li class="link">
+                                    <a href="../modules/AboutRoutingModule.html" >AboutRoutingModule</a>
+                                </li>
+                                <li class="link">
                                     <a href="../modules/AppModule.html" >AppModule</a>
                                 </li>
                         </ul>
@@ -113,9 +116,6 @@
                                 </li>
                                 <li class="link">
                                     <a href="../components/HeaderComponent.html" >HeaderComponent</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../components/HeaderMenuComponent.html" >HeaderMenuComponent</a>
                                 </li>
                                 <li class="link">
                                     <a href="../components/HelpComponent.html" >HelpComponent</a>
@@ -167,9 +167,6 @@
                         <ul class="links collapse "
                                 id="xs-pipes-links"
                             >
-                                <li class="link">
-                                    <a href="../pipes/DerpPipe.html" >DerpPipe</a>
-                                </li>
                                 <li class="link">
                                     <a href="../pipes/ImplodePipe.html" >ImplodePipe</a>
                                 </li>
@@ -269,6 +266,9 @@
                                        id="modules-links"
                    >
                                        <li class="link">
+                                           <a href="../modules/AboutRoutingModule.html" >AboutRoutingModule</a>
+                                       </li>
+                                       <li class="link">
                                            <a href="../modules/AppModule.html" >AppModule</a>
                                        </li>
                                </ul>
@@ -317,9 +317,6 @@
                                        </li>
                                        <li class="link">
                                            <a href="../components/HeaderComponent.html" >HeaderComponent</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../components/HeaderMenuComponent.html" >HeaderMenuComponent</a>
                                        </li>
                                        <li class="link">
                                            <a href="../components/HelpComponent.html" >HelpComponent</a>
@@ -371,9 +368,6 @@
                                <ul class="links collapse "
                                        id="pipes-links"
                    >
-                                       <li class="link">
-                                           <a href="../pipes/DerpPipe.html" >DerpPipe</a>
-                                       </li>
                                        <li class="link">
                                            <a href="../pipes/ImplodePipe.html" >ImplodePipe</a>
                                        </li>
@@ -451,7 +445,7 @@
 </ul>
 
 <div class="tab-content">
-    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
     <h3>File</h3>
 </p>
 <p class="comment">
@@ -471,7 +465,7 @@
         <h3>Implements</h3>
     </p>
     <p class="comment">
-                <code><a href="https://angular.io/docs/ts/latest/api/api/core/OnInit" target="_blank" >OnInit</a></code>
+                <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
     </p>
 
 
@@ -522,7 +516,7 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                 <a href="#ngOnInit">ngOnInit</a>
+                                <a href="#ngOnInit">ngOnInit</a>
                             </li>
                         </ul>
                     </td>
@@ -564,7 +558,12 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="ngOnInit"></a>
-                            <span class="name"><b> ngOnInit</b><a href="#ngOnInit"><span class="fa fa-link"></span></a></span>
+                            <span class="name">
+                                <b>
+                                ngOnInit
+                                </b>
+                                <a href="#ngOnInit"><span class="fa fa-link"></span></a>
+                            </span>
                         </td>
                     </tr>
                     <tr>
@@ -599,7 +598,7 @@
 </div>
 
 
-    <div class="tab-pane fade tab-source-code" id="source">
+    <div class="tab-pane fade tab-source-code" id="c-source">
         <pre class="line-numbers"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
 
 /**
@@ -625,17 +624,15 @@ export class FooterComponent implements OnInit {
 </code></pre>
     </div>
 
-    <div class="tab-pane fade" id="templateData">
+    <div class="tab-pane fade" id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;footer class&#x3D;&quot;&quot;&gt;
   &lt;div class&#x3D;&quot;container-fluid&quot;&gt;
     &lt;div class&#x3D;&quot;row footer-links&quot;&gt;
       &lt;a routerLink&#x3D;&quot;institutions&quot;&gt;Institutions&lt;/a&gt;
       &lt;a routerLink&#x3D;&quot;explore-collections&quot;&gt;Explore Collections&lt;/a&gt;
       &lt;a href&#x3D;&quot;http://pr-rla.org&quot; target&#x3D;&quot;_blank&quot;&gt;Visit PRRLA&lt;/a&gt;
-      &lt;!--&lt;a routerLink&#x3D;&quot;advanced-search&quot;&gt;Advanced Search&lt;/a&gt;--&gt;
       &lt;a routerLink&#x3D;&quot;help&quot;&gt;Help&lt;/a&gt;
       &lt;a routerLink&#x3D;&quot;about&quot;&gt;About Us&lt;/a&gt;
-      &lt;!--&lt;a href&#x3D;&quot;#&quot;&gt; About PRRLA&lt;/a&gt;--&gt;
     &lt;/div&gt;
   &lt;/div&gt;
   &lt;p class&#x3D;&quot;copyright&quot;&gt;PRRLA Copyright ©2016. All Rights Reserved. Hosted by UCLA Library&lt;/p&gt;
@@ -643,7 +640,7 @@ export class FooterComponent implements OnInit {
 </code></pre>
     </div>
 
-    <div class="tab-pane fade" id="tree">
+    <div class="tab-pane fade" id="c-tree">
         <div id="tree-container"></div>
         <div class="tree-legend">
             <div class="title">
@@ -666,8 +663,8 @@ export class FooterComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><footer class="">  <div class="container-fluid">    <div class="row footer-links">      <a routerLink="institutions">Institutions</a>      <a routerLink="explore-collections">Explore Collections</a>      <a href="http://pr-rla.org" target="_blank">Visit PRRLA</a>      <!--<a routerLink="advanced-search">Advanced Search</a>-->      <a routerLink="help">Help</a>      <a routerLink="about">About Us</a>      <!--<a href="#"> About PRRLA</a>-->    </div>  </div>  <p class="copyright">PRRLA Copyright ©2016. All Rights Reserved. Hosted by UCLA Library</p></footer></div>'
-    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AdvancedSearchComponent', 'selector': 'app-advanced-search'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CollectionsComponent', 'selector': 'app-collections'},{'name': 'DetailItemComponent', 'selector': 'app-detail-item'},{'name': 'ErrorComponent', 'selector': 'app-error'},{'name': 'ExhibitionComponent', 'selector': 'app-exhibition'},{'name': 'ExhibitionsComponent', 'selector': 'app-exhibitions'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'GeneralSearchBoxComponent', 'selector': 'app-general-search-box'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HeaderMenuComponent', 'selector': 'app-header-menu'},{'name': 'HelpComponent', 'selector': 'app-help'},{'name': 'IndexContentComponent', 'selector': 'app-index-content'},{'name': 'InstitutionComponent', 'selector': 'app-institution'},{'name': 'InstitutionsComponent', 'selector': 'app-institutions'},{'name': 'NotFoundComponent', 'selector': ''}];
+        var COMPONENT_TEMPLATE = '<div><footer class="">  <div class="container-fluid">    <div class="row footer-links">      <a routerLink="institutions">Institutions</a>      <a routerLink="explore-collections">Explore Collections</a>      <a href="http://pr-rla.org" target="_blank">Visit PRRLA</a>      <a routerLink="help">Help</a>      <a routerLink="about">About Us</a>    </div>  </div>  <p class="copyright">PRRLA Copyright ©2016. All Rights Reserved. Hosted by UCLA Library</p></footer></div>'
+    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AdvancedSearchComponent', 'selector': 'app-advanced-search'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CollectionsComponent', 'selector': 'app-collections'},{'name': 'DetailItemComponent', 'selector': 'app-detail-item'},{'name': 'ErrorComponent', 'selector': 'app-error'},{'name': 'ExhibitionComponent', 'selector': 'app-exhibition'},{'name': 'ExhibitionsComponent', 'selector': 'app-exhibitions'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'GeneralSearchBoxComponent', 'selector': 'app-general-search-box'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HelpComponent', 'selector': 'app-help'},{'name': 'IndexContentComponent', 'selector': 'app-index-content'},{'name': 'InstitutionComponent', 'selector': 'app-institution'},{'name': 'InstitutionsComponent', 'selector': 'app-institutions'},{'name': 'NotFoundComponent', 'selector': ''}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'FooterComponent'};
 </script>

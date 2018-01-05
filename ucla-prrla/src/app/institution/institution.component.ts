@@ -38,7 +38,7 @@ export class InstitutionComponent  implements OnInit {
     /**
      * Route, used to get Route Params
      */
-    route$: Subscription;
+    public route$: Subscription;
 
     /**
      * Constructor

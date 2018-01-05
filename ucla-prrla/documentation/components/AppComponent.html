@@ -65,6 +65,9 @@
                                 id="xs-modules-links"
                             >
                                 <li class="link">
+                                    <a href="../modules/AboutRoutingModule.html" >AboutRoutingModule</a>
+                                </li>
+                                <li class="link">
                                     <a href="../modules/AppModule.html" >AppModule</a>
                                 </li>
                         </ul>
@@ -113,9 +116,6 @@
                                 </li>
                                 <li class="link">
                                     <a href="../components/HeaderComponent.html" >HeaderComponent</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../components/HeaderMenuComponent.html" >HeaderMenuComponent</a>
                                 </li>
                                 <li class="link">
                                     <a href="../components/HelpComponent.html" >HelpComponent</a>
@@ -167,9 +167,6 @@
                         <ul class="links collapse "
                                 id="xs-pipes-links"
                             >
-                                <li class="link">
-                                    <a href="../pipes/DerpPipe.html" >DerpPipe</a>
-                                </li>
                                 <li class="link">
                                     <a href="../pipes/ImplodePipe.html" >ImplodePipe</a>
                                 </li>
@@ -269,6 +266,9 @@
                                        id="modules-links"
                    >
                                        <li class="link">
+                                           <a href="../modules/AboutRoutingModule.html" >AboutRoutingModule</a>
+                                       </li>
+                                       <li class="link">
                                            <a href="../modules/AppModule.html" >AppModule</a>
                                        </li>
                                </ul>
@@ -317,9 +317,6 @@
                                        </li>
                                        <li class="link">
                                            <a href="../components/HeaderComponent.html" >HeaderComponent</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../components/HeaderMenuComponent.html" >HeaderMenuComponent</a>
                                        </li>
                                        <li class="link">
                                            <a href="../components/HelpComponent.html" >HelpComponent</a>
@@ -371,9 +368,6 @@
                                <ul class="links collapse "
                                        id="pipes-links"
                    >
-                                       <li class="link">
-                                           <a href="../pipes/DerpPipe.html" >DerpPipe</a>
-                                       </li>
                                        <li class="link">
                                            <a href="../pipes/ImplodePipe.html" >ImplodePipe</a>
                                        </li>
@@ -451,7 +445,7 @@
 </ul>
 
 <div class="tab-content">
-    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
     <h3>File</h3>
 </p>
 <p class="comment">
@@ -514,8 +508,8 @@
 </div>
 
 
-    <div class="tab-pane fade tab-source-code" id="source">
-        <pre class="line-numbers"><code class="language-typescript">import { Component, Pipe } from &#x27;@angular/core&#x27;;
+    <div class="tab-pane fade tab-source-code" id="c-source">
+        <pre class="line-numbers"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
 
 /**
  * Main Component
@@ -530,7 +524,7 @@ export class AppComponent {
 </code></pre>
     </div>
 
-    <div class="tab-pane fade" id="templateData">
+    <div class="tab-pane fade" id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;!--The whole content below can be removed with the new code.--&gt;
 &lt;div class&#x3D;&quot;site-height-full&quot;&gt;
     &lt;div class&#x3D;&quot;container&quot;&gt;
@@ -541,7 +535,7 @@ export class AppComponent {
 &lt;app-error&gt;&lt;/app-error&gt;
 &lt;router-outlet&gt;&lt;/router-outlet&gt;
 &lt;/div&gt;
-&lt;!--&lt;app-index-content&gt;&lt;/app-index-content&gt;--&gt;
+
 
 &lt;div class&#x3D;&quot;container&quot;&gt;
     &lt;app-footer&gt;&lt;/app-footer&gt;
@@ -549,7 +543,7 @@ export class AppComponent {
 </code></pre>
     </div>
 
-    <div class="tab-pane fade" id="tree">
+    <div class="tab-pane fade" id="c-tree">
         <div id="tree-container"></div>
         <div class="tree-legend">
             <div class="title">
@@ -572,8 +566,8 @@ export class AppComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><!--The whole content below can be removed with the new code.--><div class="site-height-full">    <div class="container">        <div class="col-md-12">            <app-header></app-header>        </div>    </div><app-error></app-error><router-outlet></router-outlet></div><!--<app-index-content></app-index-content>--><div class="container">    <app-footer></app-footer></div></div>'
-    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AdvancedSearchComponent', 'selector': 'app-advanced-search'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CollectionsComponent', 'selector': 'app-collections'},{'name': 'DetailItemComponent', 'selector': 'app-detail-item'},{'name': 'ErrorComponent', 'selector': 'app-error'},{'name': 'ExhibitionComponent', 'selector': 'app-exhibition'},{'name': 'ExhibitionsComponent', 'selector': 'app-exhibitions'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'GeneralSearchBoxComponent', 'selector': 'app-general-search-box'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HeaderMenuComponent', 'selector': 'app-header-menu'},{'name': 'HelpComponent', 'selector': 'app-help'},{'name': 'IndexContentComponent', 'selector': 'app-index-content'},{'name': 'InstitutionComponent', 'selector': 'app-institution'},{'name': 'InstitutionsComponent', 'selector': 'app-institutions'},{'name': 'NotFoundComponent', 'selector': ''}];
+        var COMPONENT_TEMPLATE = '<div><!--The whole content below can be removed with the new code.--><div class="site-height-full">    <div class="container">        <div class="col-md-12">            <app-header></app-header>        </div>    </div><app-error></app-error><router-outlet></router-outlet></div><div class="container">    <app-footer></app-footer></div></div>'
+    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AdvancedSearchComponent', 'selector': 'app-advanced-search'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CollectionsComponent', 'selector': 'app-collections'},{'name': 'DetailItemComponent', 'selector': 'app-detail-item'},{'name': 'ErrorComponent', 'selector': 'app-error'},{'name': 'ExhibitionComponent', 'selector': 'app-exhibition'},{'name': 'ExhibitionsComponent', 'selector': 'app-exhibitions'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'GeneralSearchBoxComponent', 'selector': 'app-general-search-box'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HelpComponent', 'selector': 'app-help'},{'name': 'IndexContentComponent', 'selector': 'app-index-content'},{'name': 'InstitutionComponent', 'selector': 'app-institution'},{'name': 'InstitutionsComponent', 'selector': 'app-institutions'},{'name': 'NotFoundComponent', 'selector': ''}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'AppComponent'};
 </script>

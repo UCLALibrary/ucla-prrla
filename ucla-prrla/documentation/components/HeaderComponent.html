@@ -65,6 +65,9 @@
                                 id="xs-modules-links"
                             >
                                 <li class="link">
+                                    <a href="../modules/AboutRoutingModule.html" >AboutRoutingModule</a>
+                                </li>
+                                <li class="link">
                                     <a href="../modules/AppModule.html" >AppModule</a>
                                 </li>
                         </ul>
@@ -113,9 +116,6 @@
                                 </li>
                                 <li class="link">
                                     <a href="../components/HeaderComponent.html"  data-type="entity-link" class="active" >HeaderComponent</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../components/HeaderMenuComponent.html" >HeaderMenuComponent</a>
                                 </li>
                                 <li class="link">
                                     <a href="../components/HelpComponent.html" >HelpComponent</a>
@@ -167,9 +167,6 @@
                         <ul class="links collapse "
                                 id="xs-pipes-links"
                             >
-                                <li class="link">
-                                    <a href="../pipes/DerpPipe.html" >DerpPipe</a>
-                                </li>
                                 <li class="link">
                                     <a href="../pipes/ImplodePipe.html" >ImplodePipe</a>
                                 </li>
@@ -269,6 +266,9 @@
                                        id="modules-links"
                    >
                                        <li class="link">
+                                           <a href="../modules/AboutRoutingModule.html" >AboutRoutingModule</a>
+                                       </li>
+                                       <li class="link">
                                            <a href="../modules/AppModule.html" >AppModule</a>
                                        </li>
                                </ul>
@@ -317,9 +317,6 @@
                                        </li>
                                        <li class="link">
                                            <a href="../components/HeaderComponent.html"  data-type="entity-link" class="active" >HeaderComponent</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../components/HeaderMenuComponent.html" >HeaderMenuComponent</a>
                                        </li>
                                        <li class="link">
                                            <a href="../components/HelpComponent.html" >HelpComponent</a>
@@ -371,9 +368,6 @@
                                <ul class="links collapse "
                                        id="pipes-links"
                    >
-                                       <li class="link">
-                                           <a href="../pipes/DerpPipe.html" >DerpPipe</a>
-                                       </li>
                                        <li class="link">
                                            <a href="../pipes/ImplodePipe.html" >ImplodePipe</a>
                                        </li>
@@ -451,7 +445,7 @@
 </ul>
 
 <div class="tab-content">
-    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
     <h3>File</h3>
 </p>
 <p class="comment">
@@ -471,7 +465,7 @@
         <h3>Implements</h3>
     </p>
     <p class="comment">
-                <code><a href="https://angular.io/docs/ts/latest/api/api/core/OnInit" target="_blank" >OnInit</a></code>
+                <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
     </p>
 
 
@@ -522,7 +516,8 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <span class="modifier">Public</span> <a href="#prod">prod</a>
+                                    <span class="modifier">Public</span>
+                                <a href="#prod">prod</a>
                             </li>
                         </ul>
                     </td>
@@ -536,7 +531,7 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                 <a href="#ngOnInit">ngOnInit</a>
+                                <a href="#ngOnInit">ngOnInit</a>
                             </li>
                         </ul>
                     </td>
@@ -578,7 +573,12 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="ngOnInit"></a>
-                            <span class="name"><b> ngOnInit</b><a href="#ngOnInit"><span class="fa fa-link"></span></a></span>
+                            <span class="name">
+                                <b>
+                                ngOnInit
+                                </b>
+                                <a href="#ngOnInit"><span class="fa fa-link"></span></a>
+                            </span>
                         </td>
                     </tr>
                     <tr>
@@ -619,7 +619,13 @@
                     <tr>
                         <td class="col-md-4">
                             <a name="prod"></a>
-                            <span class="name"><b><span class="modifier">Public</span> prod</b><a href="#prod"><span class="fa fa-link"></span></a></span>
+                            <span class="name">
+                                <b>
+                                    <span class="modifier">Public</span>
+                                prod
+                                </b>
+                                <a href="#prod"><span class="fa fa-link"></span></a>
+                            </span>
                         </td>
                     </tr>
                     <tr>
@@ -648,7 +654,7 @@
 </div>
 
 
-    <div class="tab-pane fade tab-source-code" id="source">
+    <div class="tab-pane fade tab-source-code" id="c-source">
         <pre class="line-numbers"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
 import {environment} from &#x27;../../environments/environment&#x27;;
 
@@ -688,9 +694,8 @@ export class HeaderComponent implements OnInit {
 }</code></pre>
     </div>
 
-    <div class="tab-pane fade" id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;!--&lt;div class&#x3D;&quot;container&quot;&gt;--&gt;
-&lt;div *ngIf&#x3D;&quot;prod &#x3D;&#x3D;&#x3D; false;&quot;&gt;
+    <div class="tab-pane fade" id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div *ngIf&#x3D;&quot;prod &#x3D;&#x3D;&#x3D; false;&quot;&gt;
   &lt;div class&#x3D;&quot;alert alert-warning text-center fixed-top navbar-fixed-top&quot; role&#x3D;&quot;alert&quot;&gt;
     TEST SITE; TEMPORARY, SAMPLE DATA
   &lt;/div&gt;
@@ -702,33 +707,19 @@ export class HeaderComponent implements OnInit {
           &lt;div class&#x3D;&quot;col-md-12&quot;&gt;
             &lt;div class&#x3D;&quot;pull-right translate&quot;&gt;
               &lt;div id&#x3D;&quot;google_translate_element&quot;&gt;&lt;/div&gt;
-              &lt;!--&lt;a href&#x3D;&quot;#&quot; class&#x3D;&quot;blue language-btn&quot;&gt;Translate&lt;/a&gt;--&gt;
-              &lt;!--&lt;div class&#x3D;&quot;language-list&quot;&gt;--&gt;
-                &lt;!--&lt;a href&#x3D;&quot;#&quot;&gt;English&lt;/a&gt;--&gt;
-                &lt;!--&lt;a href&#x3D;&quot;#&quot;&gt;Czech&lt;/a&gt;--&gt;
-                &lt;!--&lt;a href&#x3D;&quot;#&quot;&gt;Bengali&lt;/a&gt;--&gt;
-                &lt;!--&lt;a href&#x3D;&quot;#&quot;&gt;Persian&lt;/a&gt;--&gt;
-                &lt;!--&lt;a href&#x3D;&quot;#&quot;&gt;Chinese&lt;/a&gt;--&gt;
-                &lt;!--&lt;a href&#x3D;&quot;#&quot;&gt;Japanese&lt;/a&gt;--&gt;
-              &lt;!--&lt;/div&gt;--&gt;
-              &lt;!--&lt;a href&#x3D;&quot;#&quot;&gt;&lt;img src&#x3D;&quot;../../assets/img/flag-usa.png&quot; alt&#x3D;&quot;&quot;&gt;&lt;/a&gt;--&gt;
-              &lt;!--&lt;a href&#x3D;&quot;#&quot;&gt;&lt;img src&#x3D;&quot;../../assets/img/flag-corean.png&quot; alt&#x3D;&quot;&quot;&gt;&lt;/a&gt;--&gt;
-              &lt;!--&lt;a href&#x3D;&quot;#&quot;&gt;&lt;img src&#x3D;&quot;../../assets/img/flag-japan.png&quot; alt&#x3D;&quot;&quot;&gt;&lt;/a&gt;--&gt;
-              &lt;!--&lt;a href&#x3D;&quot;#&quot;&gt;&lt;img src&#x3D;&quot;../../assets/img/flag-china.png&quot; alt&#x3D;&quot;&quot;&gt;&lt;/a&gt;--&gt;
+
             &lt;/div&gt;
           &lt;/div&gt;
         &lt;/div&gt;
         &lt;div class&#x3D;&quot;row&quot;&gt;
           &lt;div class&#x3D;&quot;col-md-4 col-sm-4 col-xs-9&quot;&gt;
             &lt;a routerLink&#x3D;&quot;index&quot; class&#x3D;&quot;logo&quot;&gt;&lt;img src&#x3D;&quot;../../assets/img/prrla-logo.png&quot; alt&#x3D;&quot;&quot;&gt;&lt;/a&gt;
-            &lt;!--&lt;h1&gt;&lt;a &gt;&lt;span class&#x3D;&quot;blue&quot;&gt;&lt;strong&gt;PRRLA&lt;/strong&gt;&lt;/span&gt; | &lt;span class&#x3D;&quot;blue&quot;&gt;PRL&lt;/span&gt;&lt;/a&gt;&lt;/h1&gt;--&gt;
           &lt;/div&gt;
           &lt;div class&#x3D;&quot;col-md-8&quot;&gt;
             &lt;ul class&#x3D;&quot;nav-pills nav pull-right&quot;&gt;
               &lt;li&gt;&lt;a routerLink&#x3D;&quot;institutions&quot;&gt;Institutions &lt;/a&gt;&lt;/li&gt;
               &lt;li&gt;&lt;a routerLink&#x3D;&quot;explore-collections&quot;&gt;EXPLORE Collections&lt;/a&gt;&lt;/li&gt;
               &lt;li&gt;&lt;a href&#x3D;&quot;http://pr-rla.org&quot; target&#x3D;&quot;_blank&quot;&gt;Visit PRRLA&lt;/a&gt;&lt;/li&gt;
-              &lt;!--&lt;li&gt;&lt;a routerLink&#x3D;&quot;advanced-search&quot;&gt;Advanced Search&lt;/a&gt;&lt;/li&gt;--&gt;
               &lt;li&gt;&lt;a routerLink&#x3D;&quot;help&quot;&gt;Help&lt;/a&gt;&lt;/li&gt;
               &lt;li&gt;&lt;a routerLink&#x3D;&quot;about&quot;&gt;About Us&lt;/a&gt;&lt;/li&gt;
             &lt;/ul&gt;
@@ -739,7 +730,7 @@ export class HeaderComponent implements OnInit {
 &lt;/div&gt;</code></pre>
     </div>
 
-    <div class="tab-pane fade" id="tree">
+    <div class="tab-pane fade" id="c-tree">
         <div id="tree-container"></div>
         <div class="tree-legend">
             <div class="title">
@@ -762,8 +753,8 @@ export class HeaderComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><!--<div class="container">--><div *ngIf="prod === false;">  <div class="alert alert-warning text-center fixed-top navbar-fixed-top" role="alert">    TEST SITE; TEMPORARY, SAMPLE DATA  </div></div>  <div class="row">  <header class="">    <nav>        <div class="row">          <div class="col-md-12">            <div class="pull-right translate">              <div id="google_translate_element"></div>              <!--<a href="#" class="blue language-btn">Translate</a>-->              <!--<div class="language-list">-->                <!--<a href="#">English</a>-->                <!--<a href="#">Czech</a>-->                <!--<a href="#">Bengali</a>-->                <!--<a href="#">Persian</a>-->                <!--<a href="#">Chinese</a>-->                <!--<a href="#">Japanese</a>-->              <!--</div>-->              <!--<a href="#"><img src="../../assets/img/flag-usa.png" alt=""></a>-->              <!--<a href="#"><img src="../../assets/img/flag-corean.png" alt=""></a>-->              <!--<a href="#"><img src="../../assets/img/flag-japan.png" alt=""></a>-->              <!--<a href="#"><img src="../../assets/img/flag-china.png" alt=""></a>-->            </div>          </div>        </div>        <div class="row">          <div class="col-md-4 col-sm-4 col-xs-9">            <a routerLink="index" class="logo"><img src="../../assets/img/prrla-logo.png" alt=""></a>            <!--<h1><a ><span class="blue"><strong>PRRLA</strong></span> | <span class="blue">PRL</span></a></h1>-->          </div>          <div class="col-md-8">            <ul class="nav-pills nav pull-right">              <li><a routerLink="institutions">Institutions </a></li>              <li><a routerLink="explore-collections">EXPLORE Collections</a></li>              <li><a href="http://pr-rla.org" target="_blank">Visit PRRLA</a></li>              <!--<li><a routerLink="advanced-search">Advanced Search</a></li>-->              <li><a routerLink="help">Help</a></li>              <li><a routerLink="about">About Us</a></li>            </ul>          </div>        </div>    </nav>  </header></div></div>'
-    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AdvancedSearchComponent', 'selector': 'app-advanced-search'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CollectionsComponent', 'selector': 'app-collections'},{'name': 'DetailItemComponent', 'selector': 'app-detail-item'},{'name': 'ErrorComponent', 'selector': 'app-error'},{'name': 'ExhibitionComponent', 'selector': 'app-exhibition'},{'name': 'ExhibitionsComponent', 'selector': 'app-exhibitions'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'GeneralSearchBoxComponent', 'selector': 'app-general-search-box'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HeaderMenuComponent', 'selector': 'app-header-menu'},{'name': 'HelpComponent', 'selector': 'app-help'},{'name': 'IndexContentComponent', 'selector': 'app-index-content'},{'name': 'InstitutionComponent', 'selector': 'app-institution'},{'name': 'InstitutionsComponent', 'selector': 'app-institutions'},{'name': 'NotFoundComponent', 'selector': ''}];
+        var COMPONENT_TEMPLATE = '<div><div *ngIf="prod === false;">  <div class="alert alert-warning text-center fixed-top navbar-fixed-top" role="alert">    TEST SITE; TEMPORARY, SAMPLE DATA  </div></div>  <div class="row">  <header class="">    <nav>        <div class="row">          <div class="col-md-12">            <div class="pull-right translate">              <div id="google_translate_element"></div>            </div>          </div>        </div>        <div class="row">          <div class="col-md-4 col-sm-4 col-xs-9">            <a routerLink="index" class="logo"><img src="../../assets/img/prrla-logo.png" alt=""></a>          </div>          <div class="col-md-8">            <ul class="nav-pills nav pull-right">              <li><a routerLink="institutions">Institutions </a></li>              <li><a routerLink="explore-collections">EXPLORE Collections</a></li>              <li><a href="http://pr-rla.org" target="_blank">Visit PRRLA</a></li>              <li><a routerLink="help">Help</a></li>              <li><a routerLink="about">About Us</a></li>            </ul>          </div>        </div>    </nav>  </header></div></div>'
+    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AdvancedSearchComponent', 'selector': 'app-advanced-search'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CollectionsComponent', 'selector': 'app-collections'},{'name': 'DetailItemComponent', 'selector': 'app-detail-item'},{'name': 'ErrorComponent', 'selector': 'app-error'},{'name': 'ExhibitionComponent', 'selector': 'app-exhibition'},{'name': 'ExhibitionsComponent', 'selector': 'app-exhibitions'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'GeneralSearchBoxComponent', 'selector': 'app-general-search-box'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HelpComponent', 'selector': 'app-help'},{'name': 'IndexContentComponent', 'selector': 'app-index-content'},{'name': 'InstitutionComponent', 'selector': 'app-institution'},{'name': 'InstitutionsComponent', 'selector': 'app-institutions'},{'name': 'NotFoundComponent', 'selector': ''}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'HeaderComponent'};
 </script>

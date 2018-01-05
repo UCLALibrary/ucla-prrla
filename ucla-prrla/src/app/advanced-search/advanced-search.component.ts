@@ -15,7 +15,7 @@ export class AdvancedSearchComponent implements OnInit {
     /**
      * Page Number in Url
      */
-    url_page: any;
+    public url_page: any;
 
     /**
      * Route

@@ -65,6 +65,9 @@
                                 id="xs-modules-links"
                             >
                                 <li class="link">
+                                    <a href="../modules/AboutRoutingModule.html" >AboutRoutingModule</a>
+                                </li>
+                                <li class="link">
                                     <a href="../modules/AppModule.html" >AppModule</a>
                                 </li>
                         </ul>
@@ -113,9 +116,6 @@
                                 </li>
                                 <li class="link">
                                     <a href="../components/HeaderComponent.html" >HeaderComponent</a>
-                                </li>
-                                <li class="link">
-                                    <a href="../components/HeaderMenuComponent.html" >HeaderMenuComponent</a>
                                 </li>
                                 <li class="link">
                                     <a href="../components/HelpComponent.html" >HelpComponent</a>
@@ -167,9 +167,6 @@
                         <ul class="links collapse "
                                 id="xs-pipes-links"
                             >
-                                <li class="link">
-                                    <a href="../pipes/DerpPipe.html" >DerpPipe</a>
-                                </li>
                                 <li class="link">
                                     <a href="../pipes/ImplodePipe.html" >ImplodePipe</a>
                                 </li>
@@ -269,6 +266,9 @@
                                        id="modules-links"
                    >
                                        <li class="link">
+                                           <a href="../modules/AboutRoutingModule.html" >AboutRoutingModule</a>
+                                       </li>
+                                       <li class="link">
                                            <a href="../modules/AppModule.html" >AppModule</a>
                                        </li>
                                </ul>
@@ -317,9 +317,6 @@
                                        </li>
                                        <li class="link">
                                            <a href="../components/HeaderComponent.html" >HeaderComponent</a>
-                                       </li>
-                                       <li class="link">
-                                           <a href="../components/HeaderMenuComponent.html" >HeaderMenuComponent</a>
                                        </li>
                                        <li class="link">
                                            <a href="../components/HelpComponent.html" >HelpComponent</a>
@@ -371,9 +368,6 @@
                                <ul class="links collapse "
                                        id="pipes-links"
                    >
-                                       <li class="link">
-                                           <a href="../pipes/DerpPipe.html" >DerpPipe</a>
-                                       </li>
                                        <li class="link">
                                            <a href="../pipes/ImplodePipe.html" >ImplodePipe</a>
                                        </li>
@@ -450,7 +444,7 @@
 </ul>
 
 <div class="tab-content">
-    <div class="tab-pane fade active in" id="info">
+    <div class="tab-pane fade active in" id="c-info">
 
         <p class="comment">
             <h3>File</h3>
@@ -490,7 +484,12 @@
                             <tr>
                                 <td class="col-md-4">
                                     <a name="transform"></a>
-                                    <span class="name"><b> transform</b><a href="#transform"><span class="fa fa-link"></span></a></span>
+                                    <span class="name">
+                                        <b>
+                                        transform
+                                        </b>
+                                        <a href="#transform"><span class="fa fa-link"></span></a>
+                                    </span>
                                 </td>
                             </tr>
                             <tr>
@@ -562,13 +561,13 @@
     </div>
 
 
-    <div class="tab-pane fade tab-source-code" id="source">
+    <div class="tab-pane fade tab-source-code" id="c-source">
         <pre class="line-numbers"><code class="language-typescript">import {Pipe, PipeTransform} from &#x27;@angular/core&#x27;;
 
 /**
  * Wraps url with HTML Tag
  */
-@Pipe({name:&#x27;url&#x27;})
+@Pipe({name: &#x27;url&#x27;})
 export class UrlPipe implements PipeTransform {
     transform(value: string, arg?: any): any {
         if (value.indexOf(&#x27;http&#x27;) &#x3D;&#x3D;&#x3D; 0) {
