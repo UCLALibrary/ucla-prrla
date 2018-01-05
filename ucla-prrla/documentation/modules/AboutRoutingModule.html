@@ -692,41 +692,23 @@ import { NotFoundComponent } from &#x27;./not-found/not-found.component&#x27;;
 import { ExhibitionComponent } from &#x27;./exhibition/exhibition.component&#x27;;
 import { InstitutionComponent } from &#x27;./institution/institution.component&#x27;;
 
-// export const router: Routes &#x3D; [
-//     { path: &#x27;&#x27;, redirectTo: &#x27;index&#x27;, pathMatch: &#x27;full&#x27; },
-//     { path: &#x27;index&#x27;, component: IndexContentComponent },
-//     { path: &#x27;institutions&#x27;, component: InstitutionsComponent },
-//     { path: &#x27;explore-collections&#x27;, component: CollectionsComponent },
-//     { path: &#x27;exhibitions&#x27;, component: ExhibitionsComponent },
-//     { path: &#x27;search&#x27;, component: AdvancedSearchComponent },
-//     { path: &#x27;help&#x27;, component: HelpComponent },
-//     { path: &#x27;about&#x27;, component: AboutComponent },
-//     { path: &#x27;detail/:id&#x27;, component: DetailItemComponent },
-//     { path: &#x27;exhibition&#x27;, component: ExhibitionComponent },
-//     { path: &#x27;institution&#x27;, component: InstitutionComponent },
-//     { path: &#x27;**&#x27;, component: NotFoundComponent },
-// ];
-
-export const Router: Routes &#x3D; [
-    { path: &#x27;index&#x27;, component: IndexContentComponent,
-        children: [
-            { path: &#x27;institutions&#x27;, component: InstitutionsComponent },
-            { path: &#x27;explore-collections&#x27;, component: CollectionsComponent },
-            { path: &#x27;exhibitions&#x27;, component: ExhibitionsComponent },
-            { path: &#x27;search&#x27;, component: AdvancedSearchComponent },
-            { path: &#x27;help&#x27;, component: HelpComponent },
-            { path: &#x27;about&#x27;, component: AboutComponent },
-            { path: &#x27;detail/:id&#x27;, component: DetailItemComponent },
-            { path: &#x27;exhibition&#x27;, component: ExhibitionComponent },
-            { path: &#x27;institution&#x27;, component: InstitutionComponent },
-        ],
-    },
+export const router: Routes &#x3D; [
     { path: &#x27;&#x27;, redirectTo: &#x27;index&#x27;, pathMatch: &#x27;full&#x27; },
+    { path: &#x27;index&#x27;, component: IndexContentComponent },
+    { path: &#x27;institutions&#x27;, component: InstitutionsComponent },
+    { path: &#x27;explore-collections&#x27;, component: CollectionsComponent },
+    { path: &#x27;exhibitions&#x27;, component: ExhibitionsComponent },
+    { path: &#x27;search&#x27;, component: AdvancedSearchComponent },
+    { path: &#x27;help&#x27;, component: HelpComponent },
+    { path: &#x27;about&#x27;, component: AboutComponent },
+    { path: &#x27;detail/:id&#x27;, component: DetailItemComponent },
+    { path: &#x27;exhibition&#x27;, component: ExhibitionComponent },
+    { path: &#x27;institution&#x27;, component: InstitutionComponent },
     { path: &#x27;**&#x27;, component: NotFoundComponent },
 ];
 
 @NgModule({
-    imports: [RouterModule.forChild(Router)],
+    imports: [RouterModule.forChild(router)],
     exports: [RouterModule],
     declarations: [
         NotFoundComponent,
@@ -745,7 +727,7 @@ export const Router: Routes &#x3D; [
 export class AboutRoutingModule { }
 
 
-export const routes: ModuleWithProviders &#x3D; RouterModule.forRoot(Router);</code></pre>
+export const routes: ModuleWithProviders &#x3D; RouterModule.forRoot(router);</code></pre>
     </div>
 </div>
 

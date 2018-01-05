@@ -18,7 +18,7 @@ export class AdvancedSearchComponent implements OnInit {
     public url_page: any;
 
     /**
-     * Route {string} - redirected to some place
+     * Route {string} - params in url
      */
     route$: Subscription;
 

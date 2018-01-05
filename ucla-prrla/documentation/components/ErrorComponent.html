@@ -694,7 +694,10 @@
                                                       </td>
                                                       <td>
                                                       </td>
-                                                      <td></td>
+                                                      <td><ul>
+    <li>error title</li>
+    </ul>
+    </td>
                                                     </tr>
                                                     <tr>
                                                       <td>message</td>
@@ -702,7 +705,10 @@
                                                       </td>
                                                       <td>
                                                       </td>
-                                                      <td></td>
+                                                      <td><ul>
+    <li>error message</li>
+    </ul>
+    </td>
                                                     </tr>
                                             </tbody>
                                         </table>
@@ -771,7 +777,10 @@
                                                       </td>
                                                       <td>
                                                       </td>
-                                                      <td></td>
+                                                      <td><ul>
+    <li>error message</li>
+    </ul>
+    </td>
                                                     </tr>
                                             </tbody>
                                         </table>
@@ -1065,8 +1074,8 @@ export class ErrorComponent implements OnInit {
 
     /**
      * Call this method to show error
-     * @param title
-     * @param message
+     * @param title {string} - error title
+     * @param message {string} - error message
      */
     public static show(title, message) {
         this._showError &#x3D; true;
@@ -1076,7 +1085,7 @@ export class ErrorComponent implements OnInit {
 
     /**
      * Predefined error in case of problems with backend
-     * @param message
+     * @param message {string} - error message
      */
     public static showBackend(message &#x3D; &#x27;Problems with API. Try to reload page.&#x27;){
         this.show(&#x27;Backend error&#x27;, message);
