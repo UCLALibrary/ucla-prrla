@@ -2,7 +2,7 @@ import {Pipe, PipeTransform} from '@angular/core';
 
 /**
  * Implodes arguments
- * this Pipe separate values
+ * this Pipe join separated values
  */
 @Pipe({
     name: 'implode',

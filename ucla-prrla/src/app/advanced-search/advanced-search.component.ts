@@ -297,7 +297,7 @@ export class AdvancedSearchComponent implements OnInit {
     }
 
     /**
-     * Returnts true if filter is selected
+     * Returns true if filter is selected
      * @param filterName {string} - set name of filter
      * @param filterVal {string} - set value of filter
      * @returns {boolean}
