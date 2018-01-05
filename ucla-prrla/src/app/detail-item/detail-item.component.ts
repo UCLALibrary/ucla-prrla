@@ -13,7 +13,7 @@ import {ErrorComponent} from '../error/error.component';
 })
 export class DetailItemComponent implements OnInit {
     /**
-     * Id of item
+     * Id of item {number} - id of item from array
      */
     private id;
 

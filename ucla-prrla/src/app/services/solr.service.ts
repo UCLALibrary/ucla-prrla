@@ -9,7 +9,7 @@ import {environment} from '../../environments/environment';
 @Injectable()
 export class SolrService {
     /**
-     * Base URL
+     * Base URL - this use for connect to base and get it to the application
      */
     private baseURL;
     // private baseURL = 'http://test-solr.library.ucla.edu/solr/prrla/'; /*test service*/
@@ -17,19 +17,19 @@ export class SolrService {
 
     /**
      * Default Page Size for pagination
-     * @type {number}
+     * @type {number} Page Size - set displayed pages for pagination
      */
     public pageSize = 10;
 
     /**
      * Default Order By
-     * @type {string}
+     * @type {string} Order By - set type for sorting
      */
     public orderBy = '';
 
     /**
      * Available orders
-     * @type {[{value: string; name: string}]}
+     * @type {array} Available orders - orders for sorting items
      */
     public availableOrders = [
         { value: '', name: 'Relevance'},
@@ -41,7 +41,7 @@ export class SolrService {
 
     /**
      * Constructor, sets Base Url depending on environment
-     * @param _jsonp
+     * @param _jsonp {array} - sets Base Url depending on environment
      */
     constructor(private _jsonp: Jsonp) {
         if (environment.production) {
@@ -55,7 +55,7 @@ export class SolrService {
 
     /**
      * Escapes Apache Lucene special characters
-     * @param value
+     * @param value {array} - Escapes Apache Lucene special characters
      */
     public static escapeLucene(value){
         let specials = ['+', '-', '&', '!', '(', ')', '{', '}', '[', ']', '^', '"', '~', '*', '?', ':', '\\'];
@@ -65,9 +65,9 @@ export class SolrService {
 
     /**
      * Returns Pager
-     * @param totalItems
-     * @param currentPage
-     * @param pageSize
+     * @param totalItems {number} - all items from solr
+     * @param currentPage {number} - start page default = 1
+     * @param pageSize {number} - set displayed pages for pagination default = 10
      * @returns {{totalItems: number, currentPage: number, pageSize: number, totalPages: number, startPage: number, endPage: number, startIndex: number, endIndex: number, pages: Array}}
      */
     public getPager(totalItems: number, currentPage: number = 1, pageSize: number = this.pageSize) {
@@ -119,9 +119,9 @@ export class SolrService {
 
     /**
      * Returns Books with pagination
-     * @param search
-     * @param filters
-     * @param page
+     * @param search {string} - get input search request
+     * @param filters {array} - all checked filters
+     * @param page {number} - start page default = 1
      * @returns {OperatorFunction<T, R>}
      */
     public getPaginatedBooks(search, filters, page = 1) {
@@ -238,8 +238,8 @@ export class SolrService {
 
     /**
      * Converts minus in date string to B.C.E.
-     * @param date
-     * @returns {any}
+     * @param date {string} - get date from base
+     * @returns {any} - date with B.C.E.
      */
     public makeHumanReadableDate(date){
         if(date && date[0] === "-"){
@@ -251,7 +251,7 @@ export class SolrService {
 
     /**
      * Returns Item info by ID
-     * @param id
+     * @param id {number} - number id of search item
      * @returns {OperatorFunction<T, R>}
      */
     public getItemById(id){
@@ -276,7 +276,7 @@ export class SolrService {
 
     /**
      * Used to filter garbage in Solr Response
-     * @param raw_item
+     * @param raw_item {string} - info about searched item by id
      * @returns {boolean}
      */
     private detectRegularItem(raw_item){
@@ -288,9 +288,13 @@ export class SolrService {
 
     /**
      * Transforms Item Array from Solr response to Object
-     * @param raw_item
-     * @param returnArrays
-     * @returns {{id, title: any, titles: any, alternative_title: boolean, first_line: boolean, collection: Array, institution: Array, author: boolean, language: boolean, rights: boolean, source: boolean, description: boolean, identifier: boolean, decade: boolean, subject: boolean, publisher: boolean, contributor: boolean, date: boolean, format: boolean, relation: boolean, coverage: boolean, date_keyword: boolean, external_link: boolean, alternate_external_link: boolean, type: boolean, thumbnail_url: string}}
+     * @param raw_item {string} - info about item by id
+     * @param returnArrays {array} - default = false
+     * @returns {{id, title: any, titles: any, alternative_title: boolean, first_line: boolean, collection: Array,
+     * institution: Array, author: boolean, language: boolean, rights: boolean, source: boolean, description: boolean,
+     * identifier: boolean, decade: boolean, subject: boolean, publisher: boolean, contributor: boolean, date: boolean,
+     * format: boolean, relation: boolean, coverage: boolean, date_keyword: boolean, external_link: boolean,
+     * alternate_external_link: boolean, type: boolean, thumbnail_url: string}}
      */
     private parseRawItem(raw_item, returnArrays = false){
         let item = {
@@ -368,11 +372,11 @@ export class SolrService {
 
     /**
      * Sets Item Object Property with n element of array or sets all array
-     * @param item Item Object
-     * @param raw_item Item Array
-     * @param data_key Key in Raw item
-     * @param item_key Property in Item Object
-     * @param index Index in array
+     * @param item {Object} Item - all information transformed to the object
+     * @param raw_item {array} - info about item by
+     * @param data_key {string} - Key in Raw item
+     * @param item_key {string} - Property in Item Object
+     * @param index {number} - first index in array
      * @param returnArray return value by index or all array
      * @returns {any}
      */
@@ -392,7 +396,7 @@ export class SolrService {
 
     /**
      * Returns facet human-readable name
-     * @param name
+     * @param name {string} - get name from solr
      * @returns {any}
      */
     private getFacetDisplayName(name){
@@ -431,11 +435,11 @@ export class SolrService {
 
     /**
      * Sets item property to selected string if end of string contains specific text
-     * @param item
-     * @param string
-     * @param property
-     * @param endsWith
-     * @returns {any}
+     * @param item {Object} Item - all information transformed to the object
+     * @param string {string} - text entered in input
+     * @param property {string} - item property
+     * @param endsWith {string} - end string modificator
+     * @returns {any} item
      */
     private fillItemWithEndStringModificator(item, string, property, endsWith){
         if (string.endsWith(endsWith)) {
@@ -582,10 +586,10 @@ export class SolrService {
 
     /**
      * Returns Collections by University Name
-     * @param universityName
+     * @param universityName {string} - set university name
      * @returns {Observable<R>}
      */
-    public getCollectionsByUniversity(universityName){
+    public getCollectionsByUniversity(universityName) {
         let url =
             this.baseURL + 'select' +
             '?q=institutionName:' + encodeURIComponent('"' + universityName + '"') +
@@ -631,7 +635,7 @@ export class SolrService {
 
     /**
      * Returns Universities by Collection Name
-     * @param collectionName
+     * @param collectionName {string} - set collection name
      * @returns {Observable<R>}
      */
     public getUniversitiesByCollection(collectionName){
@@ -675,7 +679,7 @@ export class SolrService {
 
     /**
      * Get Prrla Member Info by Name
-     * @param name
+     * @param name {string} - member name
      * @returns {Observable<R>}
      */
     public getPrrlaMemberInfoByName(name){
@@ -697,7 +701,7 @@ export class SolrService {
 
     /**
      * Sort array by property
-     * @param property
+     * @param property {string} - property name for sorting array
      * @returns {(a:any, b:any)=>number}
      */
     public static dynamicSort(property) {

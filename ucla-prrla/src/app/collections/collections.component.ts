@@ -38,13 +38,13 @@ export class CollectionsComponent implements OnInit {
 
     /**
      * University list with collections for each university
-     * @type {{}}
+     * @type {Object}
      */
     public collectionsByUniversity = {};
 
     /**
      * Collections list with universities related
-     * @type {{}}
+     * @type {Object}
      */
     public universitiesByCollections = {};
 
@@ -86,7 +86,7 @@ export class CollectionsComponent implements OnInit {
 
     /**
      * Select page type
-     * @param item
+     * @param item {string} - checking selected item for display collections or institutions
      */
     selectButton(item) {
         this.selected = item;
@@ -94,7 +94,7 @@ export class CollectionsComponent implements OnInit {
 
     /**
      * returns if page type is selected
-     * @param item
+     * @param item {string} - checking selected item for display collections or institutions
      * @returns {boolean}
      */
     isSelected(item) {
@@ -121,7 +121,7 @@ export class CollectionsComponent implements OnInit {
     /**
      * Toggles collection on view
      * @param event
-     * @param collectionName
+     * @param collectionName {string} - collections names on view
      */
     toggleCollection(event, collectionName){
 
@@ -130,7 +130,7 @@ export class CollectionsComponent implements OnInit {
 
     /**
      * Loads collection by name
-     * @param collectionName
+     * @param collectionName {string} - collections names on view
      */
     loadCollection(collectionName){
         if (typeof this.universitiesByCollections[collectionName] === 'undefined') {
@@ -144,7 +144,7 @@ export class CollectionsComponent implements OnInit {
 
     /**
      * Returns true if university is loaded
-     * @param universityName
+     * @param universityName {string} - university names on view
      * @returns {boolean}
      */
     isLoadedUniversity(universityName) {
@@ -153,7 +153,7 @@ export class CollectionsComponent implements OnInit {
 
     /**
      * Returns true if collection is loaded
-     * @param collectionName
+     * @param collectionName {string} - collections names on view
      * @returns {boolean}
      */
     isLoadedCollection(collectionName) {
@@ -162,8 +162,8 @@ export class CollectionsComponent implements OnInit {
 
     /**
      * Handles click on collection
-     * @param collectionName
-     * @param universityName
+     * @param collectionName {string} - collections names on view
+     * @param universityName {string} - university names on view
      */
     collectionClick(collectionName: string, universityName: string) {
         this.router.navigate(['/search'], {
@@ -182,8 +182,8 @@ export class CollectionsComponent implements OnInit {
 
     /**
      * Handles click on university
-     * @param universityName
-     * @param collectionName
+     * @param collectionName {string} - collections names on view
+     * @param universityName {string} - university names on view
      */
     universityClick(universityName: string, collectionName: string) {
         this.router.navigate(['/search'], {

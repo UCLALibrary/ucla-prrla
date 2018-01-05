@@ -13,51 +13,51 @@ import {ErrorComponent} from '../error/error.component';
 })
 export class AdvancedSearchComponent implements OnInit {
     /**
-     * Page Number in Url
+     * Page Number {number} in Url
      */
     public url_page: any;
 
     /**
-     * Route
+     * Route {string} - redirected to some place
      */
     route$: Subscription;
 
     /**
-     * Loaded Items
-     * @type {Array}
+     * Loaded Items from solr data
+     * @type {Array} items - all data from solr
      */
     public items = [];
 
     /**
-     * Filters
+     * Filters {array} - get filters from solr
      */
     public itemFilters;
 
     /**
-     * Pager
+     * Pager {number} - total pages with items
      */
     public pager;
 
     /**
-     * Page Size
+     * Page Size {number} - total items on page
      */
     public pageSize;
 
     /**
-     * Order By
+     * Order By - selected order for sorting
      * @type {string}
      */
     public orderBy = '';
 
     /**
      * Available Orders
-     * @type {Array}
+     * @type {Array} Available Orders - orders for sorting items
      */
     public availableOrders = [];
 
     /**
      * Selected Filters
-     * @type {{}}
+     * @type {string}
      */
     public selectedFilters = {};
 
@@ -141,7 +141,7 @@ export class AdvancedSearchComponent implements OnInit {
 
     /**
      * Loads page data
-     * @param page
+     * @param page {number} - set page with data
      */
     setPage(page: number) {
         document.getElementById('loading').style.display = 'block';
@@ -187,7 +187,7 @@ export class AdvancedSearchComponent implements OnInit {
      * Clears inputs
      * @param event
      */
-    clearInputs(event){
+    clearInputs(event) {
         event.preventDefault();
         this.selectedFilters = {};
         this.search_therms = '';
@@ -198,7 +198,7 @@ export class AdvancedSearchComponent implements OnInit {
     /**
      * Handles click on page
      * @param event
-     * @param page
+     * @param page {number} - set page with data
      */
     pagerClick(event, page) {
         if (!event.target.parentElement.classList.contains('disabled')) {
@@ -208,10 +208,10 @@ export class AdvancedSearchComponent implements OnInit {
 
     /**
      * Navigates to specific page with selected filters and params
-     * @param page
-     * @param filters
-     * @param therms
-     * @param orderBy
+     * @param page {number} - set page with data
+     * @param filters {string} - set selected filters
+     * @param therms {string} - set selected terms
+     * @param orderBy {string} - set selected order
      */
     navigateWithParams(page, filters, therms, orderBy) {
         this.router.navigate(['/search'], {
@@ -236,7 +236,7 @@ export class AdvancedSearchComponent implements OnInit {
 
     /**
      * Handles click on search button
-     * @param therms
+     * @param therms {string} - set selected terms
      */
     searchButtonClick(therms: string) {
         this.search_therms = therms;
@@ -280,7 +280,7 @@ export class AdvancedSearchComponent implements OnInit {
 
     /**
      * Handles click on item, opens Item Detail page
-     * @param item_id
+     * @param item_id {number} - set selected item id
      * @returns {boolean}
      */
     clickOnItem(item_id){
@@ -298,8 +298,8 @@ export class AdvancedSearchComponent implements OnInit {
 
     /**
      * Returnts true if filter is selected
-     * @param filterName
-     * @param filterVal
+     * @param filterName {string} - set name of filter
+     * @param filterVal {string} - set value of filter
      * @returns {boolean}
      */
     getIsSelectedFilter(filterName, filterVal) {
@@ -318,8 +318,8 @@ export class AdvancedSearchComponent implements OnInit {
 
     /**
      * returns `checked` string if filter is selected
-     * @param filterName
-     * @param filterVal
+     * @param filterName {string} - set name of filter
+     * @param filterVal {string} - set value of filter
      * @returns {any}
      */
     getIsSelectedFilterChecked(filterName, filterVal) {

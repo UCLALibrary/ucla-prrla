@@ -13,7 +13,7 @@ import {ErrorComponent} from '../error/error.component';
 })
 export class InstitutionComponent  implements OnInit {
     /**
-     * Institution Name
+     * Institution Name {string}
      */
     private name;
 

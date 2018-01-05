@@ -43,8 +43,8 @@ export class ErrorComponent implements OnInit {
 
     /**
      * Call this method to show error
-     * @param title
-     * @param message
+     * @param title {string} - error title
+     * @param message {string} - error message
      */
     public static show(title, message) {
         this._showError = true;
@@ -54,7 +54,7 @@ export class ErrorComponent implements OnInit {
 
     /**
      * Predefined error in case of problems with backend
-     * @param message
+     * @param message {string} - error message
      */
     public static showBackend(message = 'Problems with API. Try to reload page.'){
         this.show('Backend error', message);

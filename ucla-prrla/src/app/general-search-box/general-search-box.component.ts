@@ -23,7 +23,7 @@ export class GeneralSearchBoxComponent implements OnInit {
 
     /**
      * Opens advanced search page with search therms on click
-     * @param therms
+     * @param therms {string}
      */
     btnClick(therms: string) {
         this.doNavigation(therms);
@@ -39,7 +39,7 @@ export class GeneralSearchBoxComponent implements OnInit {
 
     /**
      * Navigate to advanced search page
-     * @param therms
+     * @param therms {string}
      */
     doNavigation(therms: string) {
         this.router.navigate(['/search'], {queryParams: {therms: therms}});
