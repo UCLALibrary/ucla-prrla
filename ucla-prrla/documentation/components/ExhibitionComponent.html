@@ -581,7 +581,7 @@
     
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="75" class="link-to-prism">src/app/exhibition/exhibition.component.ts:75</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="81" class="link-to-prism">src/app/exhibition/exhibition.component.ts:81</a></div>
                                 </td>
                             </tr>
     
@@ -608,7 +608,10 @@
                                                       </td>
                                                       <td>
                                                       </td>
-                                                      <td></td>
+                                                      <td><ul>
+    <li>set page with data</li>
+    </ul>
+    </td>
                                                     </tr>
                                                     <tr>
                                                       <td>filters</td>
@@ -616,7 +619,10 @@
                                                       </td>
                                                       <td>
                                                       </td>
-                                                      <td></td>
+                                                      <td><ul>
+    <li>set selected filters</li>
+    </ul>
+    </td>
                                                     </tr>
                                                     <tr>
                                                       <td>therms</td>
@@ -624,7 +630,10 @@
                                                       </td>
                                                       <td>
                                                       </td>
-                                                      <td></td>
+                                                      <td><ul>
+    <li>set selected terms</li>
+    </ul>
+    </td>
                                                     </tr>
                                                     <tr>
                                                       <td>orderBy</td>
@@ -632,7 +641,10 @@
                                                       </td>
                                                       <td>
                                                       </td>
-                                                      <td></td>
+                                                      <td><ul>
+    <li>set selected order</li>
+    </ul>
+    </td>
                                                     </tr>
                                             </tbody>
                                         </table>
@@ -672,13 +684,13 @@
     
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="50" class="link-to-prism">src/app/exhibition/exhibition.component.ts:50</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">src/app/exhibition/exhibition.component.ts:51</a></div>
                                 </td>
                             </tr>
     
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-description"><p>OnDestroy</p>
+                                <div class="io-description"><p>OnDestroy releases route</p>
     </div>
     
                                 <div class="io-description">
@@ -711,13 +723,13 @@
     
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/exhibition/exhibition.component.ts:24</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/exhibition/exhibition.component.ts:25</a></div>
                                 </td>
                             </tr>
     
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-description"><p>OnInit</p>
+                                <div class="io-description"><p>OnInit, loads default data</p>
     </div>
     
                                 <div class="io-description">
@@ -750,7 +762,7 @@
     
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="59" class="link-to-prism">src/app/exhibition/exhibition.component.ts:59</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="61" class="link-to-prism">src/app/exhibition/exhibition.component.ts:61</a></div>
                                 </td>
                             </tr>
     
@@ -778,7 +790,10 @@
                                                       </td>
                                                       <td>
                                                       </td>
-                                                      <td></td>
+                                                      <td><ul>
+    <li>set page with data</li>
+    </ul>
+    </td>
                                                     </tr>
                                             </tbody>
                                         </table>
@@ -825,7 +840,7 @@
                     </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/exhibition/exhibition.component.ts:19</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/exhibition/exhibition.component.ts:20</a></div>
                                 </td>
                             </tr>
     
@@ -861,11 +876,12 @@ import {ErrorComponent} from &#x27;../error/error.component&#x27;;
 export class ExhibitionComponent extends AdvancedSearchComponent {
     /**
      * Name of Exhibition
+     * @type {string}
      */
     private name;
 
     /**
-     * OnInit
+     * OnInit, loads default data
      */
     ngOnInit() {
         this.pager &#x3D; this.testService.getPager(0);
@@ -891,7 +907,7 @@ export class ExhibitionComponent extends AdvancedSearchComponent {
     }
 
     /**
-     * OnDestroy
+     * OnDestroy releases route
      */
     ngOnDestroy() {
         if (this.route$) {
@@ -901,6 +917,7 @@ export class ExhibitionComponent extends AdvancedSearchComponent {
 
     /**
      * Set Page is used to reload data on page
+     * @param page {number} - set page with data
      */
     setPage(page: number) {
         document.getElementById(&#x27;loading&#x27;).style.display &#x3D; &#x27;block&#x27;;
@@ -917,6 +934,10 @@ export class ExhibitionComponent extends AdvancedSearchComponent {
 
     /**
      * Is used to navigate to another page
+     * @param page {number} - set page with data
+     * @param filters {string} - set selected filters
+     * @param therms {string} - set selected terms
+     * @param orderBy {string} - set selected order
      */
     navigateWithParams(page, filters, therms, orderBy) {
         this.router.navigate([&#x27;/exhibition&#x27;], {
