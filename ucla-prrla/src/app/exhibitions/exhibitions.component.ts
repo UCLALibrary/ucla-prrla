@@ -19,9 +19,9 @@ export class ExhibitionsComponent implements OnInit {
 
     /**
      * Constructor
-     * @param testService
-     * @param route
-     * @param router
+     * @param testService SolrService
+     * @param route ActivatedRoute
+     * @param router Router
      */
   constructor(private testService: SolrService, private route: ActivatedRoute, private router: Router) {}
 
@@ -38,7 +38,7 @@ export class ExhibitionsComponent implements OnInit {
 
     /**
      * Opens selected Collection
-     * @param realName
+     * @param realName {string}
      */
   clickOnViewCollection(realName){
       this.router.navigate(['/exhibition'], {

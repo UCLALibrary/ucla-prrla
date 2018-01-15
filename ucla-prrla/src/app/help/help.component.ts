@@ -17,7 +17,7 @@ export class HelpComponent implements OnInit {
 
     /**
      * Scrolls to id
-     * @param location
+     * @param location {string}
      */
     goTo(location: string): void {
         window.location.hash = location;
@@ -25,7 +25,7 @@ export class HelpComponent implements OnInit {
 
     /**
      * Constructor
-     * @param document
+     * @param document Document
      */
     constructor(@Inject(DOCUMENT) private document: Document) {
     }
@@ -47,6 +47,5 @@ export class HelpComponent implements OnInit {
         } else if (this.navIsFixed && number < 280) {
             this.navIsFixed = false;
         }
-        // console.log(number);
     }
 }

@@ -15,11 +15,12 @@ import {ErrorComponent} from '../error/error.component';
 export class ExhibitionComponent extends AdvancedSearchComponent {
     /**
      * Name of Exhibition
+     * @type {string}
      */
     private name;
 
     /**
-     * OnInit
+     * OnInit, loads default data
      */
     ngOnInit() {
         this.pager = this.testService.getPager(0);
@@ -45,7 +46,7 @@ export class ExhibitionComponent extends AdvancedSearchComponent {
     }
 
     /**
-     * OnDestroy
+     * OnDestroy releases route
      */
     ngOnDestroy() {
         if (this.route$) {
@@ -55,6 +56,7 @@ export class ExhibitionComponent extends AdvancedSearchComponent {
 
     /**
      * Set Page is used to reload data on page
+     * @param page {number} - set page with data
      */
     setPage(page: number) {
         document.getElementById('loading').style.display = 'block';
@@ -71,6 +73,10 @@ export class ExhibitionComponent extends AdvancedSearchComponent {
 
     /**
      * Is used to navigate to another page
+     * @param page {number} - set page with data
+     * @param filters {string} - set selected filters
+     * @param therms {string} - set selected terms
+     * @param orderBy {string} - set selected order
      */
     navigateWithParams(page, filters, therms, orderBy) {
         this.router.navigate(['/exhibition'], {
