@@ -1,0 +1,40 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: avuong/ubuntu-uclaprrla-deploy:latest
+    steps:
+      - checkout
+      - run:
+          name: Build static files via Angular
+          command: |
+            pwd
+            ls -la
+            npm --version
+            uname -a
+            cd ucla-prrla; npm install; node_modules/.bin/ng build
+      - run:
+          name: Drop robots.txt
+          command: |
+            echo "User-agent: *" > ucla-prrla/dist/robots.txt
+            echo "Disallow: /" >> ucla-prrla/dist/robots.txt
+      - run:
+          name: Deploy to test site
+          command: |
+            which aws
+            export AWS_ACCESS_KEY_ID="${CIRCLE_BRANCH}_AWS_ACCESS_KEY_ID"
+            export AWS_SECRET_ACCESS_KEY="${CIRCLE_BRANCH}_AWS_SECRET_ACCESS_KEY"
+            if [ $CIRCLE_BRANCH == "develop" ] then export WEBURL="${CIRCLE_BRANCH}_site" fi
+            aws s3 ls s3://$WEBURL/
+
+
+      
+#      - setup_remote_docker:
+#          version: "18.06.0-ce"
+#      - run:
+#          docker --version
+#      - run:
+#          name: "PRRLA Container"
+#          command: |
+#            docker run --name prrladeploy avuong/ubuntu-uclaprrla-deploy:latest
+#            docker exec --tty prrladeploy sh -c "pwd"
