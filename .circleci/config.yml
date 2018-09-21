@@ -21,7 +21,7 @@ jobs:
           command: |
             echo "User-agent: *" > ucla-prrla/dist/robots.txt
             echo "Disallow: /" >> ucla-prrla/dist/robots.txt
-      - run:
+      - deploy:
           name: Deploy to test site
           command: |
             which aws
