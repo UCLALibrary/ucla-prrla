@@ -22,9 +22,12 @@ jobs:
           name: Deploy to test site
           command: |
             which aws
-            export AWS_ACCESS_KEY_ID="${CIRCLE_BRANCH}_AWS_ACCESS_KEY_ID"
-            export AWS_SECRET_ACCESS_KEY="${CIRCLE_BRANCH}_AWS_SECRET_ACCESS_KEY"
-            if [ $CIRCLE_BRANCH == "develop" ] then export WEBURL="${CIRCLE_BRANCH}_site" fi
+            if [ $CIRCLE_BRANCH == "develop" ]
+            then
+            export AWS_ACCESS_KEY_ID="develop_AWS_ACCESS_KEY_ID"
+            export AWS_SECRET_ACCESS_KEY="develop_AWS_SECRET_ACCESS_KEY"
+            export WEBURL=develop_site
+            fi
             aws s3 ls s3://$WEBURL/
 
 
