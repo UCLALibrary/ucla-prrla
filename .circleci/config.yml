@@ -1,9 +1,9 @@
 version: 2
 jobs:
-  branches:
-    only:
-      - develop
   build:
+    branches:
+      only:
+        - develop
     docker:
       - image: avuong/ubuntu-uclaprrla-deploy:latest
     steps:
