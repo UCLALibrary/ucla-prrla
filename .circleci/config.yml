@@ -28,7 +28,7 @@ jobs:
             export AWS_SECRET_ACCESS_KEY=$develop_AWS_SECRET_ACCESS_KEY
             export WEBURL=$develop_site
             fi
-            aws s3 ls s3://$WEBURL/
+            aws s3 sync --delete dist/ s3://$WEBURL/
 
 
       
