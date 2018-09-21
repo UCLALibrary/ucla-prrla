@@ -58,9 +58,12 @@ export class SolrService {
      * @param value {array} - Escapes Apache Lucene special characters
      */
     public static escapeLucene(value){
-        let specials = ['+', '-', '&', '!', '(', ')', '{', '}', '[', ']', '^', '"', '~', '*', '?', ':', '\\'];
-        let regexp = new RegExp("(\\" + specials.join("|\\") + ")", "g");
-        return value.replace(regexp, "\\$1");
+        // https://lucene.apache.org/core/4_0_0/queryparser/org/apache/lucene/queryparser/classic/package-summary.html#Escaping_Special_Characters
+        // only escape internal double quotes so users search for phrases
+        // don't escape * so user can search with wildcards
+        return value
+            .replace(/(\+|-|(?:&&)|(?:\|\|)|!|\(|\)|\{|\}|\[|\]|\^|~|\?|:|\\|\/)/g, "\\$1")
+            .replace(/^.+(").+/g, "\\$1");
     }
 
     /**
@@ -132,7 +135,7 @@ export class SolrService {
         let offset = (page - 1) * this.pageSize;
         let url =
             this.baseURL + 'select' + '?' +
-            'q=' + encodeURI(search) + '&' +
+            'q=' + encodeURIComponent(SolrService.escapeLucene(search)) + '&' +
             'rows=' + this.pageSize + '&' +
             'start=' + offset + '&' +
             'wt=json&' +
