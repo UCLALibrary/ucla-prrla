@@ -13,7 +13,12 @@ phases:
       - echo "Enter build stage..."
       - npm --version
       - cd ucla-prrla; npm install; node_modules/.bin/ng build
-      - ls -la
+      - mv dist dist.test
+      - node_modules/.bin/ng build --env=prod --no-sourcemap
+      - echo "Contents for prod..."
+      - ls -la dist
+      - echo "Contents for test..."
+      - ls -la dist.test
 #  post_build:
 #    commands:
       #- |-
