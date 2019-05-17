@@ -1,0 +1,23 @@
+version: 0.2
+
+env:
+  parameter-store:
+    S3_BUILD_ARTIFACTS_BUCKET: "services.dockerhub.username"
+    S3_BUILD_ARTIFACTS_BUCKET_REGION: "services.dockerhub.password"
+    S3_BUILD_ARTIFACTS_ACCESS_KEY: "services.docker.registry.username"
+    S3_BUILD_ARTIFACTS_SECRET_KEY: "cantaloupe.docker.registry.project"
+
+phases:
+  build:
+    commands:
+      - echo "Enter build stage..."
+      - ls -la
+#  post_build:
+#    commands:
+      #- |-
+#         if [ "$BUILD_VERSION" = 'stable' ] ; then
+#           AUTH="Authorization: token $AUTH_TOKEN"
+#           TAG="$(curl -S -s -H "$AUTH" "$RELEASES" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/' | cut -c2-)" ;
+#         else
+#           TAG="latest" ;
+#         fi
