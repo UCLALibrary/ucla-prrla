@@ -4,11 +4,8 @@ env:
   parameter-store:
     S3_BUILD_ARTIFACTS_BUCKET: "build.artifacts.bucketname"
     S3_BUILD_ARTIFACTS_BUCKET_REGION: "build.artifacts.bucket.region"
-    S3_BUILD_ARTIFACTS_ACCESS_KEY: "build.artifacts.s3.access.key"
-    S3_BUILD_ARTIFACTS_SECRET_KEY: "build.artifacts.s3.secret.key"
-  variables:
-    test: $S3_BUILD_ARTIFACTS_BUCKET
-    
+    AWS_ACCESS_KEY_ID: "build.artifacts.s3.access.key"
+    AWS_SECRET_ACCESS_KEY: "build.artifacts.s3.secret.key"
 
 phases:
   build:
@@ -16,13 +13,12 @@ phases:
       - echo "Enter build stage..."
       - npm --version
       - cd ucla-prrla; npm install; node_modules/.bin/ng build --no-progress
-      - tar -zcvf test-prl.tar.gz dist
+      - tar -zcf test-prl.tar.gz dist
       - rm -rf dist
       - node_modules/.bin/ng build --env=prod --no-sourcemap --no-progress
-      - tar -zcvf prod-prl.tar.gz dist
+      - tar -zcf prod-prl.tar.gz dist
       - echo "Contents to copy to S3..."
       - ls -la *.tar.gz
-      - printenv
   post_build:
     commands:
       - aws s3 ls s3://${S3_BUILD_ARTIFACTS_BUCKET}
