@@ -6,6 +6,9 @@ env:
     S3_BUILD_ARTIFACTS_BUCKET_REGION: "build.artifacts.bucket.region"
     S3_BUILD_ARTIFACTS_ACCESS_KEY: "build.artifacts.s3.access.key"
     S3_BUILD_ARTIFACTS_SECRET_KEY: "build.artifacts.s3.secret.key"
+  variables:
+    test: $S3_BUILD_ARTIFACTS_BUCKET
+    
 
 phases:
   build:
@@ -19,6 +22,7 @@ phases:
       - tar -zcvf prod-prl.tar.gz dist
       - echo "Contents to copy to S3..."
       - ls -la *.tar.gz
+      - printenv
   post_build:
     commands:
       - aws s3 ls s3://${S3_BUILD_ARTIFACTS_BUCKET}
