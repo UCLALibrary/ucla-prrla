@@ -5,7 +5,7 @@ env:
     S3_BUILD_ARTIFACTS_BUCKET: "build.artifacts.bucketname"
     S3_BUILD_ARTIFACTS_BUCKET_REGION: "build.artifacts.bucket.region"
     S3_BUILD_ARTIFACTS_ACCESS_KEY: "build.artifacts.s3.access.key"
-    S3_BUILD_ARTIFACTS_SECRET_KEY: "build.artifacts.s3.secret.key
+    S3_BUILD_ARTIFACTS_SECRET_KEY: "build.artifacts.s3.secret.key"
 
 phases:
   build:
