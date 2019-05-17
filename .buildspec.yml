@@ -13,10 +13,10 @@ phases:
       - echo "Enter build stage..."
       - npm --version
       - cd ucla-prrla; npm install; node_modules/.bin/ng build --no-progress
-      - tar -zcf test-prl.tar.gz dist
+      - cd dist; tar -zcf ../test-prl.tar.gz .; cd -
       - rm -rf dist
       - node_modules/.bin/ng build --env=prod --no-sourcemap --no-progress
-      - tar -zcf prod-prl.tar.gz dist
+      - cd dist; tar -zcf ../prod-prl.tar.gz .; cd -
       - echo "Contents to copy to S3..."
       - ls -la *.tar.gz
   post_build:
