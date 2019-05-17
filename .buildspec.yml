@@ -19,12 +19,6 @@ phases:
       - tar -zcvf prod-prl.tar.gz dist
       - echo "Contents to copy to S3..."
       - ls -la *.tar.gz
-#  post_build:
-#    commands:
-      #- |-
-#         if [ "$BUILD_VERSION" = 'stable' ] ; then
-#           AUTH="Authorization: token $AUTH_TOKEN"
-#           TAG="$(curl -S -s -H "$AUTH" "$RELEASES" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/' | cut -c2-)" ;
-#         else
-#           TAG="latest" ;
-#         fi
+  post_build:
+    commands:
+      - aws s3 ls s3://${S3_BUILD_ARTIFACTS_BUCKET}
