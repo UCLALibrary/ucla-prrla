@@ -21,4 +21,5 @@ phases:
       - ls -la *.tar.gz
   post_build:
     commands:
-      - aws s3 ls s3://${S3_BUILD_ARTIFACTS_BUCKET}
+      - aws s3 cp test-prl.tar.gz s3://${S3_BUILD_ARTIFACTS_BUCKET}/prl/test-prl-latest.tar.gz
+      - aws s3 cp prod-prl.tar.gz  s3://${S3_BUILD_ARTIFACTS_BUCKET}/prl/prod-prl-latest.tar.gz
