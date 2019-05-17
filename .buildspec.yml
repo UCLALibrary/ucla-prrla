@@ -2,10 +2,10 @@ version: 0.2
 
 env:
   parameter-store:
-    S3_BUILD_ARTIFACTS_BUCKET: "services.dockerhub.username"
-    S3_BUILD_ARTIFACTS_BUCKET_REGION: "services.dockerhub.password"
-    S3_BUILD_ARTIFACTS_ACCESS_KEY: "services.docker.registry.username"
-    S3_BUILD_ARTIFACTS_SECRET_KEY: "cantaloupe.docker.registry.project"
+    S3_BUILD_ARTIFACTS_BUCKET: "build.artifacts.bucketname"
+    S3_BUILD_ARTIFACTS_BUCKET_REGION: "build.artifacts.bucket.region"
+    S3_BUILD_ARTIFACTS_ACCESS_KEY: "build.artifacts.s3.access.key"
+    S3_BUILD_ARTIFACTS_SECRET_KEY: "build.artifacts.s3.secret.key
 
 phases:
   build:
