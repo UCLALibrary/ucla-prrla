@@ -1,14 +1,14 @@
 pipeline {
   agent any
   environment {
-    AWS_ACCESS_KEY_ID = credentials('prrla-aws-access-key')
+    AWS_ACCESS_KEY_ID     = credentials('prrla-aws-access-key')
     AWS_SECRET_ACCESS_KEY = credentials('prrla-aws-secret-access-key')
-    PACKAGE_SOURCE = http://build-artifacts.library.ucla.edu/prl
-    PROD_WEB_URL = prl.library.ucla.edu
-    TEST_WEB_URL = test-prl.library.ucla.edu
-    TEST_WEB_PACKAGE = test-prl-latest.tar.gz
-    PROD_WEB_PACKAGE = prod-prl-latest.tar.gz
-    BUILD_DIR = /tmp/build-artifacts/prl
+    PACKAGE_SOURCE        = "http://build-artifacts.library.ucla.edu/prl"
+    PROD_WEB_URL          = "prl.library.ucla.edu"
+    TEST_WEB_URL          = "test-prl.library.ucla.edu"
+    TEST_WEB_PACKAGE      = "test-prl-latest.tar.gz"
+    PROD_WEB_PACKAGE      = "prod-prl-latest.tar.gz"
+    BUILD_DIR             = "/tmp/build-artifacts/prl"
   }
   stages {
     stage('Build') {
