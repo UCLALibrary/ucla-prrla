@@ -1,5 +1,15 @@
 pipeline {
   agent any
+  environment {
+    AWS_ACCESS_KEY_ID = credentials('prrla-aws-access-key')
+    AWS_SECRET_ACCESS_KEY = credentials('prrla-aws-secret-access-key')
+    PACKAGE_SOURCE = http://build-artifacts.library.ucla.edu/prl
+    PROD_WEB_URL = prl.library.ucla.edu
+    TEST_WEB_URL = test-prl.library.ucla.edu
+    TEST_WEB_PACKAGE = test-prl-latest.tar.gz
+    PROD_WEB_PACKAGE = prod-prl-latest.tar.gz
+    BUILD_DIR = /tmp/build-artifacts/prl
+  }
   stages {
     stage('Build') {
       steps {
@@ -10,7 +20,6 @@ pipeline {
       steps {
         sh '''
         #!/bin/bash
-        BUILD_DIR=/tmp/build-artifacts/prl
         mkdir -p $BUILD_DIR
         '''
       }
@@ -19,9 +28,10 @@ pipeline {
       steps {
         sh '''
         BUILD_DIR=/tmp/build-artifacts/prl
-        wget http://build-artifacts.library.ucla.edu/prl/test-prl-latest.tar.gz -O $BUILD_DIR/test-prl-latest.tar.gz
-        cd $BUILD_DIR; mkdir codedeploy; mv test-prl-latest.tar.gz codedeploy/; cd codedeploy; tar -zxf test-prl-latest.tar.gz; ls -la; cd ..
-        rm -rf codedeploy
+        wget $PACKAGE_SOURCE/$TEST_WEB_PACKAGE -O $BUILD_DIR/$TEST_WEB_PACKAGE
+        cd $BUILD_DIR; mkdir codedeploy; mv $TEST_WEB_PACKAGE codedeploy/; cd codedeploy; tar -zxf $TEST_WEB_PACKAGE; ls -la; cd ..
+        aws s3 ls s3://$TEST_WEB_URL
+        rm -rfv $BUILD_DIR
         '''
       }
     }
