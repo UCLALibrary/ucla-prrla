@@ -11,7 +11,7 @@ pipeline {
     BUILD_DIR             = "/tmp/build-artifacts/prl"
   }
   stages {
-    stage('Build') {
+    stage('Build PRRLA Code') {
       steps {
         awsCodeBuild(projectName: 'prrla-artifact-build', credentialsId: 'PRRLA-CodeBuild-Trigger-User', region: 'us-west-2', credentialsType: 'jenkins', sourceControlType: 'project')
       }
@@ -19,13 +19,14 @@ pipeline {
     stage('Deploy to test site') {
       steps {
         sh '''
+        rm -rf $BUILD_DIR
         mkdir -p $BUILD_DIR
         wget $PACKAGE_SOURCE/$TEST_WEB_PACKAGE -O $BUILD_DIR/$TEST_WEB_PACKAGE
         cd $BUILD_DIR; mkdir codedeploy; mv $TEST_WEB_PACKAGE codedeploy/; cd codedeploy; tar -zxf $TEST_WEB_PACKAGE; rm $TEST_WEB_PACKAGE
         echo "User-agent: *\nDisallow: /" > robots.txt
         cd ..
         aws s3 sync codedeploy/ s3://$TEST_WEB_URL --delete
-        rm -rfv $BUILD_DIR
+        rm -rf $BUILD_DIR
         '''
       }
     }
@@ -37,12 +38,14 @@ pipeline {
     stage('Deploy to prod site') {
       steps {
         sh '''
+        rm -rf $BUILD_DIR
         mkdir -p $BUILD_DIR
         wget $PACKAGE_SOURCE/$PROD_WEB_PACKAGE -O $BUILD_DIR/$PROD_WEB_PACKAGE
         cd $BUILD_DIR; mkdir codedeploy; mv $PROD_WEB_PACKAGE codedeploy/; cd codedeploy; tar -zxf $PROD_WEB_PACKAGE; rm $PROD_WEB_PACKAGE
         cd ..
         aws s3 ls
-        rm -rfv $BUILD_DIR
+        aws s3 sync codedeploy/ s3://$PROD_WEB_URL --delete
+        rm -rf $BUILD_DIR
         '''
       }
     }
