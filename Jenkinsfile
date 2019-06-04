@@ -55,7 +55,6 @@ pipeline {
         wget $PACKAGE_SOURCE/$PROD_WEB_PACKAGE -O $BUILD_DIR/$PROD_WEB_PACKAGE
         cd $BUILD_DIR; mkdir codedeploy; mv $PROD_WEB_PACKAGE codedeploy/; cd codedeploy; tar -zxf $PROD_WEB_PACKAGE; rm $PROD_WEB_PACKAGE
         cd ..
-        aws s3 ls
         aws s3 sync codedeploy/ s3://$PROD_WEB_URL --delete
         rm -rf $BUILD_DIR
         '''
