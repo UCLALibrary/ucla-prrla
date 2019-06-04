@@ -63,7 +63,7 @@ pipeline {
     stage('Check prod site for errors') {
       steps {
         sh '''
-        if curl -s https://$PROD_WEB_URL | grep -i prrla
+        if curl -s http://$PROD_WEB_URL | grep -i prrla
         then
           exit 0
         else
