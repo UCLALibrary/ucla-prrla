@@ -30,6 +30,18 @@ pipeline {
         '''
       }
     }
+    stage('Test if code is deployed and working on test') {
+      steps {
+        sh '''
+        if curl -s https://$TEST_WEB_URL | grep -i prrla
+        then
+          return 0
+        else
+          return 1
+        fi
+        '''
+      }
+    }
     stage('Ready for prod deploy') {
       steps {
         input('Do you want to deploy to prod?')
@@ -49,6 +61,17 @@ pipeline {
         '''
       }
     }
- 
+    stage('Test if code is deployed and working on prod') {
+      steps {
+        sh '''
+        if curl -s https://$PROD_WEB_URL | grep -i prrla
+        then
+          return 0
+        else
+          return 1
+        fi
+        '''
+      }
+    }
   }
 }
