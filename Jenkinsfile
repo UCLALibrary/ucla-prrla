@@ -30,14 +30,14 @@ pipeline {
         '''
       }
     }
-    stage('Test if code is deployed and working on test') {
+    stage('Check test site for errors') {
       steps {
         sh '''
         if curl -s https://$TEST_WEB_URL | grep -i prrla
         then
-          return 0
+          exit 0
         else
-          return 1
+          exit 1
         fi
         '''
       }
@@ -61,14 +61,14 @@ pipeline {
         '''
       }
     }
-    stage('Test if code is deployed and working on prod') {
+    stage('Check prod site for errors') {
       steps {
         sh '''
         if curl -s https://$PROD_WEB_URL | grep -i prrla
         then
-          return 0
+          exit 0
         else
-          return 1
+          exit 1
         fi
         '''
       }
