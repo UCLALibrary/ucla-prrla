@@ -30,8 +30,8 @@
               </div>
               <br>
               <div *ngIf="item.collection">
-                <dt>Collection: </dt>
-                <dd>{{ item.collection?item.collection:"n/a" }}</dd>
+                <dt>Collection(s): </dt>
+                <dd><div *ngFor="let v of item.collection">{{ v }}</div></dd>
               </div>
               <div *ngIf="item.institution">
                 <dt>Institution: </dt>
