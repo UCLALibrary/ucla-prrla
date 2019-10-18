@@ -12,12 +12,12 @@ pipeline {
         region: "us-west-2",
         credentialsType: "jenkins",
         sourceControlType: "project",
-        sourceVersion: "LEG-151",
+        sourceVersion: "master",
         envVariables: "[ { APP_ENV, ${APP_ENV} } ]"
         )
       }
     }
-    stage('Check $APP_ENV site for errors') {
+    stage('Check site for errors') {
       steps {
         sh '''
         if [[ ${APP_ENV} == "prod-prl" ]]
