@@ -15,11 +15,13 @@ phases:
       - echo "Enter build stage..."
       - npm --version
       - cd ucla-prrla; npm install --silent
-      - if [[ ${APP_ENV} == "test-prl" ]]; then node_modules/.bin/ng build --no-progress; fi
-      - if [[ ${APP_ENV} == "prod-prl" ]]; then node_modules/.bin/ng build --env=prod --no-sourcemap --no-progress; fi
-      - cd dist; tar -zcf ../${APP_ENV}.tar.gz .; cd -
-      - ls -la *.tar.gz
+      - if [ "${APP_ENV}" = "test-prl" ]; then node_modules/.bin/ng build --no-progress; fi
+      - if [ "${APP_ENV}" = "prod-prl" ]; then node_modules/.bin/ng build --env=prod --no-sourcemap --no-progress; fi
+      - cd dist
   post_build:
     commands:
+      - tar -zcf ../${APP_ENV}.tar.gz .
+      - cd ..
+      - ls -la *.tar.gz
       - aws s3 cp ${APP_ENV}.tar.gz  s3://${S3_BUILD_ARTIFACTS_BUCKET}/prl/${APP_ENV}-latest.tar.gz
       - aws s3 sync dist/ s3://${APP_ENV}.library.ucla.edu --delete
