@@ -12,11 +12,12 @@ pipeline {
         region: "us-west-2",
         credentialsType: "jenkins",
         sourceControlType: "project",
+        sourceVersion: "LEG-151",
         envVariables: "[ { APP_ENV, ${APP_ENV} } ]"
         )
       }
     }
-    stage('Check ${APP_ENV} site for errors') {
+    stage('Check $APP_ENV site for errors') {
       steps {
         sh '''
         if [[ ${APP_ENV} == "prod-prl" ]]
@@ -34,6 +35,7 @@ pipeline {
           else
             exit 1
           fi
+        fi
         '''
       }
     }
