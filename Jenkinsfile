@@ -46,7 +46,7 @@ pipeline {
       slackSend (
       channel: "#code_deployment",
       color: "#FFFF00",
-      message: "${env.JOB_NAME} - #${env.BUILD_NUMBER} ${currentBuild.currentResult} after ${currentBuild.durationString} (<${env.BUILD_URL}|open>)\nEnvironment: ${APP_ENV}.library.ucla.edu",
+      message: "${env.JOB_NAME} - #${env.BUILD_NUMBER} ${currentBuild.currentResult} after ${currentBuild.durationString.replace(' and counting', '')} (<${env.RUN_DISPLAY_URL}|open>)\nEnvironment: ${APP_ENV}.library.ucla.edu,
       tokenCredentialId: "3f977f85-c455-4a52-9f84-e84122360849",
       teamDomain: "uclalibrary"
       )
