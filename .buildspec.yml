@@ -16,7 +16,7 @@ phases:
       - npm --version
       - cd ucla-prrla; npm install --silent
       - if [ "${APP_ENV}" = "test-prl" ]; then node_modules/.bin/ng build --no-progress; fi
-      - if [ "${APP_ENV}" = "prod-prl" ]; then node_modules/.bin/ng build --env=prod --no-sourcemap --no-progress; fi
+      - if [ "${APP_ENV}" = "prl" ]; then node_modules/.bin/ng build --env=prod --no-sourcemap --no-progress; fi
       - cd dist
   post_build:
     commands:
