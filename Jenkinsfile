@@ -17,21 +17,11 @@ pipeline {
     stage('Check site for errors') {
       steps {
         sh '''
-        if [[ ${APP_ENV} == "prod-prl" ]]
+        if curl -s https://${APP_ENV}.library.ucla.edu | grep -i prrla
         then
-          if curl -s https://prl.library.ucla.edu | grep -i prrla
-          then
-            exit 0
-          else
-            exit 1
-          fi
+          exit 0
         else
-          if curl -s https://${APP_ENV}.library.ucla.edu | grep -i prrla
-          then
-            exit 0
-          else
-            exit 1
-          fi
+          exit 1
         fi
         '''
       }
