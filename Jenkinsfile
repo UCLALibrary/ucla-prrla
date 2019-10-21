@@ -1,8 +1,5 @@
 pipeline {
   agent any
-  environment {
-    APP_ENV = "test-prl"
-  }
   stages {
     stage('Build and deploy PRRLA Code') {
       steps {
