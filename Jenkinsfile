@@ -17,7 +17,7 @@ pipeline {
     stage('Check site for errors') {
       steps {
         sh '''
-        if curl -s https://${APP_ENV}.library.ucla.edu | grep -i prrla
+        if curl -s http://${APP_ENV}.library.ucla.edu | grep -i prrla
         then
           exit 0
         else
