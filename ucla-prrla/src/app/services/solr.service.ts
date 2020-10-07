@@ -45,7 +45,7 @@ export class SolrService {
      */
     constructor(private _jsonp: Jsonp) {
         if (environment.production) {
-            this.baseURL = 'http://solr.library.ucla.edu/solr/prl/';
+            this.baseURL = 'https://solr.library.ucla.edu/solr/prl/';
             console.log('prod');
         } else {
             this.baseURL = 'https://test-solr.library.ucla.edu/solr/prl/';

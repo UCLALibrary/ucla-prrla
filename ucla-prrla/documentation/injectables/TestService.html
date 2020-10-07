@@ -1796,7 +1796,7 @@ export class TestService {
 
     constructor(private _jsonp: Jsonp) {
         if (environment.production) {
-            this.baseURL &#x3D; &#x27;http://solr.library.ucla.edu/solr/prrla/&#x27;;
+            this.baseURL &#x3D; &#x27;https://solr.library.ucla.edu/solr/prrla/&#x27;;
             console.log(&#x27;prod&#x27;);
         } else {
             this.baseURL &#x3D; &#x27;https://test-solr.library.ucla.edu/solr/prrla/&#x27;;
