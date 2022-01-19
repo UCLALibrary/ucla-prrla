@@ -5,7 +5,7 @@ on:
     branches:
       - master
       - SERV-329
-  pull_requests:
+  pull_request:
     branches:
       - master
 
