@@ -22,4 +22,4 @@ jobs:
         with:
           node-version: 8
       - run: npm install
-      - run: npm test
+      - run: node_modules/.bin/ng build
