@@ -24,4 +24,5 @@ jobs:
       - run: npm install
       - run: node --version
       - run: node_modules/.bin/ng --version
+      - run: node_modules/typescript/bin/tsc --version
       - run: node_modules/.bin/ng build
