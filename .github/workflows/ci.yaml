@@ -20,7 +20,8 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v2
         with:
-          node-version: 6
+          node-version: 12
       - run: npm install
       - run: node --version
+      - run: node_modules/.bin/ng --version
       - run: node_modules/.bin/ng build
