@@ -22,4 +22,5 @@ jobs:
         with:
           node-version: 12
       - run: npm install
+      - run: node --version
       - run: node_modules/.bin/ng build
