@@ -1,0 +1,25 @@
+name: Run CI Build
+
+on:
+  push:
+    branches:
+      - master
+      - SERV-329
+  pull_requests:
+    branches:
+      - master
+
+jobs:
+  npmbuild:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ucla-prrla
+    steps:
+      - uses: actions/checkouts@v2
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: 12
+      - run: npm install
+      - run: npm test
