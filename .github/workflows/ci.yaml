@@ -26,4 +26,6 @@ jobs:
       - run: node_modules/.bin/ng --version
       - run: node_modules/typescript/bin/tsc --version
       - run: npm version
+      - run: node_modules/.bin/ng lint
+      - run: node_modules/.bin/ng test
       - run: node_modules/.bin/ng build
