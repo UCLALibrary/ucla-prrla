@@ -33,7 +33,7 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: 'us-west-2'
-          SOURCE_DIR: 'ucla-prrla/artifacts/test-prl-latest.tar.gz'
+          SOURCE_DIR: 'ucla-prrla/artifacts'
       - name: deploy
         uses: jakejarvis/s3-sync-action@master
         with:
