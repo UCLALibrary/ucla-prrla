@@ -23,7 +23,7 @@ jobs:
           node-version: 12
       - run: npm install
       - run: node_modules/.bin/ng build --no-progress
-      - run: tar -zcf test-prl-latest.tar.gz
+      - run: tar -zcf test-prl-latest.tar.gz dist
       - name: Copy Artifact to S3
         uses: jakejarvis/s3-sync-action@master
         with:
