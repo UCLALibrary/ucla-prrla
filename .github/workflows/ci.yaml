@@ -25,10 +25,8 @@ jobs:
       - run: node_modules/.bin/ng build --no-progress
       - name: Cache Test Environment Artifacts
         uses: actions/cache@v2
-        env:
-          cache-name: testprl
         with:
-          path: ucla-prrla/dist
+          path: dist
           key: testprl
       - name: deploy
         uses: jakejarvis/s3-sync-action@master
