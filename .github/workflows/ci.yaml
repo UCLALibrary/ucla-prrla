@@ -23,15 +23,15 @@ jobs:
           node-version: 12
       - run: npm install
       - run: node_modules/.bin/ng build --no-progress
-      - run: ls -la ~/
-      - run: ls -la ~/ucla-prrla
-      - run: ls -la ~/ucla-prrla/ucla-prrla
+      - run: ls -la ~/work
+      - run: ls -la ~/work/ucla-prrla
+      - run: ls -la ~/work/ucla-prrla/ucla-prrla
       - name: Cache Test Environment Artifacts
         uses: actions/cache@v2
         env:
           cache-name: testprl
         with:
-          path: ~/ucla-prrla
+          path: ~/work/ucla-prrla/ucla-prrla/dist
           key: ${{ runner.os }}-build-${{ env.cache-name }}
       - name: deploy
         uses: jakejarvis/s3-sync-action@master
