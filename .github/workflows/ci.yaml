@@ -28,8 +28,8 @@ jobs:
         env:
           cache-name: testprl
         with:
-          path: dist
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/lockfiles') }}
+          path: ucla-prrla/dist
+          key: ${{ runner.os }}-build-${{ env.cache-name }}
       - name: deploy
         uses: jakejarvis/s3-sync-action@master
         with:
@@ -53,16 +53,6 @@ jobs:
           node-version: 12
       - run: npm install
       - run: node_modules/.bin/ng build --env=prod --no-sourcemap --no-progress
-      - name: deploy
-        uses: jakejarvis/s3-sync-action@master
-        with:
-          args: --follow-symlinks --delete
-        env:
-          AWS_S3_BUCKET: ${{ secrets.PRODPRL_AWS_S3_BUCKET }}
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_REGION: "us-west-2"
-          SOURCE_DIR: "ucla-prrla/dist"
  
   deploytest:
     needs: testbuildtestenv
@@ -73,16 +63,11 @@ jobs:
         uses: actions/cache@v2
         with:
           path: dist
-          key: ${{ runner.os }}-build-testprl-${{ hashFiles('**/lockfiles') }}
+          key: ${{ runner.os }}-build-testprl
 
       - run: find . -type d
       - run: ls -la
-      - run: pwd
-      - run: ls -la /home/runner/work/ucla-prrla/ucla-prrla
-
-      - name: Print output
-        if: steps.cache-test-prl.outputs.cache-hit != 'false'
-        run: ls -la ucla-prrla/dist
+      - run: ls -la ucla-prrla/dist
 
       - run: mkdir prl; tar -zcf prl/test-prl-latest.tar.gz dist
       - name: Copy Artifact to S3
