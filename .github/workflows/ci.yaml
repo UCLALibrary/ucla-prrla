@@ -68,7 +68,7 @@ jobs:
       - run: find . -type d
       - run: ls -la
       - run: pwd
-      - run: /home/runner/work/ucla-prrla/ucla-prrla
+      - run: ls -la /home/runner/work/ucla-prrla/ucla-prrla
 
       - name: Print output
         if: steps.cache-test-prl.outputs.cache-hit != 'false'
