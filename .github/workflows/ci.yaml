@@ -28,7 +28,7 @@ jobs:
         env:
           cache-name: testprl
         with:
-          path: ucla-prrla/dist
+          path: dist
           key: ${{ runner.os }}-build-${{ env.cache-name }}
       - name: deploy
         uses: jakejarvis/s3-sync-action@master
