@@ -24,11 +24,11 @@ jobs:
       - run: npm install
       - run: node_modules/.bin/ng build --no-progress
       - run: pwd
-      - run: ls -la
+      - run: ls -la dist
       - name: Cache Test Environment Artifacts
         uses: actions/cache@v2
         with:
-          path: ucla-prrla/ucla-prrla/dist
+          path: dist
           key: testprl
       - name: deploy
         uses: jakejarvis/s3-sync-action@master
