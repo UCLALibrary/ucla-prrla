@@ -76,9 +76,9 @@ jobs:
           path: dist
           key: ${{ runner.os }}-build-cache-test-prl-artifact
 
+      - run: find . -type d
+      - run: ls -la
+
       - name: Print output
         if: steps.cache-test-prl.outputs.cache-hit != 'false'
-        run: pwd
-        run: ls -la
-        run: find . -type d
         run: ls -la ucla-prrla/dist
