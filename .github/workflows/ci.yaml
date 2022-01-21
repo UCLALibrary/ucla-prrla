@@ -23,16 +23,13 @@ jobs:
           node-version: 12
       - run: npm install
       - run: node_modules/.bin/ng build --no-progress
-      - run: ls -la ~/work
-      - run: ls -la ~/work/ucla-prrla
-      - run: ls -la ~/work/ucla-prrla/ucla-prrla
       - name: Cache Test Environment Artifacts
         uses: actions/cache@v2
         env:
           cache-name: testprl
         with:
-          path: ~/work/ucla-prrla/ucla-prrla/dist
-          key: ${{ runner.os }}-build-${{ env.cache-name }}
+          path: dist
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/lockfiles') }}
       - name: deploy
         uses: jakejarvis/s3-sync-action@master
         with:
@@ -65,7 +62,7 @@ jobs:
         uses: actions/cache@v2
         with:
           path: dist
-          key: ${{ runner.os }}-build-testprl
+          key: ${{ runner.os }}-build-testprl-${{ hashFiles('**/lockfiles') }}
 
       - run: find . -type d
       - run: ls -la
