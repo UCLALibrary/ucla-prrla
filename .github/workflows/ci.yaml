@@ -58,10 +58,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Test PRL Cache
+        id: cache-test-prl
         uses: actions/cache@v2
         with:
           path: dist
-          key: ${{ runner.os }}-build-cache-testprl
+          key: ${{ runner.os }}-build-testprl
 
       - run: find . -type d
       - run: ls -la
