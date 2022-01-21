@@ -61,12 +61,11 @@ jobs:
         id: cache-test-prl
         uses: actions/cache@v2
         with:
-          path: dist
+          path: ucla-prrla/dist
           key: testprl
 
-      - run: find . -type d
       - run: ls -la
-      - run: ls -la ucla-prrla/dist
+      - run: find . -type f
 
       - run: mkdir prl; tar -zcf prl/test-prl-latest.tar.gz dist
       - name: Copy Artifact to S3
