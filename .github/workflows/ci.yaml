@@ -31,17 +31,6 @@ jobs:
           path: dist
           key: ${{ runner.os }}-build-${{ env.cache-name }}
       - run: mkdir prl; tar -zcf prl/test-prl-latest.tar.gz dist
-      - name: Copy Artifact to S3
-        uses: jakejarvis/s3-sync-action@master
-        with:
-          args: --follow-symlinks
-        env:
-          AWS_S3_BUCKET: ${{ secrets.BUILDARTIFACTS_AWS_S3_BUCKET }}
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_REGION: "us-west-2"
-          SOURCE_DIR: "ucla-prrla/prl"
-          DEST_DIR: "prl"
       - name: deploy
         uses: jakejarvis/s3-sync-action@master
         with:
@@ -69,8 +58,6 @@ jobs:
     needs: testbuildtestenv
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-
       - name: Test PRL Cache
         id: cache-test-prl
         uses: actions/cache@v2
@@ -80,7 +67,23 @@ jobs:
 
       - run: find . -type d
       - run: ls -la
+      - run: pwd
+      - run: /home/runner/work/ucla-prrla/ucla-prrla
 
       - name: Print output
         if: steps.cache-test-prl.outputs.cache-hit != 'false'
         run: ls -la ucla-prrla/dist
+
+      - run: mkdir prl; tar -zcf prl/test-prl-latest.tar.gz dist
+      - name: Copy Artifact to S3
+        uses: jakejarvis/s3-sync-action@master
+        with:
+          args: --follow-symlinks
+        env:
+          AWS_S3_BUCKET: ${{ secrets.BUILDARTIFACTS_AWS_S3_BUCKET }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: "us-west-2"
+          SOURCE_DIR: "ucla-prrla/prl"
+          DEST_DIR: "prl"
+
