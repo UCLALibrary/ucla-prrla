@@ -23,6 +23,16 @@ jobs:
           node-version: 12
       - run: npm install
       - run: node_modules/.bin/ng build --no-progress
+      - name: deploy
+        uses: jakejarvis/s3-sync-action@master
+        with:
+          args: --follow-symlinks --delete
+        env:
+          AWS_S3_BUCKET: ${{ secrets.TESTPRL_AWS_S3_BUCKET }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: 'us-west-2'
+          SOURCE_DIR: 'public'
   testbuildprodenv:
     runs-on: ubuntu-latest
     defaults:
