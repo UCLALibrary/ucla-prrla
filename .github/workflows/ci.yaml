@@ -12,9 +12,6 @@ on:
 jobs:
   testbuildtestenv:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ucla-prrla
     steps:
       - uses: actions/checkout@v2
       - name: Setup Node
@@ -22,13 +19,15 @@ jobs:
         with:
           node-version: 12
       - run: npm install
+        working-directory: ucla-prrla
       - run: node_modules/.bin/ng build --no-progress
+        working-directory: ucla-prrla
       - run: pwd
       - run: ls -la dist
       - name: Cache Test Environment Artifacts
         uses: actions/cache@v2
         with:
-          path: dist
+          path: ucla-prrla/dist
           key: testprl
       - name: deploy
         uses: jakejarvis/s3-sync-action@master
