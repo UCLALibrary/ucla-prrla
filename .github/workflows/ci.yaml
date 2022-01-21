@@ -23,7 +23,7 @@ jobs:
       - run: node_modules/.bin/ng build --no-progress
         working-directory: ucla-prrla
       - run: pwd
-      - run: ls -la dist
+      - run: ls -la ucla-prrla/dist
       - name: Cache Test Environment Artifacts
         uses: actions/cache@v2
         with:
