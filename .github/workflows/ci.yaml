@@ -26,11 +26,10 @@ jobs:
       - name: Cache Test Environment Artifacts
         uses: actions/cache@v2
         env:
-          cache-name: cache-test-prl-artifact
+          cache-name: testprl
         with:
           path: dist
           key: ${{ runner.os }}-build-${{ env.cache-name }}
-      - run: mkdir prl; tar -zcf prl/test-prl-latest.tar.gz dist
       - name: deploy
         uses: jakejarvis/s3-sync-action@master
         with:
@@ -59,11 +58,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Test PRL Cache
-        id: cache-test-prl
         uses: actions/cache@v2
         with:
           path: dist
-          key: ${{ runner.os }}-build-cache-test-prl-artifact
+          key: ${{ runner.os }}-build-cache-testprl
 
       - run: find . -type d
       - run: ls -la
