@@ -78,4 +78,7 @@ jobs:
 
       - name: Print output
         if: steps.cache-test-prl.outputs.cache-hit != 'false'
-        run: ls -la dist
+        run: pwd
+        run: ls -la
+        run: find . -type d
+        run: ls -la ucla-prrla/dist
