@@ -28,7 +28,7 @@ jobs:
         env:
           cache-name: testprl
         with:
-          path: dist
+          path: ucla-prrla/dist
           key: testprl
       - name: deploy
         uses: jakejarvis/s3-sync-action@master
