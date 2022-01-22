@@ -1,4 +1,4 @@
-name: Build and Deploy
+name: Test Angular and Node build
 
 on:
   pull_request:
