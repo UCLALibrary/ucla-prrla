@@ -29,16 +29,6 @@ jobs:
         with:
           path: ucla-prrla/dist
           key: testprl
-      - name: deploy
-        uses: jakejarvis/s3-sync-action@master
-        with:
-          args: --follow-symlinks --delete
-        env:
-          AWS_S3_BUCKET: ${{ secrets.TESTPRL_AWS_S3_BUCKET }}
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_REGION: "us-west-2"
-          SOURCE_DIR: "ucla-prrla/dist"
   testbuildprodenv:
     runs-on: ubuntu-latest
     defaults:
@@ -64,11 +54,9 @@ jobs:
           path: ucla-prrla/dist
           key: testprl
 
-      - run: mkdir prl; tar -zcf prl/test-prl-latest.tar.gz dist
-        working-directory: ucla-prrla
+      - run: mkdir prl; tar -zcf prl/test-prl-latest.tar.gz ucla-prrla/dist
 
       - name: Copy Artifact to S3
-        working-directory: ucla-prrla
         uses: jakejarvis/s3-sync-action@master
         with:
           args: --follow-symlinks
@@ -77,6 +65,15 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: "us-west-2"
-          SOURCE_DIR: "ucla-prrla/prl"
+          SOURCE_DIR: "prl"
           DEST_DIR: "prl"
-
+      - name: deploy
+        uses: jakejarvis/s3-sync-action@master
+        with:
+          args: --follow-symlinks --delete
+        env:
+          AWS_S3_BUCKET: ${{ secrets.TESTPRL_AWS_S3_BUCKET }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: "us-west-2"
+          SOURCE_DIR: "ucla-prrla/dist"
