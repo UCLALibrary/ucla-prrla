@@ -64,11 +64,11 @@ jobs:
           path: ucla-prrla/dist
           key: testprl
 
-      - run: ls -la
-      - run: find . -type f
-
       - run: mkdir prl; tar -zcf prl/test-prl-latest.tar.gz dist
+        working-directory: ucla-prrla
+
       - name: Copy Artifact to S3
+        working-directory: ucla-prrla
         uses: jakejarvis/s3-sync-action@master
         with:
           args: --follow-symlinks
