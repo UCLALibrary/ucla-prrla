@@ -1,0 +1,43 @@
+name: Test Angular and Node build
+
+on:
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  buildtestenv:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: 12
+      - run: npm install
+        working-directory: ucla-prrla
+      - run: node_modules/.bin/ng build --no-progress
+        working-directory: ucla-prrla
+      - name: Cache Test Environment Artifacts
+        uses: actions/cache@v2
+        with:
+          path: ucla-prrla/dist
+          key: testprl
+  buildprodenv:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ucla-prrla
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: 12
+      - run: npm install
+      - run: node_modules/.bin/ng build --env=prod --no-sourcemap --no-progress
+      - name: Cache Prod Environment Artifacts
+        uses: actions/cache@v2
+        with:
+          path: ucla-prrla/dist
+          key: prodprl
