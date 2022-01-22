@@ -10,7 +10,7 @@ on:
       - master
 
 jobs:
-  testbuildtestenv:
+  buildtestenv:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -22,14 +22,12 @@ jobs:
         working-directory: ucla-prrla
       - run: node_modules/.bin/ng build --no-progress
         working-directory: ucla-prrla
-      - run: pwd
-      - run: ls -la ucla-prrla/dist
       - name: Cache Test Environment Artifacts
         uses: actions/cache@v2
         with:
           path: ucla-prrla/dist
           key: testprl
-  testbuildprodenv:
+  buildprodenv:
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -42,9 +40,14 @@ jobs:
           node-version: 12
       - run: npm install
       - run: node_modules/.bin/ng build --env=prod --no-sourcemap --no-progress
+      - name: Cache Prod Environment Artifacts
+        uses: actions/cache@v2
+        with:
+          path: ucla-prrla/dist
+          key: prodprl
  
   deploytest:
-    needs: testbuildtestenv
+    needs: buildtestenv
     runs-on: ubuntu-latest
     steps:
       - name: Test PRL Cache
@@ -73,6 +76,40 @@ jobs:
           args: --follow-symlinks --delete
         env:
           AWS_S3_BUCKET: ${{ secrets.TESTPRL_AWS_S3_BUCKET }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: "us-west-2"
+          SOURCE_DIR: "ucla-prrla/dist"
+  deployprod:
+    needs: ["buildprodenv", "deploytest"]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Prod PRL Cache
+        id: cache-prod-prl
+        uses: actions/cache@v2
+        with:
+          path: ucla-prrla/dist
+          key: prodprl
+
+      - run: mkdir prl; tar -zcf prl/prod-prl-latest.tar.gz ucla-prrla/dist
+
+      - name: Copy Artifact to S3
+        uses: jakejarvis/s3-sync-action@master
+        with:
+          args: --follow-symlinks
+        env:
+          AWS_S3_BUCKET: ${{ secrets.BUILDARTIFACTS_AWS_S3_BUCKET }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: "us-west-2"
+          SOURCE_DIR: "prl"
+          DEST_DIR: "prl"
+      - name: deploy
+        uses: jakejarvis/s3-sync-action@master
+        with:
+          args: --follow-symlinks --delete
+        env:
+          AWS_S3_BUCKET: ${{ secrets.PRODPRL_AWS_S3_BUCKET }}
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: "us-west-2"
