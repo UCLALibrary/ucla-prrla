@@ -138,7 +138,7 @@ export class SolrService {
             'q=' + encodeURIComponent(SolrService.escapeLucene(search)) + '&' +
             'rows=' + this.pageSize + '&' +
             'start=' + offset + '&' +
-            'wt=json&' +
+            'wt=jsonp&' +
             'sort=' + encodeURI(this.orderBy) + '&' +
             'facet=true&' +
             'facet.field=institutionName&' +
@@ -261,7 +261,7 @@ export class SolrService {
             this.baseURL + 'select' + '?' +
             'q=' + encodeURI('id:' + SolrService.escapeLucene(id)) + '&' +
             'indent=true&' +
-            'wt=json&' +
+            'wt=jsonp&' +
             'json.wrf=JSONP_CALLBACK';
 
         return this._jsonp.get(url).map(data => {
@@ -462,7 +462,7 @@ export class SolrService {
         let url =
             this.baseURL + 'select' + '?' +
             'q=*&' +
-            'wt=json&' +
+            'wt=jsonp&' +
             'sort=institutionName%20asc&' +
             'facet=true&' +
             'rows=0&' +
@@ -507,7 +507,7 @@ export class SolrService {
             this.baseURL + 'select' +
             '?q=prrla_member_title:*' +
             '&rows=0' +
-            '&wt=json' +
+            '&wt=jsonp' +
             '&sort=prrla_member_title%20asc' +
             '&indent=true' +
             '&facet=true' +
@@ -551,7 +551,7 @@ export class SolrService {
         let url =
             this.baseURL + 'select' + '?' +
             'q=*&' +
-            'wt=json&' +
+            'wt=jsonp&' +
             'facet=true&' +
             'rows=0&' +
             'facet.field=collectionName&' +
@@ -602,7 +602,7 @@ export class SolrService {
             '&facet.mincount=1' +
             '&facet.limit=-1' +
             // '&sort=collectionName%20asc' +
-            '&wt=json' +
+            '&wt=jsonp' +
             '&indent=true' +
             '&json.wrf=JSONP_CALLBACK';
 
@@ -644,7 +644,7 @@ export class SolrService {
         let url =
             this.baseURL + 'select' + '?' +
             'q=*&' +
-            'wt=json&' +
+            'wt=jsonp&' +
             'facet=true&' +
             'rows=0&' +
             'facet.field=institutionName&' +
@@ -688,7 +688,7 @@ export class SolrService {
         let url =
             this.baseURL + 'select' +
             '?q=prrla_member_title:' + '"' + encodeURIComponent(name) + '"' +
-            '&wt=json' +
+            '&wt=jsonp' +
             '&indent=true' +
             '&json.wrf=JSONP_CALLBACK';
 
