@@ -148,7 +148,6 @@ export class SolrService {
             'facet.field=decade&' +
             'facet.field=language_keyword&' +
             'facet.field=rights_keyword&' +
-            'facet.field=collection&' +
             'facet.field=source_keyword&' +
             'facet.field=description_keyword&' +
             'facet.field=identifier_keyword&' +
@@ -596,7 +595,7 @@ export class SolrService {
         let url =
             this.baseURL + 'select' +
             '?q=institutionName:' + encodeURIComponent('"' + universityName + '"') +
-            '&rows=-1' +
+            '&rows=' + (Math.pow(2,31) - 1) +
             '&facet=true' +
             '&facet.field=collectionName' +
             '&facet.sort=count' +
