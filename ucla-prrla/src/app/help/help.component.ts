@@ -1,5 +1,5 @@
 import {Component, HostListener, Inject, OnInit} from '@angular/core';
-import {DOCUMENT} from '@angular/platform-browser';
+import {DOCUMENT, Title} from '@angular/platform-browser';
 
 /**
  * This file is used to render Help Page
@@ -26,14 +26,16 @@ export class HelpComponent implements OnInit {
     /**
      * Constructor
      * @param document Document
+     * @param title Title
      */
-    constructor(@Inject(DOCUMENT) private document: Document) {
+    constructor(@Inject(DOCUMENT) private document: Document, private title: Title) {
     }
 
     /**
      * OnInit
      */
     ngOnInit() {
+        this.title.setTitle('Help | PRL');
     }
 
     /**

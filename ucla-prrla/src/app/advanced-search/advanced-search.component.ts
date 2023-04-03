@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {Title} from '@angular/platform-browser';
 import {SolrService} from '../services/solr.service';
 import {ActivatedRoute, Params, Router} from '@angular/router';
 import {Subscription} from 'rxjs/Subscription';
@@ -84,11 +85,13 @@ export class AdvancedSearchComponent implements OnInit {
      * @param testService SolrService
      * @param route ActivatedRoute
      * @param router Router
+     * @param title Title
      */
     constructor(
         public testService: SolrService,
         public route: ActivatedRoute,
-        public router: Router
+        public router: Router,
+        private title: Title
     ) {
     }
 
@@ -96,6 +99,7 @@ export class AdvancedSearchComponent implements OnInit {
      * OnInit, loads default data
      */
     ngOnInit() {
+        this.title.setTitle('Search | PRL');
         this.pager = this.testService.getPager(0);
         this.pageSize = this.testService.pageSize;
         this.availableOrders = this.testService.availableOrders;

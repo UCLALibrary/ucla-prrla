@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {Title} from '@angular/platform-browser';
 import {SolrService} from '../services/solr.service';
 import {ActivatedRoute, Params} from '@angular/router';
 import {Subscription} from 'rxjs/Subscription';
@@ -72,8 +73,9 @@ export class DetailItemComponent implements OnInit {
      * Constructor
      * @param testService SorlService
      * @param route
+     * @param title Title
      */
-    constructor(public testService: SolrService, private route: ActivatedRoute) {
+    constructor(public testService: SolrService, private route: ActivatedRoute, private title: Title) {
     }
 
     /**
@@ -110,6 +112,13 @@ export class DetailItemComponent implements OnInit {
 
         this.testService.getItemById(this.id).subscribe(data => {
             this.item = data;
+
+            if (data instanceof Object) {
+                this.title.setTitle(`${data.title} | PRL`);
+            } else {
+                this.title.setTitle("FUBAR | PRL");
+            }
+
             this.loaded = true;
         }, error => {
             ErrorComponent.showBackend();

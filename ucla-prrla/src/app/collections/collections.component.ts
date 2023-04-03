@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {Title} from '@angular/platform-browser';
 import {SolrService} from '../services/solr.service';
 import {element} from "protractor";
 import {Subscription} from "rxjs/Subscription";
@@ -53,8 +54,9 @@ export class CollectionsComponent implements OnInit {
      * Sets list with available types of page
      * @param testService
      * @param router
+     * @param title
      */
-    constructor(private testService: SolrService, private router: Router) {
+    constructor(private testService: SolrService, private router: Router, private title: Title) {
         this.list = [
             'Browse by Institution',
             'Browse by Collection Title'
@@ -65,6 +67,7 @@ export class CollectionsComponent implements OnInit {
      * Loads data
      */
     ngOnInit() {
+        this.title.setTitle('Explore Collections | PRL');
         this.testService.getUniversities().subscribe(data => {
             this.universities = data.universities;
         }, error => {

@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {Title} from '@angular/platform-browser';
 import {SolrService} from '../services/solr.service';
 import {ActivatedRoute, Params, Router} from '@angular/router';
 import {Subscription} from 'rxjs/Subscription';
@@ -45,11 +46,13 @@ export class InstitutionComponent  implements OnInit {
      * @param testService SorlService
      * @param route ActivatedRoute
      * @param router Router
+     * @param title Title
      */
     constructor(
         public testService: SolrService,
         public route: ActivatedRoute,
-        public router: Router
+        public router: Router,
+        private title: Title
     ) {
     }
 
@@ -61,6 +64,7 @@ export class InstitutionComponent  implements OnInit {
         this.route$ = this.route.queryParams.subscribe(
             (params: Params) => {
                 this.name = params['name'];
+                this.title.setTitle(`${this.name} | PRL`)
 
                 this.testService.getPrrlaMemberInfoByName(this.name).subscribe(data => {
                     this.memberInfo = data.memberInfo;
