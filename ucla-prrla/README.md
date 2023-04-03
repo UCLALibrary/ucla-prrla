@@ -5,7 +5,7 @@ version 1.1.1.
 
 ## Dependencies
 
-This project uses Angular v4 which is no longer supported. Installing dependencies with npm requires an optional flag:
+This project uses Angular v4 which is no longer supported. Installing dependencies with npm may require an optional flag:
 
     npm install --legacy-peer-deps
 
