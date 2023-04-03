@@ -3,6 +3,15 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) 
 version 1.1.1.
 
+## Dependencies
+
+This project uses Angular v4 which is no longer supported. Installing dependencies with npm requires an optional flag:
+
+    npm install --legacy-peer-deps
+
+Verified with Node v18.15.0 and npm 9.5.0.
+
+
 ## Development server
 
 Run ```ng serve``` for a dev server. Navigate to ```http://localhost:4200/```. 
