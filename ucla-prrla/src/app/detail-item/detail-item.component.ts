@@ -116,7 +116,7 @@ export class DetailItemComponent implements OnInit {
             if (data instanceof Object) {
                 this.title.setTitle(`${data.title} | PRL`);
             } else {
-                this.title.setTitle("FUBAR | PRL");
+                this.title.setTitle("Error | PRL");
             }
 
             this.loaded = true;
