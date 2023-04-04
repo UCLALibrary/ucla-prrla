@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import {SolrService} from '../services/solr.service';
 import {ErrorComponent} from '../error/error.component';
 
@@ -18,13 +19,14 @@ export class InstitutionsComponent implements OnInit {
     /**
      * Constructor
      */
-    constructor(private testService: SolrService) {
+    constructor(private testService: SolrService, private title: Title) {
     }
 
     /**
      * Initializing data
      */
     ngOnInit() {
+        this.title.setTitle('Institutions | PRL');
         this.testService.getPrrlaMembers().subscribe(data => {
             this.institutions = data.members;
         }, error => {

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 /**
  * This file if used to render About Page
@@ -11,12 +12,13 @@ export class AboutComponent implements OnInit {
     /**
     * Constructor
     */
-    constructor() {}
+    constructor(private title: Title) {}
 
     /**
      * Init
      */
     ngOnInit() {
+      this.title.setTitle('About | PRL');
     }
 
 }
