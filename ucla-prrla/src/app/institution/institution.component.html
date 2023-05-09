@@ -25,9 +25,11 @@
                             <dt>Location: </dt>
                             <dd><strong>{{ memberInfo.prrla_member_location }}</strong></dd>
                             <dt>Phone: </dt>
-                            <dd><strong>{{ memberInfo.prrla_member_phone }}</strong></dd>
+                            <dd><strong><a href="tel:{{ memberInfo.prrla_member_phone }}">{{ memberInfo.prrla_member_phone }}</a></strong></dd>
                             <dt>Email: </dt>
                             <dd><strong><a href="mailto:{{ memberInfo.prrla_member_email }}">{{ memberInfo.prrla_member_email }}</a></strong></dd>
+                            <dt>Web contact: </dt>
+                            <dd><strong><a href="{{ memberInfo.prrla_member_web_contact }}" target="_blank">{{ memberInfo.prrla_member_web_contact }}</a></strong></dd>
                             <dt>Website: </dt>
                             <dd><strong><a href="{{ memberInfo.prrla_member_website }}" target="_blank">{{ memberInfo.prrla_member_website }}</a></strong></dd>
                         </dl>
