@@ -45,10 +45,10 @@ export class SolrService {
      */
     constructor(private _jsonp: Jsonp) {
         if (environment.production) {
-            this.baseURL = 'http://p-u-prlsolr01.library.ucla.edu/solr/prl/';
+            this.baseURL = 'https://p-u-prlsolr01.library.ucla.edu/solr/prl/';
             console.log('prod');
         } else {
-            this.baseURL = 'http://t-u-prlsolr01.library.ucla.edu/solr/prl/';
+            this.baseURL = 'https://t-u-prlsolr01.library.ucla.edu/solr/prl/';
             console.log('dev');
         }
     }
