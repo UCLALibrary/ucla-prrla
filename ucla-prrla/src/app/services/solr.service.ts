@@ -136,6 +136,7 @@ export class SolrService {
         let url =
             this.baseURL + 'select' + '?' +
             'q=' + encodeURIComponent(SolrService.escapeLucene(search)) + '&' +
+            'df=text_multi&' +
             'rows=' + this.pageSize + '&' +
             'start=' + offset + '&' +
             'wt=jsonp&' +
