@@ -45,10 +45,10 @@ export class SolrService {
      */
     constructor(private _jsonp: Jsonp) {
         if (environment.production) {
-            this.baseURL = 'https://solr.library.ucla.edu/solr/prl/';
+            this.baseURL = 'https://p-u-prlsolr01.library.ucla.edu/solr/prl/';
             console.log('prod');
         } else {
-            this.baseURL = 'https://test-solr.library.ucla.edu/solr/prl/';
+            this.baseURL = 'https://t-u-prlsolr01.library.ucla.edu/solr/prl/';
             console.log('dev');
         }
     }
@@ -138,7 +138,7 @@ export class SolrService {
             'q=' + encodeURIComponent(SolrService.escapeLucene(search)) + '&' +
             'rows=' + this.pageSize + '&' +
             'start=' + offset + '&' +
-            'wt=json&' +
+            'wt=jsonp&' +
             'sort=' + encodeURI(this.orderBy) + '&' +
             'facet=true&' +
             'facet.field=institutionName&' +
@@ -148,7 +148,6 @@ export class SolrService {
             'facet.field=decade&' +
             'facet.field=language_keyword&' +
             'facet.field=rights_keyword&' +
-            'facet.field=collection&' +
             'facet.field=source_keyword&' +
             'facet.field=description_keyword&' +
             'facet.field=identifier_keyword&' +
@@ -262,7 +261,7 @@ export class SolrService {
             this.baseURL + 'select' + '?' +
             'q=' + encodeURI('id:' + SolrService.escapeLucene(id)) + '&' +
             'indent=true&' +
-            'wt=json&' +
+            'wt=jsonp&' +
             'json.wrf=JSONP_CALLBACK';
 
         return this._jsonp.get(url).map(data => {
@@ -463,7 +462,7 @@ export class SolrService {
         let url =
             this.baseURL + 'select' + '?' +
             'q=*&' +
-            'wt=json&' +
+            'wt=jsonp&' +
             'sort=institutionName%20asc&' +
             'facet=true&' +
             'rows=0&' +
@@ -508,7 +507,7 @@ export class SolrService {
             this.baseURL + 'select' +
             '?q=prrla_member_title:*' +
             '&rows=0' +
-            '&wt=json' +
+            '&wt=jsonp' +
             '&sort=prrla_member_title%20asc' +
             '&indent=true' +
             '&facet=true' +
@@ -552,7 +551,7 @@ export class SolrService {
         let url =
             this.baseURL + 'select' + '?' +
             'q=*&' +
-            'wt=json&' +
+            'wt=jsonp&' +
             'facet=true&' +
             'rows=0&' +
             'facet.field=collectionName&' +
@@ -596,14 +595,14 @@ export class SolrService {
         let url =
             this.baseURL + 'select' +
             '?q=institutionName:' + encodeURIComponent('"' + universityName + '"') +
-            '&rows=-1' +
+            '&rows=' + (Math.pow(2,31) - 1) +
             '&facet=true' +
             '&facet.field=collectionName' +
             '&facet.sort=count' +
             '&facet.mincount=1' +
             '&facet.limit=-1' +
             // '&sort=collectionName%20asc' +
-            '&wt=json' +
+            '&wt=jsonp' +
             '&indent=true' +
             '&json.wrf=JSONP_CALLBACK';
 
@@ -645,7 +644,7 @@ export class SolrService {
         let url =
             this.baseURL + 'select' + '?' +
             'q=*&' +
-            'wt=json&' +
+            'wt=jsonp&' +
             'facet=true&' +
             'rows=0&' +
             'facet.field=institutionName&' +
@@ -689,7 +688,7 @@ export class SolrService {
         let url =
             this.baseURL + 'select' +
             '?q=prrla_member_title:' + '"' + encodeURIComponent(name) + '"' +
-            '&wt=json' +
+            '&wt=jsonp' +
             '&indent=true' +
             '&json.wrf=JSONP_CALLBACK';
 
