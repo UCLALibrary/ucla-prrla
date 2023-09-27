@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Title} from '@angular/platform-browser';
 import {SolrService} from '../services/solr.service';
 import {ActivatedRoute, Params, Router} from '@angular/router';
+import {DomSanitizer, SafeHtml} from '@angular/platform-browser';
 import {Subscription} from 'rxjs/Subscription';
 import {ErrorComponent} from '../error/error.component';
 
@@ -19,10 +20,47 @@ export class InstitutionComponent  implements OnInit {
     private name;
 
     /**
-     * Institution Info
-     * @type {{}}
+     * The prrla_member_title field in the corresponding Solr document
+     * @type {string}
      */
-    public memberInfo = {};
+    public title;
+
+    /**
+     * The prrla_member_description field in the corresponding Solr document (may contain HTML)
+     * @type {SafeHtml}
+     */
+    public description: SafeHtml;
+
+    /**
+     * The prrla_member_location field in the corresponding Solr document
+     * @type {string}
+     */
+    public location;
+
+    /**
+     * The prrla_member_phone field in the corresponding Solr document
+     * @type {string}
+     */
+    public phone;
+
+    /**
+     * The prrla_member_email field in the corresponding Solr document
+     * @type {string}
+     */
+
+    public email;
+
+    /**
+     * The prrla_member_web_contact field in the corresponding Solr document
+     * @type {string}
+     */
+    public webContact;
+
+    /**
+     * The prrla_member_website field in the corresponding Solr document
+     * @type {string}
+     */
+    public website;
 
     /**
      * Institution Collections
@@ -52,7 +90,8 @@ export class InstitutionComponent  implements OnInit {
         public testService: SolrService,
         public route: ActivatedRoute,
         public router: Router,
-        private title: Title
+        private title: Title,
+        public domSanitizer: DomSanitizer
     ) {
     }
 
@@ -67,7 +106,14 @@ export class InstitutionComponent  implements OnInit {
                 this.title.setTitle(`${this.name} | PRL`)
 
                 this.testService.getPrrlaMemberInfoByName(this.name).subscribe(data => {
-                    this.memberInfo = data.memberInfo;
+                    this.title = data.memberInfo.prrla_member_title;
+                    this.description = this.domSanitizer.bypassSecurityTrustHtml(data.memberInfo.prrla_member_description);
+                    this.location = data.memberInfo.prrla_member_location;
+                    this.phone = data.memberInfo.prrla_member_phone;
+                    this.email = data.memberInfo.prrla_member_email;
+                    this.webContact = data.memberInfo.prrla_member_web_contact;
+                    this.website = data.memberInfo.prrla_member_website;
+
                     this.dataLoaded = true;
                 }, error => {
                     ErrorComponent.showBackend();

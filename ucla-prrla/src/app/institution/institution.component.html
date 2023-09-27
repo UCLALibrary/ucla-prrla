@@ -15,7 +15,7 @@
                     <div class="col-md-12 padding_top3p padding_bottom3p">
                         <div class="row">
                             <div class="col-md-12 padding_bottom3p padding_top3p institution-logo">
-                                <img src="../../assets/img/logos/{{ memberInfo.prrla_member_title }}.png" alt="">
+                                <img src="../../assets/img/logos/{{ title }}.png" alt="">
                             </div>
                         </div>
                     </div>
@@ -23,22 +23,22 @@
                     <div class="col-md-12 padding_top3p padding_bottom3p">
                         <dl class="dl-horizontal">
                             <dt>Location: </dt>
-                            <dd><strong>{{ memberInfo.prrla_member_location }}</strong></dd>
+                            <dd><strong>{{ location }}</strong></dd>
                             <dt>Phone: </dt>
-                            <dd><strong><a href="tel:{{ memberInfo.prrla_member_phone }}">{{ memberInfo.prrla_member_phone }}</a></strong></dd>
+                            <dd><strong><a href="tel:{{ phone }}">{{ phone }}</a></strong></dd>
                             <dt>Email: </dt>
-                            <dd><strong><a href="mailto:{{ memberInfo.prrla_member_email }}">{{ memberInfo.prrla_member_email }}</a></strong></dd>
+                            <dd><strong><a href="mailto:{{ email }}">{{ email }}</a></strong></dd>
                             <dt>Web contact: </dt>
-                            <dd><strong><a href="{{ memberInfo.prrla_member_web_contact }}" target="_blank">{{ memberInfo.prrla_member_web_contact }}</a></strong></dd>
+                            <dd><strong><a href="{{ webContact }}" target="_blank">{{ webContact }}</a></strong></dd>
                             <dt>Website: </dt>
-                            <dd><strong><a href="{{ memberInfo.prrla_member_website }}" target="_blank">{{ memberInfo.prrla_member_website }}</a></strong></dd>
+                            <dd><strong><a href="{{ website }}" target="_blank">{{ website }}</a></strong></dd>
                         </dl>
                     </div>
                 </div>
                 <div class="col-md-8">
                     <div class="col-md-12">
-                        <h3 class="padding_bottom2p"><span class="bottom-line blue">{{ memberInfo.prrla_member_title }}</span></h3>
-                        <p>{{ memberInfo.prrla_member_description }}</p>
+                        <h3 class="padding_bottom2p"><span class="bottom-line blue">{{ title }}</span></h3>
+                        <p [innerHtml]="description"></p>
                     </div>
                     <div class="col-md-4">
                         <h3 class="padding_bottom2p"><span class="bottom-line blue">Collections</span></h3>
