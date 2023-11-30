@@ -67,7 +67,7 @@ export class CollectionsComponent implements OnInit {
      * Loads data
      */
     ngOnInit() {
-        this.title.setTitle('Explore Collections | PRL');
+        this.title.setTitle('Explore Collections | PRRLA Pacific Rim Library');
         this.testService.getUniversities().subscribe(data => {
             this.universities = data.universities;
         }, error => {

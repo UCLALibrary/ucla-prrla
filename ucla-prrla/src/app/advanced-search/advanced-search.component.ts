@@ -99,7 +99,7 @@ export class AdvancedSearchComponent implements OnInit {
      * OnInit, loads default data
      */
     ngOnInit() {
-        this.title.setTitle('Search | PRL');
+        this.title.setTitle('Search | PRRLA Pacific Rim Library');
         this.pager = this.testService.getPager(0);
         this.pageSize = this.testService.pageSize;
         this.availableOrders = this.testService.availableOrders;

@@ -70,6 +70,12 @@ export class DetailItemComponent implements OnInit {
     public loaded = false;
 
     /**
+     * Full title of item
+     * @type {string}
+     */
+    public fullTitle = '';
+
+    /**
      * Constructor
      * @param testService SorlService
      * @param route
@@ -114,9 +120,15 @@ export class DetailItemComponent implements OnInit {
             this.item = data;
 
             if (data instanceof Object) {
-                this.title.setTitle(`${data.title} | PRL`);
+                for (let i = 0; i < data.titles.length; i++) {
+                    const currentTitle = data.titles[i] + " | ";
+                    this.fullTitle += currentTitle;
+                }
+                this.fullTitle += "PRRLA Pacific Rim Library"
+                
+                this.title.setTitle(this.fullTitle);
             } else {
-                this.title.setTitle("Error | PRL");
+                this.title.setTitle("Error | PRRLA Pacific Rim Library");
             }
 
             this.loaded = true;
