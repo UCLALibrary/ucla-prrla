@@ -64,7 +64,7 @@ export class InstitutionComponent  implements OnInit {
         this.route$ = this.route.queryParams.subscribe(
             (params: Params) => {
                 this.name = params['name'];
-                this.title.setTitle(`${this.name} | PRL`)
+                this.title.setTitle(`${this.name} | PRRLA Pacific Rim Library`)
 
                 this.testService.getPrrlaMemberInfoByName(this.name).subscribe(data => {
                     this.memberInfo = data.memberInfo;

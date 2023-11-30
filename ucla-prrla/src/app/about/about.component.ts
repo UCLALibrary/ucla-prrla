@@ -18,7 +18,7 @@ export class AboutComponent implements OnInit {
      * Init
      */
     ngOnInit() {
-      this.title.setTitle('About | PRL');
+      this.title.setTitle('About | PRRLA Pacific Rim Library');
     }
 
 }

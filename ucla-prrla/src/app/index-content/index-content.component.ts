@@ -20,7 +20,7 @@ export class IndexContentComponent implements OnInit {
    * Init
    */
   ngOnInit() {
-    this.title.setTitle('Home | PRL');
+    this.title.setTitle('Home | PRRLA Pacific Rim Library');
   }
 
 }

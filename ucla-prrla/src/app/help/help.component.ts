@@ -35,7 +35,7 @@ export class HelpComponent implements OnInit {
      * OnInit
      */
     ngOnInit() {
-        this.title.setTitle('Help | PRL');
+        this.title.setTitle('Help | PRRLA Pacific Rim Library');
     }
 
     /**

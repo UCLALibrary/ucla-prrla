@@ -26,7 +26,7 @@ export class InstitutionsComponent implements OnInit {
      * Initializing data
      */
     ngOnInit() {
-        this.title.setTitle('Institutions | PRL');
+        this.title.setTitle('Institutions | PRRLA Pacific Rim Library');
         this.testService.getPrrlaMembers().subscribe(data => {
             this.institutions = data.members;
         }, error => {
